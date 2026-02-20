@@ -21,12 +21,7 @@ title: "T3: 06.03.2026"
 
 **Aufträge**
 
-::: {.callout-caution title="Übung 1"}
-- Führen Sie mit 2 Personen unser Experiment durch. Laden Sie anschliessend die 2 Datensätze auf Ilias hoch. Das Experiment dauert ca. 30 Minuten (abhängig von den Versuchspersonen) 
-- Führen Sie das Skript `quality_check.Rmd` aus und laden Sie die resultierenden Abbildungen auf Ilias hoch. 
-
-**Abgabetermin: 16.03.2026 23:55**
-:::
+- keine
 
 **Vertiefung für Interessierte (freiwillig)**
 

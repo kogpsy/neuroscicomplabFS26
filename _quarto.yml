@@ -70,8 +70,8 @@ website:
 
       - section: "Experimente"
         # href: chapters/...
-        # contents:
-        #   - chapters/...
+        contents:
+          - chapters/experiments.qmd
 
 
       - section: "Datenverarbeitung"

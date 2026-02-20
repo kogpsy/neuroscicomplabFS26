@@ -14,12 +14,27 @@ title: "T2: 27.02.2026"
 
 - wenn noch nicht erfolgt: Installieren von [PsychoPy](https://www.psychopy.org/download.html)
 
-- Artikel "Imagery adds stimulus-specific sensory evidence to perceptual detection" von Dijkstra et al. (2022) lesen: <https://doi.org/10.1167/jov.22.2.11>
+- Artikel "Imagery adds stimulus-specific sensory evidence to perceptual detection" von Dijkstra et al. (2022) lesen: <https://doi.org/10.1167/jov.22.2.11>. 
 
-- Die einzelnen Schritte des Experiments im Artikel aufschreiben: Was machen genau die Versuchpersonen? 
+- Schreiben Sie die einzelnen Schritte des Experiments im Artikel auf: Was machen genau die Versuchpersonen? 
+
+- Erstellen Sie eine [Flowchart](experiment.html#flowcharts) zum geplanten Experiment. Fügen Sie Folgendes ein:
+
+    - Alle [Elemente eines Experiments](../chapters/experiments.qmd)
+    - Wiederholungen von Elementen (mit einem Loop/Pfeil)
+    - Dauer von Elementen (z.B. in ms)
+    - Aufgenommene Daten (z.B. button press)
+
+_Tipps_: 
+
+- Zeichnen Sie die Flowchart auf einem Blatt Papier, in einem Programm wie Word/Excel oder R mit dem [{`mermaidr`}-Package](https://data-mermaid.github.io/mermaidr/).
 
 
 **Kurstermin**
+
+- Einführung in das [Programmieren mit Python](../chapters/intro_python.qmd)
+
+- [Schleifen programmieren mit Python](../chapters/loops.qmd)
 
 - Einführung in das Experiment, das wir im Kurs durchführen werden
 
@@ -29,7 +44,12 @@ title: "T2: 27.02.2026"
 
 **Aufträge**
 
-- keine
+::: {.callout-caution title="Übung 1"}
+- Führen Sie mit 2 Personen unser Experiment durch. Laden Sie anschliessend die 2 Datensätze auf Ilias hoch. Das Experiment dauert ca. 30 Minuten (abhängig von den Versuchspersonen) 
+- Führen Sie das Skript `quality_check.Rmd` aus und laden Sie die resultierenden Abbildungen auf Ilias hoch. 
+
+**Abgabetermin: 16.03.2026 23:55**
+:::
 
 **Vertiefung für Interessierte (freiwillig)**
 

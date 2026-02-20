@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Kursübersicht – Neurowissenschaft Computerlab</title>
+<title>experiments – Neurowissenschaft Computerlab</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -29,6 +49,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../chapters/loops.html" rel="prev">
 <link href="../imgs/logo_landing.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -73,15 +94,18 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-learnings.callout {
-  border-left-color: LightSlateGray;
+div.callout-debugging.callout {
+  border-left-color: RosyBrown;
 }
-div.callout-learnings.callout-style-default > .callout-header {
-  background-color: rgb(from LightSlateGray r g b / 13%);
+div.callout-debugging.callout-style-default > .callout-header {
+  background-color: rgb(from RosyBrown r g b / 13%);
 }
-div.callout-learnings .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-learnings.callout-style-default .callout-icon::before, div.callout-learnings.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="LightSlateGray" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+div.callout-debugging .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-debugging.callout-style-default .callout-icon::before, div.callout-debugging.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\e4d0' !important;
+  background-image: none;
 }
 div.callout-hands-on.callout {
   border-left-color: RosyBrown;
@@ -96,6 +120,16 @@ div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-ha
   content: 'nil' !important;
   background-image: none;
 }
+div.callout-learnings.callout {
+  border-left-color: LightSlateGray;
+}
+div.callout-learnings.callout-style-default > .callout-header {
+  background-color: rgb(from LightSlateGray r g b / 13%);
+}
+div.callout-learnings .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-learnings.callout-style-default .callout-icon::before, div.callout-learnings.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="LightSlateGray" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
 div.callout-preparation.callout {
   border-left-color: RosyBrown;
 }
@@ -107,19 +141,6 @@ div.callout-preparation.callout-style-default .callout-icon::before, div.callout
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: 'nil' !important;
-  background-image: none;
-}
-div.callout-debugging.callout {
-  border-left-color: RosyBrown;
-}
-div.callout-debugging.callout-style-default > .callout-header {
-  background-color: rgb(from RosyBrown r g b / 13%);
-}
-div.callout-debugging .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-debugging.callout-style-default .callout-icon::before, div.callout-debugging.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: '\e4d0' !important;
   background-image: none;
 }
 </style>
@@ -361,7 +382,7 @@ div.callout-debugging.callout-style-default .callout-icon::before, div.callout-d
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Kursübersicht</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/experiments.html">Experimente</a></li><li class="breadcrumb-item"><a href="../chapters/experiments.html">Neurowissenschaftliche Experimente</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -421,7 +442,7 @@ div.callout-debugging.callout-style-default .callout-icon::before, div.callout-d
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/experiments.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/experiments.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Neurowissenschaftliche Experimente</span></a>
   </div>
 </li>
@@ -450,114 +471,179 @@ div.callout-debugging.callout-style-default .callout-icon::before, div.callout-d
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/experiments.html">Experimente</a></li><li class="breadcrumb-item"><a href="../chapters/experiments.html">Neurowissenschaftliche Experimente</a></li></ol></nav></header>
 
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Kursübersicht</h1>
+
+
+
+<section id="neurowissenschaftliche-experimente" class="level1 page-columns page-full">
+<h1>Neurowissenschaftliche Experimente</h1>
+<blockquote class="blockquote">
+<p>Nothing in neuroscience makes sense except in the light of behavior. <span class="citation" data-cites="shepherd_neurobiology_1988">Shepherd (<a href="#ref-shepherd_neurobiology_1988" role="doc-biblioref">1988</a>)</span></p>
+</blockquote>
+<p>In der Neurowissenschaft wird mit naturwissenschaftlichem Schwerpunkt der Aufbau und die Funktionen des Nervensystems untersucht. Neurowissenschaften sind ein sehr weites Forschungsbereich in dem unterschiedlichste und zahlreiche Themen bearbeitet werden.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Hands-on: Complab im Forschungsprozess
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Wählen Sie in 2-4er Gruppen eines der untenstehenden Paper (Open Access) aus:</li>
+</ol>
+<ul>
+<li><span class="citation" data-cites="quon_musical_2021">Quon et al. (<a href="#ref-quon_musical_2021" role="doc-biblioref">2021</a>)</span>: <a href="https://www.nature.com/articles/s41598-021-95922-7">Quon et al.&nbsp;(2021): Musical components important for the Mozart K448 effect in epilepsy</a></li>
+<li><span class="citation" data-cites="richter_listening_2021">Richter et al. (<a href="#ref-richter_listening_2021" role="doc-biblioref">2021</a>)</span>: <a href="https://www.nature.com/articles/s41598-021-90823-1">Richter et al.&nbsp;(2021): Listening to speech with a guinea pig-to-human brain-to-brain interface</a></li>
+<li><span class="citation" data-cites="zhang_longitudinal_2021">Zhang et al. (<a href="#ref-zhang_longitudinal_2021" role="doc-biblioref">2021</a>)</span>: <a href="https://www.nature.com/articles/s41598-021-90729-y">Zhang et al.&nbsp;(2021): Longitudinal effects of meditation on brain resting-state functional connectivity</a></li>
+</ul>
+<ol start="2" type="1">
+<li><p>Schreiben Sie zuerst in einem Satz oben auf Ihr Blatt auf, was die Fragestellung des Papers ist.</p></li>
+<li><p>Gehen Sie das Paper durch und schreiben Sie heraus, wo überall im “Computerlab” gearbeitet wurde, bei dieser Forschungsarbeit. (Sie können auch Vermutungen anstellen.)</p></li>
+</ol>
+<p>z.B. <em>Datenanalyse -&gt; R/RStudio</em></p>
+<p>[15 Minuten]</p>
+</div>
+</div>
+<section id="besondere-herausforderungen-von-experimenten-in-den-verhaltenswissenschaften-kognitiven-neurowissenschaften" class="level2">
+<h2 class="anchored" data-anchor-id="besondere-herausforderungen-von-experimenten-in-den-verhaltenswissenschaften-kognitiven-neurowissenschaften">Besondere Herausforderungen von Experimenten in den Verhaltenswissenschaften / kognitiven Neurowissenschaften</h2>
+<p>Das Erstellen und Durchführen neurowissenschaftlicher Experimente bringt viele Herausforderungen mit sich.</p>
+<section id="passung-experimentalparadigmen-passend-zur-fragestellung" class="level3">
+<h3 class="anchored" data-anchor-id="passung-experimentalparadigmen-passend-zur-fragestellung">Passung: Experimentalparadigmen passend zur Fragestellung</h3>
+<p>Neurowissenschaftliche Experimente müssen exakt auf die Fragestellung zugeschnitten werden um aussagekräftige Daten zu liefern. Oft muss ein neues Paradigma erstellt werden, d.h. Forschende können kein schon bestehendes Experiment nutzen, sondern untersuchen einen Aspekt eines neuronalen Prozesses mit einer neuen Methode, einer neuen Fragestellung oder einem neuen Ansatz. Deshalb programmieren die meisten Forschenden ihre Experimentalparadigmen selbst. So können beispielsweise Instruktionen oder verwendete Stimuli, deren Grösse und Anzeigedauer präzise definiert werden. Dies erfordert breite Kenntnisse im Programmieren, der zu verwendenden Technik, wie auch der Gehirnprozesse.</p>
+</section>
+<section id="präzision-hohe-räumliche-und-zeitliche-auflösung" class="level3">
+<h3 class="anchored" data-anchor-id="präzision-hohe-räumliche-und-zeitliche-auflösung">Präzision: Hohe räumliche und zeitliche Auflösung</h3>
+<p>Eine grosse Schwierigkeit neurowissenschaftlicher Experimente ist oft, dass eine präzise Kontrolle von räumlichen und zeitliche Eigenschaften der Experimente nötig ist um sinnvolle Daten zu erhalten. Visuelle Stimuli müssen z.B. sehr genau und immer gleich präsentiert werden können. Die zeitliche Auflösung ist gerade bei EEG Experimenten von enormer Bedeutung, da EEG eine sehr hohe zeitliche Auflösung hat. Räumliche Auflösung kann bedeuten, dass sehr präzise visuelle Darbietung möglich sein muss, sowie dass die Versuchsperson sich im Setup nicht bewegen darf, weil dies die Distanzen verschiebt (z.B. im MRT, oder der Abstand zum Bildschirm beim Eyetracking).</p>
+</section>
+<section id="synchronisation-mehrere-datenspuren" class="level3">
+<h3 class="anchored" data-anchor-id="synchronisation-mehrere-datenspuren">Synchronisation: Mehrere Datenspuren</h3>
+<p>Neurowissenschaftliche Experimente beinhalten oft die Datenerhebung auf mehreren Ebenen, z.B. wird gleichzeitig Hirnaktivität und das Drücken von Antwortbuttons aufgenommen. Das bedeutet, dass Bildschirm, MRT/EEG/Eyetracking/etc., sowie die Antwort zeitlich koregistriert/synchronisiert werden müssen, um die Daten im Nachhinein auswerten zu können. Technisch ist das oft mit grossem Aufwand verbunden und benötigt einiges an Pilotierung.</p>
+</section>
+<section id="komplexität-zu-untersuchender-prozess-und-störprozesse" class="level3">
+<h3 class="anchored" data-anchor-id="komplexität-zu-untersuchender-prozess-und-störprozesse">Komplexität: Zu untersuchender Prozess und Störprozesse</h3>
+<p>Oft soll ein ganz spezifischer Prozess untersucht werden, aber das ist eine sehr komplexe Aufgabe, weil im menschlichen Gehirn gleichzeitig sehr viele verschiedene Prozesse ablaufen, kein Hirnareal hat nur eine einzige Aufgabe und aus ethischen Gründen ist das “Ausschalten” von Störfaktoren nicht immer möglich. Was kann man tun?</p>
+<p>Ein Weg den Prozess sichtbar zu machen ist es zum Beispiel einen Kontrast zu rechnen, dies wird beispielsweise bei EEG und fMRI Experimenten, aber auch bei Reaktionszeitexperimenten sehr oft gemacht. Hierfür erhebt man Daten in einer Test-Bedingung in der der Prozess abgerufen wird und eine Kontroll-Bedingung, welche als “Baseline” dient. Die Baseline enthält alle “nicht interessierenden” Prozesse, die in der Test-Bedingung vorhanden sind. Durch das Vergleichen der Test- und Kontrollbedingung erhält man einen Kontrast: Also das was den interessierenden Prozess ausmacht!</p>
+<p>Sie müssen sich beim Erstellen eines Experiments also nicht nur Gedanken dazu machen, was Sie interessiert - sondern genau so auch darüber was Sie <em>nicht</em> interessiert. In der Theorie tönt das einfach, in der Praxis ist das oft recht kniffelig.</p>
+</section>
+<section id="ressourcenintensive-datenerhebung-teuer-und-anspruchsvoll" class="level3">
+<h3 class="anchored" data-anchor-id="ressourcenintensive-datenerhebung-teuer-und-anspruchsvoll">Ressourcenintensive Datenerhebung: Teuer und anspruchsvoll</h3>
+<p>Bildgebende Verfahren, benötigen zum Teil extrem teure Geräte, wie z.B. fMRI, und bedeuten oft hohen Aufwand, z.B. das Kleben der Elektroden beim EEG. Bei der Untersuchung von ganz bestimmten Patientengruppen hat man zudem oft nicht sehr viele Personen zur Verfügung die den Einschlusskriterien entsprechen. Oft müssen Personen auch aus dem Experiment ausgeschlossen werden, weil sie z.B. Auffälligkeiten im MRI zeigen, die nichts mit dem zu untersuchenden Prozess zu tun hat oder sie brechen während der Untersuchung ab. Gerade bei der Untersuchung klinischer Aspekte stellen sich oft Schwierigkeiten, wie beispielsweise fehlende Motivation oder Compliance von Patient:innen. Daher können oft keine sehr grossen Stichproben erhoben werden, was im Gegenzug besonders präzise Experimente erfordert.</p>
+</section>
+</section>
+<section id="wichtige-elemente-von-experimenten" class="level2">
+<h2 class="anchored" data-anchor-id="wichtige-elemente-von-experimenten">Wichtige Elemente von Experimenten</h2>
+<p>Beim Programmieren von Experimenten lohnt es sich, sich zuerst darüber im klaren zu sein, welche Bausteine das geplante Experiment hat. Im Folgenden werden einige typische Elemente eines Verhaltensexperiments beschrieben. Oft kommen hier natürlich noch Stimulations- oder Aufnahmemethoden hinzu.</p>
+<section id="begrüssung-und-einverständniserklärung" class="level3">
+<h3 class="anchored" data-anchor-id="begrüssung-und-einverständniserklärung">Begrüssung und Einverständniserklärung</h3>
+<p>Hier wird die Versuchsperson begrüsst, wird über das Experiment aufgeklärt und gibt (wenn nicht vorher auf Papier schon geschehen) ihre Einverständnis zur Teilnahme am Experiment. Dies wird je nach Ethikkommission und Ethikantrag unterschiedlich gehandhabt. Wichtige Informationen sind hierbei, dass die Versuchsperson weiss worauf sie sich einlässt (Ist zum Beispiel Hirnstimulation/fMRI/etc. geplant? Wie lange dauert das Experiment ungefähr? Was soll sie tun, wenn sie abbrechen möchte?). Die Schwierigkeit ist oft, genügend Information zu geben aber die Hypothese nicht zu verraten.</p>
+</section>
+<section id="instruktion" class="level3">
+<h3 class="anchored" data-anchor-id="instruktion">Instruktion</h3>
+<p>Die Instruktion wird oft schriftlich gegeben, um diese zwischen den Versuchspersonen konstant zu halten. Es ist teilweise herausfordernd, einen Task so genau zu erklären, dass er verständlich ist, aber die Erklärung auch kurz genug zu halten, dass die Instruktion auch gelesen wird. Oft werden Übungstrials verwendet um die Instruktion zu verdeutlichen.</p>
+</section>
+<section id="stimuli" class="level3">
+<h3 class="anchored" data-anchor-id="stimuli">Stimuli</h3>
+<p>Unter Stimuli werden die gezeigten Elemente verstanden, die den Task ausmachen. Es können Töne, Bilder, Wörter, etc. als Stimuli verwendet werden.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Hands-on: Stimuli
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Welche Stimuli aus neurowissenschaftlichen Experimenten kennen Sie?</p>
+<p>Tauschen Sie sich mit Ihren Mitstudierenden aus und schreiben/zeichnen Sie ein paar Beispiele vorne an die Tafel.</p>
+<p><em>[~5 Minuten]</em></p>
+</div>
+</div>
+</section>
+<section id="trial" class="level3">
+<h3 class="anchored" data-anchor-id="trial">Trial</h3>
+<p>Ein Trial beschreibt ein sich wiederholender Vorgang in dem der Stimulus gezeigt wird und z.B. von der Versuchsperson eine Antwort erwartet wird. Ein Trial wird oft sehr viele Male wiederholt. Die Stimuli können zwischen den Trials variieren oder gleich bleiben. Das Timing der Trials kann konstant sein (ein Stimulus wird bspw. immer gleich lang gezeigt) oder variiert werden (unterschiedliche Anzeigedauer).</p>
+<p>Zwischen den Trials wird ein Inter-Trial-Interval (ITI) festgelegt. Dies wird z.B. bei fMRI Experimenten dann variiert, damit (je nach Repetition Time/TR) nicht immer in derselben Schicht aufgenommen wird bei Stimuluspräsentation.</p>
+<p>Während einem Trial wird die Antwort / Response der Versuchsperson aufgenommen. Bei der Aufnahme von Reaktiosnzeiten muss festgelegt werden, wann der Trial oder die Stimuluspräsentation beginnt und mit welcher Handlung sie endet. Es kann bestimmt werden, welche Antworten zulässig sind (bspw. nur bestimmte Tasten) und was passiert wenn eine richtige oder falsche Antwort gegeben wird: Gibt es z.B. ein Feedback bei falschen Antworten?</p>
+</section>
+<section id="run-block" class="level3">
+<h3 class="anchored" data-anchor-id="run-block">Run / Block</h3>
+<p>Ein Run/ein Block bezeichnet eine Einheit mit mehreren Trials. Oft werden Bedingungen z.B. zwischen den Runs randomisiert. Zwischen den Runs sind Pausen möglich, damit sich die Versuchsperson erholen kann. Oft wird vor dem Experimentstart ein “Übungsblock” durchgeführt, um sich sicher zu sein, dass die Versuchspersonen die Aufgabe und Instruktion verstanden haben.</p>
+</section>
+<section id="debriefing-und-verabschiedung" class="level3">
+<h3 class="anchored" data-anchor-id="debriefing-und-verabschiedung">Debriefing und Verabschiedung</h3>
+<p>Im Debriefing wird der Versuchsperson erklärt, um was es im Experiment gegangen ist, welche Hypothesen untersucht wurden und eine eventuelle Coverstory aufgedeckt. Oft werden Personen vor dem Debriefing nach der getesteten Hypothese gefragt, um zu schauen, ob sie diese erraten hatten. Das gibt Aufschluss darüber wie sehr das Experiment dadurch verzerrt sein könnte, dass die Versuchspersonen Bescheid wissen. Wichtig ist es auch den Versuchspersonen zum Schluss zu danken.</p>
+</section>
+</section>
+<section id="vorgehen-experiment-programmieren" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="vorgehen-experiment-programmieren">Vorgehen Experiment programmieren</h2>
+<p>Wichtige Schritte beim Programmieren von Experimenten sind folgende (nicht unbedingt in dieser Reihenfolge, das kommt auf das Experiment an):</p>
+<ul>
+<li><p>Task auswählen</p></li>
+<li><p>Stimuli auswählen und generieren</p></li>
+<li><p>Trial erstellen (Fixationskreuz? Stimulus? Antwortmöglichkeiten? Feedback? Masking?)</p></li>
+<li><p>Timing festlegen: Dauer Stimuluspräsentation? ITIs (Inter-Trial-Intervals)? Antwortfenster?</p></li>
+<li><p>Design: Anzahl Bedingungen und Trials bestimmen (Power bedenken), within oder between Design?</p></li>
+<li><p>Ablauf des Experiments festlegen: Gesamtdauer? Pausen nötig?</p></li>
+<li><p>Instruktion: klare Anweisungen, Coverstory</p></li>
+<li><p>Einbindung von allen technischen Geräten (z.B. EEG Recorder, MRT, Brainstimulation-Devices, Eyetracking) und Synchronisation</p></li>
+</ul>
+<section id="flowcharts" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="flowcharts">Flowcharts</h3>
+<p>Flowcharts, auf Deutsch Flussdiagramme, eignen sich um Prozesse zu beschreiben. Beim Programmieren kann man damit gut darstellen, was ein Programm machen soll.</p>
+<p><img src="../imgs/flowchart_simple.png" class="img-fluid"></p>
+<p>Bei der Planung und dem Erstellen eines Experiments ist es ebenfalls hilfreich eine Flowchart zu erstellen. In einer Experiment-Flowchart sind die Elemente eines Experimentes in Boxen eingezeichnet und mit Pfeilen verbunden um sie zeitlich einzuordnen. Timing-Informationen können unter oder neben den Boxen festgehalten werden. Die Anzahl Repetitionen wird oft neben den Pfeilen eingefügt. Hilfreich ist auch zu kennzeichnen, wo welche Daten erhoben werden (button presses, EEG, etc.).</p>
+<aside>
+Wir werden in diesem Kurs immer wieder darauf eingehen, wie man ein Experiment möglichst gut planen kann um aussagekräftige Daten zu erhalten. Hier gibt es viele Möglichkeiten wie Pilotierung, Datensimulation und die adäquate Wahl der statistischen Verfahren in Bezug auf die Fragestellung.
+</aside>
+<p>Eine Flowchart eignet sich ebenfalls sehr gut, um in einem Paper/einer Arbeit darzustellen, wie der Ablauf des Experiments war.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Hands-on: Flowcharts
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suchen Sie zusammen zu einem Thema Ihrer Wahl eine Flowchart.</p>
+<ul>
+<li>Identifizieren Sie alle Elemente des Experiments, die Sie finden.</li>
+<li>Gibt es Informationen zu den Stimuli?</li>
+<li>Gibt es Informationen zum Timing?</li>
+<li>Gibt es Informationen zur Datenerhebung?</li>
+<li>Fehlt etwas? Wie würden Sie dies ergänzen?</li>
+</ul>
+<p><em>[~10 Minuten]</em></p>
+</div>
 </div>
 
 
 
-<div class="quarto-title-meta">
+</section>
+</section>
+</section>
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<!-- Hier finden Sie einen Überblick über die Inhalte und den Aufbau des Complab-Kurses FS2026. -->
-<!-- ## Inhalte der Lehrveranstaltung -->
-<!-- Dieser Kurs behandelt die Methoden der Datenerhebung, -verarbeitung und -analyse im Feld der Neurowissenschaften.  -->
-<!-- - Wichtige Programmiersprachen und - umgebungen in den Neurowissenschaften -->
-<!-- - Programmieren von computerbasierten Experimenten (mit PsychoPy) -->
-<!-- - Programmieren von Datenverarbeitungspipelines: Datenvorverarbeitung und Visualisierung („good practices", Data Cleaning, Reproduzierbarkeit) -->
-<!-- - Analysemethoden und Modelle zugeschnitten auf unterschiedliche neurowissenschaftliche Datensätze und Fragestellungen mit frequentistischen wie auch bayesianischen Verfahren (u.a. Reaktionszeiten, Signal detection theory, Drift diffusion models) -->
-<!-- - Interpretation und kritische Einordnung von Analyseergebnissen -->
-<!-- ### Lernziele -->
-<!-- Ziel dieses Kurses ist es, dass praktisches Wissen im Umgang mit neurowissenschaftlichen Daten erworben wird, dies umfasst u.a.: -->
-<!-- - ein computerbasiertes Experiment planen, erstellen und zur Datenerhebung nutzen können -->
-<!-- - wichtige neurowissenschaftlichen Datenformate und ihre Eigenschaften kennen -->
-<!-- - Daten aus neurowissenschaftlichen Experimenten mit einem reproduzierbaren Skript vorverarbeiten und informativ visualisieren können -->
-<!-- - verschiedene Paradigmen der Datenanalyse (u.a. Äquivalenztests, Bayes Factors, Signal detection, DDMs) kennen und angewendet haben -->
-<!-- - Analyseergebnisse interpretieren, kritisch diskutieren, kommunizieren und peer-reviewen können -->
-<!-- ## Aufbau der Lehrveranstaltung -->
-<!-- Erfahrungsgemäss lernt man Programmiersprachen und Datenanalyse am schnellsten und nachhaltigsten, wenn man sie selber anwendet.  -->
-<!-- Aus diesem Grund setzen sich die Termine zusammen aus theoretischen Inputs und Hands-on Sessions, in welchen das erworbene Wissen praktisch umgesetzt wird. Die Aufteilung ist stark vom jeweiligen Thema anhängig.  -->
-<!-- ::: hands-on -->
-<!-- Hands-on Aufgaben werden in den Veranstaltungen angekündigt und erklärt. Auf der Website sind die Aufgaben in diesen Hands-on Blöcken zu finden. Die Idee der Hands-on Aufgaben ist es, dass das Gelernte sofort angewendet werden kann und bei Problemen rasche Unterstützung durch die Dozierenden möglich ist. Die Aufgaben haben teilweise (angegebene) unterschiedliche Schwierigkeitsgrade. So können alle je nach ihren Vorkenntnissen ihre Skills trainieren. Bei Abwesenheit an einem Termin, können die praktischen Teile auf der Website nachgearbeitet werden. Die Hands-on Aufgaben dienen als Vorbereitung für die Übungsaufgaben. -->
-<!-- ::: -->
-<!-- ### Typische Woche -->
-<!-- - __Vor dem Termin:__ Vorbereitungsauftrag [ca. 45-60 min], z.B. Lesen eines Artikels und Beantworten der Vorbereitungsaufgaben auf Ilias -->
-<!-- - __Kurstermin:__ Besprechen Vorbereitungsauftrag, Inhaltlicher Input, Hands-on Sessions [2 Lektionen] -->
-<!-- - __Bearbeiten der Übung (mehrwöchig):__ Hier wird selbstständig das im Kurs Gelernte und Geübte auf ein neues Problem angewendet. [5 Übungen à ca. 10 h] -->
-<!-- ## Organisatorisches -->
-<!-- ### Ilias -->
-<!-- ILIAS-Gruppe Freitag 14.15-16.00 👉 [468703-FS2026-0]() -->
-<!-- ILIAS-Gruppe Freitag 16.15-18.00 👉 [468703-FS2026-1]() -->
-<!-- ### Kursvoraussetzungen -->
-<!-- Wir werden mit der Programmiersprache R und zu einem kleinen Teil mit Python arbeiten. -->
-<!-- Für die Veranstaltung wird deshalb ein __Laptop__ mit freiem Speicherplatz benötigt. -->
-<!-- __Bitte installieren Sie bis zum 2. Kurstermine folgende Software:__ -->
-<!-- -  [Neuste Versionen von R und RStudio](https://posit.co/download/rstudio-desktop/) -->
-<!-- -  [PsychoPy](https://www.psychopy.org/download.html) -->
-<!-- -  [JASP](https://jasp-stats.org/download/) -->
-<!-- __R-Kenntnisse__ (gemäss Statistik I-IV im Bachelor Psychologie) werden vorausgesetzt. Zur Auffrischung dient folgender Link (https://methodenlehre.github.io/einfuehrung-in-R/) oder für Fortgeschrittene die Bücher [„Advanced R"](http://adv-r.had.co.nz/) und [„R for Data Scientists"](https://r4ds.had.co.nz/) von Hadley Wickham. Zusätzlich dient _Übung 2_ zur Auffrischung der Vorkenntnisse auf die im späteren Verlauf des Kurses aufgebaut wird. -->
-<!-- ### DataCamp -->
-<!-- [DataCamp](https://www.datacamp.com/) ist eine Online-Lernplattform für Data Science und Datenanalyse. Diese bietet interaktive Kurse, Tutorials und Projekte in verschiedenen Programmiersprachen u.a. in Python und R auf unterschiedlichen Niveaus an. -->
-<!-- Im Rahmen dieser Lehrveranstaltung können alle Teilnehmenden sich unter folgendem Link mit ihrer Uni Bern E-Mail Adresse (*students.unibe.ch) registrieren und Kurse auf Datacamp kostenlos nutzen:  -->
-<!-- 👉🏼 [Einladungslink DataCamp Registration](https://www.datacamp.com/groups/shared_links/3fc707ac57c6293825924af2e54b2ed9743579402c1367af9aa879b7460da23a) (zuerst muss ein DataCamp Zugang erstellt werden.) -->
-<!-- Wir werden jeweils die empfohlenen Datacamp Kurse verlinken. Sie haben mit dem Link Zugriff auf __alle Datacamp-Kurse__ bis Ende FS26. -->
-<!-- 👉🏼 Zur Auffrischung von R-Kenntnissen eignet sich dieser Kurs: [Introduction to R](https://app.datacamp.com/learn/courses/free-introduction-to-r) -->
-<!-- 👉🏼 Als Einführung in Python eignet sich folgender Kurs: [Introduction to Python](https://app.datacamp.com/learn/courses/intro-to-python-for-data-science) -->
-<!-- ## Leistungsnachweise -->
-<!-- Der Kurs entspricht 5 ETCS. -->
-<!-- Dafür müssen 3 Bereiche erfüllt werden: -->
-<!-- - Anwesenheit im Kurs -->
-<!-- - bestandene Übungen -->
-<!-- - bestandenes Abschlussquiz  -->
-<!-- Alle Leistungsnachweise werden in den Veranstaltungen angekündigt.  -->
-<!-- Die Termine für die Leistungsnachweise finden Sie unter [Termine der Leistungsnachweise](index.qmd#sec-termine). -->
-<!-- ### Anwesenheit -->
-<!-- Die Anwesenheit im Kurs wird vorausgesetzt, an 2 Terminen darf gefehlt werden.  -->
-<!-- Das Online-Skript erlaubt das Nacharbeiten des wichtigsten Stoffes im Selbststudium, wir können jedoch nicht für die Vollständigkeit garantieren.  -->
-<!-- Hilfestellung beim Programmieren und Verstehen der Inhalte erhalten Sie während der Kurszeiten. -->
-<!-- Aus zeitlichen Gründen können wir keine ausführliche Beantwortung von Fragen zum Kursinhalt per E-Mail anbieten.  -->
-<!-- Bitte stellen Sie Ihre Fragen in der Veranstaltung - auch Ihre Mitstudierenden werden davon profitieren, oft haben mehrere Personen dieselbe Frage. -->
-<!-- ### Übungen -->
-<!-- Es gibt fünf Übungen. -->
-<!-- - Die Übungen werden auf der Website aufgeschaltet und in der Veranstaltung erklärt. -->
-<!-- - Die Ergebnisse der Übungen müssen in den entsprechenden Ordner auf ILIAS hochgeladen werden. Je nach Umfang der Übung wird die Zeit bis zur Abgabe unterschiedlich ausfallen. Sie wird jedoch immer mindestens zwei Wochen betragen. -->
-<!-- - Ausser _Übung 2_ müssen alle Übungen abgegeben und als bestanden bewertet werden. Wird eine ungenügende Übungen abgegeben erhalten Sie eine zweite Frist für die Abgabe oder einen Zusatzauftrag.  -->
-<!-- - Übungen dürfen alleine oder in Gruppen von max. 3 Personen erledigt werden. Alle Personen müssen die Übung abgeben. Damit wir sehen, welche Übungsabgaben zusammengehören: Nennen Sie das File mit der Aufgabe und allen Initialen der Gruppe. Z.B. `uebung_3_GW_EW.R` -->
-<!-- __Verwenden von LLMs für Übungen__: Sie dürfen LLMs als Tools nutzen, um die Übung zu bearbeiten. Es liegt in Ihrer Verantwortung, den Output von LLMs vor der Abgabe gründlich zu prüfen. Wichtig ist dabei: -->
-<!-- - LLMs geben Code aus, aber sogar wenn dieser problemlos ausgeführt werden kann, muss genau überprüft werden, ob der Code das Richtige tut. Dieses Überprüfen kann unter Umständen genau so lange dauern, wie das Selber-Programmieren mittels Lesen und Verstehen der Dokumentation. -->
-<!-- - Das Überprüfen von Code erfordert gewisse Grundkenntnisse. Das Verwenden von LLMs ersetzt daher ohne bestehende Expertise keinen Lernaufwand.^[![](imgs/groundtruth.png)] -->
-<!-- - Das direkte Verwenden von Code ohne kompetente Prüfung ist in der Forschung unethisch! -->
-<!-- - Es dürfen nie sensible Daten eingegeben werden, insbesondere auch keine Datensätze die nicht öffentlich sind. -->
-<!-- ### Abschlussquiz -->
-<!-- Das Abschlussquiz wird gegen Ende des Semesters auf Ilias freigeschaltet und dient dazu das Gelernte zu prüfen und so Feedback zu geben, wie gut man die Lerninhalte erinnert. -->
-<!-- Sie haben die Möglichkeit das Quiz mehrmals zu wiederholen. -->
-<!-- ### Termine der Leistungsnachweise {#sec-termine} -->
-<!-- | Leistungsnachweis |Beginn | Abgabetermin | Inhalt | Todo | -->
-<!-- |---------|:------:|:------:|:-------|:-------| -->
-<!-- | [Übung 1: Experiment]() | 28.02.2026 | 14.03.2025 23:55 | Datenerhebung Experiment | Abgabe Datensätze (Ilias) | -->
-<!-- | [Übung 2: Data wrangling]() | 28.02.2025 | 14.03.2025 | Durcharbeiten des Skripts [Daten importieren und vorverarbeiten]() | - | -->
-<!-- | [Übung 3: Datenpreprocessing und -visualisierung]() | 21.03.2025 | 18.04.2025 23:55 | Daten verarbeiten und sinnvoll visualisieren | Abgabe Visualisierung und Code (Ilias) | -->
-<!-- | [Übung 4: Datenanalyse Report]() | 04.04.2025 | 08.05.2025 23:55 | Bayesianische Analyse oder Equivalence Testing | Abgabe Poster (Ilias) | -->
-<!-- | [Übung 5: EEG Project]() | 09.05.2025 | 06.06.2025 23:55 | EEG Datenanalyse | Abgabe (Ilias) | -->
-<!-- | [Abschlussquiz]() | 30.05.2025 | 07.06.2025 23:55 | Quiz ausfüllen (mehrmals möglich) | Bestehen Quiz (Ilias) | -->
-<!-- : Übersicht Leistungsnachweise {.striped .hover} -->
-
-
-
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-quon_musical_2021" class="csl-entry" role="listitem">
+Quon, Robert J., Michael A. Casey, Edward J. Camp, Stephen Meisenhelter, Sarah A. Steimel, Yinchen Song, Markus E. Testorf, et al. 2021. <span>“Musical Components Important for the <span>Mozart</span> <span>K448</span> Effect in Epilepsy.”</span> <em>Scientific Reports</em> 11 (1): 16490. <a href="https://doi.org/10.1038/s41598-021-95922-7">https://doi.org/10.1038/s41598-021-95922-7</a>.
+</div>
+<div id="ref-richter_listening_2021" class="csl-entry" role="listitem">
+Richter, Claus-Peter, Petrina La Faire, Xiaodong Tan, Pamela Fiebig, David M. Landsberger, and Alan G. Micco. 2021. <span>“Listening to Speech with a Guinea Pig-to-Human Brain-to-Brain Interface.”</span> <em>Scientific Reports</em> 11 (1): 12231. <a href="https://doi.org/10.1038/s41598-021-90823-1">https://doi.org/10.1038/s41598-021-90823-1</a>.
+</div>
+<div id="ref-shepherd_neurobiology_1988" class="csl-entry" role="listitem">
+Shepherd, Gordon M. 1988. <em>Neurobiology, 2nd Ed.</em> Neurobiology, 2nd Ed. New York, NY, US: Oxford University Press.
+</div>
+<div id="ref-zhang_longitudinal_2021" class="csl-entry" role="listitem">
+Zhang, Zongpai, Wen-Ming Luh, Wenna Duan, Grace D. Zhou, George Weinschenk, Adam K. Anderson, and Weiying Dai. 2021. <span>“Longitudinal Effects of Meditation on Brain Resting-State Functional Connectivity.”</span> <em>Scientific Reports</em> 11 (1): 11361. <a href="https://doi.org/10.1038/s41598-021-90729-y">https://doi.org/10.1038/s41598-021-90729-y</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script>
 
 
@@ -1388,6 +1474,15 @@ window.onload = function() {
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/loops.html" class="pagination-link" aria-label="Schleifen programmieren mit Python">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Schleifen programmieren mit Python</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

@@ -16,8 +16,7 @@ title: "T1: 20.02.2026"
 **Kurstermin**
 
 - [Kursinformationen](../course/syllabus.qmd) und [Terminübersicht](../course/overview.qmd)
-- Einführung in das [Programmieren mit Python](../chapters/intro_python.qmd)
-- [Schleifen programmieren mit Python](../chapters/loops.qmd)
+- Einführung [Experimentieren](../chapters/experiments.qmd)
 
 **Aufträge**
 
@@ -29,4 +28,4 @@ title: "T1: 20.02.2026"
 [DataCamp](/course/overview.qmd) Kurse: 
 
 - Zur Auffrischung von R-Kenntnissen eignet sich dieser Kurs: [Introduction to R](https://app.datacamp.com/learn/courses/free-introduction-to-r)
-- Als Einführung in Python für Interessierte eignet sich folgender Kurs: Introduction to Python
+- Als Einführung in Python für Interessierte eignet sich folgender Kurs: [Introduction to Python](https://app.datacamp.com/learn/courses/intro-to-python-for-data-science)

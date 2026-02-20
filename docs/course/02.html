@@ -73,18 +73,15 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-debugging.callout {
-  border-left-color: RosyBrown;
+div.callout-learnings.callout {
+  border-left-color: LightSlateGray;
 }
-div.callout-debugging.callout-style-default > .callout-header {
-  background-color: rgb(from RosyBrown r g b / 13%);
+div.callout-learnings.callout-style-default > .callout-header {
+  background-color: rgb(from LightSlateGray r g b / 13%);
 }
-div.callout-debugging .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-debugging.callout-style-default .callout-icon::before, div.callout-debugging.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: '\e4d0' !important;
-  background-image: none;
+div.callout-learnings .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-learnings.callout-style-default .callout-icon::before, div.callout-learnings.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="LightSlateGray" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-hands-on.callout {
   border-left-color: RosyBrown;
@@ -99,6 +96,19 @@ div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-ha
   content: 'nil' !important;
   background-image: none;
 }
+div.callout-debugging.callout {
+  border-left-color: RosyBrown;
+}
+div.callout-debugging.callout-style-default > .callout-header {
+  background-color: rgb(from RosyBrown r g b / 13%);
+}
+div.callout-debugging .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-debugging.callout-style-default .callout-icon::before, div.callout-debugging.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\e4d0' !important;
+  background-image: none;
+}
 div.callout-preparation.callout {
   border-left-color: RosyBrown;
 }
@@ -111,16 +121,6 @@ div.callout-preparation.callout-style-default .callout-icon::before, div.callout
   font-style: normal;
   content: 'nil' !important;
   background-image: none;
-}
-div.callout-learnings.callout {
-  border-left-color: LightSlateGray;
-}
-div.callout-learnings.callout-style-default > .callout-header {
-  background-color: rgb(from LightSlateGray r g b / 13%);
-}
-div.callout-learnings .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-learnings.callout-style-default .callout-icon::before, div.callout-learnings.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="LightSlateGray" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 </style>
 
@@ -411,8 +411,21 @@ div.callout-learnings.callout-style-default .callout-icon::before, div.callout-l
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Experimente</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Experimente</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/experiments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Neurowissenschaftliche Experimente</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -479,19 +492,46 @@ div.callout-learnings.callout-style-default .callout-icon::before, div.callout-l
 <p><strong>Vorbereitungsauftrag</strong></p>
 <ul>
 <li><p>wenn noch nicht erfolgt: Installieren von <a href="https://www.psychopy.org/download.html">PsychoPy</a></p></li>
-<li><p>Artikel “Imagery adds stimulus-specific sensory evidence to perceptual detection” von Dijkstra et al.&nbsp;(2022) lesen: <a href="https://doi.org/10.1167/jov.22.2.11" class="uri">https://doi.org/10.1167/jov.22.2.11</a></p></li>
-<li><p>Die einzelnen Schritte des Experiments im Artikel aufschreiben: Was machen genau die Versuchpersonen?</p></li>
+<li><p>Artikel “Imagery adds stimulus-specific sensory evidence to perceptual detection” von Dijkstra et al.&nbsp;(2022) lesen: <a href="https://doi.org/10.1167/jov.22.2.11" class="uri">https://doi.org/10.1167/jov.22.2.11</a>.</p></li>
+<li><p>Schreiben Sie die einzelnen Schritte des Experiments im Artikel auf: Was machen genau die Versuchpersonen?</p></li>
+<li><p>Erstellen Sie eine <a href="experiment.html#flowcharts">Flowchart</a> zum geplanten Experiment. Fügen Sie Folgendes ein:</p>
+<ul>
+<li>Alle <a href="../chapters/experiments.html">Elemente eines Experiments</a></li>
+<li>Wiederholungen von Elementen (mit einem Loop/Pfeil)</li>
+<li>Dauer von Elementen (z.B. in ms)</li>
+<li>Aufgenommene Daten (z.B. button press)</li>
+</ul></li>
+</ul>
+<p><em>Tipps</em>:</p>
+<ul>
+<li>Zeichnen Sie die Flowchart auf einem Blatt Papier, in einem Programm wie Word/Excel oder R mit dem <a href="https://data-mermaid.github.io/mermaidr/">{<code>mermaidr</code>}-Package</a>.</li>
 </ul>
 <p><strong>Kurstermin</strong></p>
 <ul>
+<li><p>Einführung in das <a href="../chapters/intro_python.html">Programmieren mit Python</a></p></li>
+<li><p><a href="../chapters/loops.html">Schleifen programmieren mit Python</a></p></li>
 <li><p>Einführung in das Experiment, das wir im Kurs durchführen werden</p></li>
 <li><p>Erstellen von Flowcharts für unser Experiment</p></li>
 <li><p>Einführung in PsychoPy</p></li>
 </ul>
 <p><strong>Aufträge</strong></p>
+<div class="callout callout-style-default callout-caution callout-titled" title="Übung 1">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Übung 1
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li>keine</li>
+<li>Führen Sie mit 2 Personen unser Experiment durch. Laden Sie anschliessend die 2 Datensätze auf Ilias hoch. Das Experiment dauert ca. 30 Minuten (abhängig von den Versuchspersonen)</li>
+<li>Führen Sie das Skript <code>quality_check.Rmd</code> aus und laden Sie die resultierenden Abbildungen auf Ilias hoch.</li>
 </ul>
+<p><strong>Abgabetermin: 16.03.2026 23:55</strong></p>
+</div>
+</div>
 <p><strong>Vertiefung für Interessierte (freiwillig)</strong></p>
 <ul>
 <li>PsychoPy tutorial (YouTube): <a href="https://www.youtube.com/watch?v=GSv60zgQlB8&amp;list=PL6PJquR5BWXllUt585cRJWcRTly55iXTm" class="uri">https://www.youtube.com/watch?v=GSv60zgQlB8&amp;list=PL6PJquR5BWXllUt585cRJWcRTly55iXTm</a></li>

@@ -73,14 +73,14 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-preparation.callout {
+div.callout-hands-on.callout {
   border-left-color: RosyBrown;
 }
-div.callout-preparation.callout-style-default > .callout-header {
+div.callout-hands-on.callout-style-default > .callout-header {
   background-color: rgb(from RosyBrown r g b / 13%);
 }
-div.callout-preparation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-preparation.callout-style-default .callout-icon::before, div.callout-preparation.callout-titled .callout-icon::before {
+div.callout-hands-on .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-hands-on.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: 'nil' !important;
@@ -99,14 +99,14 @@ div.callout-debugging.callout-style-default .callout-icon::before, div.callout-d
   content: '\e4d0' !important;
   background-image: none;
 }
-div.callout-hands-on.callout {
+div.callout-preparation.callout {
   border-left-color: RosyBrown;
 }
-div.callout-hands-on.callout-style-default > .callout-header {
+div.callout-preparation.callout-style-default > .callout-header {
   background-color: rgb(from RosyBrown r g b / 13%);
 }
-div.callout-hands-on .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-hands-on.callout-titled .callout-icon::before {
+div.callout-preparation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-preparation.callout-style-default .callout-icon::before, div.callout-preparation.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: 'nil' !important;
@@ -411,8 +411,21 @@ div.callout-learnings.callout-style-default .callout-icon::before, div.callout-l
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Experimente</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Experimente</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/experiments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Neurowissenschaftliche Experimente</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -484,8 +497,7 @@ div.callout-learnings.callout-style-default .callout-icon::before, div.callout-l
 <p><strong>Kurstermin</strong></p>
 <ul>
 <li><a href="../course/syllabus.html">Kursinformationen</a> und <a href="../course/overview.html">Terminübersicht</a></li>
-<li>Einführung in das <a href="../chapters/intro_python.html">Programmieren mit Python</a></li>
-<li><a href="../chapters/loops.html">Schleifen programmieren mit Python</a></li>
+<li>Einführung <a href="../chapters/experiments.html">Experimentieren</a></li>
 </ul>
 <p><strong>Aufträge</strong></p>
 <ul>
@@ -496,7 +508,7 @@ div.callout-learnings.callout-style-default .callout-icon::before, div.callout-l
 <p><a href="../course/overview.html">DataCamp</a> Kurse:</p>
 <ul>
 <li>Zur Auffrischung von R-Kenntnissen eignet sich dieser Kurs: <a href="https://app.datacamp.com/learn/courses/free-introduction-to-r">Introduction to R</a></li>
-<li>Als Einführung in Python für Interessierte eignet sich folgender Kurs: Introduction to Python</li>
+<li>Als Einführung in Python für Interessierte eignet sich folgender Kurs: <a href="https://app.datacamp.com/learn/courses/intro-to-python-for-data-science">Introduction to Python</a></li>
 </ul>
 
 

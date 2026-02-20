@@ -5,7 +5,7 @@ about:
     image: imgs/logo_landing.png
     links:
     - text: Gerda Wyssen
-      href: mailto:gerda.wyssen@unilu.ch
+      href: mailto:gerda.wyssen@unibe.ch
     - text: Enea Weber
       href: mailto:enea.weber@unibe.ch
 ---
