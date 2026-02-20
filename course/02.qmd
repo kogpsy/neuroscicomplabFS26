@@ -6,28 +6,31 @@ title: "T2: 27.02.2026"
 **Lernziele**
 
 ::: {.callout-note title="Lernziele"}
-- Verstehen des generellen Workflow und der Grundlagen der Experimentprogrammierung
+- Wichtige Bausteine von Programmiersprachen kennen (Funktionen, Argumente, Objekte)
+- Einfache Funktionen in Python selber schreiben können.
 - Erste Schritte zur Programmierung eines Experiments in PsychoPy umsetzen können 
 :::
 
 **Vorbereitungsauftrag**
 
-- wenn noch nicht erfolgt: Installieren von [PsychoPy](https://www.psychopy.org/download.html)
+- Lesen Kapitel [Einführung in R](../chapters/intro_r.qmd)
 
-- Artikel "Imagery adds stimulus-specific sensory evidence to perceptual detection" von Dijkstra et al. (2022) lesen: <https://doi.org/10.1167/jov.22.2.11>. 
+- Installieren von [R und RStudio](https://posit.co/download/rstudio-desktop/)
 
-- Schreiben Sie die einzelnen Schritte des Experiments im Artikel auf: Was machen genau die Versuchpersonen? 
+- Installieren von [PsychoPy](https://www.psychopy.org/download.html)
 
-- Erstellen Sie eine [Flowchart](experiment.html#flowcharts) zum geplanten Experiment. Fügen Sie Folgendes ein:
+- Lesen Artikel "Imagery adds stimulus-specific sensory evidence to perceptual detection" von Dijkstra et al. (2022): <https://doi.org/10.1167/jov.22.2.11>. 
+
+- Erstellen einer [Flowchart](experiment.html#flowcharts) zum geplanten Experiment mit wichtigen Bausteinen und Abläufen:
 
     - Alle [Elemente eines Experiments](../chapters/experiments.qmd)
     - Wiederholungen von Elementen (mit einem Loop/Pfeil)
     - Dauer von Elementen (z.B. in ms)
-    - Aufgenommene Daten (z.B. button press)
+    - Aufgenommene Daten (z.B. gedrückte Taste, welche zur Auswahl?)
 
 _Tipps_: 
 
-- Zeichnen Sie die Flowchart auf einem Blatt Papier, in einem Programm wie Word/Excel oder R mit dem [{`mermaidr`}-Package](https://data-mermaid.github.io/mermaidr/).
+- Die Flowchart kann auf einem Blatt Papier, in einem Programm wie Word/Excel oder R mit dem [{`mermaidr`}-Package](https://data-mermaid.github.io/mermaidr/) gezeichnet werden. Sie dient als Vorlage für das Experiment.
 
 
 **Kurstermin**
@@ -38,19 +41,18 @@ _Tipps_:
 
 - Einführung in das Experiment, das wir im Kurs durchführen werden
 
-- Erstellen von Flowcharts für unser Experiment
-
 - Einführung in PsychoPy 
 
 **Aufträge**
 
 ::: {.callout-caution title="Übung 1"}
-- Führen Sie mit 2 Personen unser Experiment durch. Laden Sie anschliessend die 2 Datensätze auf Ilias hoch. Das Experiment dauert ca. 30 Minuten (abhängig von den Versuchspersonen) 
+- Führen Sie mit 2 Personen unser Experiment durch. Laden Sie anschliessend die 2 Datensätze auf Ilias hoch. Das Experiment dauert ca. 30 Minuten (abhängig von den Versuchspersonen).
 - Führen Sie das Skript `quality_check.Rmd` aus und laden Sie die resultierenden Abbildungen auf Ilias hoch. 
+- Diese Übung muss einzeln abgegeben werden.
 
 **Abgabetermin: 16.03.2026 23:55**
 :::
 
 **Vertiefung für Interessierte (freiwillig)**
 
-- PsychoPy tutorial (YouTube): <https://www.youtube.com/watch?v=GSv60zgQlB8&list=PL6PJquR5BWXllUt585cRJWcRTly55iXTm>
+- PsychoPy Tutorial (YouTube): <https://www.youtube.com/watch?v=GSv60zgQlB8&list=PL6PJquR5BWXllUt585cRJWcRTly55iXTm>

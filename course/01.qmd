@@ -3,15 +3,15 @@ title: "T1: 20.02.2026"
 ---
 
 ::: {.callout-note title="Lernziele"}
-- Wichtige Bausteine von Programmiersprachen kennen (Funktionen, Argumente, Objekte)
-- Einfache Funktionen in Python selber schreiben können.
+- Kennen der Bausteine eines Experiments
+- Nutzen und Anwendung von Flowcharts kennen
+- Verstehen des generellen Workflow und der Grundlagen der Experimentprogrammierung
+
 :::
 
 **Vorbereitungsauftrag**
 
-- Lesen Kapitel [Einführung in R](../chapters/intro_r.qmd)
-- Installieren von [R und RStudio](https://posit.co/download/rstudio-desktop/)
-- Installieren von [PsychoPy](https://www.psychopy.org/download.html)
+- keiner
 
 **Kurstermin**
 
@@ -20,12 +20,13 @@ title: "T1: 20.02.2026"
 
 **Aufträge**
 
-- Falls noch nicht erfolgt: Installieren der oben genannten Software. *(bis T2)*
-- Aufarbeiten Wissenslücken in _R_ falls nötig. *(bis T4)*
+- siehe Vorbereitungsaufträge T2
+- Aufarbeiten Wissenslücken in _R_ falls nötig. *(bis spätestens T4)*
 
 **Vertiefung für Interessierte (freiwillig)**
 
-[DataCamp](/course/overview.qmd) Kurse: 
+DataCamp Kurse: 
 
 - Zur Auffrischung von R-Kenntnissen eignet sich dieser Kurs: [Introduction to R](https://app.datacamp.com/learn/courses/free-introduction-to-r)
+
 - Als Einführung in Python für Interessierte eignet sich folgender Kurs: [Introduction to Python](https://app.datacamp.com/learn/courses/intro-to-python-for-data-science)
