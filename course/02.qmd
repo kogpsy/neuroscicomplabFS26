@@ -1,0 +1,36 @@
+---
+title: "T2: 27.02.2026"
+---
+
+
+**Lernziele**
+
+::: {.callout-note title="Lernziele"}
+- Verstehen des generellen Workflow und der Grundlagen der Experimentprogrammierung
+- Erste Schritte zur Programmierung eines Experiments in PsychoPy umsetzen können 
+:::
+
+**Vorbereitungsauftrag**
+
+- wenn noch nicht erfolgt: Installieren von [PsychoPy](https://www.psychopy.org/download.html)
+
+- Artikel "Imagery adds stimulus-specific sensory evidence to perceptual detection" von Dijkstra et al. (2022) lesen: <https://doi.org/10.1167/jov.22.2.11>
+
+- Die einzelnen Schritte des Experiments im Artikel aufschreiben: Was machen genau die Versuchpersonen? 
+
+
+**Kurstermin**
+
+- Einführung in das Experiment, das wir im Kurs durchführen werden
+
+- Erstellen von Flowcharts für unser Experiment
+
+- Einführung in PsychoPy 
+
+**Aufträge**
+
+- keine
+
+**Vertiefung für Interessierte (freiwillig)**
+
+- PsychoPy tutorial (YouTube): <https://www.youtube.com/watch?v=GSv60zgQlB8&list=PL6PJquR5BWXllUt585cRJWcRTly55iXTm>

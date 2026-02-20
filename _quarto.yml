@@ -1,0 +1,154 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+  - index.qmd
+  - chapters/*
+  - course/*
+
+website:
+  title: Neurowissenschaft Computerlab
+  favicon: imgs/logo_landing.png
+  site-url: https://kogpsy.github.io/neuroscicomplabFS26/
+  page-navigation: true
+  search: true
+  #license: CC BY SA NC
+
+  page-footer:
+    center:
+    - text: Copyright © 2026, Gerda Wyssen, Enea Weber, Daniel Fitze, and Andrew Ellis.
+        Website made with ♡, [R](https://www.r-project.org/), and [Quarto](https://quarto.org/).
+      href: license.qmd
+    right:
+    - icon: github
+      href: https://github.com/kogpsy/neuroscicomplabFS26
+
+  navbar:
+    pinned: true
+    background: "#505C5B"
+    right:
+      - text: "Kursinformationen"
+        file: course/syllabus.qmd
+
+      - text: "Terminübersicht"
+        file: course/overview.qmd
+
+      - text: "Termine"
+        menu:
+          - course/01.qmd
+          - course/02.qmd
+          - course/03.qmd
+          # - course/04.qmd
+          # - course/05.qmd
+          # - course/06.qmd
+          # - course/07.qmd
+          # - course/08.qmd
+          # - course/09.qmd
+          # - course/10.qmd
+          # - course/11.qmd
+          # - course/12.qmd
+          # - course/13.qmd
+
+      - text: "Console"
+        menu:
+          - course/webrconsole.qmd
+          - course/pythonconsole.qmd
+
+
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      # - text: "Introduction"
+      #   href: introduction.qmd
+      - section: "Programmieren"
+        href: chapters/basics_programming.qmd
+        contents:
+          - chapters/intro_r.qmd
+          - chapters/intro_python.qmd
+          - chapters/loops.qmd
+
+      - section: "Experimente"
+        # href: chapters/...
+        # contents:
+        #   - chapters/...
+
+
+      - section: "Datenverarbeitung"
+        # href: chapters/...
+        # contents:
+        #   - chapters/...
+
+      - section: "Datenvisualisierung"
+        # href: chapters/...
+        # contents:
+        #   - chapters/...
+
+
+      - section: "EEG Datenanalyse"
+        # href: chapters/...
+        # contents:
+        #   - chapters/...
+
+
+      - section: "Modeling"
+        # href: chapters/...
+        # contents:
+        #   - chapters/...
+
+format:
+  html:
+    #number-depth: 3
+    #toc: true
+    mainfont: Atkinson Hyperlegible
+    monofont: Roboto
+    theme:
+      light:
+      - custom.scss
+      - flatly
+      dark:
+      - custom.scss
+      - darkly
+    css:
+    - include/webex.css
+    link-external-newwindow: true
+    code-background: true
+    code-copy: true
+    code-overflow: wrap
+    include-after-body: include/webex.js
+  # pdf:
+  #   documentclass: scrreprt
+
+custom-callout:
+  learnings:
+    title: "Lernziele"
+    color: LightSlateGray
+    appearance: simple
+  preparation:
+    title: "Getting Started"
+    icon-symbol: "fa-solid fa-paw"
+    color: RosyBrown
+  hands-on:
+    title: "Hands-on"
+    icon-symbol: "fa-list-check"
+    color: RosyBrown
+  # info:
+  #   title: "Weiterführende Informationen"
+  #   icon-symbol: fa-arrow-right
+  #   color: LightSlateGray
+  debugging:
+    title: "Debugging"
+    icon-symbol: fa-bugs
+    color: RosyBrown
+  # tip:
+  #   title: "Tipp!"
+  #   icon-symbol: fa-idea
+  #   color: RosyBrown
+
+
+filters:
+- webr
+- custom-callout
+- fontawesome
+
+bibliography: bibliography.bib

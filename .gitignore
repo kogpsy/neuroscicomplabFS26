@@ -1,0 +1,20 @@
+/.quarto/
+
+# *_cache/
+# *_files/
+
+archive
+_freeze
+_extensions
+
+.Rproj.user
+.Rhistory
+.Rdata
+JASP/
+
+.vscode
+
+# MacOS specific stuff
+.DS_Store
+
+**/*.quarto_ipynb

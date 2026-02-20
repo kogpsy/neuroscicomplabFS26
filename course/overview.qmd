@@ -1,0 +1,23 @@
+---
+title: "Terminübersicht"
+---
+
+| Termin | Datum |  |Thema | Vorbereitung | Übung | Deadline Übung |
+|-:|:--:|:-:|:----|:-:|:-:|:-:|
+| T1 | [20.02.2026](../course/01.qmd) | GW/EW | Einführung |  |  |  |
+| T2 | [27.02.2026](../course/02.qmd) | EW | Experimente mit PsychoPy 1 | + | Übung 1 | 16.03.2026 23:55 |
+| T3 | [06.03.2026](../course/03.qmd) | EW | Experimente mit PsychoPy 2 |  |  |  |
+| T4 | [13.03.2026](../course/04.qmd) | EW |Datenverarbeitung 1 | + | - |  |
+| T5 | [20.03.2026](../course/05.qmd) | GW |Datenverarbeitung 2 und Datenvisualisierung 1| + | Übung 2 | 16.04.2026 23:55 |
+| T6 | [27.03.2026](../course/06.qmd) | GW |Datenvisualisierung 2 | + |  |  |
+|  | 03.04.2026 |  | kein Kurs (Karfreitag) |  | |  | |
+|  | 10.04.2026 |  | kein Kurs (Semesterpause) | |  |  | |
+| T7 | [17.04.2026](../course/07.qmd) | GW |Datenanalyse 1: Parameterschätzung |  | Übung 3 | 15.05.2026 23:55  |
+| T8 | [24.04.2026](../course/08.qmd) | GW |Datenanalyse 2: Evidence of Absence |  |  | |
+| T9 | [01.05.2026](../course/09.qmd) | EW |EEG Projekt 1 |  | Übung 4 (Quiz) | 22.05.2026 23:55 |
+| T10 | [08.05.2026](../course/10.qmd) | EW | EEG Projekt 2 |  |  | |
+| T11| [15.05.2026](../course/11.qmd) | EW |Psychometrische Funktionen |  |  | |
+| T12 | [22.05.2026](../course/12.qmd) | GW | Signal Detection Theory |  |  | |
+| T13 | [29.05.2026](../course/13.qmd) | GW | Drift Diffusion Models |  | Übung 5 (Quiz) | 12.06.2026 23:55 |
+:  {.striped .hover}
+

@@ -1,0 +1,139 @@
+---
+title: "Kursübersicht"
+---
+
+<!-- Hier finden Sie einen Überblick über die Inhalte und den Aufbau des Complab-Kurses FS2026. -->
+
+<!-- ## Inhalte der Lehrveranstaltung -->
+
+<!-- Dieser Kurs behandelt die Methoden der Datenerhebung, -verarbeitung und -analyse im Feld der Neurowissenschaften.  -->
+
+<!-- - Wichtige Programmiersprachen und - umgebungen in den Neurowissenschaften -->
+<!-- - Programmieren von computerbasierten Experimenten (mit PsychoPy) -->
+<!-- - Programmieren von Datenverarbeitungspipelines: Datenvorverarbeitung und Visualisierung („good practices", Data Cleaning, Reproduzierbarkeit) -->
+<!-- - Analysemethoden und Modelle zugeschnitten auf unterschiedliche neurowissenschaftliche Datensätze und Fragestellungen mit frequentistischen wie auch bayesianischen Verfahren (u.a. Reaktionszeiten, Signal detection theory, Drift diffusion models) -->
+<!-- - Interpretation und kritische Einordnung von Analyseergebnissen -->
+
+<!-- ### Lernziele -->
+
+<!-- Ziel dieses Kurses ist es, dass praktisches Wissen im Umgang mit neurowissenschaftlichen Daten erworben wird, dies umfasst u.a.: -->
+
+<!-- - ein computerbasiertes Experiment planen, erstellen und zur Datenerhebung nutzen können -->
+<!-- - wichtige neurowissenschaftlichen Datenformate und ihre Eigenschaften kennen -->
+<!-- - Daten aus neurowissenschaftlichen Experimenten mit einem reproduzierbaren Skript vorverarbeiten und informativ visualisieren können -->
+<!-- - verschiedene Paradigmen der Datenanalyse (u.a. Äquivalenztests, Bayes Factors, Signal detection, DDMs) kennen und angewendet haben -->
+<!-- - Analyseergebnisse interpretieren, kritisch diskutieren, kommunizieren und peer-reviewen können -->
+
+
+<!-- ## Aufbau der Lehrveranstaltung -->
+
+<!-- Erfahrungsgemäss lernt man Programmiersprachen und Datenanalyse am schnellsten und nachhaltigsten, wenn man sie selber anwendet.  -->
+<!-- Aus diesem Grund setzen sich die Termine zusammen aus theoretischen Inputs und Hands-on Sessions, in welchen das erworbene Wissen praktisch umgesetzt wird. Die Aufteilung ist stark vom jeweiligen Thema anhängig.  -->
+
+<!-- ::: hands-on -->
+<!-- Hands-on Aufgaben werden in den Veranstaltungen angekündigt und erklärt. Auf der Website sind die Aufgaben in diesen Hands-on Blöcken zu finden. Die Idee der Hands-on Aufgaben ist es, dass das Gelernte sofort angewendet werden kann und bei Problemen rasche Unterstützung durch die Dozierenden möglich ist. Die Aufgaben haben teilweise (angegebene) unterschiedliche Schwierigkeitsgrade. So können alle je nach ihren Vorkenntnissen ihre Skills trainieren. Bei Abwesenheit an einem Termin, können die praktischen Teile auf der Website nachgearbeitet werden. Die Hands-on Aufgaben dienen als Vorbereitung für die Übungsaufgaben. -->
+<!-- ::: -->
+
+<!-- ### Typische Woche -->
+
+<!-- - __Vor dem Termin:__ Vorbereitungsauftrag [ca. 45-60 min], z.B. Lesen eines Artikels und Beantworten der Vorbereitungsaufgaben auf Ilias -->
+
+<!-- - __Kurstermin:__ Besprechen Vorbereitungsauftrag, Inhaltlicher Input, Hands-on Sessions [2 Lektionen] -->
+
+<!-- - __Bearbeiten der Übung (mehrwöchig):__ Hier wird selbstständig das im Kurs Gelernte und Geübte auf ein neues Problem angewendet. [5 Übungen à ca. 10 h] -->
+
+
+<!-- ## Organisatorisches -->
+
+<!-- ### Ilias -->
+
+<!-- ILIAS-Gruppe Freitag 14.15-16.00 👉 [468703-FS2026-0]() -->
+
+<!-- ILIAS-Gruppe Freitag 16.15-18.00 👉 [468703-FS2026-1]() -->
+
+
+<!-- ### Kursvoraussetzungen -->
+
+<!-- Wir werden mit der Programmiersprache R und zu einem kleinen Teil mit Python arbeiten. -->
+<!-- Für die Veranstaltung wird deshalb ein __Laptop__ mit freiem Speicherplatz benötigt. -->
+
+<!-- __Bitte installieren Sie bis zum 2. Kurstermine folgende Software:__ -->
+
+<!-- -  [Neuste Versionen von R und RStudio](https://posit.co/download/rstudio-desktop/) -->
+<!-- -  [PsychoPy](https://www.psychopy.org/download.html) -->
+<!-- -  [JASP](https://jasp-stats.org/download/) -->
+
+<!-- __R-Kenntnisse__ (gemäss Statistik I-IV im Bachelor Psychologie) werden vorausgesetzt. Zur Auffrischung dient folgender Link (https://methodenlehre.github.io/einfuehrung-in-R/) oder für Fortgeschrittene die Bücher [„Advanced R"](http://adv-r.had.co.nz/) und [„R for Data Scientists"](https://r4ds.had.co.nz/) von Hadley Wickham. Zusätzlich dient _Übung 2_ zur Auffrischung der Vorkenntnisse auf die im späteren Verlauf des Kurses aufgebaut wird. -->
+
+<!-- ### DataCamp -->
+
+<!-- [DataCamp](https://www.datacamp.com/) ist eine Online-Lernplattform für Data Science und Datenanalyse. Diese bietet interaktive Kurse, Tutorials und Projekte in verschiedenen Programmiersprachen u.a. in Python und R auf unterschiedlichen Niveaus an. -->
+
+<!-- Im Rahmen dieser Lehrveranstaltung können alle Teilnehmenden sich unter folgendem Link mit ihrer Uni Bern E-Mail Adresse (*students.unibe.ch) registrieren und Kurse auf Datacamp kostenlos nutzen:  -->
+
+<!-- 👉🏼 [Einladungslink DataCamp Registration](https://www.datacamp.com/groups/shared_links/3fc707ac57c6293825924af2e54b2ed9743579402c1367af9aa879b7460da23a) (zuerst muss ein DataCamp Zugang erstellt werden.) -->
+
+<!-- Wir werden jeweils die empfohlenen Datacamp Kurse verlinken. Sie haben mit dem Link Zugriff auf __alle Datacamp-Kurse__ bis Ende FS26. -->
+
+<!-- 👉🏼 Zur Auffrischung von R-Kenntnissen eignet sich dieser Kurs: [Introduction to R](https://app.datacamp.com/learn/courses/free-introduction-to-r) -->
+
+<!-- 👉🏼 Als Einführung in Python eignet sich folgender Kurs: [Introduction to Python](https://app.datacamp.com/learn/courses/intro-to-python-for-data-science) -->
+
+
+<!-- ## Leistungsnachweise -->
+
+<!-- Der Kurs entspricht 5 ETCS. -->
+<!-- Dafür müssen 3 Bereiche erfüllt werden: -->
+
+<!-- - Anwesenheit im Kurs -->
+<!-- - bestandene Übungen -->
+<!-- - bestandenes Abschlussquiz  -->
+
+<!-- Alle Leistungsnachweise werden in den Veranstaltungen angekündigt.  -->
+<!-- Die Termine für die Leistungsnachweise finden Sie unter [Termine der Leistungsnachweise](index.qmd#sec-termine). -->
+
+<!-- ### Anwesenheit -->
+
+<!-- Die Anwesenheit im Kurs wird vorausgesetzt, an 2 Terminen darf gefehlt werden.  -->
+
+<!-- Das Online-Skript erlaubt das Nacharbeiten des wichtigsten Stoffes im Selbststudium, wir können jedoch nicht für die Vollständigkeit garantieren.  -->
+<!-- Hilfestellung beim Programmieren und Verstehen der Inhalte erhalten Sie während der Kurszeiten. -->
+<!-- Aus zeitlichen Gründen können wir keine ausführliche Beantwortung von Fragen zum Kursinhalt per E-Mail anbieten.  -->
+<!-- Bitte stellen Sie Ihre Fragen in der Veranstaltung - auch Ihre Mitstudierenden werden davon profitieren, oft haben mehrere Personen dieselbe Frage. -->
+
+
+<!-- ### Übungen -->
+
+<!-- Es gibt fünf Übungen. -->
+
+<!-- - Die Übungen werden auf der Website aufgeschaltet und in der Veranstaltung erklärt. -->
+<!-- - Die Ergebnisse der Übungen müssen in den entsprechenden Ordner auf ILIAS hochgeladen werden. Je nach Umfang der Übung wird die Zeit bis zur Abgabe unterschiedlich ausfallen. Sie wird jedoch immer mindestens zwei Wochen betragen. -->
+<!-- - Ausser _Übung 2_ müssen alle Übungen abgegeben und als bestanden bewertet werden. Wird eine ungenügende Übungen abgegeben erhalten Sie eine zweite Frist für die Abgabe oder einen Zusatzauftrag.  -->
+<!-- - Übungen dürfen alleine oder in Gruppen von max. 3 Personen erledigt werden. Alle Personen müssen die Übung abgeben. Damit wir sehen, welche Übungsabgaben zusammengehören: Nennen Sie das File mit der Aufgabe und allen Initialen der Gruppe. Z.B. `uebung_3_GW_EW.R` -->
+
+<!-- __Verwenden von LLMs für Übungen__: Sie dürfen LLMs als Tools nutzen, um die Übung zu bearbeiten. Es liegt in Ihrer Verantwortung, den Output von LLMs vor der Abgabe gründlich zu prüfen. Wichtig ist dabei: -->
+
+<!-- - LLMs geben Code aus, aber sogar wenn dieser problemlos ausgeführt werden kann, muss genau überprüft werden, ob der Code das Richtige tut. Dieses Überprüfen kann unter Umständen genau so lange dauern, wie das Selber-Programmieren mittels Lesen und Verstehen der Dokumentation. -->
+<!-- - Das Überprüfen von Code erfordert gewisse Grundkenntnisse. Das Verwenden von LLMs ersetzt daher ohne bestehende Expertise keinen Lernaufwand.^[![](imgs/groundtruth.png)] -->
+<!-- - Das direkte Verwenden von Code ohne kompetente Prüfung ist in der Forschung unethisch! -->
+<!-- - Es dürfen nie sensible Daten eingegeben werden, insbesondere auch keine Datensätze die nicht öffentlich sind. -->
+
+
+<!-- ### Abschlussquiz -->
+
+<!-- Das Abschlussquiz wird gegen Ende des Semesters auf Ilias freigeschaltet und dient dazu das Gelernte zu prüfen und so Feedback zu geben, wie gut man die Lerninhalte erinnert. -->
+<!-- Sie haben die Möglichkeit das Quiz mehrmals zu wiederholen. -->
+
+
+<!-- ### Termine der Leistungsnachweise {#sec-termine} -->
+
+
+<!-- | Leistungsnachweis |Beginn | Abgabetermin | Inhalt | Todo | -->
+<!-- |---------|:------:|:------:|:-------|:-------| -->
+<!-- | [Übung 1: Experiment]() | 28.02.2026 | 14.03.2025 23:55 | Datenerhebung Experiment | Abgabe Datensätze (Ilias) | -->
+<!-- | [Übung 2: Data wrangling]() | 28.02.2025 | 14.03.2025 | Durcharbeiten des Skripts [Daten importieren und vorverarbeiten]() | - | -->
+<!-- | [Übung 3: Datenpreprocessing und -visualisierung]() | 21.03.2025 | 18.04.2025 23:55 | Daten verarbeiten und sinnvoll visualisieren | Abgabe Visualisierung und Code (Ilias) | -->
+<!-- | [Übung 4: Datenanalyse Report]() | 04.04.2025 | 08.05.2025 23:55 | Bayesianische Analyse oder Equivalence Testing | Abgabe Poster (Ilias) | -->
+<!-- | [Übung 5: EEG Project]() | 09.05.2025 | 06.06.2025 23:55 | EEG Datenanalyse | Abgabe (Ilias) | -->
+<!-- | [Abschlussquiz]() | 30.05.2025 | 07.06.2025 23:55 | Quiz ausfüllen (mehrmals möglich) | Bestehen Quiz (Ilias) | -->
+<!-- : Übersicht Leistungsnachweise {.striped .hover} -->

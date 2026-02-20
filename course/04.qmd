@@ -1,0 +1,32 @@
+---
+title: "T4: 13.03.2026"
+---
+
+::: {.callout-note title="Lernziele"}
+- Effizienten R-Code für automatisiertes Einlesen und Aufbereiten von Daten schreiben können
+
+- Eigene Funktionen in R erstellen können 
+:::
+
+**Vorbereitungsauftrag**
+
+- Basics in R: 
+
+    - Die Hauptfunktionen des ``{tidyverse}` (`select()`, `filter()`, `group_by()`, `mutate()`) sicher verstehen und anwenden können
+    - RMarkdown installieren und ein neues `.Rmd` Dokument erstellen
+    - Die Experimentdaten von Ilias herunterladen und in einem `data`-Ordner speichern (im selben Ordner wie das `.Rmd` Dokument)
+    - Die Daten im `.Rmd`-Dokument einlesen (mit `read_csv()`) und mit `glimpse()` anschauen 
+
+**Kurstermin**
+
+- Automatisiertes Preprocessing der Experimentdaten
+
+- Struktur und Aufbau eigener Funktionen in R 
+
+**Aufträge**
+
+- keine
+
+**Vertiefung für Interessierte (freiwillig)**
+
+- R for Data Sciene (2e) (Buch online): <https://r4ds.hadley.nz/>

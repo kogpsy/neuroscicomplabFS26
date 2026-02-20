@@ -1,0 +1,13 @@
+/*-- scss:defaults --*/
+
+// import google fonts
+@import 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Sans+Condensed:ital,wght@0,400;0,700;1,400;1,700&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"';
+// use Atkinson Hyperlegible font if available
+$font-family-sans-serif: "Atkinson Hyperlegible" !default;
+$font-family-serif: "Crimson Text" !default;
+
+/*-- scss:rules --*/
+

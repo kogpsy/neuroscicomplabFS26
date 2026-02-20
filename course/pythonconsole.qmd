@@ -1,0 +1,31 @@
+---
+title: "Pyodide Konsole (Python)"
+filters:
+    - pyodide
+---
+
+In der Pyodide-Konsole kann _Python_-Code geschrieben, verändert und ausgeführt werden.
+
+::: {.panel-tabset}
+## {{< fa code >}}&emsp;Konsole
+
+Hier Code eingeben:
+
+```{pyodide-python}
+
+```
+
+
+## {{< fa regular helicopter >}}&emsp;Tipp
+
+Folgender Beispielscode kann in der Konsole ausgeführt werden:
+
+```{r}
+#| eval: false
+hirnregionen = ["Frontallappen", "Okzipitallappen", "Temporallappen"]
+for hirnregion in hirnregionen:   
+    print("Ich mag den", hirnregion, "!")
+```
+
+:::
+

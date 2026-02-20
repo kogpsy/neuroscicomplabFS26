@@ -1,0 +1,33 @@
+---
+title: "T3: 06.03.2026"
+---
+
+::: {.callout-note title="Lernziele"}
+- Ein einfaches Experiment selbstständig in PsychoPy aufbauen können
+- Die Output-Daten von Experimenten verstehen 
+:::
+
+**Vorbereitungsauftrag**
+
+- PsychoPy Grundlagen aus Termin 2 sollen klar verstanden sein 
+
+**Kurstermin**
+
+- Experiment in PsychoPy implementieren
+
+- Output-Dateien: Bedeutung der Spalten und Variablen
+
+- Wichtige Aspekte für Testleitende 
+
+**Aufträge**
+
+::: {.callout-caution title="Übung 1"}
+- Führen Sie mit 2 Personen unser Experiment durch. Laden Sie anschliessend die 2 Datensätze auf Ilias hoch. Das Experiment dauert ca. 30 Minuten (abhängig von den Versuchspersonen) 
+- Führen Sie das Skript `quality_check.Rmd` aus und laden Sie die resultierenden Abbildungen auf Ilias hoch. 
+
+**Abgabetermin: 16.03.2026 23:55**
+:::
+
+**Vertiefung für Interessierte (freiwillig)**
+
+- Umfassendes Buch zu PsychoPy: <https://us.sagepub.com/en-us/nam/building-experiments-in-psychopy/book273700> 

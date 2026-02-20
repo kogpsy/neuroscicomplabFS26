@@ -1,0 +1,106 @@
+---
+title: "Kursinformationen"
+---
+
+## Inhalte und Lernziele
+
+Dieser Kurs behandelt die ***Methoden der Datenerhebung, -verarbeitung und -analyse im Feld der Neurowissenschaften***.
+
+- Wichtige Programmiersprachen und - umgebungen in den Neurowissenschaften
+- Programmieren von computerbasierten Experimenten (mit PsychoPy)
+   
+    $\rightarrow$ ein computerbasiertes Experiment planen, erstellen und zur Datenerhebung nutzen können
+    
+- Programmieren von Datenverarbeitungspipelines: Datenvorverarbeitung und Visualisierung („good practices", Data Cleaning, Reproduzierbarkeit)
+
+    $\rightarrow$ Daten aus neurowissenschaftlichen Experimenten mit einem reproduzierbaren Skript vorverarbeiten und informativ visualisieren können
+    
+- Analysemethoden und Modelle zugeschnitten auf unterschiedliche neurowissenschaftliche Datensätze und Fragestellungen mit frequentistischen wie auch bayesianischen Verfahren (u.a. Reaktionszeiten, Signal detection theory, Drift diffusion models)
+
+    $\rightarrow$ wichtige neurowissenschaftlichen Datenformate und ihre Eigenschaften kennen
+    $\rightarrow$ verschiedene Paradigmen der Datenanalyse (u.a. Äquivalenztests, Bayes Factors, Signal detection, DDMs) kennen und angewendet haben
+
+- Interpretation und kritische Einordnung von Analyseergebnissen
+
+    $\rightarrow$ Analyseergebnisse interpretieren, kritisch diskutieren, kommunizieren und peer-reviewen können
+
+## Aufbau der Lehrveranstaltung
+
+- __Vor dem Termin:__ Teilweise gibt es für die Kurstermine Vorbereitungsaufträge. Meistens sind dies Leseaufträge, damit wir im Kurs direkt starten und die Zeit für die praktische Umsetzung nutzen können.
+
+- __Kurstermin:__ Erfahrungsgemäss lernt man Programmiersprachen und Datenanalyse am schnellsten und nachhaltigsten, wenn man sie selber anwendet. Aus diesem Grund setzen sich die Termine zusammen aus Inputs von und Hands-on Sessions, in welchen das erworbene Wissen praktisch umgesetzt wird. 
+
+::: {.callout-caution title="Hands-on"}
+Hands-on Aufgaben werden in den Veranstaltungen angekündigt und erklärt. Auf der Website sind die Aufgaben in diesen Hands-on Blöcken zu finden. Die Idee der Hands-on Aufgaben ist es, dass das Gelernte sofort angewendet werden kann und bei Problemen rasche Unterstützung durch die Dozierenden möglich ist. Die Aufgaben haben teilweise (angegebene) unterschiedliche Schwierigkeitsgrade. So können alle angepasst an ihre Vorkenntnisse ihre Skills trainieren. Bei Abwesenheit an einem Termin, können die praktischen Teile auf der Website nachgearbeitet werden. Die Hands-on Aufgaben dienen als Vorbereitung für die Übungsaufgaben.
+:::
+
+- __Übung:__ Hier wird ausseralb des Kurstermines selbstständig das im Kurs Gelernte und Geübte auf ein neues Problem angewendet.
+
+
+## Organisatorisches
+
+### Ilias
+
+ILIAS-Gruppe Freitag 14.15-16.00 👉 [468703-FS2026-0]()
+
+ILIAS-Gruppe Freitag 16.15-18.00 👉 [468703-FS2026-1]()
+
+
+### Kursvoraussetzungen
+
+Wir werden mit der Programmiersprache R und zu einem kleinen Teil mit Python arbeiten.
+Für die Veranstaltung wird deshalb ein __Laptop__ mit freiem Speicherplatz benötigt.
+
+__Bitte installieren Sie bis zum 2. Kurstermine folgende Software:__
+
+-  [Neuste Versionen von R und RStudio](https://posit.co/download/rstudio-desktop/)
+-  [PsychoPy](https://www.psychopy.org/download.html)
+-  [JASP](https://jasp-stats.org/download/)
+
+__R-Kenntnisse__ (gemäss Statistik I-IV im Bachelor Psychologie) werden vorausgesetzt. Zur Auffrischung dient folgender Link (https://methodenlehre.github.io/einfuehrung-in-R/) oder für Fortgeschrittene die Bücher [„Advanced R"](http://adv-r.had.co.nz/) und [„R for Data Scientists"](https://r4ds.had.co.nz/) von Hadley Wickham. 
+
+### DataCamp
+
+[DataCamp](https://www.datacamp.com/) ist eine Online-Lernplattform für Data Science und Datenanalyse. Diese bietet interaktive Kurse, Tutorials und Projekte in verschiedenen Programmiersprachen u.a. in Python und R auf unterschiedlichen Niveaus an.
+
+Im Rahmen dieser Lehrveranstaltung können alle Teilnehmenden sich unter folgendem Link mit ihrer Uni Bern E-Mail Adresse (*students.unibe.ch) registrieren und Kurse auf Datacamp kostenlos nutzen (Zugriff auf __alle Datacamp-Kurse__ bis Ende FS26):
+
+👉🏼 [Einladungslink DataCamp Registration](https://www.datacamp.com/groups/shared_links/b2ab04d9934f636f8913be6e6a18db805cce00fb2a65e61b7e5ab2095a8693b0) (zuerst muss ein DataCamp Zugang erstellt werden.)
+
+👉🏼 Zur Auffrischung von R-Kenntnissen eignet sich dieser Kurs: [Introduction to R](https://app.datacamp.com/learn/courses/free-introduction-to-r)
+
+👉🏼 Als Einführung in Python eignet sich folgender Kurs: [Introduction to Python](https://app.datacamp.com/learn/courses/intro-to-python-for-data-science)
+
+
+## Leistungsnachweise
+
+Der Kurs entspricht 5 ETCS.
+Dafür müssen 2 Bereiche erfüllt werden:
+
+- Anwesenheit im Kurs (an 2 Terminen darf gefehlt werden)
+- 5 bestandene Übungen (2 davon sind Onlinequizzes auf Ilias)
+
+Alle Leistungsnachweise werden in den Veranstaltungen angekündigt.
+Die Termine für die Leistungsnachweise finden Sie unter [Terminübersicht](../course/overview.qmd).
+
+**Bei Abwesenheit:**
+Das Online-Skript erlaubt das Nacharbeiten des wichtigsten Stoffes im Selbststudium, wir können jedoch nicht für die Vollständigkeit garantieren.
+Hilfestellung beim Programmieren und Verstehen der Inhalte erhalten Sie während der Kurszeiten.
+Aus zeitlichen Gründen können wir keine ausführliche Beantwortung von Fragen zum Kursinhalt per E-Mail anbieten.
+Bitte stellen Sie Ihre Fragen in der Veranstaltung - auch Ihre Mitstudierenden werden davon profitieren, oft haben mehrere Personen dieselbe Frage.
+
+
+### Übungen
+
+- Die Übungen werden auf der Website aufgeschaltet und in der Veranstaltung erklärt.
+- Die Ergebnisse der Übungen müssen in den entsprechenden Ordner auf ILIAS hochgeladen werden. Je nach Umfang der Übung wird die Zeit bis zur Abgabe unterschiedlich ausfallen. Sie wird jedoch immer mindestens zwei Wochen betragen.
+- Übungen müssen abgegeben und als bestanden bewertet werden. Bei einer ungenügenden Übung wird zweite Frist für die Abgabe oder einen Zusatzauftrag gesetzt.
+- Übungen dürfen alleine oder in Gruppen von max. 3 Personen erledigt werden. Alle Personen müssen die Übung abgeben. Damit wir sehen, welche Übungsabgaben zusammengehören muss das File mit der Aufgabe und allen Initialen der Gruppe benannt werden: z.B. `uebung_3_GW_EW.R`
+
+__Verwenden von LLMs für Übungen__: LLMs dürfen als Tools genutzt werden, um die Übung zu bearbeiten. Es liegt in der Verantwortung der Studierenden den Output von LLMs vor der Abgabe gründlich zu prüfen. Wichtig ist dabei:
+
+- LLMs geben Code aus, aber sogar wenn dieser problemlos ausgeführt werden kann, muss genau überprüft werden, ob der Code das Richtige tut. Dieses Überprüfen kann unter Umständen genau so lange dauern, wie das Selber-Programmieren mittels Lesen und Verstehen der Dokumentation.
+- Das Überprüfen von Code erfordert gewisse Grundkenntnisse. Das Verwenden von LLMs ersetzt daher ohne bestehende Expertise keinen Lernaufwand.
+- Das direkte Verwenden von Code ohne kompetente Prüfung ist in der Forschung unethisch!
+- Es dürfen nie sensible Daten eingegeben werden, insbesondere auch keine Datensätze die nicht öffentlich sind.
+

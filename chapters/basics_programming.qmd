@@ -1,0 +1,73 @@
+# Basics Programmieren
+
+R, Python, C, MATLAB, wie auch Java sind Programmiersprachen die in der neurowissenschaftlichen Forschung häufig verwendet werden. 
+Wie gesprochene Sprachen (z.B. Englisch und Deutsch) haben Programmiersprachen Wörter und Grammatik. Teilweise sind diese zwischen den Sprachen sehr ähnlich, beherrscht man z.B. _R_, fällt das Lernen von _Python_ schon viel einfacher.
+
+## Wichtige Aspekte von Programmiersprachen
+
+- Grundsätzlich besteht Programmiercode aus _Text_ welcher _ausgeführt_ wird.
+
+- Anders als bei gesprochenen Sprachen ist beim Programmieren fehlerfreier Text sehr wichtig. Wenn ein Funktionsname falsch geschrieben oder ein falsches Zeichen verwendet wird, kann der Code nicht ausgeführt werden oder falsche Ergebnisse produzieren.
+
+<aside>Ein häufiger Fehler ist, dass eine Klammer geöffnet `(` aber nicht wieder geschlossen `)` wird. Im Gegensatz zu anderen Programmiersprachen sind in _R_ Einrückungen oder Leerzeichen irrelevant und werden nicht beachtet. </aside>
+
+- Programmiersprachen enthalten verschiedene Bausteine wie Funktionen, Argumente, Abläufe (z.B. *loops*/Schleifen), Bedingungen (*conditional statements*), Objekte (*variables*), etc., die in einer bestimmten Form/Reihenfolge aufgeschrieben werden. Sobald das Grundprinzip dieser Bausteine verinnerlicht wurde, wird die Anwendung von Programmiersprachen sehr viel einfacher.
+
+- Indem man sich an gewisse Konventionen bei der Speicherung von Code und Variablen hält, bleibt ein Skript übersichtlich und der Code ist leichter lesbar. In diesem Kurs verwenden wir _R_ z.B. mit *R-Projects* und *Notebooks*, so dass die Datei-Struktur immer ähnlich aufgebaut ist. Zudem benennen wir Variablen nach bestimmten Regeln, um den Überblick zu behalten.
+
+- Zuletzt ist es wichtig zu wissen, was zu tun ist, wenn der Code nicht läuft. _Debugging_ bedeutet, dass man sich auf die Fehlersuche macht, weshalb z.B. ein Code nicht ausgeführt werden kann. Niemand schreibt fehlerfreien Code, oft entsteht Code durch *trial and error*. Fehlermeldungen sind kein Grund zur Sorge, sondern ein wichtiger Bestandteil des Programmierens und geben Hinweise, wo und wie man den Code anpassen muss. 
+
+## Bausteine von Programmiersprachen
+
+**Objekte**
+Ein Objekt ist eine Instanz eines Datentyps oder einer Klasse, die Zustand (Daten/Attribute) und Verhalten (Methoden/Funktionen) kapselt.
+Es repräsentiert eine konkrete Einheit im Programm, mit der interagiert werden kann.
+
+**Funktionen und Argumente**
+
+Eine Funktion ist ein benannter, wiederverwendbarer Codeblock, der eine bestimmte Aufgabe ausführt.
+Argumente sind Werte oder Referenzen, die einer Funktion übergeben werden, damit sie mit diesen Daten arbeiten kann.
+
+**Bibliotheken, Packages, Libraries**
+
+Eine Bibliothek ist eine Sammlung vorgefertigter Funktionen, Klassen oder Module zur Wiederverwendung.
+Ein Package ist eine organisatorische Einheit, die mehrere zusammengehörige Module oder Bibliotheken strukturiert bündelt.
+
+**Control Structures: Loops (Schleifen) und Conditional Statements (Bedingungen)**
+
+Eine Schleife ist eine Kontrollstruktur, die einen Codeblock mehrfach ausführt – entweder eine feste Anzahl von Durchläufen oder solange eine Bedingung erfüllt ist.
+
+Auch eine Bedingung ist eine Kontrollstruktur. Durch sie wird abhängig von einem Wahrheitswert (true/false) entschieden, welcher Codeblock ausgeführt wird.
+
+## Hilfe und Debugging
+
+### Suchmaschinen
+
+Um weiterzukommen ist es oft hilfreich Suchmaschinen zu nutzen (Fehlermeldung in Suchmaschine kopieren). 
+Oft hatten andere vorher schon dasselbe Problem. 
+
+__Suchmaschinen__ eignen sich oft für das Beheben von Problemen in dem man z.B.
+
+- die Fehlermeldung kopiert und in einer Suchmaschine eingibt.
+
+- das Stichwort _R_ und das Ziel (z.B. _Zusammenfügen mehrerer Variablen zu einem Datensatz_) eingibt (meistens erzielt man bessere Resultate, wenn man das Ziel in Englisch formuliert).
+
+- Foren für Programmierprobleme sind beispielsweise _StackOverflow_ oder das [Posit-Forum](https://forum.posit.co/).
+
+
+### LLMs
+
+Auch ChatGPT zu fragen kann hilfreich sein (z.B. "Was bedeutet dieser Code? cor(x,y)").
+Natürlich kann die Antwort von ChatGPT immer falsch sein und muss getestet und kritisch überprüft werden^[![](../imgs/groundtruth.png){width=50%}].
+
+__LLMs__ eignen sich oft zu Beginn nicht schlecht, da sie für "einfache" und "häufige" Probleme besser performen, als für Spezialfälle. Hierbei gilt es einige Punkte zu beachten:
+
+- LLMs geben `Code` aus. Aber auch wenn dieser problemlos ausgeführt werden kann, muss trotzdem genau überprüft werden, ob der Code das richtige tut. Dieses Überprüfen kann unter Umständen genau so lange dauern, wie das selber schreiben mittels Lesen und Verstehen der Dokumentation.
+
+- Das Überprüfen von Code erfordert gewisse Grundkenntnisse. Das direkte Verwenden von Code ohne kompetente Prüfung in der Forschung ist unethisch!
+
+- In LLM-Interfaces dürfen keine sensiblen Daten eingegeben werden.
+
+### Peer coding
+
+Peer Coding ist eine kollaborative Arbeitsweise in der Softwareentwicklung, bei der zwei Personen gemeinsam am selben Code arbeiten. Eine Person schreibt den Code (Driver), während die andere mitdenkt, überprüft und strategische Hinweise gibt (Navigator). Die Rollen werden regelmäßig gewechselt.
