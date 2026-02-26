@@ -73,14 +73,14 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-preparation.callout {
+div.callout-hands-on.callout {
   border-left-color: RosyBrown;
 }
-div.callout-preparation.callout-style-default > .callout-header {
+div.callout-hands-on.callout-style-default > .callout-header {
   background-color: rgb(from RosyBrown r g b / 13%);
 }
-div.callout-preparation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-preparation.callout-style-default .callout-icon::before, div.callout-preparation.callout-titled .callout-icon::before {
+div.callout-hands-on .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-hands-on.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: 'nil' !important;
@@ -109,14 +109,14 @@ div.callout-learnings .callout-toggle::before {  background-image: url('data:ima
 div.callout-learnings.callout-style-default .callout-icon::before, div.callout-learnings.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="LightSlateGray" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-hands-on.callout {
+div.callout-preparation.callout {
   border-left-color: RosyBrown;
 }
-div.callout-hands-on.callout-style-default > .callout-header {
+div.callout-preparation.callout-style-default > .callout-header {
   background-color: rgb(from RosyBrown r g b / 13%);
 }
-div.callout-hands-on .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-hands-on.callout-titled .callout-icon::before {
+div.callout-preparation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-preparation.callout-style-default .callout-icon::before, div.callout-preparation.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: 'nil' !important;
@@ -124,6 +124,35 @@ div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-ha
 }
 </style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../include/webex.css">
 </head>
@@ -425,6 +454,12 @@ div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-ha
  <span class="menu-text">Neurowissenschaftliche Experimente</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/psychopy_experiments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Verhaltensexperimente mit PsychoPy</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -485,8 +520,9 @@ div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-ha
 <div class="callout-body-container callout-body">
 <ul>
 <li>Wichtige Bausteine von Programmiersprachen kennen (Funktionen, Argumente, Objekte)</li>
-<li>Einfache Funktionen in Python selber schreiben können.</li>
-<li>Erste Schritte zur Programmierung eines Experiments in PsychoPy umsetzen können</li>
+<li>Erste Schritte in Python (z.B. Datentypen kennen, Bibliotheken verwenden, Einlesen von Datensätzen, Zugriff auf Spalten und Zeilen, Daten filtern)</li>
+<li>Schleifen in Python erstellen können</li>
+<li>Erste Schritte zur Programmierung eines Experiments in PsychoPy umsetzen</li>
 </ul>
 </div>
 </div>
@@ -514,6 +550,7 @@ div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-ha
 <li><p><a href="../chapters/loops.html">Schleifen programmieren mit Python</a></p></li>
 <li><p>Einführung in das Experiment, das wir im Kurs durchführen werden</p></li>
 <li><p>Einführung in PsychoPy</p></li>
+<li><p>Wichtige Aspekte für Testleitende</p></li>
 </ul>
 <p><strong>Aufträge</strong></p>
 <div class="callout callout-style-default callout-caution callout-titled" title="Übung 1">
@@ -527,11 +564,29 @@ div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-ha
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Führen Sie mit 2 Personen unser Experiment durch. Laden Sie anschliessend die 2 Datensätze auf Ilias hoch. Das Experiment dauert ca. 30 Minuten (abhängig von den Versuchspersonen).</li>
-<li>Führen Sie das Skript <code>quality_check.Rmd</code> aus und laden Sie die resultierenden Abbildungen auf Ilias hoch.</li>
+<li>Führen Sie mit 2 Personen unser Experiment durch. Laden Sie anschliessend die 2 Datensätze auf Ilias hoch. Das Experiment dauert ca. 45 Minuten (abhängig von den Versuchspersonen).</li>
+<li>Öffnen Sie <code>quality_check.Rmd</code>, klicken Sie auf <em>Knit</em>, sodass eine HTML-Datei erzeugt wird, und laden Sie diese HTML-Datei auf ILIAS hoch.</li>
 <li>Diese Übung muss einzeln abgegeben werden.</li>
 </ul>
 <p><strong>Abgabetermin: 16.03.2026 23:55</strong></p>
+<p><strong><em><span class="math inline">\(\rightarrow\)</span> Trouble shooting</em></strong></p>
+<p>Bitte die Fehlermeldung im Fenster genau durchlesen. Dort finden Sie Hinweise darauf, was schief gelaufen ist.</p>
+<p><strong>Das Experiment startet nicht.</strong></p>
+<ul>
+<li><p>Unter <code>Einstellungen</code> (Radsymbol) den Reiter <code>Basic</code> auswählen. Bei <code>Use PsychoPy version</code> die neuste PsychoPy Version <code>2025.2.4</code> auswählen.</p></li>
+<li><p>Unter <code>Einstellungen</code> (Radsymbol) den Reiter <code>Input</code> auswählen. Bei <code>Keyboard backend</code> (statt <code>ioHub</code>) <code>PsychToolbox</code> auswählen.</p></li>
+</ul>
+<p><strong>Das Experiment startet zwar, der Bildschirm ist aber dann einfach für eine kurze Zeit grau und das Fenster schliesst sich wieder.</strong></p>
+<ul>
+<li><p>Zugriffsrechte gegeben? (Bei Windows: Als Administrator starten, bei MacOS: <a href="https://support.apple.com/en-gb/guide/mac-help/mchl07817563/12.0/mac/12.0">Zugriffsrechte erteilen</a>)</p></li>
+<li><p>Unter <code>Einstellungen</code> (Radsymbol) den Reiter <code>Input</code> auswählen. <code>Keyboard Backend</code> auf <code>PsychToolbox</code> statt <code>ioHub</code> setzen.</p></li>
+</ul>
+<p><strong>PsychoPy findet die Schriftart <em>Noto Sans</em> nicht.</strong></p>
+<ul>
+<li><p>Laden Sie die Schriftart <em>Noto Sans</em> herunter und installieren Sie sie auf Ihrem Computer:</p>
+<p>https://fonts.google.com/noto/specimen/Noto+Sans</p></li>
+<li><p>Starten Sie PsychoPy nach der Installation neu, damit die Schrift erkannt wird.</p></li>
+</ul>
 </div>
 </div>
 <p><strong>Vertiefung für Interessierte (freiwillig)</strong></p>

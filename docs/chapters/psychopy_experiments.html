@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Kursübersicht – Neurowissenschaft Computerlab</title>
+<title>psychopy_experiments – Neurowissenschaft Computerlab</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,6 +29,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../chapters/experiments.html" rel="prev">
 <link href="../imgs/logo_landing.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -73,6 +74,19 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+div.callout-preparation.callout {
+  border-left-color: RosyBrown;
+}
+div.callout-preparation.callout-style-default > .callout-header {
+  background-color: rgb(from RosyBrown r g b / 13%);
+}
+div.callout-preparation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-preparation.callout-style-default .callout-icon::before, div.callout-preparation.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: 'nil' !important;
+  background-image: none;
+}
 div.callout-hands-on.callout {
   border-left-color: RosyBrown;
 }
@@ -86,6 +100,16 @@ div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-ha
   content: 'nil' !important;
   background-image: none;
 }
+div.callout-learnings.callout {
+  border-left-color: LightSlateGray;
+}
+div.callout-learnings.callout-style-default > .callout-header {
+  background-color: rgb(from LightSlateGray r g b / 13%);
+}
+div.callout-learnings .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-learnings.callout-style-default .callout-icon::before, div.callout-learnings.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="LightSlateGray" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
 div.callout-debugging.callout {
   border-left-color: RosyBrown;
 }
@@ -97,29 +121,6 @@ div.callout-debugging.callout-style-default .callout-icon::before, div.callout-d
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: '\e4d0' !important;
-  background-image: none;
-}
-div.callout-learnings.callout {
-  border-left-color: LightSlateGray;
-}
-div.callout-learnings.callout-style-default > .callout-header {
-  background-color: rgb(from LightSlateGray r g b / 13%);
-}
-div.callout-learnings .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-learnings.callout-style-default .callout-icon::before, div.callout-learnings.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="LightSlateGray" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-preparation.callout {
-  border-left-color: RosyBrown;
-}
-div.callout-preparation.callout-style-default > .callout-header {
-  background-color: rgb(from RosyBrown r g b / 13%);
-}
-div.callout-preparation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-preparation.callout-style-default .callout-icon::before, div.callout-preparation.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: 'nil' !important;
   background-image: none;
 }
 </style>
@@ -361,7 +362,7 @@ div.callout-preparation.callout-style-default .callout-icon::before, div.callout
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Kursübersicht</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/experiments.html">Experimente</a></li><li class="breadcrumb-item"><a href="../chapters/psychopy_experiments.html">Verhaltensexperimente mit PsychoPy</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -427,7 +428,7 @@ div.callout-preparation.callout-style-default .callout-icon::before, div.callout
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/psychopy_experiments.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/psychopy_experiments.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Verhaltensexperimente mit PsychoPy</span></a>
   </div>
 </li>
@@ -456,112 +457,494 @@ div.callout-preparation.callout-style-default .callout-icon::before, div.callout
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/experiments.html">Experimente</a></li><li class="breadcrumb-item"><a href="../chapters/psychopy_experiments.html">Verhaltensexperimente mit PsychoPy</a></li></ol></nav></header>
 
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Kursübersicht</h1>
+
+
+
+<section id="verhaltensexperimente-mit-psychopy" class="level1 page-columns page-full">
+<h1>Verhaltensexperimente mit PsychoPy</h1>
+<p>Kurze Einführung in unserem Experimenten und PsychoPy.</p>
+<p>Wir können innerhalb dieses Kurses leider keine neurophysiologischen Daten erheben. Dieser Kurs legt also den Fokus auf verhaltenswissenschaftliche Forschung, die sich für die Gehirnprozesse von Menschen interessiert. Wir erstellen in PsychoPy das Experiment von <a href="https://jov.arvojournals.org/article.aspx?articleid=2778583">Dijkstra et al.&nbsp;(2022)</a>. Dieses Experiment ergibt Daten, wir in späteren Kursterminen zur psychometrischen Funktion und Signal Detection benutzen werden.</p>
+<p>PsychoPy ist eine kostenfreie Software zum Erstellen von verhaltenswissenschaftlichen Experimenten im Labor oder Online. Die Software basiert auf der Programmiersprache Python. Man kann die Experimente (mit gewissen Begrenzungen) jedoch auch in einem GUI (graphical user interface) erstellen und braucht so (fast) keine Programmierkenntnisse. PsychoPy-Experimente ermöglichen präzise räumliche und zeitliche Kontrolle. <a href="https://link.springer.com/article/10.3758/s13428-018-01193-y">(Peirce et al.&nbsp;2019)</a></p>
+<aside>
+Zu Beginn des Papers von <a href="https://link.springer.com/article/10.3758/s13428-018-01193-y">Peirce et al.&nbsp;2019</a> finden Sie eine kurze Übersicht über gängige Experimentalsoftware in den Verhaltenswissenschaften und was PsychoPy besonders macht. Auch weiterführende Informationen und Links sind hier zu finden.
+</aside>
+<p>In PsychoPy erstellen Experimente können direkt auf <a href="https://pavlovia.org/">Pavlovia</a> hochgeladen, und so als Online-Experimente gehostet und durchgeführt werden. Die Speicherung des Experimentes auf <em>gitlab</em> ermöglicht dabei eine Versionskontrolle, sowie das Teilen des Experimentalcodes.</p>
+<p>Wir erstellen zuerst ein einfaches Beispiel-Experiment.</p>
+<section id="umgebung" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="umgebung">Umgebung</h2>
+<section id="experiment-file-erstellen-und-abspeichern" class="level3">
+<h3 class="anchored" data-anchor-id="experiment-file-erstellen-und-abspeichern">Experiment-File erstellen und abspeichern</h3>
+<ul>
+<li>Öffnen Sie PsychoPy und speichern Sie in einem dafür erstellten Ordner (z.B. <code>psychopy_tutorial</code>) das Experiment-File ab (unter <code>experiment_tutorial</code>).</li>
+</ul>
+</section>
+<section id="builder-gui-und-coder" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="builder-gui-und-coder">Builder (GUI) und Coder?</h3>
+<p>Experimente können in PsychoPy mit dem Builder (in einem GUI) erstellt werden, der Python Code wird so automatisch für Sie generiert. Sie können sich diesen Code auch anschauen und verändern. Leider können Sie sobald Sie den Code verändert haben, diese Änderungen nicht zurück in den Builder übertragen. Im Builder-Modus können Sie aber Codestücke einfügen um einzelne Teile des Experiments in Python (oder anderen Programmiersprachen) zu programmieren und dennoch im Builder weiterarbeiten zu können.</p>
+<aside>
+Falls Sie planen ein Online-Experiment durchzuführen, eignet sich der Builder besonders, da die Experimente direkt online durchgeführt werden können.
+</aside>
+</section>
+</section>
+<section id="experiment-erstellen" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="experiment-erstellen">Experiment erstellen</h2>
+<section id="stimuli" class="level3">
+<h3 class="anchored" data-anchor-id="stimuli">Stimuli</h3>
+<p>In PsychoPy finden Sie schon vorprogrammierte Stimulus Elemente, wie Gratings oder Rating Scales und können Texte, geometrische Figuren, Bilder und Filme einfügen. Auch komplexere Stimuluselemente wie Random Dots können sehr einfach konfiguriert werden ohne dass sie von Grund auf neu programmiert werden müssen.</p>
+<ul>
+<li><p>Erstellen Sie einen <strong>Stimulus</strong>. Beachten Sie folgende Aspekte:</p>
+<ul>
+<li><p>Farbe</p></li>
+<li><p>Grösse</p></li>
+<li><p>weitere Eigenschaften, wie Bedingung/Kongruenz?</p></li>
+<li><p>Timing (Stimulusdauer, Stimulusende)</p></li>
+</ul></li>
+<li><p>Notieren Sie, welche Eigenschaften des Stimulus sich über die Trials hinweg in unserem Experiment verändern sollte. Dies können auch mehrere Eigenschaften sein. Diese Liste benötigen Sie später.</p></li>
+</ul>
+</section>
+<section id="trial" class="level3">
+<h3 class="anchored" data-anchor-id="trial">Trial</h3>
+<ul>
+<li><p>Ergänzen Sie alle Elemente, die für einen vollständigen Trial notwendig sind:</p>
+<ul>
+<li><p>Antwort der Versuchsperson / Response</p></li>
+<li><p>Inter-Trial-Intervall (ITI): kann vor oder nach dem Stimulus eingefügt werden. (Die Zeit des ITI wird oft variiert. Dies müsste also auch auf die Liste oben)</p></li>
+<li><p>Fixationskreuz?</p></li>
+<li><p>Mask?</p></li>
+<li><p>Feedback?</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="trialschleife" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="trialschleife">Trialschleife</h3>
+<p>Sie müssen nicht alle Trials (oder in PsychoPy: <code>Routines</code>) des Experiments einzeln programmieren, sondern können diese wiederholen, in dem Sie eine <strong>Trial</strong>-Schleife (<code>loop</code>) um den Trial herum erstellen.</p>
+<ul>
+<li><p>Erstellen Sie einen <code>loop</code>indem Sie im Feld <code>Flow</code> auf <code>Insert loop</code> klicken.</p>
+<ul>
+<li><p>Mit <code>loopType</code> können Sie steuern, die Bedingungen randomisiert/gemischt oder sequentiell/der Reihe nach angezeigt werden sollen.</p></li>
+<li><p>Mit <code>nReps</code> können Sie angeben, wie oft jeder Stimulus wiederholt werden soll. Haben Sie also einen Stimulus mit zwei zu varierenden Eigenschaften , welche je 3 Stufen haben (also 9 Zeilen im <code>conditions</code>-File und <code>nReps</code>= 2), ergibt das 18 Trials.</p></li>
+</ul></li>
+</ul>
+<p>Mittels diesen Schleifen können die Bedingungen implementiert werden z.B. dass sich der Stimulus bei jedem Trial verändert. Dies kann mit einer <code>conditions</code>-Datei spezifiziert werden, idealerweise im <code>.csv</code> oder <code>.xlsx</code>-Format.</p>
+<aside>
+Die Endung <code>.csv</code> bedeutet, dass die Daten als <em>comma separated values</em> abgespeichert werden, also durch ein Komma getrennt. Dieses Dateiformat eignet sich besser als <code>.xlsx</code>, weil es mit vielen Programmen kompatibel und gut einlesbar ist.
+</aside>
+<p><em>Beispielsweise wollen wir drei verschiedene Worte anzeigen (<code>dog</code>, <code>cat</code> und <code>rabbit</code>) und dieses Wort unterschiedlich lange anzeigen (Dauer: <code>1</code>, <code>10</code> und <code>100</code> Frames). Die Versuchspersonen sollen dann den Anfangsbuchstaben des Wortes drücken, also <code>d</code> für <code>dog</code>, <code>c</code> für <code>cat</code> und <code>r</code> für <code>rabbit</code>.</em></p>
+<ul>
+<li><p>Um die Bedingungen (in unserem Fall: die sich verändernden Stimuluseigenschaften) zu definieren, erstellen wir eine <code>.csv</code>oder <code>.xlsx</code>-Datei (z.B. in Excel/Notepad/etc.) mit dem Namen <code>conditions</code> und speichern dieses im selben Ordner wie das Experiment.</p>
+<ul>
+<li><p>Fügen Sie für jedes sich verändernde Element einen Variablennamen und die entsprechenden Werte ein (dies sind die Eigenschaften, die Sie sich bei Punkt 4.2.1 notiert haben). Die <strong>Variablennamen</strong> schreiben wir immer in die oberste Zeile der Datei.</p>
+<p><em>Wenn wir z.B. einen Text anzeigen möchten, schreiben wir in die erste Zeile <code>word</code> und <code>duration</code>.</em></p></li>
+<li><p>In die Spalte unter die Variablennamen schreiben wir die Werte.</p>
+<p><em>Als Beispiel könnten die Worte die wir anzeigen lassen wollen <code>cat</code>, <code>dog</code> und <code>rabbit</code> lauten. Dann stehen in der Spalte <code>word</code>, diese 3 Wörter unter dem Variablennamen. Unter dem Variablennamen <code>duration</code> geben wir die Anzahl Frames ein, also <code>1</code>, <code>10</code> und <code>100</code>. Wir wollen jedes Wort mit jeder Dauer kombinieren. Das ergibt 9 Zeilen.</em></p></li>
+<li><p>Fügen Sie in jeder Zeile unter dem Variablennamen <code>corrAns</code> die jeweils korrekte Antwort ein.</p></li>
+<li><p>Fügen Sie, falls vorhanden, in jeder Zeile weitere wichtige Information zum Stimulus ein.</p>
+<p><em>Im Beispiel möchten Sie z.B. später fleischfressende mit pflanzenfressenden Tieren vergleichen, deshalb eine Spalte <code>meat</code>. Dies verändert im Experiment nichts, dient aber am Schluss zur Auswertung, weil diese Variable auch immer in den Datensatz geschrieben wird.</em></p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../imgs/psychopy_conditionsfile_example.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+</figure>
+</div></li>
+<li><p>Fügen Sie nun im Loop-Fenster die <code>conditions</code>-Datei ein.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../imgs/psychopy_trialloop_example.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+</figure>
+</div></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Tipp">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Tipp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Jede Zeile in der <code>conditions</code>-Datei unterhalb des Variablennamens entspricht einer Bedingung (condition).</p>
+<p>Setzen Sie <code>nReps</code> auf 1 während Sie das Experiment erstellen, so sparen Sie Zeit.</p>
+</div>
+</div>
+<p>Im PsychoPy können Sie Variablen mit einem vorangestellten <code>$</code>einfügen.</p>
+<ul>
+<li><p>Öffnen Sie nun wieder das Stimulusfenster und passen Sie dort die Stimuluseigenschaften an. Anstatt von <em>hard-coded values</em> (also einmalig, fix festgelegten Werten) geben wir nun einen Variablennamen ein. Der Stimulus darf nicht auf <code>constant</code> gesetzt sein, sonst kann er sich nicht Trial für Trial verändern, setzen Sie ihn deshalb unbedingt auf <code>set every repeat</code>.</p>
+<p><em>In unserem Beispiel fügen wir bei <code>text</code> die Laufvariable (verändernde Eigenschaft) ein: <code>$word</code>. Die Anzeigedauer des Textes soll <code>$duration</code> in Frames sein.</em></p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../imgs/psychopy_variable.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+<ul>
+<li>Lassen Sie das Experiment laufen und kontrollieren Sie, ob alles funktioniert hat.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Tipp">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Tipp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Mit dieser Methode können Sie auch Instruktionen, ITIs, etc. variieren lassen.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="blockschleife" class="level2">
+<h2 class="anchored" data-anchor-id="blockschleife">Blockschleife</h2>
+<p>Neben Trial-Schleifen können Sie auch <strong>Block-Schleifen</strong> erstellen. Diese sind sinnvoll, wenn sich Bedingungen blockweise verändern (z.B. andere Instruktionen, andere Aufgaben, andere Stimulusarten).</p>
+<p>Sie müssen also nicht jeden Block einzeln programmieren, sondern können eine <strong>Block</strong>-Schleife (<code>loop</code>) um mehrere Trials legen.</p>
+<section id="block-loop-erstellen" class="level3">
+<h3 class="anchored" data-anchor-id="block-loop-erstellen">Block-Loop erstellen</h3>
+<ul>
+<li>Erstellen Sie im Feld <code>Flow</code> eine neue Schleife mit <code>Insert loop</code>.</li>
+<li>Diese Schleife soll <strong>alle Trials eines Blocks umfassen</strong> (also um die Trial-Schleife herum liegen).</li>
+</ul>
+</section>
+<section id="einstellungen-der-block-schleife" class="level3">
+<h3 class="anchored" data-anchor-id="einstellungen-der-block-schleife">Einstellungen der Block-Schleife</h3>
+<ul>
+<li>Mit <code>loopType</code> können Sie steuern, ob die Blöcke randomisiert/gemischt oder sequentiell/der Reihe nach angezeigt werden sollen.</li>
+<li>Mit <code>nReps</code> können Sie angeben, wie oft jeder Block wiederholt werden soll.</li>
+</ul>
+</section>
+<section id="block-bedingungen-über-eine-conditions-datei-steuern" class="level3">
+<h3 class="anchored" data-anchor-id="block-bedingungen-über-eine-conditions-datei-steuern">Block-Bedingungen über eine <code>conditions</code>-Datei steuern</h3>
+<p>Analog zur Trial-Schleife können Sie auch für Blöcke eine <code>.csv</code>- oder <code>.xlsx</code>-Datei verwenden.</p>
+<p>Erstellen Sie z.B. eine Datei <code>block_conditions.csv</code> im selben Ordner wie das Experiment.</p>
+<p>In die erste Zeile kommen die <strong>Variablennamen</strong>, z.B.:</p>
+<pre class="csv"><code>blockN,instructionText</code></pre>
+<p>Darunter stehen die Werte für jeden Block (jede Zeile entspricht einer Bedingung):</p>
+<pre class="csv"><code>1,"Reagieren Sie so genau wie möglich."
+2,"Reagieren Sie so schnell wie möglich."</code></pre>
+<p>Fügen Sie im Block-Loop-Fenster diese Datei im Feld <code>conditions</code> ein.</p>
+</section>
+<section id="variablen-im-experiment-verwenden" class="level3">
+<h3 class="anchored" data-anchor-id="variablen-im-experiment-verwenden">Variablen im Experiment verwenden</h3>
+<p>Im PsychoPy können Sie Variablen mit einem vorangestellten <code>$</code> einfügen.</p>
+<ul>
+<li><p>Öffnen Sie die Instruktions-Routine am Anfang jedes Blocks.</p></li>
+<li><p>Ersetzen Sie festen Text durch:</p>
+<p><code>$instructionText</code></p></li>
+<li><p>Setzen Sie den Parameter unbedingt auf:</p>
+<p><code>set every repeat</code></p></li>
+</ul>
+<p>Damit wird bei jedem neuen Block automatisch die passende Instruktion geladen.</p>
+</section>
+<section id="unterschiedliche-trial-dateien-pro-block-verwenden" class="level3">
+<h3 class="anchored" data-anchor-id="unterschiedliche-trial-dateien-pro-block-verwenden">Unterschiedliche Trial-Dateien pro Block verwenden</h3>
+<p>Sie können blockweise unterschiedliche Trial-Dateien verwenden.</p>
+<p>Erstellen Sie dazu eine zweite Datei mit dem Namen <code>conditions2.csv</code>.</p>
+<p>Beispiel:</p>
+<pre class="csv"><code>word,duration,corrAns
+DOG,1,d
+DOG,10,d
+DOG,100,d
+CAT,1,c
+CAT,10,c
+CAT,100,c
+RABBIT,1,r
+RABBIT,10,r
+RABBIT,100,r</code></pre>
+<ul>
+<li><p>Öffnen Sie die <strong>Trial-Loop</strong>, die innerhalb der Block-Loop liegt.</p></li>
+<li><p>Tragen Sie im Feld <code>conditions</code> ein:</p>
+<p><code>$trialFile</code></p></li>
+</ul>
+<p>Damit kann jeder Block eine andere Trial-Datei laden (z.B. <code>conditions.csv</code> im ersten Block und <code>conditions2.csv</code> im zweiten Block).</p>
+</section>
+<section id="antworten-aufnehmen" class="level3">
+<h3 class="anchored" data-anchor-id="antworten-aufnehmen">Antworten aufnehmen</h3>
+<p>In PsychoPy muss definiert werden, wie die Antwort der Versuchsperson aufgenommen wird. Dies kann mit der Maus, der Tastatur oder anderen Devices umgesetzt werden. Die Möglichkeiten sehen Sie unter <code>Responses</code>.</p>
+<ul>
+<li><p>Fügen Sie eine <strong>Antwortkomponente</strong> hinzu und benennen Sie diese sinnvoll.</p>
+<p><em>In unserem Beispiel möchten wir, dass die Versuchsperson mittels Keyboard antwortet.</em></p>
+<ul>
+<li><p>Mit <code>Force end of Routine</code> können Sie einstellen, ob eine Antwort den Trial beendet und mit dem nächsten fortfährt.</p></li>
+<li><p>Der Namen der Antwortkomponente wird später im Datensatz als Variable zu finden sein.</p>
+<p><em>Werden in einer Antwortkomponente namens <code>key_resp</code> mittels Tastendruck Antwort</em> und <em>Response Time</em> aufgenommen, heissen die Variablen dann <code>key_resp.keys</code>(gedrückte Taste) und <code>key_resp.rt</code> (Antwortdauer).</p></li>
+<li><p>Entscheiden Sie, ob PsychoPy überprüfen soll, ob die richtige Antwort gegeben wurde.</p>
+<p><em>Wenn Sie dies möchten, gleicht PsychoPy in unserem Beispiel die gegebene Antwort (<code>key_resp.keys</code>) mit der dafür eingegebenen Variable (hier <code>corrAns</code>) ab. Stimmen diese überein, fügt es in die Variable <code>key_resp.corr</code> 1 ein, wenn nicht 0).</em></p></li>
+<li><p>Mit <code>first key</code> definieren Sie, dass der erste Tastendruck zählt.</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../imgs/psychopy_resp_1.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../imgs/psychopy_resp_2.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+</figure>
+</div></li>
+</ul>
+</section>
+<section id="weitere-elemente" class="level3">
+<h3 class="anchored" data-anchor-id="weitere-elemente">Weitere Elemente</h3>
+<p>In PsychoPy GUI wird Ihnen im Fenster <code>Flow</code> eine Art Flowchart angezeigt. Hier sehen Sie, welche Elemente Ihr aktuelles Experiment enthält.</p>
+<ul>
+<li><p>Fügen Sie nun weiteren Elemente, z.B.</p>
+<ul>
+<li><p>Begrüssung</p></li>
+<li><p>Einverständnis</p></li>
+<li><p>Instruktion</p></li>
+<li><p>Debriefing, Verabschiedung</p></li>
+</ul></li>
+<li><p>Lassen Sie das Experiment laufen und kontrollieren Sie, ob alles funktioniert hat.</p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Tipp: Zwischenschritte">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Tipp: Zwischenschritte
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Beim Programmieren lohnt es sich oft, die kleinen Schritte zwischenzutesten, weil es dann einfacher ist herauszufinden, wo genau der Fehler passiert ist.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="datenspeicherung" class="level2">
+<h2 class="anchored" data-anchor-id="datenspeicherung">Datenspeicherung</h2>
+<p>Wenn man die default-Einstellungen nicht ändert, speichert PsychoPy die Daten automatisch in einer trial-by-trial <code>.csv</code>-Datei. Das bedeutet, dass jeder Trial 1 Zeile generiert. Die <code>.csv</code>-Datei erhält einen Namen, der sich aus der <em>Versuchspersonen-ID</em>, dem <em>Namen des Experiments</em>, und dem aktuellen <em>Datum inkl. Uhrzeit</em> zusammensetzt. So ist es möglich, mit derselben Versuchspersonen-ID beliebig oft das Experiment zu wiederholen. Die <code>.csv</code>-Dateien werden in einem Ordner mit dem Name <strong>data</strong> abgelegt.</p>
+<p>In den Fenstern der Elemente kann jeweils angegeben werden, was alles gespeichert werden soll.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Tipp: Naming">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Tipp: Naming
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Bei der Wahl vom Datenfile-Namen empfiehlt es sich <strong>immer</strong> Datum und Uhrzeit anzuhängen. Dies verhindert, dass Daten überschrieben werden, wenn z.B. eine Versuchspersonen-ID falsch eingetippt oder doppelt vergeben wird.</p>
+</div>
+</div>
+<p><em>Das oben verwendete Beispielsexperiment ergibt folgenden Datensatz:</em></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../imgs/psychopy_data_example.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Sie sehen die Infos aus der <code>conditions</code>-Datei (gelb), die Zählerinformationen der Loops (hellgrau), die Timinginformationen (dunkelgrau), die Antwortinformationen (blau) und die Experimentinformationen (grün).</p>
+</section>
+<section id="test-pilotierung" class="level2">
+<h2 class="anchored" data-anchor-id="test-pilotierung">Test / Pilotierung</h2>
+<ul>
+<li><p>Führen Sie das Experiment aus und schauen Sie sich den Datensatz an: Sind alle wichtigen Informationen auf jeder Zeile vorhanden?</p>
+<ul>
+<li><p>Versuchspersonen-ID</p></li>
+<li><p>Bedingung</p></li>
+<li><p>Stimuluseigenschaften (z.B. word)</p></li>
+<li><p>Antwort der Versuchsperson</p></li>
+<li><p>Antwortdauer der Versuchsperson</p></li>
+<li><p>Antwort korrekt?</p></li>
+</ul></li>
+<li><p>Können die Daten überschrieben werden?</p></li>
+<li><p>Lassen Sie jemanden anderes Ihr Experiment durchführen, und geben Sie einander Feedback.</p></li>
+</ul>
+</section>
+<section id="verwenden-von-codekomponenten-im-builder" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="verwenden-von-codekomponenten-im-builder">Verwenden von Codekomponenten im Builder</h2>
+<p>Auch wenn man das Experiment im Builder erstellt erfordern einige Experimentelemente das Verwenden von <strong>Codekomponenten</strong>. In diesem Abschnitt werden zwei häufige Anwendungsbeispiele besprochen: Die variable Blockdauer (z.B. für Fixationskreuze oder ITIs) und das Geben von Feedback (z.B. in einem Übungsdurchgang).</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>If-else Statements in Python
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In Python können Sie für verschiedene Fälle (<code>cases</code>) andere Aktionen ausfüllen, indem Sie If-else Statements nutzen.</p>
+<p>Ein If-else Statement enthält ein <code>if</code> (<em>wenn</em>), einer <code>condition</code> (<em>das zutrifft</em>), einem <code>body</code> (<em>dann mach das</em>).</p>
+<p>Ergänzt kann dies werden mit <code>ifelse</code> (<em>oder wenn</em>)+ <code>condition</code> (<em>das zutrifft</em>) + <code>body</code> (<em>dann mach das</em>) und einem <code>else</code> (<em>wenn nichts davon zutrifft</em>) + <code>body</code> (<em>dann mach das</em>).</p>
+<p><strong>Wichtig:</strong> - Python ist <em>indentation-sensibel</em>, das bedeutet: Die Einrückung (1 Tab) muss stimmen, sonst funktioniert der Code nicht. Auch der <em>Doppelpunkt</em> <code>:</code> ist wichtig und muss an der richtigen Stelle stehen. Wenn Sie mehrere <code>conditions</code> verwenden möchten, müssen Sie diese in <em>Klammern</em> <code>()</code> setzen. Hier sehen Sie die Syntax eines If-else Statements:</p>
+<pre><code>if (condition):
+    body
+    
+elif (condition):
+    body
+    
+else:
+    body</code></pre>
+</div>
+</div>
+<aside>
+Einführung in Python auf Datacamp: 👉🏼 <a href="https://app.datacamp.com/learn/courses/intro-to-python-for-data-science">Introduction to Python</a>
+</aside>
+<section id="variable-dauer-von-elementen" class="level3">
+<h3 class="anchored" data-anchor-id="variable-dauer-von-elementen">Variable Dauer von Elementen</h3>
+<section id="fixationskreuz-und-iti-mit-randomisierter-dauer" class="level4">
+<h4 class="anchored" data-anchor-id="fixationskreuz-und-iti-mit-randomisierter-dauer">Fixationskreuz und ITI mit randomisierter Dauer</h4>
+<p>Um das Experiment für die Versuchsperson unvorhersehbarer zu machen, implementieren wir vor dem eigentlichen Stimulus ein Fixationskreuz mit variabler Länge. Diese Länge soll 0.2, 0.4, 0.6, oder 0.8 Sekunden betragen.</p>
+<ul>
+<li><p>Fügen Sie einen Codeblock <code>code_fixationcross</code> ein und definieren Sie unter <code>Begin Routine</code> die Variable <code>fixationcross_duration</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../imgs/psychopy_codecomponent_1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+</figure>
+</div></li>
+<li><p>Fügen Sie einen Textblock <code>fixationcross</code> ein mit dem Text <code>+</code> und Schriftgrösse <code>10</code>. Geben Sie unter <code>duration</code> Ihre vorher definierte Variable ein (vergessen Sie dabei das <code>$</code> nicht): <code>$fixationcross_duration</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../imgs/psychopy_codecomponent_2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+</figure>
+</div></li>
+</ul>
+<div class="callout callout-style-default callout-caution callout-titled" title="Hands-on: Variable ITI einbauen">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Hands-on: Variable ITI einbauen
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Fügen Sie nach dem Stimulus eine ITI mit variabler Dauer hinzu.</p>
+<p><strong>Einfachere Variante:</strong> Die ITI soll 10, 20, 30, 40 oder 50 Frames betragen.</p>
+<p><strong>Schwierigere Variante:</strong> Die ITI soll eine Zufallszahl zwischen 0.2 und 0.8 Sekunden betragen.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="feedback" class="level3">
+<h3 class="anchored" data-anchor-id="feedback">Feedback</h3>
+<p>Es gibt Experimente, welche Feedback erfordern. Oft wird vor der Datenerhebung ein Übungsblock eingebaut, welcher Feedback enthält, so dass die Versuchspersonen wissen, ob sie den Task richtig verstanden haben.</p>
+<ul>
+<li><p>Erstellen Sie zuerst eine <a href="https://kogpsy.github.io/neuroscicomplabFS24/pages/chapters/psychopy_experiments.html#trialschleife">Trialschleife</a> mit einem Stimulus und einer Response.</p></li>
+<li><p>Fügen Sie nach dem Stimulus und der Antwort (aber innerhalb der Trialschleife!) eine Routine <code>feedback</code> ein.</p></li>
+<li><p>Fügen Sie innerhalb der Routine <code>feedback</code> eine <strong>Codekomponente</strong> hinzu. In dieser Komponente können Sie nun</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../imgs/psychopy_feedback1.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+</figure>
+</div></li>
+<li><p>Fügen Sie nun eine <strong>Textkomponente</strong> hinzu und fügen Sie beim Textfeld die Variable <code>$response_msg</code> ein, damit die Versuchsperson abhängig von ihrer Antwort das entsprechende Feedback erhält, welches zuvor in der Codekomponente definiert wurde.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../imgs/psychopy_feedback2.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+</figure>
+</div></li>
+</ul>
+<div class="callout callout-style-default callout-caution callout-titled" title="Hands-on: Feedback geben">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Hands-on: Feedback geben
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sie können mittels einer <strong>Codekomponente</strong> auch reagieren, wenn die Versuchsperson zu schnell, zu langsam oder gar nicht antwortet.</p>
+<ul>
+<li>Erstellen Sie einen Übungsdurchgang. Fügen Sie eine Code-Komponente hinzu und legen Sie fest, welches Feedback die Versuchsperson erhalten soll.</li>
+</ul>
+<p><strong>Einfache Variante:</strong> Geben Sie der Person Feedback, ob ihre Antwort richtig oder falsch war.</p>
+<p><strong>Mittelschwere Variante:</strong> Geben Sie der Person Feedback, wenn Sie zu schnell oder zu langsam antwortet.</p>
+<p><strong>Schwere Variante:</strong> Erstellen Sie einen Counter, welcher der Versuchsperson anzeigt, wie gut sie ist, indem für jede richtige Antwort 5 Punkte erhält, für jede falsche Antwort 5 Punkte abgezogen werden.</p>
+<p>Falls Sie zur Geschwindigkeit Rückmeldung geben wollen oder einen Counter bauen, können Sie etwas in dieser Art machen.</p>
+<pre><code>if dots_keyboard_response.keys is None:
+    response_text = "miss"
+
+elif dots_keyboard_response.rt &lt;= 0.1:
+    response_text = "too fast"
+
+else:
+    if (direction == "left" and dots_keyboard_response.keys == "f" or 
+        direction == "right" and dots_keyboard_response.keys == "j"):
+        response_text = "+5 points"
+    else:
+        response_text = "+0 points"
+    </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="weitere-wichtige-punkte" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="weitere-wichtige-punkte">Weitere wichtige Punkte</h2>
+<section id="degrees-of-visual-angle" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="degrees-of-visual-angle">Degrees of Visual Angle</h3>
+<p>Oftmals werden Grössenangaben von Stimuli noch in Pixel oder Zentimeter, sondern in <em>degrees of visual angle</em> gemacht. Dies hat den Vorteil, dass die Angaben nicht vom Monitor selber oder der Entferung vom Monitor abhängig sind. <em>Degrees of visual angle</em> gibt die wahrgenommene Grösse des Stimulus an, und berücksichtigt die Grösse des Monitors und des Stimulus, und die Entfernung der Versuchsperson vom Monitor. Weitere Informationen dazu finden Sie auf der Website von <a href="https://osdoc.cogsci.nl/3.3/visualangle/">OpenSesame</a>. Üblicherweise entspricht ein <em>degrees of visual angle</em> etwa einem cm bei einer Entfernung von 57 cm vom Monitor.</p>
+<aside>
+<a href="https://osdoc.cogsci.nl/">OpenSesame</a> ist ein weiteres, Python-basierendes Programm für die Erstellung behavioraler Experimente.
+</aside>
+<p>Zur Umrechnung zwischen cm und <em>degrees of visual angle</em> finden Sie unter diesem <a href="https://www.sr-research.com/eye-tracking-blog/background/visual-angle/">Link</a> mehr Information.</p>
+</section>
+<section id="timing" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="timing">Timing</h3>
+<p><strong>Frames vs.&nbsp;time (sec or ms)</strong>: Die präziseste Art zur Steuerung des Timings von Stimuli besteht darin, sie für eine festgelegte Anzahl von Frames zu präsentieren. Bei einer Framerate von 60 Hz können Sie Ihren Stimulus nicht z. B. 120 ms lange präsentieren; die Bildperiode würde Sie auf einen Zeitraum von 116,7 ms (7 Bilder) oder 133,3 ms (8 Bilder) beschränken. Dies ist besonders wichtig für Reaktionszeit-Aufgaben und EEG-Studien, wo ein präzises Millisekunden-Timing erforderlich ist. Hier finden Sie weitere Informationen zu diesem Thema: <a href="https://www.psychopy.org/coder/codeStimuli.html">Presening Stimuli - Psychopy</a>.</p>
+<aside>
+Hertz ist eine Einheit die angibt, wie häufig etwas pro Sekunde passiert. Hertz kann wie <em>Mal pro Sekunde</em> ausgesprochen werden. 60 Hertz bedeutet also, 60 Mal pro Sekunde.
+</aside>
+</section>
+<section id="individualisierte-aufgabenschwierigkeit-schwellenmessung" class="level3">
+<h3 class="anchored" data-anchor-id="individualisierte-aufgabenschwierigkeit-schwellenmessung">Individualisierte Aufgabenschwierigkeit / Schwellenmessung</h3>
+<p>In PsychoPy kann ein Staircase in einem Loop verwendet werden, um die Schwierigkeit einer Aufgabe basierend auf der Leistung der Teilnehmer dynamisch anzupassen. Sie ist besonders häufig in Experimenten zur Schwellenmessung, bei denen das Ziel darin besteht, die kleinste wahrnehmbare Reizintensität zu bestimmen. Hier finden Sie weitere Informationen zu diesem Thema: <a href="https://www.psychopy.org//general/staircases.html">Using a Staircase - PsychoPy</a>.</p>
+<div class="callout callout-style-default callout-caution callout-titled" title="Hands-on: Experiment programmieren">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Hands-on: Experiment programmieren
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Schauen Sie sich Ihre Flowchart von das Dijkstra et al.&nbsp;(2022) Paper an.</p>
+<ol type="1">
+<li><p>Erstellen Sie die main trials (keine Übungstrials) des Experiments in PsychoPy. Wir benutzen hier keine dynamischen Stimuli, sondern statische Gabor Gratings (und Noise). Diese sind im img_tutorial Ordner gespeichert.</p></li>
+<li><p>Erstellen Sie eine Block-Schleife (Loop) und sorgen Sie dafür, dass sich die Instruktionen zu Beginn jedes Blocks automatisch aktualisieren (anhand einer .csv oder .xlsx Datei). In dieser Block-Datei sollen Sie zusätzlich festlegen, welche Trial-conditions-Datei in der Trial-Loop verwendet wird (z.B. über eine Spalte trialFile). Wir erstellen dabei nur zwei Blöcke: (1) IMAGINE RIGHT, DETECT RIGHT und (2) IMAGINE RIGHT, DETECT LEFT. Dafür benötigen Sie:</p></li>
+</ol>
+<p>Eine Block-Datei (z.B. block_conditions.csv/.xlsx) mit (a) Instruktionstext und (b) dem Namen der zu ladenden Trial-Datei pro Block.</p>
+<p>Zwei Trial-Dateien:</p>
+<ul>
+<li><p>trials_block_1: Trial-Datei mit RIGHT-Gratings über die verschiedenen Visibility-Level</p></li>
+<li><p>trials_block_2: Trial-Datei mit LEFT-Gratings über die verschiedenen Visibility-Level</p></li>
+</ul>
+<ol start="3" type="1">
+<li>Wenn Sie genügend Zeit haben können Sie auch noch Übungstrials einbauen.</li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Tipp: Hilfreiche Ressourcen">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Tipp: Hilfreiche Ressourcen
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Hilfreiche Informationen zum Erstellen von Experimenten in PsychoPy finden Sie hier:</p>
+<ul>
+<li><p><a href="https://www.psychopy.org/">PsychoPy Website</a></p></li>
+<li><p><a href="https://tu-coding-outreach-group.github.io/cog_summer_workshops_2021/psychopy/index.html">Walk-through: Builder</a></p></li>
+<li><p><a href="https://discourse.psychopy.org/">Diskussionsforum</a></p></li>
+</ul>
+</div>
 </div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<!-- Hier finden Sie einen Überblick über die Inhalte und den Aufbau des Complab-Kurses FS2026. -->
-<!-- ## Inhalte der Lehrveranstaltung -->
-<!-- Dieser Kurs behandelt die Methoden der Datenerhebung, -verarbeitung und -analyse im Feld der Neurowissenschaften.  -->
-<!-- - Wichtige Programmiersprachen und - umgebungen in den Neurowissenschaften -->
-<!-- - Programmieren von computerbasierten Experimenten (mit PsychoPy) -->
-<!-- - Programmieren von Datenverarbeitungspipelines: Datenvorverarbeitung und Visualisierung („good practices", Data Cleaning, Reproduzierbarkeit) -->
-<!-- - Analysemethoden und Modelle zugeschnitten auf unterschiedliche neurowissenschaftliche Datensätze und Fragestellungen mit frequentistischen wie auch bayesianischen Verfahren (u.a. Reaktionszeiten, Signal detection theory, Drift diffusion models) -->
-<!-- - Interpretation und kritische Einordnung von Analyseergebnissen -->
-<!-- ### Lernziele -->
-<!-- Ziel dieses Kurses ist es, dass praktisches Wissen im Umgang mit neurowissenschaftlichen Daten erworben wird, dies umfasst u.a.: -->
-<!-- - ein computerbasiertes Experiment planen, erstellen und zur Datenerhebung nutzen können -->
-<!-- - wichtige neurowissenschaftlichen Datenformate und ihre Eigenschaften kennen -->
-<!-- - Daten aus neurowissenschaftlichen Experimenten mit einem reproduzierbaren Skript vorverarbeiten und informativ visualisieren können -->
-<!-- - verschiedene Paradigmen der Datenanalyse (u.a. Äquivalenztests, Bayes Factors, Signal detection, DDMs) kennen und angewendet haben -->
-<!-- - Analyseergebnisse interpretieren, kritisch diskutieren, kommunizieren und peer-reviewen können -->
-<!-- ## Aufbau der Lehrveranstaltung -->
-<!-- Erfahrungsgemäss lernt man Programmiersprachen und Datenanalyse am schnellsten und nachhaltigsten, wenn man sie selber anwendet.  -->
-<!-- Aus diesem Grund setzen sich die Termine zusammen aus theoretischen Inputs und Hands-on Sessions, in welchen das erworbene Wissen praktisch umgesetzt wird. Die Aufteilung ist stark vom jeweiligen Thema anhängig.  -->
-<!-- ::: hands-on -->
-<!-- Hands-on Aufgaben werden in den Veranstaltungen angekündigt und erklärt. Auf der Website sind die Aufgaben in diesen Hands-on Blöcken zu finden. Die Idee der Hands-on Aufgaben ist es, dass das Gelernte sofort angewendet werden kann und bei Problemen rasche Unterstützung durch die Dozierenden möglich ist. Die Aufgaben haben teilweise (angegebene) unterschiedliche Schwierigkeitsgrade. So können alle je nach ihren Vorkenntnissen ihre Skills trainieren. Bei Abwesenheit an einem Termin, können die praktischen Teile auf der Website nachgearbeitet werden. Die Hands-on Aufgaben dienen als Vorbereitung für die Übungsaufgaben. -->
-<!-- ::: -->
-<!-- ### Typische Woche -->
-<!-- - __Vor dem Termin:__ Vorbereitungsauftrag [ca. 45-60 min], z.B. Lesen eines Artikels und Beantworten der Vorbereitungsaufgaben auf Ilias -->
-<!-- - __Kurstermin:__ Besprechen Vorbereitungsauftrag, Inhaltlicher Input, Hands-on Sessions [2 Lektionen] -->
-<!-- - __Bearbeiten der Übung (mehrwöchig):__ Hier wird selbstständig das im Kurs Gelernte und Geübte auf ein neues Problem angewendet. [5 Übungen à ca. 10 h] -->
-<!-- ## Organisatorisches -->
-<!-- ### Ilias -->
-<!-- ILIAS-Gruppe Freitag 14.15-16.00 👉 [468703-FS2026-0]() -->
-<!-- ILIAS-Gruppe Freitag 16.15-18.00 👉 [468703-FS2026-1]() -->
-<!-- ### Kursvoraussetzungen -->
-<!-- Wir werden mit der Programmiersprache R und zu einem kleinen Teil mit Python arbeiten. -->
-<!-- Für die Veranstaltung wird deshalb ein __Laptop__ mit freiem Speicherplatz benötigt. -->
-<!-- __Bitte installieren Sie bis zum 2. Kurstermine folgende Software:__ -->
-<!-- -  [Neuste Versionen von R und RStudio](https://posit.co/download/rstudio-desktop/) -->
-<!-- -  [PsychoPy](https://www.psychopy.org/download.html) -->
-<!-- -  [JASP](https://jasp-stats.org/download/) -->
-<!-- __R-Kenntnisse__ (gemäss Statistik I-IV im Bachelor Psychologie) werden vorausgesetzt. Zur Auffrischung dient folgender Link (https://methodenlehre.github.io/einfuehrung-in-R/) oder für Fortgeschrittene die Bücher [„Advanced R"](http://adv-r.had.co.nz/) und [„R for Data Scientists"](https://r4ds.had.co.nz/) von Hadley Wickham. Zusätzlich dient _Übung 2_ zur Auffrischung der Vorkenntnisse auf die im späteren Verlauf des Kurses aufgebaut wird. -->
-<!-- ### DataCamp -->
-<!-- [DataCamp](https://www.datacamp.com/) ist eine Online-Lernplattform für Data Science und Datenanalyse. Diese bietet interaktive Kurse, Tutorials und Projekte in verschiedenen Programmiersprachen u.a. in Python und R auf unterschiedlichen Niveaus an. -->
-<!-- Im Rahmen dieser Lehrveranstaltung können alle Teilnehmenden sich unter folgendem Link mit ihrer Uni Bern E-Mail Adresse (*students.unibe.ch) registrieren und Kurse auf Datacamp kostenlos nutzen:  -->
-<!-- 👉🏼 [Einladungslink DataCamp Registration](https://www.datacamp.com/groups/shared_links/3fc707ac57c6293825924af2e54b2ed9743579402c1367af9aa879b7460da23a) (zuerst muss ein DataCamp Zugang erstellt werden.) -->
-<!-- Wir werden jeweils die empfohlenen Datacamp Kurse verlinken. Sie haben mit dem Link Zugriff auf __alle Datacamp-Kurse__ bis Ende FS26. -->
-<!-- 👉🏼 Zur Auffrischung von R-Kenntnissen eignet sich dieser Kurs: [Introduction to R](https://app.datacamp.com/learn/courses/free-introduction-to-r) -->
-<!-- 👉🏼 Als Einführung in Python eignet sich folgender Kurs: [Introduction to Python](https://app.datacamp.com/learn/courses/intro-to-python-for-data-science) -->
-<!-- ## Leistungsnachweise -->
-<!-- Der Kurs entspricht 5 ETCS. -->
-<!-- Dafür müssen 3 Bereiche erfüllt werden: -->
-<!-- - Anwesenheit im Kurs -->
-<!-- - bestandene Übungen -->
-<!-- - bestandenes Abschlussquiz  -->
-<!-- Alle Leistungsnachweise werden in den Veranstaltungen angekündigt.  -->
-<!-- Die Termine für die Leistungsnachweise finden Sie unter [Termine der Leistungsnachweise](index.qmd#sec-termine). -->
-<!-- ### Anwesenheit -->
-<!-- Die Anwesenheit im Kurs wird vorausgesetzt, an 2 Terminen darf gefehlt werden.  -->
-<!-- Das Online-Skript erlaubt das Nacharbeiten des wichtigsten Stoffes im Selbststudium, wir können jedoch nicht für die Vollständigkeit garantieren.  -->
-<!-- Hilfestellung beim Programmieren und Verstehen der Inhalte erhalten Sie während der Kurszeiten. -->
-<!-- Aus zeitlichen Gründen können wir keine ausführliche Beantwortung von Fragen zum Kursinhalt per E-Mail anbieten.  -->
-<!-- Bitte stellen Sie Ihre Fragen in der Veranstaltung - auch Ihre Mitstudierenden werden davon profitieren, oft haben mehrere Personen dieselbe Frage. -->
-<!-- ### Übungen -->
-<!-- Es gibt fünf Übungen. -->
-<!-- - Die Übungen werden auf der Website aufgeschaltet und in der Veranstaltung erklärt. -->
-<!-- - Die Ergebnisse der Übungen müssen in den entsprechenden Ordner auf ILIAS hochgeladen werden. Je nach Umfang der Übung wird die Zeit bis zur Abgabe unterschiedlich ausfallen. Sie wird jedoch immer mindestens zwei Wochen betragen. -->
-<!-- - Ausser _Übung 2_ müssen alle Übungen abgegeben und als bestanden bewertet werden. Wird eine ungenügende Übungen abgegeben erhalten Sie eine zweite Frist für die Abgabe oder einen Zusatzauftrag.  -->
-<!-- - Übungen dürfen alleine oder in Gruppen von max. 3 Personen erledigt werden. Alle Personen müssen die Übung abgeben. Damit wir sehen, welche Übungsabgaben zusammengehören: Nennen Sie das File mit der Aufgabe und allen Initialen der Gruppe. Z.B. `uebung_3_GW_EW.R` -->
-<!-- __Verwenden von LLMs für Übungen__: Sie dürfen LLMs als Tools nutzen, um die Übung zu bearbeiten. Es liegt in Ihrer Verantwortung, den Output von LLMs vor der Abgabe gründlich zu prüfen. Wichtig ist dabei: -->
-<!-- - LLMs geben Code aus, aber sogar wenn dieser problemlos ausgeführt werden kann, muss genau überprüft werden, ob der Code das Richtige tut. Dieses Überprüfen kann unter Umständen genau so lange dauern, wie das Selber-Programmieren mittels Lesen und Verstehen der Dokumentation. -->
-<!-- - Das Überprüfen von Code erfordert gewisse Grundkenntnisse. Das Verwenden von LLMs ersetzt daher ohne bestehende Expertise keinen Lernaufwand.^[![](imgs/groundtruth.png)] -->
-<!-- - Das direkte Verwenden von Code ohne kompetente Prüfung ist in der Forschung unethisch! -->
-<!-- - Es dürfen nie sensible Daten eingegeben werden, insbesondere auch keine Datensätze die nicht öffentlich sind. -->
-<!-- ### Abschlussquiz -->
-<!-- Das Abschlussquiz wird gegen Ende des Semesters auf Ilias freigeschaltet und dient dazu das Gelernte zu prüfen und so Feedback zu geben, wie gut man die Lerninhalte erinnert. -->
-<!-- Sie haben die Möglichkeit das Quiz mehrmals zu wiederholen. -->
-<!-- ### Termine der Leistungsnachweise {#sec-termine} -->
-<!-- | Leistungsnachweis |Beginn | Abgabetermin | Inhalt | Todo | -->
-<!-- |---------|:------:|:------:|:-------|:-------| -->
-<!-- | [Übung 1: Experiment]() | 28.02.2026 | 14.03.2025 23:55 | Datenerhebung Experiment | Abgabe Datensätze (Ilias) | -->
-<!-- | [Übung 2: Data wrangling]() | 28.02.2025 | 14.03.2025 | Durcharbeiten des Skripts [Daten importieren und vorverarbeiten]() | - | -->
-<!-- | [Übung 3: Datenpreprocessing und -visualisierung]() | 21.03.2025 | 18.04.2025 23:55 | Daten verarbeiten und sinnvoll visualisieren | Abgabe Visualisierung und Code (Ilias) | -->
-<!-- | [Übung 4: Datenanalyse Report]() | 04.04.2025 | 08.05.2025 23:55 | Bayesianische Analyse oder Equivalence Testing | Abgabe Poster (Ilias) | -->
-<!-- | [Übung 5: EEG Project]() | 09.05.2025 | 06.06.2025 23:55 | EEG Datenanalyse | Abgabe (Ilias) | -->
-<!-- | [Abschlussquiz]() | 30.05.2025 | 07.06.2025 23:55 | Quiz ausfüllen (mehrmals möglich) | Bestehen Quiz (Ilias) | -->
-<!-- : Übersicht Leistungsnachweise {.striped .hover} -->
-
-
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script>
@@ -1394,6 +1777,15 @@ window.onload = function() {
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/experiments.html" class="pagination-link" aria-label="Neurowissenschaftliche Experimente">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Neurowissenschaftliche Experimente</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

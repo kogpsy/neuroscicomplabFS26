@@ -17,8 +17,6 @@ title: "T3: 06.03.2026"
 
 - Output-Dateien: Bedeutung der Spalten und Variablen
 
-- Wichtige Aspekte für Testleitende 
-
 **Aufträge**
 
 - keine

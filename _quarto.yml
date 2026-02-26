@@ -72,7 +72,7 @@ website:
         # href: chapters/...
         contents:
           - chapters/experiments.qmd
-
+          - chapters/psychopy_experiments.qmd
 
       - section: "Datenverarbeitung"
         # href: chapters/...

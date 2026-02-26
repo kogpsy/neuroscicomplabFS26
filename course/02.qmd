@@ -7,8 +7,9 @@ title: "T2: 27.02.2026"
 
 ::: {.callout-note title="Lernziele"}
 - Wichtige Bausteine von Programmiersprachen kennen (Funktionen, Argumente, Objekte)
-- Einfache Funktionen in Python selber schreiben können.
-- Erste Schritte zur Programmierung eines Experiments in PsychoPy umsetzen können 
+- Erste Schritte in Python (z.B. Datentypen kennen, Bibliotheken verwenden, Einlesen von Datensätzen, Zugriff auf Spalten und Zeilen, Daten filtern)
+- Schleifen in Python erstellen können
+- Erste Schritte zur Programmierung eines Experiments in PsychoPy umsetzen 
 :::
 
 **Vorbereitungsauftrag**
@@ -43,15 +44,46 @@ _Tipps_:
 
 - Einführung in PsychoPy 
 
+- Wichtige Aspekte für Testleitende 
+
 **Aufträge**
 
 ::: {.callout-caution title="Übung 1"}
-- Führen Sie mit 2 Personen unser Experiment durch. Laden Sie anschliessend die 2 Datensätze auf Ilias hoch. Das Experiment dauert ca. 30 Minuten (abhängig von den Versuchspersonen).
-- Führen Sie das Skript `quality_check.Rmd` aus und laden Sie die resultierenden Abbildungen auf Ilias hoch. 
+- Führen Sie mit 2 Personen unser Experiment durch. Laden Sie anschliessend die 2 Datensätze auf Ilias hoch. Das Experiment dauert ca. 45 Minuten (abhängig von den Versuchspersonen).
+- Öffnen Sie `quality_check.Rmd`, klicken Sie auf *Knit*, sodass eine HTML-Datei erzeugt wird, und laden Sie diese HTML-Datei auf ILIAS hoch.
 - Diese Übung muss einzeln abgegeben werden.
 
 **Abgabetermin: 16.03.2026 23:55**
+
+***$\rightarrow$ Trouble shooting***
+
+Bitte die Fehlermeldung im Fenster genau durchlesen. Dort finden Sie Hinweise darauf, was schief gelaufen ist.
+
+
+__Das Experiment startet nicht.__
+
+- Unter `Einstellungen` (Radsymbol) den Reiter `Basic` auswählen. Bei `Use PsychoPy version` die neuste PsychoPy Version `2025.2.4` auswählen.
+
+- Unter `Einstellungen` (Radsymbol) den Reiter `Input` auswählen. Bei `Keyboard backend` (statt `ioHub`) `PsychToolbox` auswählen.
+
+
+__Das Experiment startet zwar, der Bildschirm ist aber dann einfach für eine kurze Zeit grau und das Fenster schliesst sich wieder.__
+
+- Zugriffsrechte gegeben? (Bei Windows: Als Administrator starten, bei MacOS: [Zugriffsrechte erteilen](https://support.apple.com/en-gb/guide/mac-help/mchl07817563/12.0/mac/12.0))
+
+- Unter `Einstellungen` (Radsymbol) den Reiter `Input` auswählen. `Keyboard Backend` auf `PsychToolbox` statt `ioHub` setzen.
+
+
+__PsychoPy findet die Schriftart *Noto Sans* nicht.__
+
+- Laden Sie die Schriftart *Noto Sans* herunter und installieren Sie sie auf Ihrem Computer:
+
+  https://fonts.google.com/noto/specimen/Noto+Sans
+
+- Starten Sie PsychoPy nach der Installation neu, damit die Schrift erkannt wird.
+
 :::
+
 
 **Vertiefung für Interessierte (freiwillig)**
 
