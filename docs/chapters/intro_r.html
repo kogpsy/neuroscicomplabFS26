@@ -1155,6 +1155,29 @@ globalThis.qwebrExecuteCode = async function (
 
 </script>
 <style>
+div.callout-hands-on.callout {
+  border-left-color: RosyBrown;
+}
+div.callout-hands-on.callout-style-default > .callout-header {
+  background-color: rgb(from RosyBrown r g b / 13%);
+}
+div.callout-hands-on .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-hands-on.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: 'nil' !important;
+  background-image: none;
+}
+div.callout-learnings.callout {
+  border-left-color: LightSlateGray;
+}
+div.callout-learnings.callout-style-default > .callout-header {
+  background-color: rgb(from LightSlateGray r g b / 13%);
+}
+div.callout-learnings .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-learnings.callout-style-default .callout-icon::before, div.callout-learnings.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="LightSlateGray" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
 div.callout-preparation.callout {
   border-left-color: RosyBrown;
 }
@@ -1179,29 +1202,6 @@ div.callout-debugging.callout-style-default .callout-icon::before, div.callout-d
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: '\e4d0' !important;
-  background-image: none;
-}
-div.callout-learnings.callout {
-  border-left-color: LightSlateGray;
-}
-div.callout-learnings.callout-style-default > .callout-header {
-  background-color: rgb(from LightSlateGray r g b / 13%);
-}
-div.callout-learnings .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-learnings.callout-style-default .callout-icon::before, div.callout-learnings.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="LightSlateGray" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-hands-on.callout {
-  border-left-color: RosyBrown;
-}
-div.callout-hands-on.callout-style-default > .callout-header {
-  background-color: rgb(from RosyBrown r g b / 13%);
-}
-div.callout-hands-on .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-hands-on.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: 'nil' !important;
   background-image: none;
 }
 </style>
@@ -2773,7 +2773,7 @@ Komplexere und grafisch ansprechendere Plots können mit dem Package <code>{ggpl
 </div>
 </section>
 </section>
-<section id="hilfe-in-r" class="level2">
+<section id="hilfe-in-r" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="hilfe-in-r">Hilfe in R</h2>
 <p>In diesem Kapitel finden Sie verschiedene Hilfestellungen für die Arbeit mit <em>R</em>.</p>
 <p>Häufigste Fehlerquellen sind:</p>
@@ -2799,9 +2799,6 @@ Komplexere und grafisch ansprechendere Plots können mit dem Package <code>{ggpl
 <span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a><span class="fu">.libPaths</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-</section>
-<section id="hilfe-in-r-1" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="hilfe-in-r-1">Hilfe in <em>R</em></h2>
 <section id="section-14" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="section-14"><code>?</code></h3>
 <p>Um zu erfahren, was genau eine Funktion macht und welche Argumente sie benötigt, kann die leere Funktion mit einem Fragezeichen aufgerufen werden: <code>?cor()</code>. Dies funktioniert nur, wenn das Package in dem sich die Funktion befindet geladen ist!</p>
@@ -2838,9 +2835,8 @@ Wird zum Beispiel <code>?glimpse()</code> eingegeben bevor das {tidyverse} gelad
 <h3 class="anchored" data-anchor-id="autocomplete-mit">Autocomplete mit <kbd title="Tab" aria-hidden="true">Tab</kbd><span class="visually-hidden">Tab</span></h3>
 <p>Mit der Taste <kbd title="Tab" aria-hidden="true">Tab</kbd><span class="visually-hidden">Tab</span> können Sie schauen, welche Vorschläge <em>R</em> Ihnen macht. So sehen Sie z.B. welche Argumente eine Funktion benötigt.</p>
 </section>
-</section>
-<section id="bücher-und-tutorials" class="level2">
-<h2 class="anchored" data-anchor-id="bücher-und-tutorials">Bücher und Tutorials</h2>
+<section id="bücher-und-tutorials" class="level3">
+<h3 class="anchored" data-anchor-id="bücher-und-tutorials">Bücher und Tutorials</h3>
 <p>Sehr geeignete Bücher und Websites sind im Folgenden aufgelistet. Der Vorteil dieser Quellen im Vergleich zu Suchmaschinen oder LLMs ist, dass die Informationen verifiziert sind.</p>
 <ul>
 <li><p><a href="https://r4ds.had.co.nz/">R for Data Science von Hadley Wickham</a></p></li>
@@ -2849,6 +2845,7 @@ Wird zum Beispiel <code>?glimpse()</code> eingegeben bevor das {tidyverse} gelad
 </ul>
 
 
+</section>
 </section>
 </section>
 

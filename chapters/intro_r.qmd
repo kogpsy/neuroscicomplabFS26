@@ -934,8 +934,6 @@ RStudio.Version()
 .libPaths()
 ```
 
-## Hilfe in _R_
-
 ### `?`
 
 Um zu erfahren, was genau eine Funktion macht und welche Argumente sie benötigt, kann die leere Funktion mit einem Fragezeichen aufgerufen werden: `?cor()`. 
@@ -973,7 +971,7 @@ Dort können Sie Namen von _Packages_ oder Funktionen eingeben um zur Dokumentat
 Mit der Taste {{< kbd Tab >}} können Sie schauen, welche Vorschläge _R_ Ihnen macht.
 So sehen Sie z.B. welche Argumente eine Funktion benötigt.
 
-## Bücher und Tutorials
+### Bücher und Tutorials
 
 Sehr geeignete Bücher und Websites sind im Folgenden aufgelistet. 
 Der Vorteil dieser Quellen im Vergleich zu Suchmaschinen oder LLMs ist, dass die Informationen verifiziert sind.
