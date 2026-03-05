@@ -9,7 +9,7 @@ title: "T3: 06.03.2026"
 
 **Vorbereitungsauftrag**
 
-- PsychoPy Grundlagen aus Termin 2 sollen klar verstanden sein 
+- keine
 
 **Kurstermin**
 

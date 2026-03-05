@@ -73,19 +73,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-preparation.callout {
-  border-left-color: RosyBrown;
-}
-div.callout-preparation.callout-style-default > .callout-header {
-  background-color: rgb(from RosyBrown r g b / 13%);
-}
-div.callout-preparation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-preparation.callout-style-default .callout-icon::before, div.callout-preparation.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: 'nil' !important;
-  background-image: none;
-}
 div.callout-hands-on.callout {
   border-left-color: RosyBrown;
 }
@@ -120,6 +107,19 @@ div.callout-debugging.callout-style-default .callout-icon::before, div.callout-d
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: '\e4d0' !important;
+  background-image: none;
+}
+div.callout-preparation.callout {
+  border-left-color: RosyBrown;
+}
+div.callout-preparation.callout-style-default > .callout-header {
+  background-color: rgb(from RosyBrown r g b / 13%);
+}
+div.callout-preparation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-preparation.callout-style-default .callout-icon::before, div.callout-preparation.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: 'nil' !important;
   background-image: none;
 }
 </style>
@@ -361,6 +361,10 @@ window.Quarto = {
     <a class="dropdown-item" href="../course/03.html">
  <span class="dropdown-text">T3: 06.03.2026</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../course/04.html">
+ <span class="dropdown-text">T4: 13.03.2026</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -423,6 +427,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../chapters/intro_r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Einführung in R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/datawrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Daten importieren und vorverarbeiten mit R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -530,7 +540,7 @@ window.Quarto = {
 <ul>
 <li><p>Lesen Kapitel <a href="../chapters/intro_r.html">Einführung in R</a></p></li>
 <li><p>Installieren von <a href="https://posit.co/download/rstudio-desktop/">R und RStudio</a></p></li>
-<li><p>Installieren von <a href="https://www.psychopy.org/download.html">PsychoPy</a></p></li>
+<li><p>Installieren von <a href="https://www.psychopy.org/download.html">PsychoPy</a>: Version PsychoPy Standalone (Stable)</p></li>
 <li><p>Lesen Artikel “Imagery adds stimulus-specific sensory evidence to perceptual detection” von Dijkstra et al.&nbsp;(2022): <a href="https://doi.org/10.1167/jov.22.2.11" class="uri">https://doi.org/10.1167/jov.22.2.11</a>.</p></li>
 <li><p>Erstellen einer <a href="experiment.html#flowcharts">Flowchart</a> zum geplanten Experiment mit wichtigen Bausteinen und Abläufen:</p>
 <ul>

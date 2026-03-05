@@ -120,7 +120,7 @@ while i <= 100:
 ::: callout-caution
 ## Hands-on 4: Flowchart erstellen
 
-Erstellen Sie eine Flowchart für die `for`-Schleife in *Aufgabe 3*.
+Erstellen Sie eine Flowchart für die `while`-Schleife in *Aufgabe 3*.
 
 Sie können diese auf <https://app.diagrams.net/> erstellen.
 

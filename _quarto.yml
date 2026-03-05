@@ -38,7 +38,7 @@ website:
           - course/01.qmd
           - course/02.qmd
           - course/03.qmd
-          # - course/04.qmd
+          - course/04.qmd
           # - course/05.qmd
           # - course/06.qmd
           # - course/07.qmd
@@ -65,6 +65,7 @@ website:
         href: chapters/basics_programming.qmd
         contents:
           - chapters/intro_r.qmd
+          - chapters/datawrangling.qmd
           - chapters/intro_python.qmd
           - chapters/loops.qmd
 

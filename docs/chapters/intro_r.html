@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/intro_python.html" rel="next">
+<link href="../chapters/datawrangling.html" rel="next">
 <link href="../chapters/basics_programming.html" rel="prev">
 <link href="../imgs/logo_landing.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -1155,6 +1155,19 @@ globalThis.qwebrExecuteCode = async function (
 
 </script>
 <style>
+div.callout-debugging.callout {
+  border-left-color: RosyBrown;
+}
+div.callout-debugging.callout-style-default > .callout-header {
+  background-color: rgb(from RosyBrown r g b / 13%);
+}
+div.callout-debugging .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-debugging.callout-style-default .callout-icon::before, div.callout-debugging.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\e4d0' !important;
+  background-image: none;
+}
 div.callout-hands-on.callout {
   border-left-color: RosyBrown;
 }
@@ -1189,19 +1202,6 @@ div.callout-preparation.callout-style-default .callout-icon::before, div.callout
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: 'nil' !important;
-  background-image: none;
-}
-div.callout-debugging.callout {
-  border-left-color: RosyBrown;
-}
-div.callout-debugging.callout-style-default > .callout-header {
-  background-color: rgb(from RosyBrown r g b / 13%);
-}
-div.callout-debugging .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-debugging.callout-style-default .callout-icon::before, div.callout-debugging.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: '\e4d0' !important;
   background-image: none;
 }
 </style>
@@ -1443,6 +1443,10 @@ window.Quarto = {
     <a class="dropdown-item" href="../course/03.html">
  <span class="dropdown-text">T3: 06.03.2026</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../course/04.html">
+ <span class="dropdown-text">T4: 13.03.2026</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -1505,6 +1509,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../chapters/intro_r.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Einführung in R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/datawrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Daten importieren und vorverarbeiten mit R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -3698,8 +3708,8 @@ window.onload = function() {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/intro_python.html" class="pagination-link" aria-label="Python: Einführung für Neurowissenschaften">
-        <span class="nav-page-text">Python: Einführung für Neurowissenschaften</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/datawrangling.html" class="pagination-link" aria-label="Daten importieren und vorverarbeiten mit R">
+        <span class="nav-page-text">Daten importieren und vorverarbeiten mit R</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

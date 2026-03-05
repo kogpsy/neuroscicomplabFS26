@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>T4: 13.03.2026 – Neurowissenschaft Computerlab</title>
+<title>datawrangling – Neurowissenschaft Computerlab</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -29,6 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../chapters/intro_python.html" rel="next">
+<link href="../chapters/intro_r.html" rel="prev">
 <link href="../imgs/logo_landing.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -73,6 +110,29 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
+div.callout-learnings.callout {
+  border-left-color: LightSlateGray;
+}
+div.callout-learnings.callout-style-default > .callout-header {
+  background-color: rgb(from LightSlateGray r g b / 13%);
+}
+div.callout-learnings .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-learnings.callout-style-default .callout-icon::before, div.callout-learnings.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="LightSlateGray" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-hands-on.callout {
+  border-left-color: RosyBrown;
+}
+div.callout-hands-on.callout-style-default > .callout-header {
+  background-color: rgb(from RosyBrown r g b / 13%);
+}
+div.callout-hands-on .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-hands-on.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: 'nil' !important;
+  background-image: none;
+}
 div.callout-debugging.callout {
   border-left-color: RosyBrown;
 }
@@ -94,29 +154,6 @@ div.callout-preparation.callout-style-default > .callout-header {
 }
 div.callout-preparation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-preparation.callout-style-default .callout-icon::before, div.callout-preparation.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: 'nil' !important;
-  background-image: none;
-}
-div.callout-learnings.callout {
-  border-left-color: LightSlateGray;
-}
-div.callout-learnings.callout-style-default > .callout-header {
-  background-color: rgb(from LightSlateGray r g b / 13%);
-}
-div.callout-learnings .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-learnings.callout-style-default .callout-icon::before, div.callout-learnings.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="LightSlateGray" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-hands-on.callout {
-  border-left-color: RosyBrown;
-}
-div.callout-hands-on.callout-style-default > .callout-header {
-  background-color: rgb(from RosyBrown r g b / 13%);
-}
-div.callout-hands-on .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-hands-on.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: 'nil' !important;
@@ -365,7 +402,7 @@ div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-ha
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">T4: 13.03.2026</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/basics_programming.html">Programmieren</a></li><li class="breadcrumb-item"><a href="../chapters/datawrangling.html">Daten importieren und vorverarbeiten mit R</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -402,7 +439,7 @@ div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-ha
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/datawrangling.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/datawrangling.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Daten importieren und vorverarbeiten mit R</span></a>
   </div>
 </li>
@@ -466,73 +503,401 @@ div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-ha
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">T4: 13.03.2026</h1>
-</div>
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/basics_programming.html">Programmieren</a></li><li class="breadcrumb-item"><a href="../chapters/datawrangling.html">Daten importieren und vorverarbeiten mit R</a></li></ol></nav></header>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
 
 
-</header>
-
-
-<div class="callout callout-style-default callout-note callout-titled" title="Lernziele">
+<section id="daten-importieren-und-vorverarbeiten-mit-r" class="level1 page-columns page-full">
+<h1>Daten importieren und vorverarbeiten mit R</h1>
+<p>In R gibt es sehr viele hilfreiche <em>Funktionen</em> und <em>Packages</em>, die für die Vorverarbeitung und Analyse neurowissenschaftlicher Verhaltensdaten (oder extrahierten Daten aus bildgebenden Verfahren) verwendet werden können. Beim Arbeiten in <em>R</em> empfiehlt es sich durchgehend in einem <em>R-Script</em>, <em>RNotebook</em> oder <em>R-Markdown</em> Dokument (<code>.Rmd</code>) innerhalb eines <em>RStudio-Projects</em> zu arbeiten, da so ein reproduzierbarer Workflow erstellt werden kann. Ein weiterer Vorteil ist zudem, dass Rohdaten <strong>nicht</strong> verändert werden müssen.</p>
+<p>In diesem Kapitel finden Sie die wichtigesten data wrangling Funktionen des {tidyverse}-Packages:</p>
+<ul>
+<li>die Pipe: <code>|&gt;</code></li>
+<li>Daten einlesen: <code>read.csv()</code></li>
+<li>Daten filtern: <code>filter()</code></li>
+<li>Variablen auswählen: <code>select()</code></li>
+<li>Variablen generieren/verändern: <code>mutate()</code></li>
+<li>Variablentyp verändern: <code>as.factor()</code>, <code>as.numeric</code></li>
+<li>Gruppieren und zusammenfassen: <code>group_by()</code></li>
+<li>Datensätze speichern: <code>write.csv()</code></li>
+</ul>
+<p><img src="../imgs/allison_horst_rasafriend.png" class="img-fluid quarto-figure quarto-figure-center" style="width:50.0%"> <a href="https://allisonhorst.com/everything-else">Illustration by Allison Horst</a></p>
+<aside>
+<p>Hilfreiche Datacamp Kurse:</p>
+<ul>
+<li><p><a href="https://www.datacamp.com/tutorial/r-studio-tutorial">RStudio Tutorial</a>.</p></li>
+<li><p><a href="https://app.datacamp.com/learn/courses/introduction-to-the-tidyverse">Introduction to the Tidyverse</a>.</p></li>
+</ul>
+</aside>
+<section id="datenformate" class="level2">
+<h2 class="anchored" data-anchor-id="datenformate">Datenformate</h2>
+<p>Bevor mit einem Datensatz gearbeitet wird, empfiehlt es sich den Datensatz anzuschauen und Folgendes zu identifizieren:</p>
+<ul>
+<li><p>In welchem Dateiformat ist der Datensatz gespeichert? (z.B. in <code>.csv</code>, <code>.xlsx</code> oder anderen?)</p></li>
+<li><p>In welchem Datenformat ist der Datensatz geordnet? (<code>long</code> oder <code>wide</code> oder <code>mixed</code>?)</p></li>
+<li><p>Gibt es ein <code>data dictionary</code> mit Erklärungen zu den Variablen?</p></li>
+</ul>
+</section>
+<section id="set-up" class="level2">
+<h2 class="anchored" data-anchor-id="set-up">Set up</h2>
+<div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Lernziele
+<span class="screen-reader-only">Caution</span>Hands-on: Vorbereitung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>Öffnen Sie RStudio.</p></li>
+<li><p>Erstellen Sie ein neues <em>RStudio-Project</em>.</p>
+<ul>
+<li><p>Klicken Sie dafür auf <code>File</code> &gt; <code>New Project</code></p></li>
+<li><p>Benennen Sie das Project <code>complab_fs26</code> und speichern Sie es an einem sinnvollen Ort auf Ihrem Computer. Wählen Sie, dass dafür ein neuer Ordner erstellt werden soll.</p></li>
+</ul></li>
+<li><p>Erstellen Sie in diesem Projekt-Ordner einen Ordner namens <code>data</code>.</p></li>
+<li><p>Kopieren Sie in den <code>data</code>-Ordner Ihre erhobenen Daten des Stroop Experiments. Falls Sie noch keine Daten erhoben haben, dann laden Sie <a href="data/stroop_example.csv">hier</a> einen Beispiels-Datensatz herunter und speichern Sie ihn im <code>data</code>-Ordner.</p></li>
+<li><p>Erstellen Sie ein neues <em>RScript</em> oder ein <em>RNotebook</em> (<code>.Rmd</code>-File: <code>File</code> &gt; <code>New File</code> &gt; <code>RNotebook</code>) und speichern Sie dieses unter <code>intro_datawrangling</code> im Projekt-Ordner.</p></li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Tipp: Namensgebung für Files und Variablen
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Wenn Sie Filenamen auswählen, achten Sie darauf dass diese <a href="https://opendatahandbook.org/glossary/en/terms/machine-readable"><em>machine-readable</em></a> sind:</p>
+<ul>
+<li><p>keine Lücken (verwenden Sie stattdessen den <code>camelCase</code>, den <code>snake_case</code> oder <code>-</code>)</p></li>
+<li><p>keine <code>ä</code>, <code>ö</code>, <code>ü</code> oder andere Sonderzeichen verwenden</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="packages-installieren-und-laden" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="packages-installieren-und-laden">Packages installieren und laden</h2>
+<p>Für das Bearbeiten der Daten verwenden eignen sich Funktionen aus dem <em>Package</em> {tidyverse}, eine Sammlung von verschiedenen, für <em>data science</em> sehr geeigneten <em>R Packages</em>. Funktionen aus dem {tidyverse} ermöglichen und vereinfachen viele Schritte der Datenverarbeitung. Im Folgenden werden die wichtigsten und häufigst verwendeten Funktionen beschrieben. Das {tidyverse} können Sie direkt in <em>R</em> herunterladen:</p>
+<aside>
+Mehr Informationen zum {tidyverse} finden Sie <a href="https://r4ds.had.co.nz/">hier</a>.
+</aside>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download und Installieren des Packages (nur einmal ausführen)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Ein <em>Package</em> muss nur einmal heruntergeladen und <strong>installiert</strong> werden, danach ist es lokal auf dem Computer gespeichert. Aber: Jedes Mal wenn <em>R</em> geöffnet wird, müssen <em>Packages</em> wieder neu <strong>geladen</strong> werden.</p>
+<div class="cell" data-warnings="false" data-errors="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Package laden (bei jedem Öffnen von R zu Beginn des Skripts ausführen)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Sobald ein <em>Package</em> installiert ist, können die Funktionen auch verwendet werden ohne, dass das ganze <em>Package</em> mit <code>library()</code> geladen wird, indem die Funktion mit dem <em>Package</em>-Namen zusammen aufgerufen wird: <code>packagename::packagefunction()</code>. Dies macht Sinn, wenn verschiedene <em>Packages</em> dieselben Namen für verschiedene Funktionen nutzen und es so zu Konflikten kommt oder wenn nur eine Funktion aus einem <em>Package</em> verwendet werden soll und alle anderen sowieso nicht gebraucht werden.</p>
+</section>
+<section id="daten-importieren-in-r-read.csv" class="level2">
+<h2 class="anchored" data-anchor-id="daten-importieren-in-r-read.csv">Daten importieren in R: <code>read.csv()</code></h2>
+<p>Einen Datensatz in <code>.csv</code>-Format kann mit der Funktion <code>read.csv()</code> importiert werden. Teilweise muss innerhalb der Klammer zusätzlich der <em>Separator</em> mit <code>sep = ","</code> angegeben werden, also mit welchem Zeichen die Spalten getrennt sind. Normalerweise ist dies <code>,</code> in <code>.csv</code> (<em>comma separated values</em>), es kann aber auch <code>;</code>, <code>.</code> oder eine Lücke <code></code> sein.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Daten laden und anschauen</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>d_stroop <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/stroop_example.csv"</span>, <span class="at">sep =</span> <span class="st">","</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(d_stroop)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Hands-on: Daten einlesen
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Lesen Sie den Stroop Datensatz in Ihrem <code>data</code>-Ordner ein und schauen Sie ihn dann mit den Funktionen <code>glimpse()</code> und <code>head()</code> an.</p>
+<ul>
+<li><p>Welche Variablen sind wichtig für die weitere Auswertung?</p></li>
+<li><p>Welche braucht es wahrscheinlich nicht mehr?</p></li>
+<li><p>Finden Sie Versuchspersonenidentifikation? / Reaktionszeit? / Antwort der Versuchsperson?</p></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Tipp: Daten anderer Formate einlesen
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Falls Sie eine Excel-Datei einlesen möchten, können Sie dies mit der <code>read_excel()</code>-Funktion aus dem Package <code>readxl()</code> tun: <code>readxl::read_excel()</code>.</p>
+<p>Falls Sie nicht wissen, mit welcher Funktion Sie Ihre Daten einlesen können, können Sie dies in <em>RStudio</em> ausprobieren indem Sie beim Reiter <code>Environment</code> auf <code>Import Dataset</code> klicken und dort Ihren Datensatz auswählen oder über <code>File</code> &gt; <code>Import Dataset</code>. Sie können dort diverse Einstellungen tätigen. In der <em>R Console</em> können Sie dann den Code sehen, der zum Einlesen verwendet wurde und die dortige Funktion in Ihren Code kopieren.</p>
+</div>
+</div>
+</section>
+<section id="verwenden-der-pipe-oder" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="verwenden-der-pipe-oder">Verwenden der Pipe: <code>|&gt;</code> oder <code>%&gt;%</code></h2>
+<p>In <em>R</em> können Sie die <em>Pipe</em> verwenden um mehrere Datenverarbeitungsschritte aneinander zu hängen. Damit sparen Sie sich aufwändige Zwischenschritte und vermeiden das Erstellen von immer neuen Datensätzen. Statt zwei einzelne Datenverarbeitungsschritte zu machen wie oben, können mehrere Schritte (hier Daten einlesen und anzeigen) zusammengefasst werden, in dem nach Zeilenende eine <em>Pipe</em> eingefügt wird:</p>
+<aside>
+Wann <em>Pipes</em> ungeeignet sind wird <a href="https://r4ds.had.co.nz/pipes.html#when-not-to-use-the-pipe">hier</a> beschrieben.
+</aside>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>d_stroop <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/stroop_example.csv"</span>, <span class="at">sep =</span> <span class="st">","</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">glimpse</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Die <em>Base R Pipe <code>|&gt;</code> und die </em><code>magritter</code> Pipe <code>%&gt;%</code>_ unterscheiden sich in Details, in diesem Kapitel spielt es jedoch keine Rolle, welche Pipe Sie verwenden.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Tipp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Achtung: Wenn wir zu Beginn ein <code>&lt;-</code> oder <code>=</code> verwenden, wird alles was nach der Pipe kommt wird ebenfalls im Datensatz verändert. Wird z.B. der Code …</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>d_stroop <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/stroop_example.csv"</span>, <span class="at">sep =</span> <span class="st">","</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>…eingegeben, besteht der Datensatz <code>d_stroop</code> dann nur noch aus 6 Zeilen, weil die Funktion <code>head()</code> den Datensatz auf die ersten 6 Zeilen kürzt.</p>
+<p>Wird die Pipe ohne <code>&lt;-</code> oder <code>=</code> verwendet, bleibt der Datensatz unverändert:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>d_stroop <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="daten-filtern-filter" class="level2">
+<h2 class="anchored" data-anchor-id="daten-filtern-filter">Daten filtern: <code>filter()</code></h2>
+<p>Mit <code>filter()</code> können bestimmte Beobachtungen oder Untergruppen ausgewählt werden. Hierfür muss in der Funktion <code>filter(.data, filter, ...)</code> der Datensatz, die betreffende Variable, sowie eine Bedingung eingegeben werden. Es wird die ganze Zeile im Datensatz behalten in der die Variable der Bedingung entspricht.</p>
+<p><em>Beispiele:</em></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># nur die Trials mit den rot angezeigten Wörtern behalten</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>d_stroop_filtered <span class="ot">&lt;-</span> <span class="fu">filter</span>(d_stroop, color <span class="sc">==</span> <span class="st">"red"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># dasselbe mit der Pipe</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>d_filtered <span class="ot">&lt;-</span> d_stroop <span class="sc">|&gt;</span> <span class="fu">filter</span>(color <span class="sc">==</span> <span class="st">"red"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># nur Trials die ohne blau angezeigten Wörter behalten</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>d_filtered <span class="ot">&lt;-</span> d_stroop <span class="sc">|&gt;</span> <span class="fu">filter</span>(color <span class="sc">!=</span> <span class="st">"blue"</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># nur Übungstrials mit einer Antwortszeit unter oder gleich gross wie 1 Sekunde behalten</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>d_filtered <span class="ot">&lt;-</span> d_stroop <span class="sc">|&gt;</span> <span class="fu">filter</span>(respPractice.rt <span class="sc">&lt;=</span> <span class="dv">1</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># nur Übungstrials mit Antwortzeiten zwischen 1 und 2 Sekunden behalten</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>d_filtered <span class="ot">&lt;-</span> d_stroop <span class="sc">|&gt;</span> <span class="fu">filter</span>(respPractice.rt <span class="sc">&gt;</span> <span class="dv">1</span> <span class="sc">&amp;</span> respPractice.rt <span class="sc">&lt;</span> <span class="dv">2</span>)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co"># mehrere Filter verwenden</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>d_filtered <span class="ot">&lt;-</span> d_stroop <span class="sc">|&gt;</span> </span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(color <span class="sc">==</span> <span class="st">"red"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(respPractice.rt <span class="sc">&lt;=</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>In unserem Datensatz möchten wir nur die gültigen Experimentdaten behalten, die <em>Color-To-Key</em> (<code>ctk</code>) Bedingung sowie die <em>Practice Trials</em> möchten wir ausschliessen.</p>
+<p>Die Variable <code>trials_test.thisN</code> enthält die Trialnummer, sie enthält nur Einträge, während der gültigen Trials. Wir können dies nutzen und alle Zeilen behalten in welchen die Zelle der Variable <code>trials_test.thisN</code> <strong>nicht</strong> leer ist:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>d_stroop <span class="ot">&lt;-</span> d_stroop <span class="sc">|&gt;</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(trials_test.thisN)) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Hands-on: Daten filtern
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Erstellen Sie einen neuen Datensatz namens <code>d_stroop_correct</code> und filtern Sie diesen so dass er nur Trials mit <strong>richtigen</strong> Antworten enthält. Schauen Sie in der Variable <code>keyResp_test_run.corr</code>, ob tatsächlich nur noch richtige Antworten übrig geblieben sind.</p>
+<p>Achtung: Arbeiten Sie in den weiteren Schritten <strong>nicht</strong> mit diesem Datensatz weiter, da wir die falschen Antworten in einem nächsten Schritt noch im Datensatz brauchen.</p>
+</div>
+</div>
+</section>
+<section id="variablen-auswählen-select" class="level2">
+<h2 class="anchored" data-anchor-id="variablen-auswählen-select">Variablen auswählen: <code>select()</code></h2>
+<p>Ein komplexer Datensatz mit sehr vielen Variablen wird oft für die Analyse aus Gründen der Einfachheit oder Anonymisierung reduziert. Das bedeutet, dass man sich die nötigen Variablen herausliest, und nur mit diesem reduzierten Datensatz weiterarbeitet. Hierzu eignet sich die Funktion <code>select()</code> sehr gut: Mit <code>select(.data, variablenname, ...)</code> können die zu behaltenden Variablen ausgewählt werden. Wird ein <code>!</code> vor einen Variablennamen gesetzt, wird die Variable <strong>nicht</strong> behalten.</p>
+<p>Mit <code>select()</code> können wir auch die Variablen sortieren und umbenennen, damit unser Datensatz so strukturiert ist, wie wir ihn gebrauchen können.</p>
+<p><em>Beispiele:</em></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable word und color behalten ohne Pipe</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>d_simpler <span class="ot">&lt;-</span> <span class="fu">select</span>(d_stroop, word, color)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable word und color behalten mit Pipe</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>d_simpler <span class="ot">&lt;-</span> d_stroop <span class="sc">|&gt;</span> <span class="fu">select</span>(word, color)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># alle Variablen ausser word behalten</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>d_simpler <span class="ot">&lt;-</span> d_stroop <span class="sc">|&gt;</span> <span class="fu">select</span>(<span class="sc">!</span>word)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Variablennamen verändern</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>d_simpler <span class="ot">&lt;-</span> d_stroop <span class="sc">|&gt;</span> <span class="fu">select</span>(<span class="at">newvariablename =</span> word)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Sollen mehrere Variablen am Stück ausgewählt werden, kann man die erste Variable in der Reihe (z.B. <code>word</code>) und die letzte in der Reihe (z.B. <code>congruent</code>) als <code>word:congruent</code> eingeben, dann werden auch alle dazwischen liegenden Variablen ausgewählt.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Hands-on: Variablen auswählen
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Schauen Sie sich Ihren Datensatz an, welche Variablen benötigen Sie für die weitere Analysen?</p>
+<p>Erstellen Sie einen neuen Datensatz <code>d_stroop_clean</code> in welchem Sie die entsprechenden Variablen auswählen und umbennen, wenn Sie Ihnen zu lange/kompliziert erscheinen.</p>
+<p>Untenstehend finden Sie ein Beispiel, wie der Datensatz danach aussehen könnte.</p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 120
+Columns: 10
+$ id         &lt;chr&gt; "sub-154989", "sub-154989", "sub-154989", "sub-154989", "su…
+$ experiment &lt;chr&gt; "stroop_test", "stroop_test", "stroop_test", "stroop_test",…
+$ trial      &lt;int&gt; 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1…
+$ word       &lt;chr&gt; "rot", "rot", "blau", "gelb", "rot", "blau", "blau", "gelb"…
+$ color      &lt;chr&gt; "red", "red", "blue", "yellow", "yellow", "yellow", "red", …
+$ corrAns    &lt;chr&gt; "r", "r", "b", "g", "g", "g", "r", "r", "b", "g", "b", "b",…
+$ congruent  &lt;int&gt; 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0,…
+$ response   &lt;chr&gt; "r", "r", "b", "g", "g", "g", "r", "r", "b", "g", "b", "b",…
+$ rt         &lt;dbl&gt; 1.0639791, 0.7370255, 1.1883303, 1.2007897, 1.6688681, 1.58…
+$ accuracy   &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…</code></pre>
+</div>
+</div>
+</section>
+<section id="neue-variablen-generieren-und-verändern-mutate-und-case_when" class="level2">
+<h2 class="anchored" data-anchor-id="neue-variablen-generieren-und-verändern-mutate-und-case_when">Neue Variablen generieren und verändern: <code>mutate()</code> und <code>case_when()</code></h2>
+<p>Mit der <code>mutate(.data, …)</code> Funktion können im Datensatz neue Variablen generiert oder bestehende verändert werden.</p>
+<p><em>Beispiel:</em></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Neue Variablen erstellen</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>d_new <span class="ot">&lt;-</span> d_stroop_clean <span class="sc">|&gt;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">num_variable =</span> <span class="fl">1.434</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">chr_variable =</span> <span class="st">"1.434"</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">sumofxy_variable =</span> rt <span class="sc">+</span> <span class="dv">1</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">copy_variable =</span> word)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Bestehende Variablen verändern</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>d_new <span class="ot">&lt;-</span> d_new <span class="sc">|&gt;</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">num_variable =</span> num_variable <span class="sc">*</span> <span class="dv">1000</span>) <span class="co"># z.B. um Sekunden zu Millisekunden zu machen</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Mit <code>case_when()</code> kann eine neue Variable erstellt werden in Abhängigkeit von Werten anderer Variablen. Damit kann z.B. eine Variable <code>accuracy</code> erstellt werden, die den Wert <code>correct</code> hat, wenn die Aufgabe richtig gelöst wurde (z.B. Bedingung <code>rot</code> und Tastendruck <code>r</code>) und sonst den Wert <code>error</code> hat.</p>
+<p><em>Beispiel:</em></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>d_condvariable <span class="ot">&lt;-</span> d_stroop_clean <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">cond_variable =</span> <span class="fu">case_when</span>(rt <span class="sc">&gt;</span> <span class="fl">0.8</span> <span class="sc">~</span> <span class="st">"higher"</span>,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                                     rt <span class="sc">&lt;=</span> <span class="fl">0.8</span> <span class="sc">~</span> <span class="st">"lower"</span>,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">.default =</span> <span class="cn">NA</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Hands-on: Variablen generieren und verändern
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><p>Effizienten R-Code für automatisiertes Einlesen und Aufbereiten von Daten schreiben können</p></li>
-<li><p>Eigene Funktionen in R erstellen können</p></li>
+<li><p>Erstellen Sie im Datensatz <code>d_stroop_clean</code> eine neue Variable mit dem Namen <code>researcher</code>, den Ihren Namen enthält.</p></li>
+<li><p>Erstellen Sie zudem eine Variable <code>accuracy_check</code>, mit <code>correct</code> für korrekte und <code>error</code> für inkorrekte Trials. Kontrollieren Sie mit der Variable <code>keyResp_test_run.corr</code> (oder Ihrem neuen Variablennamen, wenn Sie diese umbenannt haben) im Datensatz, ob Sie die Aufgabe richtig gelöst haben.</p></li>
+<li><p>Ändern Sie die Trialnummer, so dass sie nicht mehr mit 0 beginnt, sondern mit 1.</p></li>
 </ul>
 </div>
 </div>
-<p><strong>Vorbereitungsauftrag</strong></p>
+</section>
+<section id="variablenklasse-verändern-as.factor-as.numeric" class="level2">
+<h2 class="anchored" data-anchor-id="variablenklasse-verändern-as.factor-as.numeric">Variablenklasse verändern: <code>as.factor()</code>, <code>as.numeric()</code>, …</h2>
+<p>Variablen können verschiedene Klassen haben, sie können z.B. kategoriale (<code>factor</code>, <code>character</code>) oder numerische (<code>integer</code>, <code>numeric</code>, <code>double</code>) Informationen enthalten. Beim Einlesen “rät” <em>R</em>, welche Klasse eine Variable hat. Teilweise möchten wir dies ändern. Wenn wir eine Variable zu einem Faktor machen möchten, verwenden wir <code>as.factor()</code>. Dies macht z.B. Sinn, wenn die Versuchspersonennummer als Zahl eingelesen wurde. Um von einem Faktor zu einer numerischen Variable zu kommen, verwenden wir <code>as.numeric()</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Die Variable "congruent" zu einem Faktor machen</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>d_stroop_clean <span class="sc">|&gt;</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">congruent =</span> <span class="fu">as.factor</span>(congruent))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Hands-on: Variablenklassen
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Schauen Sie sich den Datensatz mit <code>glimpse()</code> oder mit <code>View()</code> an. Welche Klassen enthält Ihr Datensatz und was bedeuten Sie?</p>
+</div>
+</div>
+<!-- #### `relevel()` -->
+</section>
+<section id="daten-gruppieren-und-zusammenfassen-group_by-und-summarise" class="level2">
+<h2 class="anchored" data-anchor-id="daten-gruppieren-und-zusammenfassen-group_by-und-summarise">Daten gruppieren und zusammenfassen: <code>group_by()</code> und <code>summarise()</code></h2>
+<p>Mit diesen beiden Funktionen können wir mit wenig Code den Datensatz gruppieren und zusammenfassen.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nach Wörter gruppieren</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>d_stroop_clean <span class="sc">|&gt;</span> <span class="fu">group_by</span>(word) <span class="sc">|&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">mean_rt =</span> <span class="fu">mean</span>(rt),</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">sd_rt =</span> <span class="fu">sd</span>(rt))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  word  mean_rt sd_rt
+  &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;
+1 blau     1.23 0.490
+2 gelb     1.26 0.447
+3 rot      1.16 0.552</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Hands-on: Daten zusammenfassen
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Erstellen Sie einen neuen Datensatz <code>d_stroop_summary</code></p>
 <ul>
-<li><p>Basics in R:</p>
-<ul>
-<li>Die Hauptfunktionen des `<code>{tidyverse}</code> (<code>select()</code>, <code>filter()</code>, <code>group_by()</code>, <code>mutate()</code>) sicher verstehen und anwenden können
-<ul>
-<li><a href="../chapters/intro_r.html">Einführung in R</a></li>
-<li><a href="../chapters/datawrangling.html">Daten importieren und vorverarbeiten mit R</a></li>
-</ul></li>
-<li>Ein neues <code>.Rmd</code> Dokument erstellen (falls nötig package <code>{rmarkdown}</code> installieren)</li>
-<li>Die Experimentdaten von Ilias herunterladen und in einem <code>data</code>-Ordner speichern (im selben Ordner wie das <code>.Rmd</code> Dokument)</li>
-<li>Die Daten im <code>.Rmd</code>-Dokument einlesen (mit <code>read_csv()</code>) und mit <code>glimpse()</code> anschauen</li>
-</ul></li>
+<li><p>Gruppieren Sie den Datensatz für Wortfarbe und Kongruenz.</p></li>
+<li><p>Fassen Sie für diese Gruppen die durchschnittliche Antwortzeit und Accuracy sowie die Standardabweichungen zusammen.</p></li>
 </ul>
-<p><strong>Kurstermin</strong></p>
-<ul>
-<li><p>Automatisiertes Preprocessing der Experimentdaten</p></li>
-<li><p>Struktur und Aufbau eigener Funktionen in R</p></li>
-</ul>
-<p><strong>Aufträge</strong></p>
-<ul>
-<li>keine</li>
-</ul>
-<p><strong>Vertiefung für Interessierte (freiwillig)</strong></p>
-<ul>
-<li>R for Data Sciene (2e) (Buch online): <a href="https://r4ds.hadley.nz/" class="uri">https://r4ds.hadley.nz/</a></li>
-</ul>
+</div>
+</div>
+</section>
+<section id="datensätze-speichern-write.csv" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="datensätze-speichern-write.csv">Datensätze speichern: <code>write.csv()</code></h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(d_stroop_clean, <span class="at">file =</span> <span class="st">"data/dataset_stroop_clean.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Hands-on: Datensätze speichern
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Speichern Sie einen neuen Datensatz mit den vorverarbeiteten Daten.</p>
+</div>
+</div>
+<aside>
+Zu den gelernten Funktionen finden Sie hier <a href="https://allisonhorst.com/r-packages-functions">Grafiken</a> die evtl. helfen, sich die Funktions-Namen zu merken.
+</aside>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script>
@@ -1365,6 +1730,18 @@ window.onload = function() {
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/intro_r.html" class="pagination-link" aria-label="Einführung in R">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Einführung in R</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/intro_python.html" class="pagination-link" aria-label="Python: Einführung für Neurowissenschaften">
+        <span class="nav-page-text">Python: Einführung für Neurowissenschaften</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

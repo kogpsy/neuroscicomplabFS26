@@ -18,7 +18,7 @@ title: "T2: 27.02.2026"
 
 - Installieren von [R und RStudio](https://posit.co/download/rstudio-desktop/)
 
-- Installieren von [PsychoPy](https://www.psychopy.org/download.html)
+- Installieren von [PsychoPy](https://www.psychopy.org/download.html): Version PsychoPy Standalone (Stable) 
 
 - Lesen Artikel "Imagery adds stimulus-specific sensory evidence to perceptual detection" von Dijkstra et al. (2022): <https://doi.org/10.1167/jov.22.2.11>. 
 
@@ -81,6 +81,8 @@ __PsychoPy findet die Schriftart *Noto Sans* nicht.__
   https://fonts.google.com/noto/specimen/Noto+Sans
 
 - Starten Sie PsychoPy nach der Installation neu, damit die Schrift erkannt wird.
+
+
 
 :::
 
