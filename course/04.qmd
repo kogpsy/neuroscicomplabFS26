@@ -15,7 +15,7 @@ title: "T4: 13.03.2026"
 
     - Die Hauptfunktionen des ``{tidyverse}` (`select()`, `filter()`, `group_by()`, `mutate()`) sicher verstehen und anwenden können
         - [Einführung in R](../chapters/intro_r.html)
-        - [Daten importieren und vorverarbeiten mit R](../chapters/datawrangling.html)
+        - [Daten importieren und vorverarbeiten mit R](../chapters/basics_datawrangling.html)
     - Ein neues `.Rmd` Dokument erstellen (falls nötig package `{rmarkdown}` installieren)
     - Die Experimentdaten von Ilias herunterladen und in einem `data`-Ordner speichern (im selben Ordner wie das `.Rmd` Dokument)
     - Die Daten im `.Rmd`-Dokument einlesen (mit `read_csv()`) und mit `glimpse()` anschauen 
@@ -23,13 +23,10 @@ title: "T4: 13.03.2026"
 
 **Kurstermin**
 
-- Automatisiertes Preprocessing der Experimentdaten
+- [Automatisiertes Preprocessing der Experimentdaten](../chapters/functions_wrangling.html)
 
 - Struktur und Aufbau eigener Funktionen in R 
 
-**Aufträge**
-
-- keine
 
 **Vertiefung für Interessierte (freiwillig)**
 

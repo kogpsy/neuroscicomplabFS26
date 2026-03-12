@@ -1,0 +1,2204 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>functions_wrangling – Neurowissenschaft Computerlab</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/rmarkdown.html" rel="next">
+<link href="../chapters/basics_datawrangling.html" rel="prev">
+<link href="../imgs/logo_landing.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-cdbc3631c51ce3e0d9bcdf02df00f99f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-a7d9048d97f31e8fb63faba404854c4e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-cdbc3631c51ce3e0d9bcdf02df00f99f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>
+div.callout-learnings.callout {
+  border-left-color: LightSlateGray;
+}
+div.callout-learnings.callout-style-default > .callout-header {
+  background-color: rgb(from LightSlateGray r g b / 13%);
+}
+div.callout-learnings .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-learnings.callout-style-default .callout-icon::before, div.callout-learnings.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="LightSlateGray" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-debugging.callout {
+  border-left-color: RosyBrown;
+}
+div.callout-debugging.callout-style-default > .callout-header {
+  background-color: rgb(from RosyBrown r g b / 13%);
+}
+div.callout-debugging .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-debugging.callout-style-default .callout-icon::before, div.callout-debugging.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\e4d0' !important;
+  background-image: none;
+}
+div.callout-hands-on.callout {
+  border-left-color: RosyBrown;
+}
+div.callout-hands-on.callout-style-default > .callout-header {
+  background-color: rgb(from RosyBrown r g b / 13%);
+}
+div.callout-hands-on .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-hands-on.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: 'nil' !important;
+  background-image: none;
+}
+div.callout-preparation.callout {
+  border-left-color: RosyBrown;
+}
+div.callout-preparation.callout-style-default > .callout-header {
+  background-color: rgb(from RosyBrown r g b / 13%);
+}
+div.callout-preparation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-preparation.callout-style-default .callout-icon::before, div.callout-preparation.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: 'nil' !important;
+  background-image: none;
+}
+</style>
+
+
+<link rel="stylesheet" href="../include/webex.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Neurowissenschaft Computerlab</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../course/syllabus.html"> 
+<span class="menu-text">Kursinformationen</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../course/overview.html"> 
+<span class="menu-text">Terminübersicht</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-termine" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Termine</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-termine">    
+        <li>
+    <a class="dropdown-item" href="../course/01.html">
+ <span class="dropdown-text">T1: 20.02.2026</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../course/02.html">
+ <span class="dropdown-text">T2: 27.02.2026</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../course/03.html">
+ <span class="dropdown-text">T3: 06.03.2026</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../course/04.html">
+ <span class="dropdown-text">T4: 13.03.2026</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../course/05.html">
+ <span class="dropdown-text">T5 20.03.2026</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-console" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Console</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-console">    
+        <li>
+    <a class="dropdown-item" href="../course/webrconsole.html">
+ <span class="dropdown-text">WebR Konsole (R)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../course/pythonconsole.html">
+ <span class="dropdown-text">Pyodide Konsole (Python)</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/basics_datawrangling.html">Datenverarbeitung</a></li><li class="breadcrumb-item"><a href="../chapters/functions_wrangling.html">Automatisiertes Preprocessing</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/basics_programming.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programmieren</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/intro_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Einführung in R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/intro_python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python: Einführung für Neurowissenschaften</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/loops.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schleifen programmieren mit Python</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Experimente</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/experiments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Neurowissenschaftliche Experimente</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/psychopy_experiments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Verhaltensexperimente mit PsychoPy</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/basics_datawrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datenverarbeitung</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/functions_wrangling.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Automatisiertes Preprocessing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/rmarkdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RStudio Projects und RMarkdown</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Datenvisualisierung</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">EEG Datenanalyse</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Modeling</span></span>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#automatisiertes-preprocessing" id="toc-automatisiertes-preprocessing" class="nav-link active" data-scroll-target="#automatisiertes-preprocessing">Automatisiertes Preprocessing</a>
+  <ul class="collapse">
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#stroop-experiment-data-wrangling" id="toc-stroop-experiment-data-wrangling" class="nav-link" data-scroll-target="#stroop-experiment-data-wrangling"><strong>Stroop-Experiment</strong> data wrangling</a></li>
+  <li><a href="#funktionen-in-r-die-grundlogik" id="toc-funktionen-in-r-die-grundlogik" class="nav-link" data-scroll-target="#funktionen-in-r-die-grundlogik">Funktionen in R: die Grundlogik</a>
+  <ul class="collapse">
+  <li><a href="#wann-sind-funktionen-nützlich" id="toc-wann-sind-funktionen-nützlich" class="nav-link" data-scroll-target="#wann-sind-funktionen-nützlich">Wann sind Funktionen nützlich?</a></li>
+  </ul></li>
+  <li><a href="#einfachstes-beispiel" id="toc-einfachstes-beispiel" class="nav-link" data-scroll-target="#einfachstes-beispiel">Einfachstes Beispiel</a>
+  <ul class="collapse">
+  <li><a href="#die-einzelnen-teile-einer-funktion" id="toc-die-einzelnen-teile-einer-funktion" class="nav-link" data-scroll-target="#die-einzelnen-teile-einer-funktion">Die einzelnen Teile einer Funktion</a></li>
+  </ul></li>
+  <li><a href="#funktionen-mit-datensätzen" id="toc-funktionen-mit-datensätzen" class="nav-link" data-scroll-target="#funktionen-mit-datensätzen">Funktionen mit Datensätzen</a></li>
+  <li><a href="#mehrere-schritte-in-einer-funktion" id="toc-mehrere-schritte-in-einer-funktion" class="nav-link" data-scroll-target="#mehrere-schritte-in-einer-funktion">Mehrere Schritte in einer Funktion</a></li>
+  <li><a href="#daten-mit-eigener-funktion-einlesen" id="toc-daten-mit-eigener-funktion-einlesen" class="nav-link" data-scroll-target="#daten-mit-eigener-funktion-einlesen">Daten mit eigener Funktion einlesen</a></li>
+  <li><a href="#einlesen-automatisieren" id="toc-einlesen-automatisieren" class="nav-link" data-scroll-target="#einlesen-automatisieren">Einlesen Automatisieren</a>
+  <ul class="collapse">
+  <li><a href="#alle-files-einzeln-einlesen" id="toc-alle-files-einzeln-einlesen" class="nav-link" data-scroll-target="#alle-files-einzeln-einlesen">Alle Files einzeln einlesen</a></li>
+  <li><a href="#alle-files-mit-for-loop-einlesen" id="toc-alle-files-mit-for-loop-einlesen" class="nav-link" data-scroll-target="#alle-files-mit-for-loop-einlesen">Alle Files mit <code>for</code>-Loop einlesen</a></li>
+  <li><a href="#alle-files-mit-der-funktion-map-einlesen" id="toc-alle-files-mit-der-funktion-map-einlesen" class="nav-link" data-scroll-target="#alle-files-mit-der-funktion-map-einlesen">Alle Files mit der Funktion <code>map()</code> einlesen</a></li>
+  </ul></li>
+  <li><a href="#kompletter-stroop-code-an-einem-ort" id="toc-kompletter-stroop-code-an-einem-ort" class="nav-link" data-scroll-target="#kompletter-stroop-code-an-einem-ort">Kompletter Stroop Code an einem Ort</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/basics_datawrangling.html">Datenverarbeitung</a></li><li class="breadcrumb-item"><a href="../chapters/functions_wrangling.html">Automatisiertes Preprocessing</a></li></ol></nav></header>
+
+
+
+
+
+<section id="automatisiertes-preprocessing" class="level1 page-columns page-full">
+<h1>Automatisiertes Preprocessing</h1>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Hands-on: Vorbereitung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Für diesen Teil benötigen Sie Ihre <code>.Rmd</code>-Datei und die Daten, die Sie heruntergeladen haben:</p>
+<ul>
+<li><p>Laden Sie den Ordner mit den Rohdaten des Stroop Experiments von ILIAS herunter und entzippen Sie diesen.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Verschieben Sie den entzippten Ordner <code>raw</code> in Ihren <code>data</code>-Ordner (Achtung: nicht nur die einzelnen Files verschieben, sondern den ganzen Ordner).</p></li>
+<li><p>Laden Sie den Beispielsdatensatz <a href="data/stroop_example2.csv"><code>stroop_example2.csv</code></a> herunter und speichern Sie diesen direkt im <code>data</code>-Ordner.</p></li>
+<li><p>Öffnen Sie eures RMarkdown-File (<code>.Rmd</code>). In einem RMarkdown-File können Code und Text verbunden werden und die die Outputs des Codes (z.B. Grafiken) werden angezeigt.</p></li>
+</ul>
+</div>
+</div>
+<p>Die Daten stammen von unserem Stroop Kursexperiment vom letzten Jahr.</p>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<div class="cell" data-warnings="false" data-errors="false">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Package laden (bei jedem Öffnen von R zu Beginn des Skripts ausführen)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="stroop-experiment-data-wrangling" class="level2">
+<h2 class="anchored" data-anchor-id="stroop-experiment-data-wrangling"><strong>Stroop-Experiment</strong> data wrangling</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Daten vorverarbeiten</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data_stroop <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/stroop_example2.csv"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(data_stroop)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>d_stroop <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/stroop_example2.csv"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(trials_test.thisN)) <span class="sc">|&gt;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">trial =</span> trials_test.thisN <span class="sc">+</span> <span class="dv">1</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">condition =</span> <span class="fu">case_when</span>(congruent <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"congruent"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                                 congruent <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"incongruent"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="at">id =</span> participant, </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>           trial,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>           word, </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>           color,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>           congruent,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>           condition,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>           <span class="at">resp =</span> keyResp_test_run.keys, </span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>           <span class="at">corr =</span> keyResp_test_run.corr, </span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">rt =</span> keyResp_test_run.rt)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="funktionen-in-r-die-grundlogik" class="level2">
+<h2 class="anchored" data-anchor-id="funktionen-in-r-die-grundlogik">Funktionen in R: die Grundlogik</h2>
+<p>Bisher haben wir Code einfach direkt ausgeführt. Oft möchten wir aber denselben Code mehrfach verwenden, ohne ihn jedes Mal neu zu schreiben. Genau dafür sind <strong>Funktionen</strong> da.</p>
+<p>Eine Funktion ist ein Stück Code, das wir unter einem Namen speichern. Danach können wir es immer wieder verwenden.</p>
+<p>Die Grundlogik einer Funktion ist:</p>
+<ol type="1">
+<li><p><strong>Input</strong> – Was geht in die Funktion hinein?</p></li>
+<li><p><strong>Prozess</strong> – Was passiert mit diesem Input?</p></li>
+<li><p><strong>Output</strong> – Was kommt am Ende wieder heraus?</p></li>
+</ol>
+<p>Man kann sich eine Funktion wie eine kleine Maschine vorstellen:</p>
+<p><strong>Input → Verarbeitung → Output</strong></p>
+<p>oder etwas konkreter:</p>
+<p><strong>Daten → Funktion → Ergebnis</strong></p>
+<section id="wann-sind-funktionen-nützlich" class="level3">
+<h3 class="anchored" data-anchor-id="wann-sind-funktionen-nützlich">Wann sind Funktionen nützlich?</h3>
+<p>Funktionen sind besonders praktisch, wenn:</p>
+<ul>
+<li><p>wir denselben Code mehrfach brauchen</p></li>
+<li><p>ein Skript übersichtlicher werden soll</p></li>
+<li><p>wir einen Verarbeitungsschritt an vielen Datensätzen wiederholen möchten</p></li>
+</ul>
+<p>Gerade beim Data Wrangling sind Funktionen sehr wichtig, weil wir oft dieselben Schritte auf viele Dateien anwenden wollen.</p>
+</section>
+</section>
+<section id="einfachstes-beispiel" class="level2">
+<h2 class="anchored" data-anchor-id="einfachstes-beispiel">Einfachstes Beispiel</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>add_numbers <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y){</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> x <span class="sc">+</span> y</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(result)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">add_numbers</span>(<span class="dv">2</span>, <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+</div>
+<section id="die-einzelnen-teile-einer-funktion" class="level3">
+<h3 class="anchored" data-anchor-id="die-einzelnen-teile-einer-funktion">Die einzelnen Teile einer Funktion</h3>
+<p>In dieser Funktion:</p>
+<ul>
+<li><p><code>add_numbers</code> ist der <strong>Name</strong> der Funktion</p></li>
+<li><p><code>x</code> und <code>y</code> sind die <strong>Inputs</strong> (Argumente)</p></li>
+<li><p><code>x + y</code> ist der <strong>Prozess</strong></p></li>
+<li><p><code>return(result)</code> gibt den <strong>Output</strong> zurück</p></li>
+</ul>
+<p>Die allgemeine Struktur einer Funktion sieht so aus:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>funktionsname <span class="ot">&lt;-</span> <span class="cf">function</span>(input_1, input_2, input_n){</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Verarbeitungsschritte</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(output)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Hands-on 1: Erste eigene Funktion
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Schreiben Sie eine Funktion <code>square_number()</code>, die eine Zahl quadriert.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>square_number <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  ___</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">square_number</span>(<span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Die Ausgabe sollte <code>16</code> sein.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="funktionen-mit-datensätzen" class="level2">
+<h2 class="anchored" data-anchor-id="funktionen-mit-datensätzen">Funktionen mit Datensätzen</h2>
+<p>Funktionen können natürlich nicht nur mit einzelnen Zahlen arbeiten, sondern auch mit ganzen Datensätzen.</p>
+<p>Zum Beispiel können wir eine Funktion schreiben, die die mittlere Reaktionszeit berechnet:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mean_rt <span class="ot">&lt;-</span> <span class="cf">function</span>(data){</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">mean</span>(data<span class="sc">$</span>rt, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(result)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mean_rt</span>(d_stroop)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.215347</code></pre>
+</div>
+</div>
+<p>Hier ist:</p>
+<ul>
+<li><p>der <strong>Input</strong>: ein Datensatz</p></li>
+<li><p>der <strong>Prozess</strong>: Berechnung des Mittelwerts von <code>rt</code></p></li>
+<li><p>der <strong>Output</strong>: eine einzelne Zahl (mean rt)</p></li>
+</ul>
+<p>Noch ein Beispiel:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>fast_congruent <span class="ot">&lt;-</span> <span class="cf">function</span>(data){</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  d <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(rt <span class="sc">&lt;</span> <span class="fl">0.6</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">mean</span>(d<span class="sc">$</span>congruent) <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(p)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="fu">fast_congruent</span>(d_stroop)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 72.72727</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Hands-on 2: Funktion selbst schreiben
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Schreiben Sie eine Funktion <code>accuracy()</code>, die einen Datensatz als Input nimmt und den <strong>Prozentanteil korrekter Antworten</strong> zurückgibt.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>accuracy <span class="ot">&lt;-</span> <span class="cf">function</span>(data){</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  ___</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="fu">accuracy</span>(d_stroop)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Tipp: Der Mittelwert von <code>corr</code> entspricht dem Anteil korrekter Antworten.<br>
+</p>
+</div>
+</div>
+</section>
+<section id="mehrere-schritte-in-einer-funktion" class="level2">
+<h2 class="anchored" data-anchor-id="mehrere-schritte-in-einer-funktion">Mehrere Schritte in einer Funktion</h2>
+<p>Oft besteht der Prozess innerhalb einer Funktion aus mehreren Verarbeitungsschritten.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>clean_rt <span class="ot">&lt;-</span> <span class="cf">function</span>(data){</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  data_clean <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(rt <span class="sc">&gt;</span> <span class="fl">0.2</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(rt <span class="sc">&lt;</span> <span class="dv">2</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">mean</span>(data_clean<span class="sc">$</span>rt, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(result)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="fu">clean_rt</span>(d_stroop)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.107092</code></pre>
+</div>
+</div>
+<p>Hier passiert Folgendes:</p>
+<ol type="1">
+<li><p>Der Datensatz wird als Input übergeben</p></li>
+<li><p>Sehr kurze und sehr lange Reaktionszeiten werden entfernt</p></li>
+<li><p>Die mittlere Reaktionszeit wird berechnet</p></li>
+<li><p>Diese wird als Output zurückgegeben</p></li>
+</ol>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Hands-on 3: Eine etwas schwierigere Funktion
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Schreiben Sie eine Funktion <code>stroop_summary()</code>, die:</p>
+<ol type="1">
+<li><p>nur <strong>korrekte Trials</strong> behält</p></li>
+<li><p>die <strong>mittlere Reaktionszeit pro Bedingung</strong> berechnet</p></li>
+<li><p>einen neuen Data Frame zurückgibt</p></li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>stroop_summary <span class="ot">&lt;-</span> <span class="cf">function</span>(data){</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  ___</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="fu">stroop_summary</span>(d_stroop)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Tipp:</p>
+<ul>
+<li><p><code>filter()</code></p></li>
+<li><p><code>group_by()</code></p></li>
+<li><p><code>summarise()</code><br>
+</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="daten-mit-eigener-funktion-einlesen" class="level2">
+<h2 class="anchored" data-anchor-id="daten-mit-eigener-funktion-einlesen">Daten mit eigener Funktion einlesen</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>read_stroop <span class="ot">&lt;-</span> <span class="cf">function</span>(path){</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  d_stroop <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(path) <span class="sc">|&gt;</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(trials_test.thisN)) <span class="sc">|&gt;</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">trial =</span> trials_test.thisN <span class="sc">+</span> <span class="dv">1</span>,</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">condition =</span> <span class="fu">case_when</span>(</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>        congruent <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"congruent"</span>,</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>        congruent <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"incongruent"</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">id =</span> participant,</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>      trial,</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>      word,</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>      color,</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>      congruent,</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>      condition,</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">resp =</span> keyResp_test_run.keys,</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">corr =</span> keyResp_test_run.corr,</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">rt =</span> keyResp_test_run.rt</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(d_stroop)</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>d_stroop_fun <span class="ot">&lt;-</span> <span class="fu">read_stroop</span>(<span class="at">path =</span> <span class="st">"data/stroop_example2.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 161 Columns: 92
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (26): wordCTK, colorCTK, corrAnsCTK, wordPractice, colorPractice, corrAn...
+dbl (65): congruentCTK, congruentPractice, congruent, trials_CTK.thisRepN, t...
+lgl  (1): notes
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Hands-on 4: Funktion verstehen
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Schauen Sie sich die Funktion <code>read_stroop()</code> oben an:</p>
+<ol type="1">
+<li><p>Was ist der Input?</p></li>
+<li><p>Welche Verarbeitungsschritte passieren innerhalb der Funktion?</p></li>
+<li><p>Was ist der Output?</p></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="einlesen-automatisieren" class="level2">
+<h2 class="anchored" data-anchor-id="einlesen-automatisieren">Einlesen Automatisieren</h2>
+<p>Wir benötigen eine Liste aller Datenfiles. Die Funktion <code>list.files()</code> gibt einer Liste aller Dokumente in einem Ordner zurück. Mit dem Argument <code>pattern = ...</code> kann spezifiziert werden, welche Buchstaben(folgen) der Filenamen entahlten soll.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="at">path =</span> <span class="st">'data/raw'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [1] "sub-001_stroop_test.csv" "sub-002_stroop_test.csv"
+  [3] "sub-003_stroop_test.csv" "sub-004_stroop_test.csv"
+  [5] "sub-005_stroop_test.csv" "sub-006_stroop_test.csv"
+  [7] "sub-007_stroop_test.csv" "sub-008_stroop_test.csv"
+  [9] "sub-009_stroop_test.csv" "sub-010_stroop_test.csv"
+ [11] "sub-011_stroop_test.csv" "sub-012_stroop_test.csv"
+ [13] "sub-013_stroop_test.csv" "sub-014_stroop_test.csv"
+ [15] "sub-015_stroop_test.csv" "sub-016_stroop_test.csv"
+ [17] "sub-017_stroop_test.csv" "sub-018_stroop_test.csv"
+ [19] "sub-019_stroop_test.csv" "sub-020_stroop_test.csv"
+ [21] "sub-021_stroop_test.csv" "sub-022_stroop_test.csv"
+ [23] "sub-023_stroop_test.csv" "sub-024_stroop_test.csv"
+ [25] "sub-025_stroop_test.csv" "sub-026_stroop_test.csv"
+ [27] "sub-027_stroop_test.csv" "sub-028_stroop_test.csv"
+ [29] "sub-029_stroop_test.csv" "sub-030_stroop_test.csv"
+ [31] "sub-031_stroop_test.csv" "sub-032_stroop_test.csv"
+ [33] "sub-033_stroop_test.csv" "sub-034_stroop_test.csv"
+ [35] "sub-035_stroop_test.csv" "sub-036_stroop_test.csv"
+ [37] "sub-037_stroop_test.csv" "sub-038_stroop_test.csv"
+ [39] "sub-040_stroop_test.csv" "sub-041_stroop_test.csv"
+ [41] "sub-042_stroop_test.csv" "sub-043_stroop_test.csv"
+ [43] "sub-044_stroop_test.csv" "sub-045_stroop_test.csv"
+ [45] "sub-046_stroop_test.csv" "sub-047_stroop_test.csv"
+ [47] "sub-048_stroop_test.csv" "sub-049_stroop_test.csv"
+ [49] "sub-050_stroop_test.csv" "sub-051_stroop_test.csv"
+ [51] "sub-052_stroop_test.csv" "sub-053_stroop_test.csv"
+ [53] "sub-054_stroop_test.csv" "sub-055_stroop_test.csv"
+ [55] "sub-057_stroop_test.csv" "sub-058_stroop_test.csv"
+ [57] "sub-059_stroop_test.csv" "sub-060_stroop_test.csv"
+ [59] "sub-061_stroop_test.csv" "sub-062_stroop_test.csv"
+ [61] "sub-063_stroop_test.csv" "sub-064_stroop_test.csv"
+ [63] "sub-065_stroop_test.csv" "sub-066_stroop_test.csv"
+ [65] "sub-067_stroop_test.csv" "sub-068_stroop_test.csv"
+ [67] "sub-069_stroop_test.csv" "sub-070_stroop_test.csv"
+ [69] "sub-071_stroop_test.csv" "sub-072_stroop_test.csv"
+ [71] "sub-073_stroop_test.csv" "sub-074_stroop_test.csv"
+ [73] "sub-075_stroop_test.csv" "sub-076_stroop_test.csv"
+ [75] "sub-077_stroop_test.csv" "sub-078_stroop_test.csv"
+ [77] "sub-079_stroop_test.csv" "sub-080_stroop_test.csv"
+ [79] "sub-082_stroop_test.csv" "sub-083_stroop_test.csv"
+ [81] "sub-084_stroop_test.csv" "sub-085_stroop_test.csv"
+ [83] "sub-086_stroop_test.csv" "sub-087_stroop_test.csv"
+ [85] "sub-088_stroop_test.csv" "sub-089_stroop_test.csv"
+ [87] "sub-090_stroop_test.csv" "sub-091_stroop_test.csv"
+ [89] "sub-092_stroop_test.csv" "sub-093_stroop_test.csv"
+ [91] "sub-094_stroop_test.csv" "sub-095_stroop_test.csv"
+ [93] "sub-096_stroop_test.csv" "sub-097_stroop_test.csv"
+ [95] "sub-098_stroop_test.csv" "sub-099_stroop_test.csv"
+ [97] "sub-100_stroop_test.csv" "sub-101_stroop_test.csv"
+ [99] "sub-102_stroop_test.csv" "sub-103_stroop_test.csv"
+[101] "sub-104_stroop_test.csv" "sub-105_stroop_test.csv"
+[103] "sub-106_stroop_test.csv" "sub-107_stroop_test.csv"
+[105] "sub-108_stroop_test.csv" "sub-109_stroop_test.csv"
+[107] "sub-110_stroop_test.csv" "sub-111_stroop_test.csv"
+[109] "sub-112_stroop_test.csv" "sub-113_stroop_test.csv"
+[111] "sub-114_stroop_test.csv" "sub-115_stroop_test.csv"
+[113] "sub-116_stroop_test.csv" "sub-117_stroop_test.csv"
+[115] "sub-118_stroop_test.csv" "sub-119_stroop_test.csv"
+[117] "sub-120_stroop_test.csv" "sub-121_stroop_test.csv"
+[119] "sub-122_stroop_test.csv" "sub-123_stroop_test.csv"
+[121] "sub-124_stroop_test.csv" "sub-125_stroop_test.csv"
+[123] "sub-126_stroop_test.csv" "sub-127_stroop_test.csv"
+[125] "sub-128_stroop_test.csv" "sub-129_stroop_test.csv"
+[127] "sub-130_stroop_test.csv" "sub-131_stroop_test.csv"
+[129] "sub-132_stroop_test.csv" "sub-133_stroop_test.csv"
+[131] "sub-134_stroop_test.csv" "sub-135_stroop_test.csv"
+[133] "sub-136_stroop_test.csv" "sub-137_stroop_test.csv"
+[135] "sub-138_stroop_test.csv" "sub-139_stroop_test.csv"
+[137] "sub-140_stroop_test.csv" "sub-141_stroop_test.csv"
+[139] "sub-142_stroop_test.csv" "sub-143_stroop_test.csv"
+[141] "sub-144_stroop_test.csv" "sub-145_stroop_test.csv"
+[143] "sub-146_stroop_test.csv" "sub-147_stroop_test.csv"
+[145] "sub-148_stroop_test.csv" "sub-149_stroop_test.csv"
+[147] "sub-150_stroop_test.csv" "sub-151_stroop_test.csv"
+[149] "sub-152_stroop_test.csv" "sub-153_stroop_test.csv"
+[151] "sub-154_stroop_test.csv" "sub-155_stroop_test.csv"
+[153] "sub-156_stroop_test.csv" "sub-157_stroop_test.csv"
+[155] "sub-158_stroop_test.csv" "sub-159_stroop_test.csv"
+[157] "sub-160_stroop_test.csv" "sub-161_stroop_test.csv"
+[159] "sub-162_stroop_test.csv" "sub-163_stroop_test.csv"
+[161] "sub-164_stroop_test.csv" "sub-165_stroop_test.csv"
+[163] "sub-167_stroop_test.csv" "sub-168_stroop_test.csv"
+[165] "sub-169_stroop_test.csv" "sub-170_stroop_test.csv"
+[167] "sub-171_stroop_test.csv" "sub-172_stroop_test.csv"
+[169] "sub-173_stroop_test.csv" "sub-174_stroop_test.csv"
+[171] "sub-175_stroop_test.csv" "sub-176_stroop_test.csv"
+[173] "sub-177_stroop_test.csv" "sub-178_stroop_test.csv"
+[175] "sub-179_stroop_test.csv" "sub-180_stroop_test.csv"
+[177] "sub-181_stroop_test.csv" "sub-182_stroop_test.csv"
+[179] "sub-183_stroop_test.csv" "sub-184_stroop_test.csv"
+[181] "sub-185_stroop_test.csv" "sub-186_stroop_test.csv"
+[183] "sub-187_stroop_test.csv" "sub-188_stroop_test.csv"
+[185] "sub-189_stroop_test.csv" "sub-190_stroop_test.csv"
+[187] "sub-191_stroop_test.csv" "sub-192_stroop_test.csv"
+[189] "sub-193_stroop_test.csv" "sub-194_stroop_test.csv"
+[191] "sub-195_stroop_test.csv" "sub-196_stroop_test.csv"
+[193] "sub-197_stroop_test.csv" "sub-198_stroop_test.csv"
+[195] "sub-199_stroop_test.csv" "sub-200_stroop_test.csv"
+[197] "sub-201_stroop_test.csv" "sub-202_stroop_test.csv"
+[199] "sub-203_stroop_test.csv" "sub-204_stroop_test.csv"
+[201] "sub-205_stroop_test.csv" "sub-206_stroop_test.csv"
+[203] "sub-207_stroop_test.csv" "sub-208_stroop_test.csv"
+[205] "sub-209_stroop_test.csv" "sub-210_stroop_test.csv"
+[207] "sub-211_stroop_test.csv" "sub-212_stroop_test.csv"
+[209] "sub-213_stroop_test.csv" "sub-214_stroop_test.csv"
+[211] "sub-215_stroop_test.csv" "sub-216_stroop_test.csv"
+[213] "sub-217_stroop_test.csv" "sub-218_stroop_test.csv"
+[215] "sub-219_stroop_test.csv" "sub-220_stroop_test.csv"
+[217] "sub-221_stroop_test.csv" "sub-222_stroop_test.csv"
+[219] "sub-223_stroop_test.csv" "sub-224_stroop_test.csv"
+[221] "sub-225_stroop_test.csv" "sub-226_stroop_test.csv"
+[223] "sub-227_stroop_test.csv" "sub-228_stroop_test.csv"
+[225] "sub-229_stroop_test.csv" "sub-230_stroop_test.csv"
+[227] "sub-231_stroop_test.csv" "sub-232_stroop_test.csv"
+[229] "sub-233_stroop_test.csv" "sub-234_stroop_test.csv"
+[231] "sub-235_stroop_test.csv" "sub-236_stroop_test.csv"
+[233] "sub-237_stroop_test.csv" "sub-238_stroop_test.csv"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="at">path =</span> <span class="st">'data/raw'</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [1] "data/raw/sub-001_stroop_test.csv" "data/raw/sub-002_stroop_test.csv"
+  [3] "data/raw/sub-003_stroop_test.csv" "data/raw/sub-004_stroop_test.csv"
+  [5] "data/raw/sub-005_stroop_test.csv" "data/raw/sub-006_stroop_test.csv"
+  [7] "data/raw/sub-007_stroop_test.csv" "data/raw/sub-008_stroop_test.csv"
+  [9] "data/raw/sub-009_stroop_test.csv" "data/raw/sub-010_stroop_test.csv"
+ [11] "data/raw/sub-011_stroop_test.csv" "data/raw/sub-012_stroop_test.csv"
+ [13] "data/raw/sub-013_stroop_test.csv" "data/raw/sub-014_stroop_test.csv"
+ [15] "data/raw/sub-015_stroop_test.csv" "data/raw/sub-016_stroop_test.csv"
+ [17] "data/raw/sub-017_stroop_test.csv" "data/raw/sub-018_stroop_test.csv"
+ [19] "data/raw/sub-019_stroop_test.csv" "data/raw/sub-020_stroop_test.csv"
+ [21] "data/raw/sub-021_stroop_test.csv" "data/raw/sub-022_stroop_test.csv"
+ [23] "data/raw/sub-023_stroop_test.csv" "data/raw/sub-024_stroop_test.csv"
+ [25] "data/raw/sub-025_stroop_test.csv" "data/raw/sub-026_stroop_test.csv"
+ [27] "data/raw/sub-027_stroop_test.csv" "data/raw/sub-028_stroop_test.csv"
+ [29] "data/raw/sub-029_stroop_test.csv" "data/raw/sub-030_stroop_test.csv"
+ [31] "data/raw/sub-031_stroop_test.csv" "data/raw/sub-032_stroop_test.csv"
+ [33] "data/raw/sub-033_stroop_test.csv" "data/raw/sub-034_stroop_test.csv"
+ [35] "data/raw/sub-035_stroop_test.csv" "data/raw/sub-036_stroop_test.csv"
+ [37] "data/raw/sub-037_stroop_test.csv" "data/raw/sub-038_stroop_test.csv"
+ [39] "data/raw/sub-040_stroop_test.csv" "data/raw/sub-041_stroop_test.csv"
+ [41] "data/raw/sub-042_stroop_test.csv" "data/raw/sub-043_stroop_test.csv"
+ [43] "data/raw/sub-044_stroop_test.csv" "data/raw/sub-045_stroop_test.csv"
+ [45] "data/raw/sub-046_stroop_test.csv" "data/raw/sub-047_stroop_test.csv"
+ [47] "data/raw/sub-048_stroop_test.csv" "data/raw/sub-049_stroop_test.csv"
+ [49] "data/raw/sub-050_stroop_test.csv" "data/raw/sub-051_stroop_test.csv"
+ [51] "data/raw/sub-052_stroop_test.csv" "data/raw/sub-053_stroop_test.csv"
+ [53] "data/raw/sub-054_stroop_test.csv" "data/raw/sub-055_stroop_test.csv"
+ [55] "data/raw/sub-057_stroop_test.csv" "data/raw/sub-058_stroop_test.csv"
+ [57] "data/raw/sub-059_stroop_test.csv" "data/raw/sub-060_stroop_test.csv"
+ [59] "data/raw/sub-061_stroop_test.csv" "data/raw/sub-062_stroop_test.csv"
+ [61] "data/raw/sub-063_stroop_test.csv" "data/raw/sub-064_stroop_test.csv"
+ [63] "data/raw/sub-065_stroop_test.csv" "data/raw/sub-066_stroop_test.csv"
+ [65] "data/raw/sub-067_stroop_test.csv" "data/raw/sub-068_stroop_test.csv"
+ [67] "data/raw/sub-069_stroop_test.csv" "data/raw/sub-070_stroop_test.csv"
+ [69] "data/raw/sub-071_stroop_test.csv" "data/raw/sub-072_stroop_test.csv"
+ [71] "data/raw/sub-073_stroop_test.csv" "data/raw/sub-074_stroop_test.csv"
+ [73] "data/raw/sub-075_stroop_test.csv" "data/raw/sub-076_stroop_test.csv"
+ [75] "data/raw/sub-077_stroop_test.csv" "data/raw/sub-078_stroop_test.csv"
+ [77] "data/raw/sub-079_stroop_test.csv" "data/raw/sub-080_stroop_test.csv"
+ [79] "data/raw/sub-082_stroop_test.csv" "data/raw/sub-083_stroop_test.csv"
+ [81] "data/raw/sub-084_stroop_test.csv" "data/raw/sub-085_stroop_test.csv"
+ [83] "data/raw/sub-086_stroop_test.csv" "data/raw/sub-087_stroop_test.csv"
+ [85] "data/raw/sub-088_stroop_test.csv" "data/raw/sub-089_stroop_test.csv"
+ [87] "data/raw/sub-090_stroop_test.csv" "data/raw/sub-091_stroop_test.csv"
+ [89] "data/raw/sub-092_stroop_test.csv" "data/raw/sub-093_stroop_test.csv"
+ [91] "data/raw/sub-094_stroop_test.csv" "data/raw/sub-095_stroop_test.csv"
+ [93] "data/raw/sub-096_stroop_test.csv" "data/raw/sub-097_stroop_test.csv"
+ [95] "data/raw/sub-098_stroop_test.csv" "data/raw/sub-099_stroop_test.csv"
+ [97] "data/raw/sub-100_stroop_test.csv" "data/raw/sub-101_stroop_test.csv"
+ [99] "data/raw/sub-102_stroop_test.csv" "data/raw/sub-103_stroop_test.csv"
+[101] "data/raw/sub-104_stroop_test.csv" "data/raw/sub-105_stroop_test.csv"
+[103] "data/raw/sub-106_stroop_test.csv" "data/raw/sub-107_stroop_test.csv"
+[105] "data/raw/sub-108_stroop_test.csv" "data/raw/sub-109_stroop_test.csv"
+[107] "data/raw/sub-110_stroop_test.csv" "data/raw/sub-111_stroop_test.csv"
+[109] "data/raw/sub-112_stroop_test.csv" "data/raw/sub-113_stroop_test.csv"
+[111] "data/raw/sub-114_stroop_test.csv" "data/raw/sub-115_stroop_test.csv"
+[113] "data/raw/sub-116_stroop_test.csv" "data/raw/sub-117_stroop_test.csv"
+[115] "data/raw/sub-118_stroop_test.csv" "data/raw/sub-119_stroop_test.csv"
+[117] "data/raw/sub-120_stroop_test.csv" "data/raw/sub-121_stroop_test.csv"
+[119] "data/raw/sub-122_stroop_test.csv" "data/raw/sub-123_stroop_test.csv"
+[121] "data/raw/sub-124_stroop_test.csv" "data/raw/sub-125_stroop_test.csv"
+[123] "data/raw/sub-126_stroop_test.csv" "data/raw/sub-127_stroop_test.csv"
+[125] "data/raw/sub-128_stroop_test.csv" "data/raw/sub-129_stroop_test.csv"
+[127] "data/raw/sub-130_stroop_test.csv" "data/raw/sub-131_stroop_test.csv"
+[129] "data/raw/sub-132_stroop_test.csv" "data/raw/sub-133_stroop_test.csv"
+[131] "data/raw/sub-134_stroop_test.csv" "data/raw/sub-135_stroop_test.csv"
+[133] "data/raw/sub-136_stroop_test.csv" "data/raw/sub-137_stroop_test.csv"
+[135] "data/raw/sub-138_stroop_test.csv" "data/raw/sub-139_stroop_test.csv"
+[137] "data/raw/sub-140_stroop_test.csv" "data/raw/sub-141_stroop_test.csv"
+[139] "data/raw/sub-142_stroop_test.csv" "data/raw/sub-143_stroop_test.csv"
+[141] "data/raw/sub-144_stroop_test.csv" "data/raw/sub-145_stroop_test.csv"
+[143] "data/raw/sub-146_stroop_test.csv" "data/raw/sub-147_stroop_test.csv"
+[145] "data/raw/sub-148_stroop_test.csv" "data/raw/sub-149_stroop_test.csv"
+[147] "data/raw/sub-150_stroop_test.csv" "data/raw/sub-151_stroop_test.csv"
+[149] "data/raw/sub-152_stroop_test.csv" "data/raw/sub-153_stroop_test.csv"
+[151] "data/raw/sub-154_stroop_test.csv" "data/raw/sub-155_stroop_test.csv"
+[153] "data/raw/sub-156_stroop_test.csv" "data/raw/sub-157_stroop_test.csv"
+[155] "data/raw/sub-158_stroop_test.csv" "data/raw/sub-159_stroop_test.csv"
+[157] "data/raw/sub-160_stroop_test.csv" "data/raw/sub-161_stroop_test.csv"
+[159] "data/raw/sub-162_stroop_test.csv" "data/raw/sub-163_stroop_test.csv"
+[161] "data/raw/sub-164_stroop_test.csv" "data/raw/sub-165_stroop_test.csv"
+[163] "data/raw/sub-167_stroop_test.csv" "data/raw/sub-168_stroop_test.csv"
+[165] "data/raw/sub-169_stroop_test.csv" "data/raw/sub-170_stroop_test.csv"
+[167] "data/raw/sub-171_stroop_test.csv" "data/raw/sub-172_stroop_test.csv"
+[169] "data/raw/sub-173_stroop_test.csv" "data/raw/sub-174_stroop_test.csv"
+[171] "data/raw/sub-175_stroop_test.csv" "data/raw/sub-176_stroop_test.csv"
+[173] "data/raw/sub-177_stroop_test.csv" "data/raw/sub-178_stroop_test.csv"
+[175] "data/raw/sub-179_stroop_test.csv" "data/raw/sub-180_stroop_test.csv"
+[177] "data/raw/sub-181_stroop_test.csv" "data/raw/sub-182_stroop_test.csv"
+[179] "data/raw/sub-183_stroop_test.csv" "data/raw/sub-184_stroop_test.csv"
+[181] "data/raw/sub-185_stroop_test.csv" "data/raw/sub-186_stroop_test.csv"
+[183] "data/raw/sub-187_stroop_test.csv" "data/raw/sub-188_stroop_test.csv"
+[185] "data/raw/sub-189_stroop_test.csv" "data/raw/sub-190_stroop_test.csv"
+[187] "data/raw/sub-191_stroop_test.csv" "data/raw/sub-192_stroop_test.csv"
+[189] "data/raw/sub-193_stroop_test.csv" "data/raw/sub-194_stroop_test.csv"
+[191] "data/raw/sub-195_stroop_test.csv" "data/raw/sub-196_stroop_test.csv"
+[193] "data/raw/sub-197_stroop_test.csv" "data/raw/sub-198_stroop_test.csv"
+[195] "data/raw/sub-199_stroop_test.csv" "data/raw/sub-200_stroop_test.csv"
+[197] "data/raw/sub-201_stroop_test.csv" "data/raw/sub-202_stroop_test.csv"
+[199] "data/raw/sub-203_stroop_test.csv" "data/raw/sub-204_stroop_test.csv"
+[201] "data/raw/sub-205_stroop_test.csv" "data/raw/sub-206_stroop_test.csv"
+[203] "data/raw/sub-207_stroop_test.csv" "data/raw/sub-208_stroop_test.csv"
+[205] "data/raw/sub-209_stroop_test.csv" "data/raw/sub-210_stroop_test.csv"
+[207] "data/raw/sub-211_stroop_test.csv" "data/raw/sub-212_stroop_test.csv"
+[209] "data/raw/sub-213_stroop_test.csv" "data/raw/sub-214_stroop_test.csv"
+[211] "data/raw/sub-215_stroop_test.csv" "data/raw/sub-216_stroop_test.csv"
+[213] "data/raw/sub-217_stroop_test.csv" "data/raw/sub-218_stroop_test.csv"
+[215] "data/raw/sub-219_stroop_test.csv" "data/raw/sub-220_stroop_test.csv"
+[217] "data/raw/sub-221_stroop_test.csv" "data/raw/sub-222_stroop_test.csv"
+[219] "data/raw/sub-223_stroop_test.csv" "data/raw/sub-224_stroop_test.csv"
+[221] "data/raw/sub-225_stroop_test.csv" "data/raw/sub-226_stroop_test.csv"
+[223] "data/raw/sub-227_stroop_test.csv" "data/raw/sub-228_stroop_test.csv"
+[225] "data/raw/sub-229_stroop_test.csv" "data/raw/sub-230_stroop_test.csv"
+[227] "data/raw/sub-231_stroop_test.csv" "data/raw/sub-232_stroop_test.csv"
+[229] "data/raw/sub-233_stroop_test.csv" "data/raw/sub-234_stroop_test.csv"
+[231] "data/raw/sub-235_stroop_test.csv" "data/raw/sub-236_stroop_test.csv"
+[233] "data/raw/sub-237_stroop_test.csv" "data/raw/sub-238_stroop_test.csv"</code></pre>
+</div>
+</div>
+<p>Um die Files einzulesen, reichen nur die Namen der Dateien nicht aus. Dazu benötigen wir die kompletten Pfade.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>files <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="st">"data/raw/"</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="alle-files-einzeln-einlesen" class="level3">
+<h3 class="anchored" data-anchor-id="alle-files-einzeln-einlesen">Alle Files einzeln einlesen</h3>
+<p>Jedes Daten File wird einzeln eingelesen. Anschliessend müssen alle Files zusammengefügt werden. Diese Lösung ist einfach zu verstehen, ist bei vielen Dokumenten aber zu aufwändig.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>file1 <span class="ot">&lt;-</span> files[<span class="dv">1</span>]</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>file2 <span class="ot">&lt;-</span> files[<span class="dv">2</span>]</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>file3 <span class="ot">&lt;-</span> files[<span class="dv">3</span>]</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>d1 <span class="ot">&lt;-</span> <span class="fu">read_stroop</span>(file1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 161 Columns: 110
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (21): wordCTK, colorCTK, corrAnsCTK, keyResp_CTK.keys, wordPractice, col...
+dbl (77): congruentCTK, thisN, thisTrialN, thisRepN, keyResp_CTK.corr, keyRe...
+lgl (12): keyResp_CTK.duration, respPractice.duration, keyResp_test_run.dura...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>d2 <span class="ot">&lt;-</span> <span class="fu">read_stroop</span>(file2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 161 Columns: 111
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (21): wordCTK, colorCTK, corrAnsCTK, keyResp_CTK.keys, wordPractice, col...
+dbl (78): congruentCTK, thisN, thisTrialN, thisRepN, keyResp_CTK.corr, keyRe...
+lgl (12): keyResp_CTK.duration, respPractice.duration, keyResp_test_run.dura...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>d3 <span class="ot">&lt;-</span> <span class="fu">read_stroop</span>(file3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 161 Columns: 111
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (21): wordCTK, colorCTK, corrAnsCTK, keyResp_CTK.keys, wordPractice, col...
+dbl (78): congruentCTK, thisN, thisTrialN, thisRepN, keyResp_CTK.corr, keyRe...
+lgl (12): keyResp_CTK.duration, respPractice.duration, keyResp_test_run.dura...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>d_hand <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(d1, d2, d3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="alle-files-mit-for-loop-einlesen" class="level3">
+<h3 class="anchored" data-anchor-id="alle-files-mit-for-loop-einlesen">Alle Files mit <code>for</code>-Loop einlesen</h3>
+<p>Das Einlesen kann mit einem for-Loop automatisiert werden. Der Loop iteriert über alle Daten Files. Als erstes muss ein leerer Data Frame <code>d_loop</code> erstellt werden. Bei jeder Iteration des Loops wird ein Daten File eingelesen und dem erstellten Data Frame <code>d_loop</code> angehängt.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>d_loop <span class="ot">&lt;-</span> <span class="fu">tibble</span>()</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (file <span class="cf">in</span> files){</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    d_tmp <span class="ot">&lt;-</span> <span class="fu">read_stroop</span>(file)</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    d_loop <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(d_loop, d_tmp)</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="alle-files-mit-der-funktion-map-einlesen" class="level3">
+<h3 class="anchored" data-anchor-id="alle-files-mit-der-funktion-map-einlesen">Alle Files mit der Funktion <code>map()</code> einlesen</h3>
+<p><code>map()</code> wendet eine Funktion auf alle Elemente eines Vektors an. Der Vektor <code>files</code> enthält die Pfade zu den Daten Files. Mit <code>map()</code> können wir also unsere selbst erstellte Funktion <code>read_stroop()</code> auf jeden Pfad anwenden. Im Anschluss müssen die Dataframes noch verbunden werden.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>d_map1 <span class="ot">&lt;-</span> files <span class="sc">|&gt;</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">map</span>(read_stroop) <span class="sc">%&gt;%</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bind_rows</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Die Funktion <code>map_dfr()</code> macht das gleiche wie <code>map()</code> fügt aber zusätzlich die einzelnen Data Frames automatisch zusammen.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>d_map2 <span class="ot">&lt;-</span> files <span class="sc">|&gt;</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">map_dfr</span>(read_stroop)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><br></p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>Hands-on 5: map Funktion anweden
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Benutzen Sie die Funktion <code>map()</code> um unsere Funktion <code>fast_congruent()</code> gleichzeitig auf <code>d1</code>, <code>d2</code> und <code>d3</code> anzuwenden.</p>
+<p>TIPP: <code>map()</code> braucht als Argument eine Liste!</p>
+</div>
+</div>
+<p><br></p>
+</section>
+</section>
+<section id="kompletter-stroop-code-an-einem-ort" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="kompletter-stroop-code-an-einem-ort">Kompletter Stroop Code an einem Ort</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>read_stroop <span class="ot">&lt;-</span> <span class="cf">function</span>(path){</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    d_stroop <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(path) <span class="sc">|&gt;</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(trials_test.thisN)) <span class="sc">|&gt;</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">trial =</span> trials_test.thisN <span class="sc">+</span> <span class="dv">1</span>,</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">condition =</span> <span class="fu">case_when</span>(congruent <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"congruent"</span>,</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>                                 congruent <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"incongruent"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="at">id =</span> participant, </span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>           trial,</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>           word, </span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>           color, </span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>           congruent, </span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>           condition,</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>           <span class="at">resp =</span> keyResp_test_run.keys, </span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>           <span class="at">corr =</span> keyResp_test_run.corr, </span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>           <span class="at">rt =</span> keyResp_test_run.rt)</span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>    d_stroop</span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">path =</span> <span class="st">'data/raw/'</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>)<span class="sc">|&gt;</span></span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">map_dfr</span>(read_stroop)</span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>d <span class="sc">|&gt;</span> <span class="fu">write.csv</span>(<span class="at">file =</span> <span class="st">"data/clean/dataset_stroop_clean.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>) <span class="co"># neuer Datensatz in anderen Ordner speichern um Verdoppelung zu vermeiden</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<aside>
+Achten Sie darauf, den neu erstellten Datensatz nicht in den <code>raw</code>-Ordner zu speichern. Sonst wird er (weil er <code>stroop</code> im Namen hat) beim nächsten Ausführen der Funktion <code>read_stroop</code> ebenfalls eingelesen, was einen Fehler verursacht.
+</aside>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Hands-on Lösungen
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="hands-on-1" class="level3">
+<h3 class="anchored" data-anchor-id="hands-on-1">Hands-on 1</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>square_number <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> x<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(result)</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="fu">square_number</span>(<span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 16</code></pre>
+</div>
+</div>
+</section>
+<section id="hands-on-2" class="level3">
+<h3 class="anchored" data-anchor-id="hands-on-2">Hands-on 2</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>accuracy <span class="ot">&lt;-</span> <span class="cf">function</span>(data){</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(data<span class="sc">$</span>corr) <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="fu">accuracy</span>(d_stroop)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 100</code></pre>
+</div>
+</div>
+</section>
+<section id="hands-on-3" class="level3">
+<h3 class="anchored" data-anchor-id="hands-on-3">Hands-on 3</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>stroop_summary <span class="ot">&lt;-</span> <span class="cf">function</span>(data){</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(corr <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(condition) <span class="sc">|&gt;</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">mean_rt =</span> <span class="fu">mean</span>(rt, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(result)</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a><span class="fu">stroop_summary</span>(d_stroop)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  condition   mean_rt
+  &lt;chr&gt;         &lt;dbl&gt;
+1 congruent      1.14
+2 incongruent    1.29</code></pre>
+</div>
+</div>
+</section>
+<section id="hands-on-5" class="level3">
+<h3 class="anchored" data-anchor-id="hands-on-5">Hands-on 5</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>data_list <span class="ot">&lt;-</span> <span class="fu">list</span>(d1, d2, d3)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>data_list <span class="sc">|&gt;</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(fast_congruent)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] 61.29032
+
+[[2]]
+[1] 61.76471
+
+[[3]]
+[1] 52.17391</code></pre>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Für das Entzippen mit <em>Windows</em> machen Sie einen Rechtsklick auf den Ordner mit dem Reissverschluss und wählen Sie Entpacken nach und geben Sie den Ordner an, in dem Sie alle Ihre <em>RProject</em>-Ordner speichern. Für das Entzippen mit <em>Mac</em> speichern Sie den heruntergeladenen Ordner in den Ordner, in dem Sie alle Ihre <em>RProject</em>-Ordner speichern und Doppelklicken Sie danach auf den Ordner. <strong>Nur entzippte Ordner können einwandfrei verwendet werden!</strong><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script>
+
+
+
+/* update total correct if #webex-total_correct exists */
+
+update_total_correct = function() {
+
+  console.log("webex: update total_correct");
+
+
+
+  var t = document.getElementsByClassName("webex-total_correct");
+
+  for (var i = 0; i < t.length; i++) {
+
+    p = t[i].parentElement;
+
+    var correct = p.getElementsByClassName("webex-correct").length;
+
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+
+    var selects = p.getElementsByClassName("webex-select").length;
+
+
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+
+  }
+
+}
+
+
+
+/* webex-solution button toggling function */
+
+b_func = function() {
+
+  console.log("webex: toggle hide");
+
+
+
+  var cl = this.parentElement.classList;
+
+  if (cl.contains('open')) {
+
+    cl.remove("open");
+
+  } else {
+
+    cl.add("open");
+
+  }
+
+}
+
+
+
+/* check answers */
+
+check_func = function() {
+
+  console.log("webex: check answers");
+
+
+
+  var cl = this.parentElement.classList;
+
+  if (cl.contains('unchecked')) {
+
+    cl.remove("unchecked");
+
+    this.innerHTML = "Hide Answers";
+
+  } else {
+
+    cl.add("unchecked");
+
+    this.innerHTML = "Show Answers";
+
+  }
+
+}
+
+
+
+/* function for checking solveme answers */
+
+solveme_func = function(e) {
+
+  console.log("webex: check solveme");
+
+
+
+  var real_answers = JSON.parse(this.dataset.answer);
+
+  var my_answer = this.value;
+
+  var cl = this.classList;
+
+  if (cl.contains("ignorecase")) {
+
+    my_answer = my_answer.toLowerCase();
+
+  }
+
+  if (cl.contains("nospaces")) {
+
+    my_answer = my_answer.replace(/ /g, "")
+
+  }
+
+
+
+  if (my_answer == "") {
+
+    cl.remove("webex-correct");
+
+    cl.remove("webex-incorrect");
+
+  } else if (real_answers.includes(my_answer)) {
+
+    cl.add("webex-correct");
+
+    cl.remove("webex-incorrect");
+
+  } else {
+
+    cl.add("webex-incorrect");
+
+    cl.remove("webex-correct");
+
+  }
+
+
+
+  // match numeric answers within a specified tolerance
+
+  if(this.dataset.tol > 0){
+
+    var tol = JSON.parse(this.dataset.tol);
+
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+
+      cl.add("webex-correct");
+
+    } else {
+
+      cl.remove("webex-correct");
+
+    }
+
+  }
+
+
+
+  // added regex bit
+
+  if (cl.contains("regex")){
+
+    answer_regex = RegExp(real_answers.join("|"))
+
+    if (answer_regex.test(my_answer)) {
+
+      cl.add("webex-correct");
+
+    }
+
+  }
+
+
+
+  update_total_correct();
+
+}
+
+
+
+/* function for checking select answers */
+
+select_func = function(e) {
+
+  console.log("webex: check select");
+
+
+
+  var cl = this.classList
+
+
+
+  /* add style */
+
+  cl.remove("webex-incorrect");
+
+  cl.remove("webex-correct");
+
+  if (this.value == "answer") {
+
+    cl.add("webex-correct");
+
+  } else if (this.value != "blank") {
+
+    cl.add("webex-incorrect");
+
+  }
+
+
+
+  update_total_correct();
+
+}
+
+
+
+/* function for checking radiogroups answers */
+
+radiogroups_func = function(e) {
+
+  console.log("webex: check radiogroups");
+
+
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+
+  var cl = checked_button.parentElement.classList;
+
+  var labels = checked_button.parentElement.parentElement.children;
+
+
+
+  /* get rid of styles */
+
+  for (i = 0; i < labels.length; i++) {
+
+    labels[i].classList.remove("webex-incorrect");
+
+    labels[i].classList.remove("webex-correct");
+
+  }
+
+
+
+  /* add style */
+
+  if (checked_button.value == "answer") {
+
+    cl.add("webex-correct");
+
+  } else {
+
+    cl.add("webex-incorrect");
+
+  }
+
+
+
+  update_total_correct();
+
+}
+
+
+
+window.onload = function() {
+
+  console.log("webex onload");
+
+  /* set up solution buttons */
+
+  var buttons = document.getElementsByTagName("button");
+
+
+
+  for (var i = 0; i < buttons.length; i++) {
+
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+
+      buttons[i].onclick = b_func;
+
+    }
+
+  }
+
+
+
+  var check_sections = document.getElementsByClassName("webex-check");
+
+  console.log("check:", check_sections.length);
+
+  for (var i = 0; i < check_sections.length; i++) {
+
+    check_sections[i].classList.add("unchecked");
+
+
+
+    let btn = document.createElement("button");
+
+    btn.innerHTML = "Show Answers";
+
+    btn.classList.add("webex-check-button");
+
+    btn.onclick = check_func;
+
+    check_sections[i].appendChild(btn);
+
+
+
+    let spn = document.createElement("span");
+
+    spn.classList.add("webex-total_correct");
+
+    check_sections[i].appendChild(spn);
+
+  }
+
+
+
+  /* set up webex-solveme inputs */
+
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+
+
+  for (var i = 0; i < solveme.length; i++) {
+
+    /* make sure input boxes don't auto-anything */
+
+    solveme[i].setAttribute("autocomplete","off");
+
+    solveme[i].setAttribute("autocorrect", "off");
+
+    solveme[i].setAttribute("autocapitalize", "off");
+
+    solveme[i].setAttribute("spellcheck", "false");
+
+    solveme[i].value = "";
+
+
+
+    /* adjust answer for ignorecase or nospaces */
+
+    var cl = solveme[i].classList;
+
+    var real_answer = solveme[i].dataset.answer;
+
+    if (cl.contains("ignorecase")) {
+
+      real_answer = real_answer.toLowerCase();
+
+    }
+
+    if (cl.contains("nospaces")) {
+
+      real_answer = real_answer.replace(/ /g, "");
+
+    }
+
+    solveme[i].dataset.answer = real_answer;
+
+
+
+    /* attach checking function */
+
+    solveme[i].onkeyup = solveme_func;
+
+    solveme[i].onchange = solveme_func;
+
+
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+
+  }
+
+
+
+  /* set up radiogroups */
+
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+
+  for (var i = 0; i < radiogroups.length; i++) {
+
+    radiogroups[i].onchange = radiogroups_func;
+
+  }
+
+
+
+  /* set up selects */
+
+  var selects = document.getElementsByClassName("webex-select");
+
+  for (var i = 0; i < selects.length; i++) {
+
+    selects[i].onchange = select_func;
+
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+
+  }
+
+
+
+  update_total_correct();
+
+}
+
+
+
+</script>
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/kogpsy\.github\.io\/neuroscicomplabFS26\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/basics_datawrangling.html" class="pagination-link" aria-label="Datenverarbeitung">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Datenverarbeitung</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/rmarkdown.html" class="pagination-link" aria-label="RStudio Projects und RMarkdown">
+        <span class="nav-page-text">RStudio Projects und RMarkdown</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../license.qmd">
+<p>Copyright © 2026, Gerda Wyssen, Enea Weber, Daniel Fitze, and Andrew Ellis. Website made with ♡, <a href="https://www.r-project.org/">R</a>, and <a href="https://quarto.org/">Quarto</a>.</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/kogpsy/neuroscicomplabFS26">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

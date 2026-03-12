@@ -1,0 +1,458 @@
+# Automatisiertes Preprocessing
+
+::: callout-caution
+## Hands-on: Vorbereitung
+
+Für diesen Teil benötigen Sie Ihre `.Rmd`-Datei und die Daten, die Sie heruntergeladen haben:
+
+-   Laden Sie den Ordner mit den Rohdaten des Stroop Experiments von ILIAS herunter und entzippen Sie diesen.[^functions_wrangling-1] Verschieben Sie den entzippten Ordner `raw` in Ihren `data`-Ordner (Achtung: nicht nur die einzelnen Files verschieben, sondern den ganzen Ordner).
+
+-   Laden Sie den Beispielsdatensatz [`stroop_example2.csv`](data/stroop_example2.csv) herunter und speichern Sie diesen direkt im `data`-Ordner.
+
+-   Öffnen Sie eures RMarkdown-File (`.Rmd`). In einem RMarkdown-File können Code und Text verbunden werden und die die Outputs des Codes (z.B. Grafiken) werden angezeigt.
+:::
+
+[^functions_wrangling-1]: Für das Entzippen mit *Windows* machen Sie einen Rechtsklick auf den Ordner mit dem Reissverschluss und wählen Sie Entpacken nach und geben Sie den Ordner an, in dem Sie alle Ihre *RProject*-Ordner speichern. Für das Entzippen mit *Mac* speichern Sie den heruntergeladenen Ordner in den Ordner, in dem Sie alle Ihre *RProject*-Ordner speichern und Doppelklicken Sie danach auf den Ordner. **Nur entzippte Ordner können einwandfrei verwendet werden!**
+
+Die Daten stammen von unserem Stroop Kursexperiment vom letzten Jahr.
+
+## Setup
+
+```{r}
+#| warnings: FALSE
+#| errors: FALSE
+#| output: FALSE
+# Package laden (bei jedem Öffnen von R zu Beginn des Skripts ausführen)
+library("tidyverse") 
+```
+
+## **Stroop-Experiment** data wrangling
+
+```{r}
+#| output: false
+# Daten vorverarbeiten
+data_stroop <- read_csv("data/stroop_example2.csv")
+glimpse(data_stroop)
+
+d_stroop <- read_csv("data/stroop_example2.csv") |>
+    filter(!is.na(trials_test.thisN)) |>
+    mutate(trial = trials_test.thisN + 1,
+           condition = case_when(congruent == 1 ~ "congruent",
+                                 congruent == 0 ~ "incongruent")) |>
+    select(id = participant, 
+           trial,
+           word, 
+           color,
+           congruent,
+           condition,
+           resp = keyResp_test_run.keys, 
+           corr = keyResp_test_run.corr, 
+           rt = keyResp_test_run.rt)
+```
+
+## Funktionen in R: die Grundlogik
+
+Bisher haben wir Code einfach direkt ausgeführt. Oft möchten wir aber denselben Code mehrfach verwenden, ohne ihn jedes Mal neu zu schreiben. Genau dafür sind **Funktionen** da.
+
+Eine Funktion ist ein Stück Code, das wir unter einem Namen speichern. Danach können wir es immer wieder verwenden.
+
+Die Grundlogik einer Funktion ist:
+
+1.  **Input** – Was geht in die Funktion hinein?
+
+2.  **Prozess** – Was passiert mit diesem Input?
+
+3.  **Output** – Was kommt am Ende wieder heraus?
+
+Man kann sich eine Funktion wie eine kleine Maschine vorstellen:
+
+**Input → Verarbeitung → Output**
+
+oder etwas konkreter:
+
+**Daten → Funktion → Ergebnis**
+
+### Wann sind Funktionen nützlich?
+
+Funktionen sind besonders praktisch, wenn:
+
+-   wir denselben Code mehrfach brauchen
+
+-   ein Skript übersichtlicher werden soll
+
+-   wir einen Verarbeitungsschritt an vielen Datensätzen wiederholen möchten
+
+Gerade beim Data Wrangling sind Funktionen sehr wichtig, weil wir oft dieselben Schritte auf viele Dateien anwenden wollen.
+
+## Einfachstes Beispiel
+
+```{r}
+add_numbers <- function(x, y){
+  result <- x + y
+  return(result)
+}
+add_numbers(2, 3)
+```
+
+### Die einzelnen Teile einer Funktion
+
+In dieser Funktion:
+
+-   `add_numbers` ist der **Name** der Funktion
+
+-   `x` und `y` sind die **Inputs** (Argumente)
+
+-   `x + y` ist der **Prozess**
+
+-   `return(result)` gibt den **Output** zurück
+
+Die allgemeine Struktur einer Funktion sieht so aus:
+
+```{r}
+#| eval: false
+funktionsname <- function(input_1, input_2, input_n){
+
+  # Verarbeitungsschritte
+
+  return(output)
+}
+```
+
+::: callout-caution
+## Hands-on 1: Erste eigene Funktion
+
+Schreiben Sie eine Funktion `square_number()`, die eine Zahl quadriert.
+
+```{r}
+#| eval: false
+square_number <- function(x){
+  ___
+}
+
+square_number(4)
+```
+
+Die Ausgabe sollte `16` sein.
+:::
+
+## Funktionen mit Datensätzen
+
+Funktionen können natürlich nicht nur mit einzelnen Zahlen arbeiten, sondern auch mit ganzen Datensätzen.
+
+Zum Beispiel können wir eine Funktion schreiben, die die mittlere Reaktionszeit berechnet:
+
+```{r}
+mean_rt <- function(data){
+  result <- mean(data$rt, na.rm = TRUE)
+  return(result)
+}
+
+mean_rt(d_stroop)
+```
+
+Hier ist:
+
+-   der **Input**: ein Datensatz
+
+-   der **Prozess**: Berechnung des Mittelwerts von `rt`
+
+-   der **Output**: eine einzelne Zahl (mean rt)
+
+Noch ein Beispiel:
+
+```{r}
+fast_congruent <- function(data){
+  d <- data |>
+    filter(rt < 0.6)
+  p <- mean(d$congruent) * 100
+  return(p)
+}
+
+fast_congruent(d_stroop)
+```
+
+::: callout-caution
+## Hands-on 2: Funktion selbst schreiben
+
+Schreiben Sie eine Funktion `accuracy()`, die einen Datensatz als Input nimmt und den **Prozentanteil korrekter Antworten** zurückgibt.
+
+```{r}
+#| eval: false
+accuracy <- function(data){
+
+  ___
+
+}
+
+accuracy(d_stroop)
+
+```
+
+Tipp: Der Mittelwert von `corr` entspricht dem Anteil korrekter Antworten.\
+:::
+
+## Mehrere Schritte in einer Funktion
+
+Oft besteht der Prozess innerhalb einer Funktion aus mehreren Verarbeitungsschritten.
+
+```{r}
+clean_rt <- function(data){
+
+  data_clean <- data |>
+    filter(rt > 0.2) |>
+    filter(rt < 2)
+  
+  result <- mean(data_clean$rt, na.rm = TRUE)
+  return(result)
+}
+
+clean_rt(d_stroop)
+```
+
+Hier passiert Folgendes:
+
+1.  Der Datensatz wird als Input übergeben
+
+2.  Sehr kurze und sehr lange Reaktionszeiten werden entfernt
+
+3.  Die mittlere Reaktionszeit wird berechnet
+
+4.  Diese wird als Output zurückgegeben
+
+::: callout-caution
+## Hands-on 3: Eine etwas schwierigere Funktion
+
+Schreiben Sie eine Funktion `stroop_summary()`, die:
+
+1.  nur **korrekte Trials** behält
+
+2.  die **mittlere Reaktionszeit pro Bedingung** berechnet
+
+3.  einen neuen Data Frame zurückgibt
+
+```{r}
+#| eval: false
+stroop_summary <- function(data){
+
+  ___
+
+}
+
+stroop_summary(d_stroop)
+```
+
+Tipp:
+
+-   `filter()`
+
+-   `group_by()`
+
+-   `summarise()`\
+:::
+
+## Daten mit eigener Funktion einlesen
+
+```{r}
+read_stroop <- function(path){
+  d_stroop <- read_csv(path) |>
+    filter(!is.na(trials_test.thisN)) |>
+    mutate(
+      trial = trials_test.thisN + 1,
+      condition = case_when(
+        congruent == 1 ~ "congruent",
+        congruent == 0 ~ "incongruent"
+      )
+    ) |>
+    select(
+      id = participant,
+      trial,
+      word,
+      color,
+      congruent,
+      condition,
+      resp = keyResp_test_run.keys,
+      corr = keyResp_test_run.corr,
+      rt = keyResp_test_run.rt
+    )
+
+  return(d_stroop)
+}
+
+d_stroop_fun <- read_stroop(path = "data/stroop_example2.csv")
+```
+
+::: callout-caution
+## Hands-on 4: Funktion verstehen
+
+Schauen Sie sich die Funktion `read_stroop()` oben an:
+
+1.  Was ist der Input?
+
+2.  Welche Verarbeitungsschritte passieren innerhalb der Funktion?
+
+3.  Was ist der Output?
+:::
+
+## Einlesen Automatisieren
+
+Wir benötigen eine Liste aller Datenfiles. Die Funktion `list.files()` gibt einer Liste aller Dokumente in einem Ordner zurück. Mit dem Argument `pattern = ...` kann spezifiziert werden, welche Buchstaben(folgen) der Filenamen entahlten soll.
+
+```{r}
+list.files(path = 'data/raw')
+list.files(path = 'data/raw', full.names = TRUE)
+```
+
+Um die Files einzulesen, reichen nur die Namen der Dateien nicht aus. Dazu benötigen wir die kompletten Pfade.
+
+```{r}
+
+files <- list.files("data/raw/", full.names = TRUE)
+
+```
+
+### Alle Files einzeln einlesen
+
+Jedes Daten File wird einzeln eingelesen. Anschliessend müssen alle Files zusammengefügt werden. Diese Lösung ist einfach zu verstehen, ist bei vielen Dokumenten aber zu aufwändig.
+
+```{r}
+file1 <- files[1]
+file2 <- files[2]
+file3 <- files[3]
+
+d1 <- read_stroop(file1)
+d2 <- read_stroop(file2)
+d3 <- read_stroop(file3)
+
+d_hand <- bind_rows(d1, d2, d3)
+```
+
+### Alle Files mit `for`-Loop einlesen
+
+Das Einlesen kann mit einem for-Loop automatisiert werden. Der Loop iteriert über alle Daten Files. Als erstes muss ein leerer Data Frame `d_loop` erstellt werden. Bei jeder Iteration des Loops wird ein Daten File eingelesen und dem erstellten Data Frame `d_loop` angehängt.
+
+```{r}
+#| eval: false
+#| warning: false
+#| message: false
+d_loop <- tibble()
+
+for (file in files){
+    d_tmp <- read_stroop(file)
+    d_loop <- bind_rows(d_loop, d_tmp)
+}
+```
+
+### Alle Files mit der Funktion `map()` einlesen
+
+`map()` wendet eine Funktion auf alle Elemente eines Vektors an. Der Vektor `files` enthält die Pfade zu den Daten Files. Mit `map()` können wir also unsere selbst erstellte Funktion `read_stroop()` auf jeden Pfad anwenden. Im Anschluss müssen die Dataframes noch verbunden werden.
+
+```{r}
+#| eval: false
+#| warning: false
+#| message: false
+d_map1 <- files |>
+    map(read_stroop) %>%
+    bind_rows()
+```
+
+Die Funktion `map_dfr()` macht das gleiche wie `map()` fügt aber zusätzlich die einzelnen Data Frames automatisch zusammen.
+
+```{r}
+#| eval: false
+#| warning: false
+#| message: false
+d_map2 <- files |>
+    map_dfr(read_stroop)
+```
+
+<br>
+
+::: callout-caution
+## Hands-on 5: map Funktion anweden
+
+Benutzen Sie die Funktion `map()` um unsere Funktion `fast_congruent()` gleichzeitig auf `d1`, `d2` und `d3` anzuwenden.
+
+TIPP: `map()` braucht als Argument eine Liste!
+:::
+
+<br>
+
+## Kompletter Stroop Code an einem Ort
+
+```{r}
+#| eval: false
+#| warning: false
+#| message: false
+read_stroop <- function(path){
+    d_stroop <- read_csv(path) |>
+    filter(!is.na(trials_test.thisN)) |>
+    mutate(trial = trials_test.thisN + 1,
+           condition = case_when(congruent == 1 ~ "congruent",
+                                 congruent == 0 ~ "incongruent")) |>
+    select(id = participant, 
+           trial,
+           word, 
+           color, 
+           congruent, 
+           condition,
+           resp = keyResp_test_run.keys, 
+           corr = keyResp_test_run.corr, 
+           rt = keyResp_test_run.rt)
+    d_stroop
+}
+
+d <- list.files(path = 'data/raw/', full.names = TRUE)|>
+    map_dfr(read_stroop)
+
+d |> write.csv(file = "data/clean/dataset_stroop_clean.csv", row.names = FALSE) # neuer Datensatz in anderen Ordner speichern um Verdoppelung zu vermeiden
+```
+
+<aside>Achten Sie darauf, den neu erstellten Datensatz nicht in den `raw`-Ordner zu speichern. Sonst wird er (weil er `stroop` im Namen hat) beim nächsten Ausführen der Funktion `read_stroop` ebenfalls eingelesen, was einen Fehler verursacht.</aside>
+
+::: {.callout-tip collapse="true"}
+## Hands-on Lösungen
+
+### Hands-on 1
+
+```{r}
+square_number <- function(x){
+  result <- x^2
+  return(result)
+}
+
+square_number(4)
+```
+
+### Hands-on 2
+
+```{r}
+accuracy <- function(data){
+  mean(data$corr) * 100
+}
+
+accuracy(d_stroop)
+```
+
+### Hands-on 3
+
+```{r}
+stroop_summary <- function(data){
+  result <- data |>
+    filter(corr == 1) |>
+    group_by(condition) |>
+    summarise(mean_rt = mean(rt, na.rm = TRUE))
+  return(result)
+}
+
+stroop_summary(d_stroop)
+```
+
+### Hands-on 5
+
+```{r}
+data_list <- list(d1, d2, d3)
+
+data_list |>
+  map(fast_congruent)
+```
+:::

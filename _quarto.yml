@@ -39,7 +39,7 @@ website:
           - course/02.qmd
           - course/03.qmd
           - course/04.qmd
-          # - course/05.qmd
+          - course/05.qmd
           # - course/06.qmd
           # - course/07.qmd
           # - course/08.qmd
@@ -59,13 +59,10 @@ website:
     style: "docked"
     search: true
     contents:
-      # - text: "Introduction"
-      #   href: introduction.qmd
       - section: "Programmieren"
         href: chapters/basics_programming.qmd
         contents:
           - chapters/intro_r.qmd
-          - chapters/datawrangling.qmd
           - chapters/intro_python.qmd
           - chapters/loops.qmd
 
@@ -76,9 +73,10 @@ website:
           - chapters/psychopy_experiments.qmd
 
       - section: "Datenverarbeitung"
-        # href: chapters/...
-        # contents:
-        #   - chapters/...
+        href: chapters/basics_datawrangling.qmd
+        contents:
+          - chapters/functions_wrangling.qmd
+          - chapters/rmarkdown.qmd
 
       - section: "Datenvisualisierung"
         # href: chapters/...
@@ -99,8 +97,8 @@ website:
 
 format:
   html:
-    #number-depth: 3
-    #toc: true
+    number-depth: 3
+    toc: true
     mainfont: Atkinson Hyperlegible
     monofont: Roboto
     theme:

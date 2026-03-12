@@ -7,19 +7,12 @@ title: "T3: 06.03.2026"
 - Die Output-Daten von Experimenten verstehen 
 :::
 
-**Vorbereitungsauftrag**
-
-- keine
-
 **Kurstermin**
 
 - Experiment in PsychoPy implementieren
 
 - Output-Dateien: Bedeutung der Spalten und Variablen
 
-**Aufträge**
-
-- keine
 
 **Vertiefung für Interessierte (freiwillig)**
 

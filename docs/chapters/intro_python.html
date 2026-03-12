@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../chapters/loops.html" rel="next">
-<link href="../chapters/datawrangling.html" rel="prev">
+<link href="../chapters/intro_r.html" rel="prev">
 <link href="../imgs/logo_landing.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -110,19 +110,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>
-div.callout-debugging.callout {
-  border-left-color: RosyBrown;
-}
-div.callout-debugging.callout-style-default > .callout-header {
-  background-color: rgb(from RosyBrown r g b / 13%);
-}
-div.callout-debugging .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-debugging.callout-style-default .callout-icon::before, div.callout-debugging.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: '\e4d0' !important;
-  background-image: none;
-}
 div.callout-hands-on.callout {
   border-left-color: RosyBrown;
 }
@@ -134,6 +121,19 @@ div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-ha
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: 'nil' !important;
+  background-image: none;
+}
+div.callout-debugging.callout {
+  border-left-color: RosyBrown;
+}
+div.callout-debugging.callout-style-default > .callout-header {
+  background-color: rgb(from RosyBrown r g b / 13%);
+}
+div.callout-debugging .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-debugging.callout-style-default .callout-icon::before, div.callout-debugging.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\e4d0' !important;
   background-image: none;
 }
 div.callout-learnings.callout {
@@ -517,7 +517,7 @@ globalThis._qpyodideGetInstance = function() {
 <link rel="stylesheet" href="../include/webex.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -725,6 +725,10 @@ globalThis._qpyodideGetInstance = function() {
     <a class="dropdown-item" href="../course/04.html">
  <span class="dropdown-text">T4: 13.03.2026</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../course/05.html">
+ <span class="dropdown-text">T5 20.03.2026</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -791,12 +795,6 @@ globalThis._qpyodideGetInstance = function() {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/datawrangling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Daten importieren und vorverarbeiten mit R</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../chapters/intro_python.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Python: Einführung für Neurowissenschaften</span></a>
   </div>
@@ -833,8 +831,27 @@ globalThis._qpyodideGetInstance = function() {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Datenverarbeitung</span></span>
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/basics_datawrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datenverarbeitung</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/functions_wrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Automatisiertes Preprocessing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/rmarkdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RStudio Projects und RMarkdown</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -853,7 +870,28 @@ globalThis._qpyodideGetInstance = function() {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#python-einführung-für-neurowissenschaften" id="toc-python-einführung-für-neurowissenschaften" class="nav-link active" data-scroll-target="#python-einführung-für-neurowissenschaften">Python: Einführung für Neurowissenschaften</a>
+  <ul class="collapse">
+  <li><a href="#wichtige-datentypen-in-python-mit-vergleich-zu-r" id="toc-wichtige-datentypen-in-python-mit-vergleich-zu-r" class="nav-link" data-scroll-target="#wichtige-datentypen-in-python-mit-vergleich-zu-r">Wichtige Datentypen in Python (mit Vergleich zu R)</a></li>
+  <li><a href="#beispiele" id="toc-beispiele" class="nav-link" data-scroll-target="#beispiele">Beispiele</a></li>
+  <li><a href="#bibliotheken-importieren" id="toc-bibliotheken-importieren" class="nav-link" data-scroll-target="#bibliotheken-importieren">Bibliotheken importieren</a></li>
+  <li><a href="#datensätze-einlesen-und-anschauen" id="toc-datensätze-einlesen-und-anschauen" class="nav-link" data-scroll-target="#datensätze-einlesen-und-anschauen">Datensätze einlesen und anschauen</a></li>
+  <li><a href="#dot-notation-verstehen" id="toc-dot-notation-verstehen" class="nav-link" data-scroll-target="#dot-notation-verstehen">Dot-Notation verstehen</a></li>
+  <li><a href="#zugriff-auf-spalten-und-zeilen" id="toc-zugriff-auf-spalten-und-zeilen" class="nav-link" data-scroll-target="#zugriff-auf-spalten-und-zeilen">Zugriff auf Spalten und Zeilen</a>
+  <ul class="collapse">
+  <li><a href="#beispiele-1" id="toc-beispiele-1" class="nav-link" data-scroll-target="#beispiele-1">Beispiele:</a></li>
+  </ul></li>
+  <li><a href="#daten-filtern-und-neue-variablen-erstellen" id="toc-daten-filtern-und-neue-variablen-erstellen" class="nav-link" data-scroll-target="#daten-filtern-und-neue-variablen-erstellen">Daten filtern und neue Variablen erstellen</a></li>
+  <li><a href="#zusammenfassung-r-vs-python" id="toc-zusammenfassung-r-vs-python" class="nav-link" data-scroll-target="#zusammenfassung-r-vs-python">Zusammenfassung: R vs Python</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/basics_programming.html">Programmieren</a></li><li class="breadcrumb-item"><a href="../chapters/intro_python.html">Python: Einführung für Neurowissenschaften</a></li></ol></nav></header>
 
@@ -2230,8 +2268,8 @@ window.onload = function() {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/datawrangling.html" class="pagination-link" aria-label="Daten importieren und vorverarbeiten mit R">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Daten importieren und vorverarbeiten mit R</span>
+      <a href="../chapters/intro_r.html" class="pagination-link" aria-label="Einführung in R">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Einführung in R</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

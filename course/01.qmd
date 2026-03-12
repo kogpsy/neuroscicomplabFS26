@@ -9,10 +9,6 @@ title: "T1: 20.02.2026"
 
 :::
 
-**Vorbereitungsauftrag**
-
-- keiner
-
 **Kurstermin**
 
 - [Kursinformationen](../course/syllabus.qmd) und [Terminübersicht](../course/overview.qmd)

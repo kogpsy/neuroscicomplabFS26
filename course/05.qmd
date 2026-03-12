@@ -1,0 +1,43 @@
+---
+title: "T5 20.03.2026"
+---
+
+::: {.callout-note title="Lernziele"}
+
+- Reproduzierbare Datenverarbeitung mit `R` und `RMarkdown/Quarto` umsetzen können
+
+- Wichtigste Good Practices in der Datenverarbeitung kennen
+
+- Hilfreiche Tools und Methoden zur Sicherung der Datenqualität und der Reproduzierbarkeit von Analysen kennen lernen
+
+- ein Data dictionary erstellen können
+
+- Datenvisualisierung mit dem `{ggplot2}`-Package ausführen können
+
+:::
+
+**Vorbereitungsauftrag**
+
+Je nach Vorwissen [RStudio Projects und RMarkdown](../chapters/rmarkdown.html) durchlesen. Sie sollten in `R` 
+    
+- ein `RProject` erstellen können
+- ein `RMarkdown`oder `Quarto`-File erstellen können und damit die Datenverarbeitungsschritte von der letzten Woche durchführen können. 
+
+
+**Kurstermin**
+
+- [Good Practices in der Datenverarbeitung]()
+
+**Aufträge**
+
+::: {.callout-caution title="Übung 2: Reproduzierbare Datenverarbeitung und -visualisierung"}
+
+tba am 20.03.2026
+
+**Abgabetermin: 16.04.2026 23:55**
+
+:::
+
+**Vertiefung für Interessierte (freiwillig)**
+
+- R for Data Sciene (2e) (Buch online): <https://r4ds.hadley.nz/>

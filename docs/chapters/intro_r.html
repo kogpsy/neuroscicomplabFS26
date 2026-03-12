@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/datawrangling.html" rel="next">
+<link href="../chapters/intro_python.html" rel="next">
 <link href="../chapters/basics_programming.html" rel="prev">
 <link href="../imgs/logo_landing.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -1155,27 +1155,14 @@ globalThis.qwebrExecuteCode = async function (
 
 </script>
 <style>
-div.callout-debugging.callout {
+div.callout-preparation.callout {
   border-left-color: RosyBrown;
 }
-div.callout-debugging.callout-style-default > .callout-header {
+div.callout-preparation.callout-style-default > .callout-header {
   background-color: rgb(from RosyBrown r g b / 13%);
 }
-div.callout-debugging .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-debugging.callout-style-default .callout-icon::before, div.callout-debugging.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: '\e4d0' !important;
-  background-image: none;
-}
-div.callout-hands-on.callout {
-  border-left-color: RosyBrown;
-}
-div.callout-hands-on.callout-style-default > .callout-header {
-  background-color: rgb(from RosyBrown r g b / 13%);
-}
-div.callout-hands-on .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-hands-on.callout-titled .callout-icon::before {
+div.callout-preparation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-preparation.callout-style-default .callout-icon::before, div.callout-preparation.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: 'nil' !important;
@@ -1191,17 +1178,30 @@ div.callout-learnings .callout-toggle::before {  background-image: url('data:ima
 div.callout-learnings.callout-style-default .callout-icon::before, div.callout-learnings.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="LightSlateGray" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-preparation.callout {
+div.callout-hands-on.callout {
   border-left-color: RosyBrown;
 }
-div.callout-preparation.callout-style-default > .callout-header {
+div.callout-hands-on.callout-style-default > .callout-header {
   background-color: rgb(from RosyBrown r g b / 13%);
 }
-div.callout-preparation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-preparation.callout-style-default .callout-icon::before, div.callout-preparation.callout-titled .callout-icon::before {
+div.callout-hands-on .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-hands-on.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: 'nil' !important;
+  background-image: none;
+}
+div.callout-debugging.callout {
+  border-left-color: RosyBrown;
+}
+div.callout-debugging.callout-style-default > .callout-header {
+  background-color: rgb(from RosyBrown r g b / 13%);
+}
+div.callout-debugging .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-debugging.callout-style-default .callout-icon::before, div.callout-debugging.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\e4d0' !important;
   background-image: none;
 }
 </style>
@@ -1239,7 +1239,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../include/webex.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -1447,6 +1447,10 @@ window.Quarto = {
     <a class="dropdown-item" href="../course/04.html">
  <span class="dropdown-text">T4: 13.03.2026</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../course/05.html">
+ <span class="dropdown-text">T5 20.03.2026</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -1513,12 +1517,6 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/datawrangling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Daten importieren und vorverarbeiten mit R</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../chapters/intro_python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python: Einführung für Neurowissenschaften</span></a>
   </div>
@@ -1555,8 +1553,27 @@ window.Quarto = {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Datenverarbeitung</span></span>
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/basics_datawrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datenverarbeitung</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/functions_wrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Automatisiertes Preprocessing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/rmarkdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RStudio Projects und RMarkdown</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -1575,7 +1592,49 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#einführung-in-r" id="toc-einführung-in-r" class="nav-link active" data-scroll-target="#einführung-in-r">Einführung in R</a>
+  <ul class="collapse">
+  <li><a href="#sec-installation" id="toc-sec-installation" class="nav-link" data-scroll-target="#sec-installation">Installation</a></li>
+  <li><a href="#sec-windows" id="toc-sec-windows" class="nav-link" data-scroll-target="#sec-windows">Step-by-Step Installation für Windows</a></li>
+  <li><a href="#sec-macos" id="toc-sec-macos" class="nav-link" data-scroll-target="#sec-macos">Step-by-Step Installation für MacOS</a></li>
+  <li><a href="#sec-setuprstudio" id="toc-sec-setuprstudio" class="nav-link" data-scroll-target="#sec-setuprstudio">Einrichten von <em>RStudio</em></a>
+  <ul class="collapse">
+  <li><a href="#verändern-der-grundeinstellungen" id="toc-verändern-der-grundeinstellungen" class="nav-link" data-scroll-target="#verändern-der-grundeinstellungen">Verändern der Grundeinstellungen</a></li>
+  <li><a href="#sec-setup" id="toc-sec-setup" class="nav-link" data-scroll-target="#sec-setup">Informationen zu Ihrem Setup</a></li>
+  <li><a href="#speicherort-der-packages" id="toc-speicherort-der-packages" class="nav-link" data-scroll-target="#speicherort-der-packages">Speicherort der <em>Packages</em></a></li>
+  </ul></li>
+  <li><a href="#bausteine-von-r" id="toc-bausteine-von-r" class="nav-link" data-scroll-target="#bausteine-von-r">Bausteine von R</a>
+  <ul class="collapse">
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#mathematische-operatoren" id="toc-mathematische-operatoren" class="nav-link" data-scroll-target="#mathematische-operatoren">Mathematische Operatoren</a></li>
+  <li><a href="#variablen-in-r" id="toc-variablen-in-r" class="nav-link" data-scroll-target="#variablen-in-r">Variablen in R</a></li>
+  <li><a href="#datensätze" id="toc-datensätze" class="nav-link" data-scroll-target="#datensätze">Datensätze</a></li>
+  <li><a href="#funktionen-und-argumente" id="toc-funktionen-und-argumente" class="nav-link" data-scroll-target="#funktionen-und-argumente">Funktionen und Argumente</a></li>
+  </ul></li>
+  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling">Data wrangling</a></li>
+  <li><a href="#datenvisualisieren" id="toc-datenvisualisieren" class="nav-link" data-scroll-target="#datenvisualisieren">Datenvisualisieren</a>
+  <ul class="collapse">
+  <li><a href="#scatterplot" id="toc-scatterplot" class="nav-link" data-scroll-target="#scatterplot">Scatterplot</a></li>
+  <li><a href="#histogramme" id="toc-histogramme" class="nav-link" data-scroll-target="#histogramme">Histogramme</a></li>
+  <li><a href="#boxplots" id="toc-boxplots" class="nav-link" data-scroll-target="#boxplots">Boxplots</a></li>
+  </ul></li>
+  <li><a href="#hilfe-in-r" id="toc-hilfe-in-r" class="nav-link" data-scroll-target="#hilfe-in-r">Hilfe in R</a>
+  <ul class="collapse">
+  <li><a href="#environment" id="toc-environment" class="nav-link" data-scroll-target="#environment">Environment</a></li>
+  <li><a href="#section-14" id="toc-section-14" class="nav-link" data-scroll-target="#section-14"><code>?</code></a></li>
+  <li><a href="#helpfenster-in-rstudio" id="toc-helpfenster-in-rstudio" class="nav-link" data-scroll-target="#helpfenster-in-rstudio"><code>Help</code>Fenster in <em>RStudio</em></a></li>
+  <li><a href="#autocomplete-mit" id="toc-autocomplete-mit" class="nav-link" data-scroll-target="#autocomplete-mit">Autocomplete mit <kbd title="Tab" aria-hidden="true">Tab</kbd><span class="visually-hidden">Tab</span></a></li>
+  <li><a href="#bücher-und-tutorials" id="toc-bücher-und-tutorials" class="nav-link" data-scroll-target="#bücher-und-tutorials">Bücher und Tutorials</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/basics_programming.html">Programmieren</a></li><li class="breadcrumb-item"><a href="../chapters/intro_r.html">Einführung in R</a></li></ol></nav></header>
 
@@ -3708,8 +3767,8 @@ window.onload = function() {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/datawrangling.html" class="pagination-link" aria-label="Daten importieren und vorverarbeiten mit R">
-        <span class="nav-page-text">Daten importieren und vorverarbeiten mit R</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/intro_python.html" class="pagination-link" aria-label="Python: Einführung für Neurowissenschaften">
+        <span class="nav-page-text">Python: Einführung für Neurowissenschaften</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

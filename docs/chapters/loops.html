@@ -110,17 +110,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>
-div.callout-debugging.callout {
+div.callout-preparation.callout {
   border-left-color: RosyBrown;
 }
-div.callout-debugging.callout-style-default > .callout-header {
+div.callout-preparation.callout-style-default > .callout-header {
   background-color: rgb(from RosyBrown r g b / 13%);
 }
-div.callout-debugging .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-debugging.callout-style-default .callout-icon::before, div.callout-debugging.callout-titled .callout-icon::before {
+div.callout-preparation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-preparation.callout-style-default .callout-icon::before, div.callout-preparation.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
-  content: '\e4d0' !important;
+  content: 'nil' !important;
   background-image: none;
 }
 div.callout-hands-on.callout {
@@ -136,17 +136,17 @@ div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-ha
   content: 'nil' !important;
   background-image: none;
 }
-div.callout-preparation.callout {
+div.callout-debugging.callout {
   border-left-color: RosyBrown;
 }
-div.callout-preparation.callout-style-default > .callout-header {
+div.callout-debugging.callout-style-default > .callout-header {
   background-color: rgb(from RosyBrown r g b / 13%);
 }
-div.callout-preparation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-preparation.callout-style-default .callout-icon::before, div.callout-preparation.callout-titled .callout-icon::before {
+div.callout-debugging .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-debugging.callout-style-default .callout-icon::before, div.callout-debugging.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
-  content: 'nil' !important;
+  content: '\e4d0' !important;
   background-image: none;
 }
 div.callout-learnings.callout {
@@ -517,7 +517,7 @@ globalThis._qpyodideGetInstance = function() {
 <link rel="stylesheet" href="../include/webex.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -725,6 +725,10 @@ globalThis._qpyodideGetInstance = function() {
     <a class="dropdown-item" href="../course/04.html">
  <span class="dropdown-text">T4: 13.03.2026</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../course/05.html">
+ <span class="dropdown-text">T5 20.03.2026</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -791,12 +795,6 @@ globalThis._qpyodideGetInstance = function() {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/datawrangling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Daten importieren und vorverarbeiten mit R</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../chapters/intro_python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python: Einführung für Neurowissenschaften</span></a>
   </div>
@@ -833,8 +831,27 @@ globalThis._qpyodideGetInstance = function() {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Datenverarbeitung</span></span>
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/basics_datawrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datenverarbeitung</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/functions_wrangling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Automatisiertes Preprocessing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/rmarkdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">RStudio Projects und RMarkdown</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -853,7 +870,22 @@ globalThis._qpyodideGetInstance = function() {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#schleifen-programmieren-mit-python" id="toc-schleifen-programmieren-mit-python" class="nav-link active" data-scroll-target="#schleifen-programmieren-mit-python">Schleifen programmieren mit Python</a>
+  <ul class="collapse">
+  <li><a href="#for-schleifen" id="toc-for-schleifen" class="nav-link" data-scroll-target="#for-schleifen"><code>for</code>-Schleifen</a></li>
+  <li><a href="#while-schleifen" id="toc-while-schleifen" class="nav-link" data-scroll-target="#while-schleifen"><code>while</code>-Schleifen</a></li>
+  <li><a href="#flowcharts" id="toc-flowcharts" class="nav-link" data-scroll-target="#flowcharts">Flowcharts</a></li>
+  <li><a href="#wichtig-endlosschleifen-vermeiden" id="toc-wichtig-endlosschleifen-vermeiden" class="nav-link" data-scroll-target="#wichtig-endlosschleifen-vermeiden">Wichtig: Endlosschleifen vermeiden</a></li>
+  <li><a href="#fazit" id="toc-fazit" class="nav-link" data-scroll-target="#fazit">Fazit</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/basics_programming.html">Programmieren</a></li><li class="breadcrumb-item"><a href="../chapters/loops.html">Schleifen programmieren mit Python</a></li></ol></nav></header>
 
