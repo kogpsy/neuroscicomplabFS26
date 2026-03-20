@@ -73,19 +73,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-hands-on.callout {
-  border-left-color: RosyBrown;
-}
-div.callout-hands-on.callout-style-default > .callout-header {
-  background-color: rgb(from RosyBrown r g b / 13%);
-}
-div.callout-hands-on .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-hands-on.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: 'nil' !important;
-  background-image: none;
-}
 div.callout-debugging.callout {
   border-left-color: RosyBrown;
 }
@@ -99,14 +86,14 @@ div.callout-debugging.callout-style-default .callout-icon::before, div.callout-d
   content: '\e4d0' !important;
   background-image: none;
 }
-div.callout-preparation.callout {
+div.callout-hands-on.callout {
   border-left-color: RosyBrown;
 }
-div.callout-preparation.callout-style-default > .callout-header {
+div.callout-hands-on.callout-style-default > .callout-header {
   background-color: rgb(from RosyBrown r g b / 13%);
 }
-div.callout-preparation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-preparation.callout-style-default .callout-icon::before, div.callout-preparation.callout-titled .callout-icon::before {
+div.callout-hands-on .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-hands-on.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: 'nil' !important;
@@ -121,6 +108,19 @@ div.callout-learnings.callout-style-default > .callout-header {
 div.callout-learnings .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-learnings.callout-style-default .callout-icon::before, div.callout-learnings.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="LightSlateGray" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-preparation.callout {
+  border-left-color: RosyBrown;
+}
+div.callout-preparation.callout-style-default > .callout-header {
+  background-color: rgb(from RosyBrown r g b / 13%);
+}
+div.callout-preparation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-preparation.callout-style-default .callout-icon::before, div.callout-preparation.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: 'nil' !important;
+  background-image: none;
 }
 </style>
 
@@ -340,6 +340,10 @@ div.callout-learnings.callout-style-default .callout-icon::before, div.callout-l
     <a class="dropdown-item" href="../course/05.html">
  <span class="dropdown-text">T5 20.03.2026</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../course/06.html">
+ <span class="dropdown-text">T6 27.03.2026</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -462,11 +466,30 @@ div.callout-learnings.callout-style-default .callout-icon::before, div.callout-l
  <span class="menu-text">RStudio Projects und RMarkdown</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/goodpractices_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Good Practices in der Datenverarbeitung</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Datenvisualisierung</span></span>
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/basics_ggplot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datenvisualisierung</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/data_visualization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Grundlagen der Datenvisualisierung</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -521,6 +544,7 @@ div.callout-learnings.callout-style-default .callout-icon::before, div.callout-l
 <li><p>Reproduzierbare Datenverarbeitung mit <code>R</code> und <code>RMarkdown/Quarto</code> umsetzen können</p></li>
 <li><p>Wichtigste Good Practices in der Datenverarbeitung kennen</p></li>
 <li><p>Hilfreiche Tools und Methoden zur Sicherung der Datenqualität und der Reproduzierbarkeit von Analysen kennen lernen</p></li>
+<li><p>ein Data cleaning plan erstellen können</p></li>
 <li><p>ein Data dictionary erstellen können</p></li>
 <li><p>Datenvisualisierung mit dem <code>{ggplot2}</code>-Package ausführen können</p></li>
 </ul>
@@ -534,7 +558,8 @@ div.callout-learnings.callout-style-default .callout-icon::before, div.callout-l
 </ul>
 <p><strong>Kurstermin</strong></p>
 <ul>
-<li><a href="">Good Practices in der Datenverarbeitung</a></li>
+<li><a href="../chapters/goodpractices_data.html">Good Practices in der Datenverarbeitung</a></li>
+<li><a href="../chapters/basics_ggplot.html">Einführung in ggplot2</a></li>
 </ul>
 <p><strong>Aufträge</strong></p>
 <div class="callout callout-style-default callout-caution callout-titled" title="Übung 2: Reproduzierbare Datenverarbeitung und -visualisierung">
@@ -547,13 +572,66 @@ div.callout-learnings.callout-style-default .callout-icon::before, div.callout-l
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>tba am 20.03.2026</p>
+<p>In der Übung 2 erstellen Sie eine Dataprocessing Pipeline (Analyseskript) für die Daten unseres Kursexperiments. Die Pipeline enthält</p>
+<ul>
+<li>ein Data dictionary der Daten</li>
+<li>das Beschreiben des Data cleaning plans,</li>
+<li>das Einlesen und Cleaning der Rohdaten des Kursexperiments</li>
+<li>eine minimale deskriptive Analyse</li>
+<li>eine Visualisierung zur Beantwortung einer selber gewählten Forschungsfrage zu den Daten.</li>
+</ul>
+<p><strong>Vorgehen</strong></p>
+<p><strong><em>1. Download und Setup</em></strong></p>
+<ul>
+<li>Laden Sie das <code>R</code>-Project <code>uebung-2</code> herunter und entzippen Sie den Ordner. Im <code>data</code>-Ordner finden Sie die Einzeldateien vom Kursexperiment.
+<ul>
+<li><a href="../data/uebung-2.zip">uebung-2 <code>R</code>-Project</a></li>
+</ul></li>
+</ul>
+<p><strong><em>2. Data processing pipeline</em></strong></p>
+<ul>
+<li>Arbeiten Sie sich durch alle Schritte im <code>.Rmd</code>-file im Projektordner.</li>
+<li>Erstellen Sie eine Visualisierung. Die Kriterien für die Visualisierung sind im nächsten Unterkapitel beschrieben.</li>
+<li>Testen Sie, ob das Skript durchläuft und ein gerenderetes File generiert wird. (Löschen Sie alle Variablen aus dem <code>Environment</code>, Restarten Sie <code>R</code> und <em>Knitten</em> Sie das Dokument noch einmal.)</li>
+</ul>
+<p><strong><em>3. Visualisierung</em></strong></p>
+<p>Die Datenvisualisierung muss folgende Kriterien erfüllen:</p>
+<ul>
+<li><p>Die Visualisierung muss von uns mit dem von Ihnen hochgeladenen Code reproduzierbar sein.</p></li>
+<li><p>Die Visualisierung muss folgende Merkmale enthalten:</p>
+<ul>
+<li>data summary in any form (e.g.&nbsp;mead/median and/or distribution info (error bars, quantiles, density))</li>
+<li>at least one visible data point from each participant (raw data, or could also be a mean of participants’ responses)</li>
+<li>different colors (greys are ok)</li>
+<li>cleanly labelled axes</li>
+<li>title (must contain research question)</li>
+<li>caption (must contain target audience and aim of visualisation)</li>
+<li>a changed theme</li>
+</ul></li>
+<li><p>Es dürfen (müssen aber nicht) zusätzliche Elemente gestaltet werden (z.B. Schriftart).</p></li>
+<li><p>Die Visualisierung muss zusätzlich zur Darstellung im gerenderten RMarkdown-File auch noch als separates File abgespeichert und hochgeladen werden. Die Visualisierung wird (ohne Ihren Namen) auf die Website geladen. Wenn Sie dies nicht möchten, teilen Sie uns dies per Mail mit (keine Begründung nötig).</p></li>
+</ul>
+<p><strong><em>4. Einreichen auf Ilias</em></strong></p>
+<ul>
+<li>Dataprocessing Pipeline (Analyseskript) (<code>.Rmd</code>oder <code>.qmd</code>)</li>
+<li>Dataprocessing Pipeline (gerendertes Analyseskript) (<code>.html</code>oder <code>.pdf</code>)</li>
+<li>Visualisierung (<code>.jpg</code> oder <code>.png</code>)</li>
+</ul>
+<p>Bitte beachten Sie die Abgabekriterien, die im Vorgehen beschrieben werden. Die Übung gilt nur als erfüllt, wenn diese eingehalten werden (z.B. Dateiformate).</p>
 <p><strong>Abgabetermin: 16.04.2026 23:55</strong></p>
+<ul>
+<li><p><em>Information zum Arbeiten in Kleingruppen:</em></p>
+<ul>
+<li>Übungen dürfen alleine oder in Gruppen von max. 3 Personen erledigt werden. Alle Personen müssen die Übung auf Ilias hochladen, um die Übung zu bestehen.</li>
+<li>Die Files von Gruppenarbeiten müssen folgendermassen benannt werden, damit wir sehen, welche Übungsabgaben zusammengehören: Nennen Sie das File mit der Aufgabe und allen Initialen der Gruppe. Z.B. uebung_1_GW_EW.R. Geben Sie bei allen Files die Initialen in derselben Reihenfolge an.s</li>
+</ul></li>
+</ul>
 </div>
 </div>
 <p><strong>Vertiefung für Interessierte (freiwillig)</strong></p>
 <ul>
-<li>R for Data Sciene (2e) (Buch online): <a href="https://r4ds.hadley.nz/" class="uri">https://r4ds.hadley.nz/</a></li>
+<li>R for Data Science (2e) (Buch online): <a href="https://r4ds.hadley.nz/" class="uri">https://r4ds.hadley.nz/</a></li>
+<li>Wiki zu den Data wrangling functions: <a href="https://github.com/Cghlewis/data-wrangling-functions/wiki/Count" class="uri">https://github.com/Cghlewis/data-wrangling-functions/wiki/Count</a></li>
 </ul>
 
 

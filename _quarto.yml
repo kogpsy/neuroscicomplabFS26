@@ -40,7 +40,7 @@ website:
           - course/03.qmd
           - course/04.qmd
           - course/05.qmd
-          # - course/06.qmd
+          - course/06.qmd
           # - course/07.qmd
           # - course/08.qmd
           # - course/09.qmd
@@ -77,12 +77,12 @@ website:
         contents:
           - chapters/functions_wrangling.qmd
           - chapters/rmarkdown.qmd
+          - chapters/goodpractices_data.qmd
 
       - section: "Datenvisualisierung"
-        # href: chapters/...
-        # contents:
-        #   - chapters/...
-
+        href: chapters/basics_ggplot.qmd
+        contents:
+          - chapters/data_visualization.qmd
 
       - section: "EEG Datenanalyse"
         # href: chapters/...
@@ -143,7 +143,6 @@ custom-callout:
   #   title: "Tipp!"
   #   icon-symbol: fa-idea
   #   color: RosyBrown
-
 
 filters:
 - webr

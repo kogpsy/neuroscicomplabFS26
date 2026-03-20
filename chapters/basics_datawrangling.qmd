@@ -301,7 +301,7 @@ d_stroop_clean <- d_stroop |>
 
 ## Neue Variablen generieren und verändern: `mutate()` und `case_when()`
 
-Mit der `mutate(.data, …)` Funktion können im Datensatz neue Variablen generiert oder bestehende verändert werden. 
+Mit der `mutate(.data, …)` Funktion können im Datensatz neue Variablen generiert, bestehende Variablen verändert und bestehende Variablen gelöscht werden.
 
 _Beispiel:_
 
@@ -317,6 +317,10 @@ d_new <- d_stroop_clean |>
 # Bestehende Variablen verändern
 d_new <- d_new |>
     mutate(num_variable = num_variable * 1000) # z.B. um Sekunden zu Millisekunden zu machen
+
+# Bestehende Variablen löschen
+d_new <- d_new |>
+    mutate(copy_variable = NA) # z.B. um Sekunden zu Millisekunden zu machen
 ```
 
 Mit `case_when()` kann eine neue Variable erstellt werden in Abhängigkeit von Werten anderer Variablen. Damit kann z.B. eine Variable `accuracy` erstellt werden, die den Wert `correct` hat, wenn die Aufgabe richtig gelöst wurde (z.B. Bedingung `rot` und Tastendruck `r`) und sonst den Wert `error` hat.

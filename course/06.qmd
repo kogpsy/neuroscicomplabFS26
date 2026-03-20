@@ -1,0 +1,41 @@
+---
+title: "T6 27.03.2026"
+---
+
+::: {.callout-note title="Lernziele"}
+
+- Datenvisualisierung mit dem `{ggplot2}`-Package ausführen können
+
+- Wichtigste Datenvisualisierungsformate sowie deren Vor- und Nachteile bzw. Anwendungsbereiche kennen
+
+- Ein passendes Grafikformat zu einer Forschungsfrage und Daten auswählen und gestalten können
+
+- Reproduzierbaren Code für eine Grafik erstellen
+
+:::
+
+**Vorbereitungsauftrag**
+
+Je nach Vorwissen [Datenvisualisierung mit {ggplot2}](../chapters/basics_ggplot.html) durchlesen. Sie sollten in `R` 
+    
+- die Funktion `ggplot()` aus dem `{ggplot2}`-package kennen und einen einfachen Plot mit `aes()` und `geom_point()` erstellen können.
+
+- Lesen Sie den Artikel *The Science of Visual Data
+Communication: What Works* von Franconeri et al. (2021): <https://faculty.sites.iastate.edu/tesfatsi/archive/tesfatsi/ScienceOfVisualDataCommunication.FranconeriEtAl2021.pdf>. Finden Sie 3 Punkte die Ihnen auffallen/Sie überraschen/Sie wichtig finden bezüglich Datenvisualisierung im wissenschaftlichen Kontext. Wir werden diese Punkte anfangs der Veranstaltung sammeln und diskutieren.
+
+**Kurstermin**
+
+- [Grundlagen der Datenvisualisierung](../chapters/data_visualization.qmd)
+
+**Aufträge**
+
+::: {.callout-caution title="Übung 2: Reproduzierbare Datenverarbeitung und -visualisierung"}
+
+siehe [20.03.2026](../course/05.qmd)
+
+:::
+
+**Vertiefung für Interessierte (freiwillig)**
+
+- R for Data Science (2e) (Buch online): <https://r4ds.hadley.nz/>
+- Wiki zu den Data wrangling functions: <https://github.com/Cghlewis/data-wrangling-functions/wiki/Count>

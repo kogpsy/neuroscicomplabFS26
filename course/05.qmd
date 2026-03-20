@@ -10,6 +10,8 @@ title: "T5 20.03.2026"
 
 - Hilfreiche Tools und Methoden zur Sicherung der Datenqualität und der Reproduzierbarkeit von Analysen kennen lernen
 
+- ein Data cleaning plan erstellen können
+
 - ein Data dictionary erstellen können
 
 - Datenvisualisierung mit dem `{ggplot2}`-Package ausführen können
@@ -26,18 +28,73 @@ Je nach Vorwissen [RStudio Projects und RMarkdown](../chapters/rmarkdown.html) d
 
 **Kurstermin**
 
-- [Good Practices in der Datenverarbeitung]()
+- [Good Practices in der Datenverarbeitung](../chapters/goodpractices_data.qmd)
+- [Einführung in ggplot2](../chapters/basics_ggplot.qmd)
 
 **Aufträge**
 
 ::: {.callout-caution title="Übung 2: Reproduzierbare Datenverarbeitung und -visualisierung"}
 
-tba am 20.03.2026
+In der Übung 2 erstellen Sie eine Dataprocessing Pipeline (Analyseskript) für die Daten unseres Kursexperiments.
+Die Pipeline enthält
+
+- ein Data dictionary der Daten
+- das Beschreiben des Data cleaning plans,
+- das Einlesen und Cleaning der Rohdaten des Kursexperiments
+- eine minimale deskriptive Analyse
+- eine Visualisierung zur Beantwortung einer selber gewählten Forschungsfrage zu den Daten.
+
+**Vorgehen**
+
+***1. Download und Setup***
+
+- Laden Sie das `R`-Project `uebung-2` herunter und entzippen Sie den Ordner. Im `data`-Ordner finden Sie die Einzeldateien vom Kursexperiment.
+    - [uebung-2 `R`-Project](../data/uebung-2.zip)
+
+***2. Data processing pipeline***
+
+- Arbeiten Sie sich durch alle Schritte im `.Rmd`-file im Projektordner.
+- Erstellen Sie eine Visualisierung. Die Kriterien für die Visualisierung sind im nächsten Unterkapitel beschrieben.
+- Testen Sie, ob das Skript durchläuft und ein gerenderetes File generiert wird. (Löschen Sie alle Variablen aus dem `Environment`, Restarten Sie `R` und *Knitten* Sie das Dokument noch einmal.)
+
+***3. Visualisierung***
+
+Die Datenvisualisierung muss folgende Kriterien erfüllen:
+
+- Die Visualisierung muss von uns mit dem von Ihnen hochgeladenen Code reproduzierbar sein.
+
+- Die Visualisierung muss folgende Merkmale enthalten:
+
+    - data summary in any form (e.g. mead/median and/or distribution info (error bars, quantiles, density))
+    - at least one visible data point from each participant (raw data, or could also be a mean of participants' responses)
+    - different colors (greys are ok)
+    - cleanly labelled axes
+    - title (must contain research question)
+    - caption (must contain target audience and aim of visualisation)
+    - a changed theme
+    
+- Es dürfen (müssen aber nicht) zusätzliche Elemente gestaltet werden (z.B. Schriftart).
+
+- Die Visualisierung muss zusätzlich zur Darstellung im gerenderten RMarkdown-File auch noch als separates File abgespeichert und hochgeladen werden. Die Visualisierung wird (ohne Ihren Namen) auf die Website geladen. Wenn Sie dies nicht möchten, teilen Sie uns dies per Mail mit (keine Begründung nötig).
+
+***4. Einreichen auf Ilias***
+
+- Dataprocessing Pipeline (Analyseskript) (`.Rmd`oder `.qmd`)
+- Dataprocessing Pipeline (gerendertes Analyseskript) (`.html`oder `.pdf`)
+- Visualisierung (`.jpg` oder `.png`)
+
+Bitte beachten Sie die Abgabekriterien, die im Vorgehen beschrieben werden. Die Übung gilt nur als erfüllt, wenn diese eingehalten werden (z.B. Dateiformate).
 
 **Abgabetermin: 16.04.2026 23:55**
+
+- *Information zum Arbeiten in Kleingruppen:*
+
+    - Übungen dürfen alleine oder in Gruppen von max. 3 Personen erledigt werden. Alle Personen müssen die Übung auf Ilias hochladen, um die Übung zu bestehen.
+    - Die Files von Gruppenarbeiten müssen folgendermassen benannt werden, damit wir sehen, welche Übungsabgaben zusammengehören: Nennen Sie das File mit der Aufgabe und allen Initialen der Gruppe. Z.B. uebung_1_GW_EW.R. Geben Sie bei allen Files die Initialen in derselben Reihenfolge an.s
 
 :::
 
 **Vertiefung für Interessierte (freiwillig)**
 
-- R for Data Sciene (2e) (Buch online): <https://r4ds.hadley.nz/>
+- R for Data Science (2e) (Buch online): <https://r4ds.hadley.nz/>
+- Wiki zu den Data wrangling functions: <https://github.com/Cghlewis/data-wrangling-functions/wiki/Count>

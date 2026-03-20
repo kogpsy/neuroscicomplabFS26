@@ -1,0 +1,140 @@
+---
+title: "Data processing pipeline - Uebung 2"
+author: "NACHNAME, V., NACHNAME, V., NACHNAME, V."
+output: html_document
+date: "`r Sys.Date()`"
+---
+
+# Setup
+
+```{r}
+#| message: false
+library(tidyverse)
+```
+
+# A. Data dictionary
+
+Included variables: 
+
+- id (identification)
+- block (experimental block)
+- trial (experimental trial)
+- detected_orienation (the orientation from grating participants were instructed to detect LEFT or RIGHT)
+- imagined_orientation (the orientation from grating participants were instructed to imagine LEFT or RIGHT)
+- condition (signal absent o present)
+- visLevel (visibility of the stimulus in %, technically, the probability that a pixel was part of the image vs noise.)
+- response (what participants answered, right key: stimulus was present, left: absent)
+- corr (whether answer was correct, 1: correct, 0: not correct)
+- rt (response time in seconds)
+- vividness_rating (the vividness rating (1-5) given at the end of each block in which there was imagery involved (i.e. imagine left or right blocks), 1: low, 5: high)
+- compliance (at the end of each block, participants were asked what they imagined: right grating (press right arrow), left grating (press left), or nothing (press down))
+- complied (compliance compared to the actually imagined_orientation to check whether they complied to the instructions
+- congruency (if the imagined and the presented orientation align: congruent, if not: incongruent, if not applicable: none)
+
+INSERT DATA DICTIONARY OF THE ABOVE VARIABLES WITH THE FOLLOWING COLUMNS:
+
+| variable | label | type | values | source | transformations | universe | skip_logic |
+
+(see <https://www.tablesgenerator.com/markdown_tables> for help)
+
+
+# B. Data cleaning plan
+
+DATA SHOULD HAVE THE VARIABLES DEFINED IN DATA DICTIONARY ABOVE
+
+INSERT DATA CLEANING PLAN, e.g.
+
+- Step
+- Step
+    - Substep 
+- Step 
+    - Substep 
+    - Substep 
+    
+
+# C. Automated read in and cleaning
+
+Read in raw data and clean it according to data cleaning plan.
+Write all data in one dataset `d_raw`.
+(set to `eval: false` as soon as clean dataset is saved)
+
+```{r}
+#| eval: true
+# d_raw <- INSERT DATA READ-IN AND CLEANING CODE (DATA IN FOLDER data/raw)
+
+```
+
+
+Save cleaned data file as `dijkstra_data.csv`-file in folder `data`. 
+(set to `eval: false` as soon as clean dataset is saved)
+
+```{r}
+#| eval: false
+write.csv(d_raw, "data/dijkstra_data.csv", row.names = FALSE)
+rm(d_raw) # removes d_raw dataset from environment
+
+```
+
+Read in clean data.
+(set to `eval: true` to use the cleaned, saved dataset for further use)
+
+```{r}
+#| eval: false
+d <- read.csv("data/dijkstra_data.csv")
+```
+
+
+# D. Descriptive Analysis
+
+```{r}
+# insert descriptive analysis to generate variables used in the text below
+n = 999 # number of all participants
+accuracy = 999 # overall accuracy in trials
+accuracy_congruent = 999 # accuracy in congruent trials
+accuracy_incongruent = 999 # accuracy in incongruent trials
+```
+
+`r n` participants were included.
+Participants showed and accuracy of `r accuracy`, with a higher/lower accuracy in the congruent condition (`r accuracy_congruent`) compared to the incongruent condition (`r accuracy_incongruent`).
+
+# E. Visualisation
+
+Research question: INSERT RESEARCH QUESTION
+
+Target audience: SCIENTIFIC EXPERTS / GENERAL PUBLIC (SCIENCE COMMUNICATION) / STAKEHOLDER (choose one)
+
+Aim of the visualisation: DIAGNOSTIC PLOT / SHOW RESULT
+
+
+```{r}
+#  if necessary: insert preprocessing for visualization
+```
+
+
+```{r}
+# insert code for data visualisation
+# visualisation must include:
+# - data distribution info (error bars, quantiles, density)
+# - at least one visible data point from each participant (raw data, or could also be a mean of participants' responses)
+# - different colors (greys are ok)
+# - cleanly labelled axes
+# - title (must contain the research question)
+# - caption (must contain target audience and aim of visualisation)
+# - a changed theme
+# - optional: altered font, adapted theme
+
+```
+
+
+Save plot (set to `eval: true` when adapted for your use)
+
+```{r}
+#| eval: false
+ggsave(filename = "plots/NAME.JPG",
+       plot = get_last_plot(), #saves last plot, can also be an object name from environment e.g. p1
+       width = 7,
+       height = 7,
+       units = "cm", # can also be "mm" for millimeters, "px" for pixels, "in" for inches
+       dpi = 300) # plot resolution
+```
+

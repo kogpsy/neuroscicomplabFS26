@@ -1,0 +1,602 @@
+# Grundlagen der Datenvisualisierung
+
+Datenvisualisierung ist ein wichtiger Schritt in der Analyse neurowissenschaftlicher Daten. 
+Das grafische Darstellen von Informationen dient dazu die Datenkomplexität zu reduzieren und wichtige Eigenschaften herauszuheben und zusammenzufassen. 
+
+Dabei geht es nicht nur darum Ergebnisse zu kommunizieren, sondern auch dazu Einsichten über die Daten zu gewinnen: Auch wenn in den meisten wissenschaftlichen Artikeln nur wenige Grafiken gezeigt werden, wurden die Daten oft während der Analyse zahlreiche Male visualisiert.
+
+<aside> Spannende Beispiele für Datenvisualisierungen finden Sie auf dieser [Website](https://www.cedricscherer.com/top/dataviz). </aside>
+
+Wir schauen uns drei Kernaufgaben der Datenvisualisierung an: 
+
+- __Diagnostik__: Daten untersuchen
+- __Analyse__: Daten zusammenfassen
+- __Kommunikation__: Forschungsergebnisse visualisieren
+
+Je nachdem welchem Zweck eine Grafik dienen soll, müssen andere Grafikeigenschaften berücksichtigt werden. 
+Diagnostische Grafiken müssen beispielsweise nicht in erster Linie ästhetisch ansprechend sein, sondern aufzeigen, wo Probleme im Datensatz vorliegen könnten. 
+Eine "gute" Grafik komprimiert die Information in den Daten so, dass Erkenntnisse gewonnen werden können. 
+
+::: callout-caution
+## Hands-on: Vorbereitung
+
+- Erstellen Sie ein _RProject_ in _R_ oder verwenden Sie das Projekt vom letzten Kapitel.
+- Laden Sie den Datensatz `dataset_stroop_clean.csv` [hier](data/dataset_stroop_clean.csv) herunter und speichern Sie diesen in dem Ordner `data` im Ordner Ihres _RProjects_.
+- Öffnen Sie ein neues RScript (`.R`) oder RMarkdown-File (`.Rmd`). In einem RMarkdown-File können Code und Text verbunden werden und die die Outputs des Codes (z.B. Grafiken) werden anzeigt.
+
+Die Daten stammen von letztjährigen Kursexperiment, einem Stroop Test.
+
+Im Projekt wird mit einem _RMarkdown_ gearbeitet: So kann Code und Text verbunden werden, und Code-Outputs z.B. Grafiken können _inline_ angezeigt werden, zudem ermöglicht dieses Vorgehen reproduzierbare Grafiken.
+Sie können in das _RMarkdown_ den untenstehenden Code kopieren und modifizieren, um die Datenvisualisierungen nachzuvollziehen und damit zu üben.
+:::
+
+```{r}
+#| message: false
+#| warning: false
+# Packages laden
+library(tidyverse)
+library(patchwork)
+
+# Daten einlesen und Textvariablen zu Faktoren umwandeln
+d <- read_csv("../data/dataset_stroop_clean.csv") |>
+    mutate(across(where(is.character), as.factor))
+
+# Datensatz anschauen
+d |> slice_head(n = 10)
+```
+
+<!-- Hier Info zu `across` einfügen/verweisen. -->
+
+## Diagnostik: Daten untersuchen
+
+Datensätze können sehr komplex sein, deshalb ist die Visualisierung der Daten ein hilfreicher erster Schritt. 
+Mit Hilfe von Visualisierungen können Aussagen über die Qualität der Daten gemacht werden, z.B. über:
+
+- Fehlende Werte
+- Aufgabenschwierigkeit
+- Extreme Datenpunkte (Ausreisser)
+- Zeitverläufe
+- Verteilung der Daten
+
+Diagnostische Grafiken dienen dazu, rasch an Informationen zu können und Probleme in Datensätzen zu entdecken. 
+Die Grafiken müssen daher nicht ästhetisch ansprechend oder für Aussenstehende verständlich sein. 
+Im Sinne der Reproduzierbarkeit lohnt es sich aber, auch diese Visualisierungen gut zu dokumentieren.
+
+Im Folgenden schauen wir uns Beispiele für diagnostische Grafiken an.
+
+### Fehlende Werte
+
+Hierbei ist es wichtig, vor allem systematisch fehlende Datenpunkte zu entdecken: Fehlt bei einer Person die Hälfte der Antworten? Möchten wir diese ausschliessen?
+
+Diese können mit dem Package {naniar} relativ schnell sichtbar gemacht werden. Es gibt keine _missings_ in unserem Fall.
+
+```{r}
+naniar::vis_miss(d)
+```
+
+<aside>Bevor Sie das Package verwenden können, müssen Sie dies erst herunterladen. Sie können dies unter dem Reiter `Tools` > `Install Packages ...` tun oder in der Konsole mit `install.packages("naniar")`. </aside>
+
+Für die Analyse schliessen wir alle Reaktionszeiten unter 100ms und über 8 Sekunden aus.
+
+```{r}
+# zu schnelle und zu langsame Antworten ausschliessen
+d <- d |>
+    filter(rt > 0.099 & rt < 8)
+```
+
+Wir berechnen nun für die kommenden Grafiken die Anzahl Trials pro Person, die *accuracy*, sowie die mittlere Reaktionszeit für die Bedingungen `congruent` und `incongruent` (wie im Kapitel [Aggregierte Statistiken](https://kogpsy.github.io/neuroscicomplabFS23/pages/chapters/summarizing-data.html) beschrieben).
+
+```{r}
+#| message: false
+#| warning: false
+# Daten gruppieren:  Anzahl Trials, Accuracy und mittlere Reaktionszeit berechnen
+acc_rt_individual <- d |>
+    group_by(id, condition) |>
+    summarise(
+        N = n(),
+        ncorrect = sum(corr),
+        accuracy = mean(corr),
+        median_rt = median(rt)
+    )
+acc_rt_individual
+```
+
+Nachdem wir Trials ohne Antwort ausgeschlossen haben, interessiert es uns, wie viele Trials jede Versuchsperson gelöst hat:
+
+```{r}
+#| message: false
+#| warning: false
+# Plot: Anzahl Trials pro Bedingung für jede Versuchsperson 
+acc_rt_individual |> 
+    ggplot(aes(x = id, y = N)) +
+    geom_point() +
+    facet_wrap(~ condition) +
+    geom_hline(yintercept = 40) + # Horizontale Linie einfügen
+    theme_minimal()
+```
+
+Wir könnten alle Personen ausschliessen, die weniger als 40 gültige Trials hatten (in unserem Beispiel nicht nötig, da alle genügend Trials haben).
+
+::: {.callout-tip collapse="true"}
+## Code: Daten ausschliessen
+
+```{r}
+#| message: false
+#| warning: false
+# Datensatz mit allen Ids, welche zuwenig Trials hatten
+n_exclusions <- acc_rt_individual |>
+    filter(N < 40) 
+
+# Aus dem Hauptdatensatz diese Ids ausschliessen
+d <- d |>
+    filter(!id %in% n_exclusions$id) 
+
+# Check
+d_acc_rt_individual <- d |>
+    group_by(id, condition) |>
+    summarise(
+        N = n(),
+        ncorrect = sum(corr),
+        accuracy = mean(corr),
+        median_rt = median(rt)
+    )
+
+d_acc_rt_individual |> 
+    ggplot(aes(x = id, y = N)) +
+    geom_point() +
+    facet_wrap(~ condition) +
+    geom_hline(yintercept = 40) + # Horizontale Linie einfügen
+    theme_minimal()
+```
+:::
+
+### Extreme Datenpunkte (Ausreisser)
+
+Wir können Visualisierungen auch verwenden, um extreme Datenpunkte zu identifizieren. Dafür teilen wir hier die Accuracywerte in 3 Gruppen ein und plotten diese:
+
+```{r}
+# Trials nach accuracy einteilen
+d_acc_rt_individual_grouped <- d_acc_rt_individual %>% 
+  mutate(
+    performance = case_when(
+      accuracy > 0.75 ~ "good",
+      accuracy < 0.40 ~ "bad",
+      TRUE ~ "ok") %>% 
+      factor(levels = c("good", "ok", "bad")))
+
+# Outlier visualisieren
+d_acc_rt_individual_grouped %>% 
+    ggplot(aes(x = id, y = accuracy, color = performance, shape = performance)) +
+    geom_point(size = 2, alpha = 0.6) + 
+    geom_point(data = filter(d_acc_rt_individual_grouped, performance != "OK"), 
+               alpha = 0.9) + 
+    facet_grid(~condition) +
+    scale_color_manual(values = c("gray40", "steelblue", "red")) +
+    geom_hline(yintercept = 0.33, linetype='dotted', col = 'black')+
+    annotate("text", x = "sub-100", y = 0.33, label = "chance level", vjust = -1, size = 3) +
+    theme_minimal(base_size = 12)
+```
+
+
+<aside>Dasselbe könnte man für die Reaktionszeiten machen. Informationen dazu, wie Ausreisser in Reaktionszeiten gefunden und visualisiert werden können, finden Sie [hier](https://kogpsy.github.io/neuroscicomplab/07-mental-chronometry.html).</aside>
+
+
+### Werte löschen
+
+Es können einzelne Trials oder auch die gesamten Daten einer Versuchsperson ausgeschlossen werden, weil z.B. die Accuracy zu tief war, fehlende Werte bestanden, etc.
+
+Hierbei ist wichtig:
+
+- Datenpunkte werden __nie__ aus den Rohdaten gelöscht, sondern nur aus dem aktuell geladenen Datensatz, welcher für die Analysen verwendet und neu abgespeichert wurde. So können wir uns immer noch umentscheiden und verlieren nicht die Information, welche Daten gefehlt haben.
+
+- Dadurch, dass die Datenverarbeitung in _R_ mit reproduzierbarem Code geschrieben ist, können wir immer überprüfen, ob ein Fehler in unserer Datenverarbeitung zu den missings geführt hat und diesen evtl. korrigieren.
+
+- Es macht nicht immer Sinn die Trials mit missing data zu löschen! Dies muss von Fall zu Fall entschieden werden. Wenn Versuchspersonen zum Beispiel teilweise zu lange brauchten um eine Aufgabe zu lösen, dann ist das eine wichtige Information, wird diese rausgelöscht, wird die Leistung der Versuchsperson systematisch überschätzt.
+
+
+In unserem Beispiel macht es Sinn, die drei Versuchspersonen, die extrem tiefe Accuracy hatten (wahrscheinlich weil sie die Aufgabe falsch verstanden hatten) vor den Analysen aus dem Datensatz auszuschliessen.Zuerst schauen wir uns an, welche Versuchspersonen sehr tiefe `accuracy`-Werte hatten:
+
+```{r}
+acc_rt_individual |>
+    filter(accuracy < 0.33) # 0.33 ist das chance level
+```
+
+Dann schliessen wir diese 3 Personen aus. Hierbei empfiehlt es sich, den Code so zu kommentieren, dass man später direkt sieht, weshalb eine Person ausgeschlossen wurde.
+
+```{r}
+# Aussschluss dieser Personen
+d <- d |>
+    filter(id != "sub-009") |> # Ausschluss wegen zu tiefer Accuracy (< 0.33)
+    filter(id != "sub-180") |> # Ausschluss wegen zu tiefer Accuracy (< 0.33)
+    filter(id != "sub-201") # Ausschluss wegen zu tiefer Accuracy (< 0.33)
+```
+
+
+
+### Verlaufseffekte: Ermüdung und Lernen
+
+Verlaufseffekte sind relevant, wenn man z.B. Ermüdungs- oder Lerneffekte ausschliessen möchte. Sie könnten aber auch inhaltlich interessant sein, z.B. in einem Trainingskontext, wenn man sich dafür interessiert, wie viele Trials nötig sind, damit sich jemand in einer Aufgabe verbessert.
+
+In unserem Experiment möchten wir sicher sein, dass die Performanz sich über die Zeit hinweg nicht zu stark verändert. 
+Hierzu können wir beispielsweise die *accuracy* plotten:
+
+```{r}
+#| message: false
+#| warning: false
+d_acc_rt_trial <- d |>
+    group_by(condition, trial) |>
+    summarise(
+        accuracy = mean(corr),
+        median_rt = median(rt)
+        )
+
+d_acc_rt_trial |>
+    ggplot(aes(x = trial, y = accuracy, color = condition)) +
+    geom_point(size = 2, alpha = 0.8) +
+    geom_line() +
+    scale_color_manual(values = c(congruent = "skyblue3",
+                                 incongruent = "tomato3")) +
+    facet_wrap(~ condition) +
+    theme_minimal(base_size = 12)
+```
+
+Oder wir können uns die Reaktionszeiten über die Zeit hinweg anschauen. 
+
+```{r}
+#| message: false
+#| warning: false
+d_acc_rt_trial |>
+    ggplot(aes(x = trial, y = median_rt, color = condition)) +
+    geom_point(size = 2, alpha = 0.8) +
+    geom_line() +
+    scale_color_manual(values = c(congruent = "skyblue3",
+                                 incongruent = "tomato3")) +
+    facet_wrap(~ condition) +
+    theme_minimal(base_size = 12)
+```
+
+
+Das tun wir hier für 3 Versuchspersonen.
+
+```{r}
+#| message: false
+#| warning: false
+# Plot: Reaktionszeit über die Trials hinweg (für 3 Versuchspersonen)
+d |>
+    filter(id %in% c("sub-001", "sub-100", "sub-150")) |>
+    ggplot(aes(x = trial, y = rt, color = condition)) +
+    geom_smooth(method = "lm", se = FALSE) +
+    geom_point(alpha = 0.5) +
+    scale_color_manual(values = c(congruent = "skyblue3",
+                                 incongruent = "tomato3")) +
+    facet_wrap(~ id) +
+    theme_minimal()
+```
+
+
+### Aufgabenschwierigkeit und Performanz der Versuchspersonen
+
+Bevor wir die Daten analysieren, möchten wir wissen, ob die Personen die Aufgabe einigermassen gut lösen konnten (und wollten). 
+In unserem Experiment erwarten wir eine Genauigkeit (accuracy) über dem Rateniveau von 33%. Wir plotten hierfür die `accuracy` für jede Person und Bedingung.
+
+```{r}
+#| message: false
+#| warning: false
+# Plot accuracy per person and condition
+p1 <- d_acc_rt_individual |> 
+  ggplot(aes(x = condition, y = accuracy, color = condition)) +
+    geom_jitter(size = 3, alpha = 0.4, 
+                width = 0.2, height = 0) +
+    geom_boxplot(width = 0.1, alpha = 0, color = "black") +
+    scale_color_manual(values = c(congruent = "skyblue3",
+                                 incongruent = "tomato3")) +
+    labs(x = "Congruency",
+         y = "Proportion correct",
+         title = "Accuracy",
+         subtitle = "per Person and Condition") +
+    theme_minimal(base_size = 12) +
+    theme(legend.position = "none")
+
+p2 <- d_acc_rt_individual |> 
+  ggplot(aes(x = condition, y = median_rt, color = condition)) +
+    geom_jitter(size = 3, alpha = 0.4, 
+                width = 0.2, height = 0) +
+    geom_boxplot(width = 0.1, alpha = 0, color = "black") +
+    scale_color_manual(values = c(congruent = "skyblue3",
+                                 incongruent = "tomato3")) +
+    labs(x = "Congruency",
+         y = "Median Response Time [s]",
+         title = "Median Response Time",
+         subtitle = "per Person and Condition") +
+    theme_minimal(base_size = 12) +
+    theme(legend.position = "none")
+
+library(patchwork)
+
+p1 + p2
+```
+
+Und wir interessieren uns, wie sich die `accuracy` zwischen den Bedingungen unterscheidet. 
+Das zeigt uns, ob die Instruktion eine Wirkung hatte. 
+Dafür fügen wir Linien ein, die die `accuracy`- Werte pro Versuchsperson verbindet:
+
+```{r}
+p3 <- d_acc_rt_individual |> 
+    ggplot(aes(x = condition, y = accuracy, color = condition, group = id)) +
+    geom_line(color = "grey40", alpha = 0.5) +
+    geom_jitter(size = 3, alpha = 0.8, 
+                width = 0, height = 0) +
+    scale_color_manual(values = c(congruent = "skyblue3",
+                                 incongruent = "tomato3")) +
+    labs(x = "Congruency",
+         y = "Proportion correct",
+         title = "Accuracy",
+         subtitle = "per Person and Condition") +
+    theme_minimal(base_size = 12) +
+    theme(legend.position = "none")
+
+p4 <- d_acc_rt_individual |> 
+    ggplot(aes(x = condition, y = median_rt, color = condition, group = id)) +
+    geom_line(color = "grey40", alpha = 0.5) +
+    geom_jitter(size = 3, alpha = 0.8, 
+                width = 0, height = 0) +
+    scale_color_manual(values = c(congruent = "skyblue3",
+                                 incongruent = "tomato3")) +
+    labs(x = "Congruency",
+         y = "Median Response Time [s]",
+         title = "Median Response Time",
+         subtitle = "per Person and Condition") +
+    theme_minimal(base_size = 12) +
+    theme(legend.position = "none")
+
+p3 + p4
+```
+
+:::{.callout-caution}
+## Hands-on: Datenqualität
+
+Besprechen Sie miteinander, was Sie nun über unsere Daten wissen.
+
+- Haben die Versuchspersonen die Aufgaben lösen können? 
+
+- War die Aufgabe zu einfach, zu schwierig? 
+
+- Denken Sie, die Personen waren motiviert?
+
+- Welche Datensätze / Trials möchten wir ausschliessen? (Achtung: Dies müsste eigentlich **vor** dem Anschauen der Daten entschieden werden, um zu verhindern, dass man Datenpunkte ausschliesst, welche die Hypothese nicht bestätigen.)
+
+- Wie gut eignen sich die Daten, um die Forschungsfrage zu beantworten?
+
+- Was könnte bei einem nächsten Experiment besser gemacht werden?
+
+:::
+
+## Analyse: Daten zusammenfassen und explorieren
+
+Grafiken können einerseits eine Ergänzung zur statistischen Datenanalyse sein, wie auch die Resultate der Analysen (bspw. geschätzte Parameterwerte) visualisieren. 
+Sie haben den Vorteil, dass Informationen über Daten oder Analyseergebnisse gleichzeitig ersichtlich sind, sie können also vom Betrachtenden direkt verglichen werden.
+
+Wir möchten die Daten hinsichtlich der Forschungsfragen visualisieren. 
+Die Grafiken müssen vor allem präzise und informativ sein. 
+Um Schlüsse aus Daten ziehen zu können, müssen diese zusammengefasst werden. 
+Dazu eignen sich Lagemasse oder **Masse der zentralen Tendenz**, also beispielsweise der Mittelwert, Median oder Modus. 
+Gleichzeitig ist es wichtig, dass auch **Verteilungsmasse** berichtet werden, wie *Standardabweichungen* oder *Standardfehler*. 
+Wir können auch mit Werte aus statistischen Modellen, wie *Parameterschätzungen* und *Konfidenzintervalle*, grafisch darstellen.
+
+Mit Hilfe von Visualisierungen können z.B. Aussagen können gemacht werden über:
+
+- Verteilung der Daten
+- Zusammenhänge von Variablen (Korrelationen, Zeitverläufe)
+- Vergleiche und Unterschiede von Gruppen / Bedingungen
+
+
+### Zentrale Tendenz und Verteilungsmasse
+
+Masse der zentralen Tendenz sind beispielsweise der Mittelwert, der Median und Modus. 
+Wenn wir uns dafür interessieren, wie sich die *accuracy* in Bezug auf alle Teilnehmenden verhält, schauen wir uns die zentrale Tendenz über alle Personen hinweg an. Es sollte nie nur die zentrale Tendenz, sondern immer auch ein passendes Verteilungsmass berichtet werden.
+
+Wie oben schon gezeigt können wir dies z.B. mit Boxplots umsetzen Diese zeigen uns den Median und die Quartile sowie Ausreisser an. Eine andere Möglichkeit Verteilungen anzuzeigen sind die Violinplots. Hier wurden mit `geom_jitter()` auch die Mittelwerte der einzelnen Personen im Plot eingefügt.
+
+```{r}
+#| message: false
+#| warning: false
+# Boxplot
+p_boxplot <- d_acc_rt_individual |> 
+  ggplot(aes(x = condition, y = accuracy, color = condition)) +
+    geom_jitter(alpha = 0.25, width = 0.2) +
+    geom_boxplot(alpha = 0, width = 0.2, color = "black") +
+    scale_fill_manual(values = c(congruent = "skyblue3",
+                                 incongruent = "tomato3")) +
+    labs(title = "Boxplot",
+         x = "Congruency",
+         y = "Proportion correct") +
+    theme_minimal(base_size = 12) +
+    theme(legend.position = "none")
+
+# Violin Plot
+p_violin <- d_acc_rt_individual |> 
+  ggplot(aes(x = condition, y = accuracy, color = condition)) +
+    geom_jitter(alpha = 0.5, width = 0.2) +
+    geom_violin(alpha = 0, width = 0.2, color = "black") +
+    scale_fill_manual(values = c(congruent = "skyblue3",
+                                 incongruent = "tomato3")) +
+    labs(title = "Violin Plot",
+         x = "Congruency",
+         y = "Proportion correct") +
+    theme_minimal(base_size = 12) +
+    theme(legend.position = "none")
+
+p_boxplot + p_violin
+```
+
+Das _Package_ {ggridges} bietet die Möglichkeit die Verteilungen zu plotten. 
+Mehr Informationen hierzu finden Sie [hier](https://cran.r-project.org/web/packages/ggridges/vignettes/introduction.html) in der Dokumentation.
+
+
+```{r}
+#| message: false
+#| warning: false
+library(ggridges)
+p5 <- d_acc_rt_individual |> 
+    ggplot(aes(x = accuracy, y = condition, fill = condition)) + geom_density_ridges2(scale = 0.5, alpha = 0.5) +
+    scale_fill_manual(values = c(congruent = "skyblue3",
+                                 incongruent = "tomato3")) +
+    labs(title = "Accuracy",
+         x = "Proportion corect",
+         y = "Congruency") +
+    theme_minimal(base_size = 12) +
+    theme(legend.position = "none")
+
+p6 <- d_acc_rt_individual |> 
+    ggplot(aes(x = median_rt, y = condition, fill = condition)) + geom_density_ridges2(scale = 1, alpha = 0.5) +
+    scale_fill_manual(values = c(congruent = "skyblue3",
+                                 incongruent = "tomato3")) +
+    labs(title = "Median Response Time",
+         x = "Median Response Time [s]",
+         y = "Congruency") +
+    theme_minimal(base_size = 12) +
+    theme(legend.position = "none")
+
+p5 + p6
+```
+
+
+### Aggregierte Statistiken 
+
+Wenn wir Mittelwerte und Standardfehler angeben möchten können wir dies wie folgt tun. 
+Wichtig ist hier, dass wir _within-subject_ Standardfehler berechnen. 
+Genaueres zu den Unterschieden zwischen within- und between-subject Standardfehlern finden Sie [hier](https://kogpsy.github.io/neuroscicomplabFS23/pages/chapters/summarizing-data.html). 
+Wir verwenden das _Package_ {Rmisc}. _Achtung:_ Da dieses jedoch wegen der Namen der Funktionen oft Namens-Konflikte auslöst, laden wir `Rmisc` nicht mit der `library()`-Funktion, sondern stellen es einfach vor die benötigte Funktion, z.B. so `Rmisc::summarySEwithin()`.
+
+```{r}
+d_acc_within <- d |>
+    Rmisc::summarySEwithin(measurevar = "corr",
+                               withinvars = "condition",
+                               idvar = "id",
+                               na.rm = FALSE,
+                               conf.interval = 0.95)
+
+p7 <- d_acc_within |>
+    ggplot(aes(x = condition, y = corr, group = 1)) +
+    geom_line() +
+    geom_errorbar(width = .1, aes(ymin = corr-se, ymax = corr+se)) +
+    geom_point(size = 3) +
+    labs(title = "Accuracy",
+         x = "Congruency",
+         y = "Accuracy") +
+    theme_minimal(base_size = 12) +
+    theme(legend.position = "none")
+
+
+d_rt_within <- d |>
+    Rmisc::summarySEwithin(measurevar = "rt",
+                               withinvars = "condition",
+                               idvar = "id",
+                               na.rm = FALSE,
+                               conf.interval = 0.95)
+
+p8 <- d_rt_within |>
+    ggplot(aes(x = condition, y = rt, group = 1)) +
+    geom_line() +
+    geom_errorbar(width = .1, aes(ymin = rt-se, ymax = rt+se)) +
+    geom_point(size = 3) +
+    labs(title = "Median Response Time",
+         x = "Congruency",
+         y = "Median Response Time [s]") +
+    theme_minimal(base_size = 12) +
+    theme(legend.position = "none")
+
+p7 + p8
+
+```
+
+- [Hier](http://www.cookbook-r.com/Graphs/Plotting_means_and_error_bars_(ggplot2)) finden Sie weitere Code-Beispiele für das Plotten von Verteilungsmassen.
+
+- [Hier](https://kogpsy.github.io/neuroscicomplabFS22/pages/chapters/07_response_times_i.html#zusammenfassen-zentrale-tendenz-und-dispersion) finden Sie Informationen, wie Reaktionszeiten zusammengefasst und visualisiert werden könnten.
+
+### Visualisieren von Modellschätzungen
+
+Wenn für die statistische Analyse ein Modell geschätzt wurde, kann auch dies visualisiert werden. 
+Auf diese Form der Visualisierung wird in diesem Kapitel aber nicht eingegangen. 
+
+- [sjPlot](https://cran.r-project.org/web/packages/sjPlot/vignettes/plot_model_estimates.html): Package zum Plotten von Fixed Effects
+
+- [see](https://dominiquemakowski.github.io/publication/ludecke2021see/ludecke2021see.pdf): Package zum Visualisieren von Statistischen Modellen
+
+
+## Kommunikation: Forschungsergebnisse visualisieren
+
+Kommunikation der Ergebnisse findet vor allem in den wissenschaftlichen Artikeln, Postern oder Präsentationen statt. 
+Bei Visualisierungen die der Kommunkation dienen sind folgende Merkmale wichtig:
+
+### Beschriftungen
+
+Die genaue Beschriftung und deren Lesbarkeit ist für diese Form von Grafiken zentral. Achten Sie sich auf Folgendes: 
+
+- Die Achsenbeschriftungen enthalten die verwendete Variable in Klartext (nicht den R Variablennamen) und wenn zutreffend auch die Masseinheit (z.B. *Response Time [ms]*). Beschriftungen können Sie einfügen mit `labs()`.
+
+```{r}
+p_boxplot +
+labs(title = "Der Titel der Grafik", 
+     subtitle = "Der Subtitel der Grafik",
+     x = "hier kommt Label x [Masseinheit]", 
+     y = "hier kommt Label y [Masseinheit]",
+     caption = " Hier kommt eine Caption")
+```
+
+- Farben / Formen usw. werden in einer Legende den Gruppen zugeordnet (Ausnahme: wenn Daten von einzelnen Personen geplottet werden, wird die Versuchspersonennummer nicht aufgeführt). 
+
+- Masse der zentralen Tendenz und Varianzmasse werden beschrieben (z.B. Standardfehler oder Standardabweichung?)
+
+
+### Fünf Merkmale einer guten Grafik
+
+Es gibt unzählige Optionen die eigenen Daten zu visualisieren. 
+Folgende Prinzipien helfen beim Erstellen einer informativen Grafik, die zur Kommunikation der Ergebnisse dient.
+
+<aside>Die Punkte 3-5 wurden aus dem Buch "The Visual Display of Quantitative Information" von Edward Tufte, 1986 entnommen.</aside>
+
+#### 1. Eine Frage beantworten
+ 
+Jede Grafik sollte mindestens eine teilweise aber auch mehrere Fragen beantworten.
+
+👉 Welche Frage möchte ich beantworten? Welche Form der Visualisierung beantwortet diese Frage am besten?
+
+Hierbei kann es hilfreich sein den "Arbeitstitel" der Grafik als Frage zu formulieren. 
+
+
+#### 2. Zielgruppe berücksichtigen
+
+Beim Erstellen der Grafik sollte beachtet werden, an wen sich die Grafik richtet. Für eine Präsentation müssen die Achsenbeschriftungen vergrössert und die Grafik simpel gehalten werden. In einem wissenschaftlichen Artikel kann die Grafik komplexer gestaltet werden, da die Lesenden sich mehr Zeit zum Anschauen nehmen können. Zudem sollten hier die Vorgaben des Journals berücksichtigt werden. Auch wichtig ist das Verwenden von "farbenblind-freundlichen" Palletten, rot und grün ist z.B. eine schlechte Wahl.
+
+👉 Für welchen Zweck / für wen erstelle ich die Grafik? Wie ist das Vorwissen des Zielpublikums?
+
+- Für einen Fachartikel lohnt es sich, zu Beginn die Vorgaben der Fachzeitschrift zu berücksichtigen.
+
+
+#### 3. Die Daten zeigen
+
+Das tönt simpel, wird aber oft nicht berücksichtigt. Bei einer Grafik geht es in erster Linie um die Daten. Es sollte die simpelste Form gewählt werden, welche die Informationen vermittelt. Oft braucht es keine ausgefallenen Grafikideen oder neuartigen Formate. Hierbei ist es wichtig, die Art der Daten zu berücksichtigen: Wie viele Variablen sind es? Sind diese kontinuierlich (z.B. Reaktionszeiten) oder diskret (z.B. Experimentalbedingungen)? Wie viele Dimensionen haben meine Daten? Mit zwei Achsen lassen sich zwei Dimensionen darstellen, zusätzlich können mit Farben und Formen noch weitere Dimensionen abgebildet werden (z.B. Millisekunden, Bedingung 1 und Bedingung 2). Es können Rohwerte geplottet werden oder *summary statistics* (z.B. Mittelwerte, Standardabweichungen)
+
+👉 Welche Art Grafik eignet sich für meine Frage und meine Daten? Schauen Sie z.B. [hier](https://www.data-to-viz.com) nach oder nutzen Sie das `esquisse`-Package.
+
+- Beispiele für verschiedenen Plots in R sind z.B. histogram, boxplot, violin plot, scatter plot / correlogram, jitter plot, raincloud plot, percentiles / shift functions, area chart, heat map.
+
+
+#### 4. Optimieren des *data-ink ratio*s 
+
+Das *Daten-Tinte-Verhältnis* sollte so optimal wie möglich sein. Das bedeutet, das idealerweise jeder Strich, jeder Punkt, jedes Textfeld Information beinhaltet. Alles was keine Information transportiert oder nur wiederholt kann weggelassen werden.
+
+👉 Was kann ich weglassen?
+
+- In R kann zum Schluss des Plots `+ theme_minimal()` hinzugefügt werden, dies entfernt u.a. den grauen Hintergrund. Das Grau des Hintergrunds ist Farbe (*ink*), welche keine Information transportiert, das Weglassen lässt die Grafik ruhiger wirken.
+
+
+#### 5. Feedback einholen und revidieren
+
+Das Erstellen einer guten Grafik ist iterativ, das heisst, sie wird immer wieder überarbeitet, bis sie die Information möglichst einfach, genau aber klar kommuniziert. Hierbei ist Feedback oft unerlässlich.
+
+👉 Was denken andere über Ihre Grafik?
+
+
+
