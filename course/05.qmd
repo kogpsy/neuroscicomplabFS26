@@ -85,7 +85,9 @@ Die Datenvisualisierung muss folgende Kriterien erfüllen:
 
 Bitte beachten Sie die Abgabekriterien, die im Vorgehen beschrieben werden. Die Übung gilt nur als erfüllt, wenn diese eingehalten werden (z.B. Dateiformate).
 
-**Abgabetermin: 16.04.2026 23:55**
+**Abgabetermin: 23.04.2026 23:55**
+
+- Die Übung wird am 20.3.2026 und 27.03.2026 an den Kursterminen besprochen. Fragen können im Forum auf Ilias gestellt werden (per E-Mail können keine inhaltlichen Fragen zu den Übungen beantwortet werden).
 
 - *Information zum Arbeiten in Kleingruppen:*
 

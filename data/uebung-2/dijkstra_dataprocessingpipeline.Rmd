@@ -5,6 +5,8 @@ output: html_document
 date: "`r Sys.Date()`"
 ---
 
+IF FINISHED DELETE ALL COMMENTS AND WORKING INSTRUCTIONS (<- LIKE THIS ONE)
+
 # Setup
 
 ```{r}
@@ -14,77 +16,108 @@ library(tidyverse)
 
 # A. Data dictionary
 
-Included variables: 
+Included variables (these variables must be in the clean datafile after the automated cleaning and processing).
+
+Example: id is the label, and in the brackets the variable description can be found.
+
+Important: all variables with an asterix (*) are optional and can also be left out.
+For people who want to learn how to write a more complex read-in, the variables can be included.
 
 - id (identification)
 - block (experimental block)
 - trial (experimental trial)
-- detected_orienation (the orientation from grating participants were instructed to detect LEFT or RIGHT)
-- imagined_orientation (the orientation from grating participants were instructed to imagine LEFT or RIGHT)
 - condition (signal absent o present)
-- visLevel (visibility of the stimulus in %, technically, the probability that a pixel was part of the image vs noise.)
+- vis_level (visibility of the stimulus in %, technically, the probability that a pixel was part of the image vs noise.)
 - response (what participants answered, right key: stimulus was present, left: absent)
 - corr (whether answer was correct, 1: correct, 0: not correct)
 - rt (response time in seconds)
-- vividness_rating (the vividness rating (1-5) given at the end of each block in which there was imagery involved (i.e. imagine left or right blocks), 1: low, 5: high)
 - compliance (at the end of each block, participants were asked what they imagined: right grating (press right arrow), left grating (press left), or nothing (press down))
 - complied (compliance compared to the actually imagined_orientation to check whether they complied to the instructions
-- congruency (if the imagined and the presented orientation align: congruent, if not: incongruent, if not applicable: none)
+
+- *detected_orientation (the orientation from grating participants were instructed to detect LEFT or RIGHT)
+- *imagined_orientation (the orientation from grating participants were instructed to imagine LEFT or RIGHT)
+- *vividness_rating (the vividness rating (1-5) given at the end of each block in which there was imagery involved (i.e. imagine left or right blocks), 1: low, 5: high)
+- *congruency (if the imagined and the presented orientation align: congruent, if not: incongruent, if not applicable: none)
 
 INSERT DATA DICTIONARY OF THE ABOVE VARIABLES WITH THE FOLLOWING COLUMNS:
 
-| variable | label | type | values | source | transformations | universe | skip_logic |
+| variable | label | type | values | source | transformations | skip_logic |
 
 (see <https://www.tablesgenerator.com/markdown_tables> for help)
+
+| variable | label |   |   |
+|:-----------|:-------|---|---|
+| identification | id |   |   |
+|           |       |   |   |
 
 
 # B. Data cleaning plan
 
-DATA SHOULD HAVE THE VARIABLES DEFINED IN DATA DICTIONARY ABOVE
+INSERT DATA CLEANING PLAN
+LIST ALL STEPS NEEDED TO GET FROM THE RAW TO THE CLEAN DATA
+SHORT DESCRIPTIONS ARE ENOUGH
+HERE SOME EXAMPLES:
 
-INSERT DATA CLEANING PLAN, e.g.
+- Read in raw data from "raw" folder
 
-- Step
-- Step
-    - Substep 
-- Step 
-    - Substep 
-    - Substep 
+- Transform variables
+    - variable "present" (as.numeric) from variable "present" in raw data
+    - variable "block" (as.character) from variable "block" in raw data
+
+- Create new variables
+    - variable "id" from variable "participant" in raw data
     
+- Write clean data as "dijkstra_data_clean.csv" 
 
+    
 # C. Automated read in and cleaning
 
 Read in raw data and clean it according to data cleaning plan.
-Write all data in one dataset `d_raw`.
-(set to `eval: false` as soon as clean dataset is saved)
+Write all data in one dataset `d_raw` set chunk to `eval: false` as soon as clean dataset is saved.
+
+IF YOU SET eval:false THE CHUNK DOES NOT RUN EVERY TIME YOU KNIT THE .RMD FILE. THIS SAVES YOU TIME.
 
 ```{r}
 #| eval: true
-# d_raw <- INSERT DATA READ-IN AND CLEANING CODE (DATA IN FOLDER data/raw)
+
+# define PATH (string with path)
+PATH = ""
+
+# define read-in function
+read_function <- function(path) {
+    d <- read_csv(path, show_col_types = FALSE)
+    
+    # INSERT DATA CLEANING AS IN THE DATA CLEANING PLAN ABOVE
+    # CLEAN DATA SHOULD HAVE THE VARIABLES DEFINED IN DATA DICTIONARY ABOVE
+}
+
+# run function
+d <- list.files(
+  path = PATH,
+  pattern = "\\.csv$",
+  full.names = TRUE
+) |>
+  map_dfr(read_function)
 
 ```
 
-
-Save cleaned data file as `dijkstra_data.csv`-file in folder `data`. 
-(set to `eval: false` as soon as clean dataset is saved)
+Save cleaned data file as `dijkstra_data.csv`-file in folder `data` and set chunk to `eval: false` as soon as clean dataset is saved.
 
 ```{r}
 #| eval: false
-write.csv(d_raw, "data/dijkstra_data.csv", row.names = FALSE)
+
+write.csv(d_raw, "data/dijkstra_data_clean.csv", row.names = FALSE)
 rm(d_raw) # removes d_raw dataset from environment
 
 ```
 
-Read in clean data.
-(set to `eval: true` to use the cleaned, saved dataset for further use)
-
-```{r}
-#| eval: false
-d <- read.csv("data/dijkstra_data.csv")
-```
-
 
 # D. Descriptive Analysis
+
+CALCULATE SOME SHORT DESCRIPTIVE STATISTICS. 
+YOU CAN SAVE THE RESULT IN A VARIABLE AND CALL THAT VARIABLE IN THE TEXT.
+IN THE RENDERED DOCUMENT, THE VALUES WILL AUTOMATICALLY INSERTED.
+THIS IS A GOOD WAY TO AUTOMATICALLY UPDATE REPORTS, IF NEW DATA IS ADDED.
 
 ```{r}
 # insert descriptive analysis to generate variables used in the text below
@@ -95,9 +128,15 @@ accuracy_incongruent = 999 # accuracy in incongruent trials
 ```
 
 `r n` participants were included.
-Participants showed and accuracy of `r accuracy`, with a higher/lower accuracy in the congruent condition (`r accuracy_congruent`) compared to the incongruent condition (`r accuracy_incongruent`).
+Participants showed and accuracy of `r accuracy`, with an accuracy of `r accuracy_congruent` in the congruent trials and an accuracy of `r accuracy_incongruent` in the incongruent trials
 
 # E. Visualisation
+
+Read in course data.
+
+```{r}
+d_viz <- read.csv("data/data_dijkstra_course.csv")
+```
 
 Research question: INSERT RESEARCH QUESTION
 

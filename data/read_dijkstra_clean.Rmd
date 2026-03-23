@@ -1,0 +1,91 @@
+```{r}
+
+library(tidyverse)
+
+
+read_dijkstra <- function(path) {
+  
+  d <- read_csv(path, show_col_types = FALSE)
+  
+  d_block <- d |>
+    group_by(participant, block) |>
+    summarise(
+      vivid = first(na.omit(as.character(main_vivid_key.keys)), default = NA_character_),
+      compliance = first(na.omit(as.character(block_compliance_key.keys)), default = NA_character_),
+      .groups = "drop"
+    ) |>
+    mutate(
+      participant = as.character(participant),
+      block = as.character(block)
+    )
+  
+  d_trial <- d |>
+    filter(!is.na(main_detect_key.keys)) |>
+    mutate(
+      id = as.character(participant),
+      block = as.character(block),
+      trial = as.numeric(trialInBlock),
+      detectOri = str_to_lower(as.character(detectOri)),
+      imagineOri = str_to_lower(as.character(imagineOri)),
+      present = as.numeric(present),
+      stimulus = case_when(
+        present == 1 ~ "present",
+        present == 0 ~ "absent",
+        TRUE ~ NA_character_
+      ),
+      congruency = case_when(
+        imagineOri == "none" ~ "none",
+        detectOri == imagineOri ~ "congruent",
+        detectOri != imagineOri ~ "incongruent",
+        TRUE ~ NA_character_
+      ),
+      visLevel = as.character(visLevel),
+      response = case_when(
+        main_detect_key.keys == "right" ~ "present",
+        main_detect_key.keys == "left" ~ "absent",
+        TRUE ~ NA_character_
+      ),
+      corr = as.numeric(main_detect_key.corr),
+      rt = as.numeric(main_detect_key.rt)
+    ) |>
+    select(
+      id,
+      block,
+      trial,
+      detectOri,
+      imagineOri,
+      present,
+      stimulus,
+      congruency,
+      visLevel,
+      response,
+      corr,
+      rt
+    ) |>
+      filter(rt > 0.1 & rt < 5)
+  
+  d_trial |>
+    left_join(d_block, by = c("id" = "participant", "block" = "block")) |>
+    mutate(
+      compliance = str_to_lower(compliance),
+      complied = case_when(
+        compliance == "right" & imagineOri == "right" ~ "yes",
+        compliance == "left"  & imagineOri == "left"  ~ "yes",
+        compliance == "down"  & imagineOri == "none"  ~ "yes",
+        is.na(compliance) | is.na(imagineOri) ~ NA_character_,
+        TRUE ~ "no"
+      )
+    )
+}
+
+d <- list.files(
+  path = "uebung-2/data/raw/",
+  pattern = "\\.csv$",
+  full.names = TRUE
+) |>
+  map_dfr(read_dijkstra)
+
+write_csv(d, "uebung-2/data/data_dijkstra_course.csv")
+
+```
+
