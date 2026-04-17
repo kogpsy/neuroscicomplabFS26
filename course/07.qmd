@@ -1,0 +1,122 @@
+---
+title: "T7 17.04.2026"
+---
+
+::: {.callout-note title="Lernziele"}
+
+- wissen welche Annahmen hinter statistischen Verfahren stecken, welche Fragen mit Bayesianischer Statistik beantwortet werden können, und wie Nullunterschiede statistisch getestet werden können
+
+- Datengenerierende Prozesse kennen und einfache DAGs (dynamic acyclic graphs) zeichnen können
+
+- den Unterschied zwischen Parameterschätzung und Hypothesentests kennen
+
+- Einblick in die Bayesianische Parameterschätzung erhalten und wichtige Konzepte wie sich Prior, Likelihood und Posterior verstehen
+
+:::
+
+**Vorbereitungsauftrag**
+
+Kein Vorbereitungsauftrag.
+
+**Kurstermin**
+
+- [Einführung](../chapters/intro_analysis.qmd)
+
+- [Datengenerierende Prozesse](../chapters/datageneratingprocesses.qmd)
+
+- [Parameterschätzung](../chapters/parameterestimates.qmd)
+
+**Aufträge**
+
+::: {.callout-caution title="Übung 3: Datenanalyse"}
+
+In der Übung 3 werten Sie die im Kurs erhobenen Daten mit einer selbst gewählten Fragestellung aus. Lesen Sie die Anweisungen genau durch und arbeiten Sie entlang der Arbeitsanweisung.
+
+**Vorgehen**
+
+***1. Download und Setup***
+
+- Falls noch nicht installiert: Installieren Sie JASP: <https://jasp-stats.org/download/>.
+
+- Laden Sie den Ordner `uebung-3` herunter und entzippen Sie den Ordner. Der Ordner enthält:
+    
+    - Postervorlage zum Ausfüllen
+    - Datensatz im "wide"-Format: `data_dijkstra_wide.csv` (geeignet für JASP-Analysen)
+    - Datensatz im "long"-Format: `data_dijkstra_long.csv` (geeignet für R- oder JASP-Visualisierungen unter `Descriptives`)
+    
+- Machen Sie sich mit den beiden Datensätzen vertraut.
+
+**DER WIDE-DATENSATZ WIRD AN DIE IM KURS ZUSAMMENGETRAGENEN HYPOTHESEN ANGEPASST UND IST DAHER ERST AB SPÄTESTENS DEM 21.4.2026 HIER VERFÜGBAR. FALLS AM KURSTERMIN T8 HYPOTHESEN HINZUKOMMEN WIRD ER ERGÄNZT (VARIABLEN WERDEN HINZUGEFÜGT) UND ZUSÄTZLICH HIER AUFGELISTET. IM UNTENSTEHENDEN DATA DICTIONARY FINDEN SIE DANN JEWEILS DIE VERSION DER VARIABLEN.**
+
+***2. Präregistrierung***
+
+- **a.** Wählen Sie eine Fragestellung und ein Variablenpaar aus. *(Tipp: Lesen Sie beispielweise nach, welche Hypothesen im Originalpaper untersucht und welche Resultate dort gefunden wurden.)*
+
+- **b.** Wählen Sie eines der 4 Analyseverfahren in JASP aus, welches zu Ihrer Fragestellung passt:
+
+    - Bayesianischer $t$-Test für abhängige Stichproben (Paired Samples T-Test)
+    - Bayesianischer $t$-Test für unabhängige Stichproben (Independent Samples T-Test)
+    - Äquivalenztest für abhängige Stichproben (Equivalence Paired Samples T-Test)
+    - Äquivalenztest für unabhängige Stichproben (Equivalence Independent Samples T-Test)
+    
+- **c.** Füllen Sie im Poster den Teil **Einführung/Introduction** aus mit:
+
+    - Forschungssfrage
+    - Relevanz (inkl. mind. 2 Referenzen)
+    - Hypothesen (Nullhypothese, Alternativhypothese)
+    
+- **d.** Beschreiben Sie im Poster unter **Methode/Methods**:
+
+    - das Sample (N)
+    - das Experimentalparadigma/den Task (mit Referenz zum Originalpaper)
+    - den Ablauf (evtl. inkl. Flowchart/Bild des Stimulus)
+    - UV(n)
+    - AV(n)
+    - relevante Preprocessingschritte
+    - das Analyseverfahren
+
+ ***3. Datenanalyse in JASP***
+ 
+ - **a.** Lesen Sie für die Analyse das `wide`-Datenfile in JASP ein.
+ 
+ - **b.** Schauen Sie sich die Deskriptivstatistik an. *(Tipp: Mit den Daten im `long`-Format können Sie auch in JASP `Descriptives > Raincloud Plots` oder in R den `esquisser()` verwenden.)*
+ 
+ - **c.** Wählen Sie den geplanten Test und wählen Sie das geplante Variablenpaar.
+ 
+ - **d.** Führen Sie den statistischen Test aus. 
+    
+    
+***4. Schlussfolgerungen***
+
+-  **a.** Berichten Sie die Resultate im Poster unter **Resultate/Results**:
+    
+    - relevante deskriptivstatistische Kennwerte
+    - für Äquivalenztests: Statistic, t, df, CI90%
+    - für Bayesianische Tests: BF10, BF01, Median, CI95%
+    - Fügen Sie mind. 1 Plot ein (aus JASP, R oder esquisser), falls passend kann der Plot von Übung 2 verwendet werden. Der Plot muss die statistischen Resultate abbilden!
+    - Fügen Sie evtl. eine Tabelle ein
+    - Beschreiben Sie Ihre Resultate in mind. 2 Sätzen
+    
+-  **b.** Beschreiben Sie im Poster mit mind. 3 Sätzen unter **Diskussion/Discussion**:
+
+    - Welche Schlussfolgerungen können Sie aus Ihrer Analyse ziehen?
+    - Welche Schlussfolgerungen können Sie aus Ihrer Analyse nicht ziehen? / Welche Limitation(en) hat Ihre Analyse?
+    - Welche Implikation haben Ihre Resultate?
+
+***5. Einreichen auf Ilias***
+
+- Laden Sie folgende Dateien auf Ilias unter `Übung 3` hoch:
+
+    - .jasp-File (gezippt)
+    - Poster (.pdf)
+    
+- Bitte beachten Sie die Abgabekriterien, die im Vorgehen beschrieben werden. Die Übung gilt nur als erfüllt, wenn diese eingehalten werden (z.B. Dateiformate).
+
+- Die Übung wird am 23.05.2026 (bei Fehlen am ersten Termin am 29.05.2026) an den Kursterminen besprochen. Fragen können im Forum auf Ilias gestellt werden (per E-Mail können keine inhaltlichen Fragen zu den Übungen beantwortet werden).
+
+- Übungen dürfen alleine oder in Gruppen von max. 3 Personen erledigt werden. Alle Personen müssen die Übung auf Ilias hochladen, um die Übung zu bestehen. Die Files von Gruppenarbeiten müssen folgendermassen benannt werden, damit wir sehen, welche Übungsabgaben zusammengehören: Nennen Sie das File mit der Aufgabe und allen Initialen der Gruppe. Z.B. uebung_1_GW_EW.R. Geben Sie bei allen Files die Initialen in derselben Reihenfolge an.
+
+**Abgabetermin: 15.05.2026 23:55**
+:::
+
+

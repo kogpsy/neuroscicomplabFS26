@@ -15,9 +15,12 @@ Dieser Kurs behandelt die ***Methoden der Datenerhebung, -verarbeitung und -anal
 
     $\rightarrow$ Daten aus neurowissenschaftlichen Experimenten mit einem reproduzierbaren Skript vorverarbeiten und informativ visualisieren können
     
-- Analysemethoden und Modelle zugeschnitten auf unterschiedliche neurowissenschaftliche Datensätze und Fragestellungen mit frequentistischen wie auch bayesianischen Verfahren (u.a. Reaktionszeiten, Signal detection theory, Drift diffusion models)
+- Analysemethoden und Modelle für unterschiedliche neurowissenschaftliche Datensätze und Fragestellungen mit frequentistischen wie auch bayesianischen Verfahren (u.a. Reaktionszeiten, Signal detection theory, Drift diffusion models)
 
-    $\rightarrow$ wichtige neurowissenschaftlichen Datenformate und ihre Eigenschaften kennen
+    $\rightarrow$ wichtige neurowissenschaftliche Datenformate und ihre Eigenschaften kennen
+    
+    $\rightarrow$ den Unterschied zwischen "evidence of absence" und "absence of evidence" kennen und anhand von Äquivalenztest und Bayesianischen t-tests EOA und AOE unterschieden können
+    
     $\rightarrow$ verschiedene Paradigmen der Datenanalyse (u.a. Äquivalenztests, Bayes Factors, Signal detection, DDMs) kennen und angewendet haben
 
 - Interpretation und kritische Einordnung von Analyseergebnissen

@@ -1,0 +1,27 @@
+---
+title: "T12 22.05.2026"
+---
+
+::: {.callout-note title="Lernziele"}
+
+- wissen weshalb Daten in der Neurowissenschaft modelliert werden und welche Informationen dabei gewonnen werden können, sowie wo die Limitationen des Modellierens liegen
+
+:::
+
+**Vorbereitungsauftrag**
+
+**Kurstermin**
+
+- [Hypothesentests](../chapters/modeling.qmd)
+
+- [Signal detection theroy](../chapters/sdt.qmd)
+
+**Vertiefung für Interessierte (freiwillig)**
+
+- Forstmann, B. U., & Wagenmakers, E. J. (2015). Model-based cognitive neuroscience: A conceptual introduction. In An introduction to model-based cognitive neuroscience (pp. 139-156). New York, NY: Springer New York.
+
+- Lewandowsky, S., & Farrell, S. (2010). Computational modeling in cognition: Principles and practice. Sage.
+
+- Lewandowsky, S., & Oberauer, K. (2018). Computational modeling in cognition and cognitive neuroscience. Stevens' handbook of experimental psychology and cognitive neuroscience, 5, 1-35.
+
+- Lektüre für die Semesterferien: "Models of the Mind: How Physics, Engineering, and Mathematics Have Shaped Our Understanding of the Brain" von Grace Lindsay (2021)

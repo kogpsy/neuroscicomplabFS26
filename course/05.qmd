@@ -92,7 +92,7 @@ Bitte beachten Sie die Abgabekriterien, die im Vorgehen beschrieben werden. Die 
 - *Information zum Arbeiten in Kleingruppen:*
 
     - Übungen dürfen alleine oder in Gruppen von max. 3 Personen erledigt werden. Alle Personen müssen die Übung auf Ilias hochladen, um die Übung zu bestehen.
-    - Die Files von Gruppenarbeiten müssen folgendermassen benannt werden, damit wir sehen, welche Übungsabgaben zusammengehören: Nennen Sie das File mit der Aufgabe und allen Initialen der Gruppe. Z.B. uebung_1_GW_EW.R. Geben Sie bei allen Files die Initialen in derselben Reihenfolge an.s
+    - Die Files von Gruppenarbeiten müssen folgendermassen benannt werden, damit wir sehen, welche Übungsabgaben zusammengehören: Nennen Sie das File mit der Aufgabe und allen Initialen der Gruppe. Z.B. uebung_1_GW_EW.R. Geben Sie bei allen Files die Initialen in derselben Reihenfolge an.
 
 :::
 

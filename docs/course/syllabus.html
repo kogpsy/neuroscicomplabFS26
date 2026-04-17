@@ -73,19 +73,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-debugging.callout {
-  border-left-color: RosyBrown;
-}
-div.callout-debugging.callout-style-default > .callout-header {
-  background-color: rgb(from RosyBrown r g b / 13%);
-}
-div.callout-debugging .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-debugging.callout-style-default .callout-icon::before, div.callout-debugging.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: '\e4d0' !important;
-  background-image: none;
-}
 div.callout-hands-on.callout {
   border-left-color: RosyBrown;
 }
@@ -97,6 +84,19 @@ div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-ha
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: 'nil' !important;
+  background-image: none;
+}
+div.callout-debugging.callout {
+  border-left-color: RosyBrown;
+}
+div.callout-debugging.callout-style-default > .callout-header {
+  background-color: rgb(from RosyBrown r g b / 13%);
+}
+div.callout-debugging .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-debugging.callout-style-default .callout-icon::before, div.callout-debugging.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\e4d0' !important;
   background-image: none;
 }
 div.callout-preparation.callout {
@@ -373,6 +373,14 @@ window.Quarto = {
     <a class="dropdown-item" href="../course/06.html">
  <span class="dropdown-text">T6 27.03.2026</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../course/07.html">
+ <span class="dropdown-text">T7 17.04.2026</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../course/08.html">
+ <span class="dropdown-text">T8 24.04.2026</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -521,6 +529,29 @@ window.Quarto = {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../chapters/intro_analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datenanalyse</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/datageneratingprocesses.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datengenerierende Prozesse</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/parameterestimates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Parameterschätzung: Einführung in die Bayesianische Statistik</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
  <span class="menu-text">EEG Datenanalyse</span></span>
   </li>
@@ -585,8 +616,10 @@ window.Quarto = {
 <p><span class="math inline">\(\rightarrow\)</span> ein computerbasiertes Experiment planen, erstellen und zur Datenerhebung nutzen können</p></li>
 <li><p>Programmieren von Datenverarbeitungspipelines: Datenvorverarbeitung und Visualisierung („good practices”, Data Cleaning, Reproduzierbarkeit)</p>
 <p><span class="math inline">\(\rightarrow\)</span> Daten aus neurowissenschaftlichen Experimenten mit einem reproduzierbaren Skript vorverarbeiten und informativ visualisieren können</p></li>
-<li><p>Analysemethoden und Modelle zugeschnitten auf unterschiedliche neurowissenschaftliche Datensätze und Fragestellungen mit frequentistischen wie auch bayesianischen Verfahren (u.a. Reaktionszeiten, Signal detection theory, Drift diffusion models)</p>
-<p><span class="math inline">\(\rightarrow\)</span> wichtige neurowissenschaftlichen Datenformate und ihre Eigenschaften kennen <span class="math inline">\(\rightarrow\)</span> verschiedene Paradigmen der Datenanalyse (u.a. Äquivalenztests, Bayes Factors, Signal detection, DDMs) kennen und angewendet haben</p></li>
+<li><p>Analysemethoden und Modelle für unterschiedliche neurowissenschaftliche Datensätze und Fragestellungen mit frequentistischen wie auch bayesianischen Verfahren (u.a. Reaktionszeiten, Signal detection theory, Drift diffusion models)</p>
+<p><span class="math inline">\(\rightarrow\)</span> wichtige neurowissenschaftliche Datenformate und ihre Eigenschaften kennen</p>
+<p><span class="math inline">\(\rightarrow\)</span> den Unterschied zwischen “evidence of absence” und “absence of evidence” kennen und anhand von Äquivalenztest und Bayesianischen t-tests EOA und AOE unterschieden können</p>
+<p><span class="math inline">\(\rightarrow\)</span> verschiedene Paradigmen der Datenanalyse (u.a. Äquivalenztests, Bayes Factors, Signal detection, DDMs) kennen und angewendet haben</p></li>
 <li><p>Interpretation und kritische Einordnung von Analyseergebnissen</p>
 <p><span class="math inline">\(\rightarrow\)</span> Analyseergebnisse interpretieren, kritisch diskutieren, kommunizieren und peer-reviewen können</p></li>
 </ul>

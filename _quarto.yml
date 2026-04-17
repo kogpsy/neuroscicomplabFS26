@@ -41,8 +41,8 @@ website:
           - course/04.qmd
           - course/05.qmd
           - course/06.qmd
-          # - course/07.qmd
-          # - course/08.qmd
+          - course/07.qmd
+          - course/08.qmd
           # - course/09.qmd
           # - course/10.qmd
           # - course/11.qmd
@@ -84,16 +84,24 @@ website:
         contents:
           - chapters/data_visualization.qmd
 
+      - section: "Datenanalyse"
+        href: chapters/intro_analysis.qmd
+        contents:
+          - chapters/datageneratingprocesses.qmd
+          - chapters/parameterestimates.qmd
+          #- chapters/hypothesistests.qmd
+
       - section: "EEG Datenanalyse"
         # href: chapters/...
         # contents:
         #   - chapters/...
 
-
       - section: "Modeling"
-        # href: chapters/...
-        # contents:
-        #   - chapters/...
+        # href: chapters/modeling.qmd
+        #contents:
+         # - chapters/psychometricfunctions.qmd
+         # - chapters/sdt.qmd
+         # - chapters/ddm.qmd
 
 format:
   html:

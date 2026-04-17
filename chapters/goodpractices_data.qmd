@@ -129,7 +129,7 @@ FAIR ist ein Satz von Leitprinzipien (@wilkinson_fair_2016), die Daten nützlich
 
 | Prinzip | Was es bedeutet | Beispiel |
 |------------------|----------------------------------|--------------------|
-| **F – Findable (Auffindbar)** | Daten sollen sowohl für Menschen als auch für Computer leicht auffindbar sein. Sie brauchen eine eindeutige Kennung und klare Metadaten (Informationen über die Daten). | Laden Sie Ihren Datensatz in ein öffentliches Repositorium (z. B. OSF, Zenodo) mit DOI und einem aussagekräftigen Titel hoch. |
+| **F – Findable (Auffindbar)** | Daten sollen sowohl für Menschen als auch für Computer leicht auffindbar sein. Sie brauchen eine eindeutige Kennung und klare Metadaten (Informationen über die Daten). | Laden Sie Ihren Datensatz in ein öffentliches Repositorium (z.B. OSF, Zenodo) mit DOI und einem aussagekräftigen Titel hoch. |
 | **A – Accessible (Zugänglich)** | Sobald Daten gefunden wurden, sollen sie über standardisierte Wege abrufbar sein – mit klaren Zugriffsbedingungen. | Auch wenn der Zugriff eingeschränkt ist, sollten die Metadaten öffentlich sein und der Zugang erklärt werden. |
 | **I – Interoperable (Interoperabel)** | Daten sollen in standardisierten Formaten und Begriffen strukturiert sein, damit sie mit anderen Daten und Tools zusammenarbeiten können. | Verwenden Sie CSV statt proprietärer Formate und sprechende Variablennamen (z. B. „alter“ statt „a_g3“). |
 | **R – Reusable (Wiederverwendbar)** | Daten sollen ausreichend dokumentiert sein, damit andere sie korrekt interpretieren und wiederverwenden können. | Fügen Sie eine README-Datei mit Beschreibung der Variablen hinzu und verwenden Sie eine offene Lizenz wie CC-BY. |

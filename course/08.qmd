@@ -1,0 +1,45 @@
+---
+title: "T8 24.04.2026"
+---
+
+::: {.callout-note title="Lernziele"}
+
+- den Unterschied zwischen "evidence of absence" und "absence of evidence" kennen und anhand von Äquivalenztest und Bayesianischen t-tests EOA und AOE unterschieden können
+
+- Äquivalenztest (TOST) in JASP anwenden, um eine Forschungsfrage zu beantworten
+
+- Bayesianischer $t$-Test in JASP anwenden, um eine Forschungsfrage zu beantworten
+
+:::
+
+**Vorbereitungsauftrag**
+
+- Falls noch nicht installiert: Installieren Sie JASP: <https://jasp-stats.org/download/>.
+
+- Falls nicht anwesend bei T7: Lesen Sie die Kapitel (wir bauen heute darauf auf):
+    
+    - [Einführung](../chapters/intro_analysis.qmd)
+
+    - [Datengenerierende Prozesse](../chapters/datageneratingprocesses.qmd)
+
+    - [Parameterschätzung](../chapters/parameterestimates.qmd)
+
+- Lesen Sie **eines** der beiden Paper:  
+
+    - A. Lakens et al. (2018). Equivalence Testing for Psychological Research: A Tutorial. <https://doi.org/10.1177/2515245918770963>^[Open Access]
+    
+    - Keysers et al. (2020). Using Bayes factor hypothesis testing in neuroscience to establish evidence of absence. <https://doi.org/10.1038/s41593-020-0660-4>^[Access through Uni Bern or Ilias]
+
+Am Kurstermin werden Sie die wichtigsten Punkte für eine Person, welche den anderen Artikel gewählt hat kurz mündlich zusammenfassen.
+
+**Kurstermin**
+
+- [Hypothesentests](../chapters/hypothesistests.qmd)
+
+**Aufträge**
+
+::: {.callout-caution title="Übung 3: Datenanalyse"}
+
+siehe [17.04.2026](../course/07.qmd)
+
+:::
