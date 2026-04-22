@@ -38,15 +38,18 @@ In der Übung 3 werten Sie die im Kurs erhobenen Daten mit einer selbst gewählt
 
 - Falls noch nicht installiert: Installieren Sie JASP: <https://jasp-stats.org/download/>.
 
-- Laden Sie den Ordner `uebung-3` herunter und entzippen Sie den Ordner. Der Ordner enthält:
+- Laden Sie den Ordner `uebung-3` [hier](../data/uebung-3.zip) herunter und entzippen Sie den Ordner. 
+Der Ordner enthält:
     
     - Postervorlage zum Ausfüllen
-    - Datensatz im "wide"-Format: `data_dijkstra_wide.csv` (geeignet für JASP-Analysen)
-    - Datensatz im "long"-Format: `data_dijkstra_long.csv` (geeignet für R- oder JASP-Visualisierungen unter `Descriptives`)
-    
+    - Datensatz im "long"-Format: `data_dijkstra_long.csv` (geeignet für R- oder JASP-Visualisierungen unter `Descriptives`), dies ist der schon bekannte Datensatz aus Übung 2
+    - Datensätze im "wide"-Format: `data_dijkstra_wide_....csv` (geeignet für JASP-Analysen)
+
 - Machen Sie sich mit den beiden Datensätzen vertraut.
 
-**DER WIDE-DATENSATZ WIRD AN DIE IM KURS ZUSAMMENGETRAGENEN HYPOTHESEN ANGEPASST UND IST DAHER ERST AB SPÄTESTENS DEM 21.4.2026 HIER VERFÜGBAR. FALLS AM KURSTERMIN T8 HYPOTHESEN HINZUKOMMEN WIRD ER ERGÄNZT (VARIABLEN WERDEN HINZUGEFÜGT) UND ZUSÄTZLICH HIER AUFGELISTET. IM UNTENSTEHENDEN DATA DICTIONARY FINDEN SIE DANN JEWEILS DIE VERSION DER VARIABLEN.**
+Die Datensätze im `wide`-Format wurden jeweils nach Person sowie zusätzlich einer oder zwei Variablen aus dem `long`-Datensatz gruppiert und dann der Median der Reaktionszeit und die Accuracy berechnet.
+
+Der Datensatz `data_dijkstra_wide_congruency.csv` enthält z.B. für jede Person und Kongruenzbedingung (`congruent`, `incongruent` und `none`) je einen Median-RT und eine Accuracy.
 
 ***2. Präregistrierung***
 

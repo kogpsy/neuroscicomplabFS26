@@ -73,29 +73,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-debugging.callout {
-  border-left-color: RosyBrown;
-}
-div.callout-debugging.callout-style-default > .callout-header {
-  background-color: rgb(from RosyBrown r g b / 13%);
-}
-div.callout-debugging .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-debugging.callout-style-default .callout-icon::before, div.callout-debugging.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: '\e4d0' !important;
-  background-image: none;
-}
-div.callout-learnings.callout {
-  border-left-color: LightSlateGray;
-}
-div.callout-learnings.callout-style-default > .callout-header {
-  background-color: rgb(from LightSlateGray r g b / 13%);
-}
-div.callout-learnings .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-learnings.callout-style-default .callout-icon::before, div.callout-learnings.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="LightSlateGray" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
 div.callout-hands-on.callout {
   border-left-color: RosyBrown;
 }
@@ -107,6 +84,19 @@ div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-ha
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: 'nil' !important;
+  background-image: none;
+}
+div.callout-debugging.callout {
+  border-left-color: RosyBrown;
+}
+div.callout-debugging.callout-style-default > .callout-header {
+  background-color: rgb(from RosyBrown r g b / 13%);
+}
+div.callout-debugging .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-debugging.callout-style-default .callout-icon::before, div.callout-debugging.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\e4d0' !important;
   background-image: none;
 }
 div.callout-preparation.callout {
@@ -121,6 +111,16 @@ div.callout-preparation.callout-style-default .callout-icon::before, div.callout
   font-style: normal;
   content: 'nil' !important;
   background-image: none;
+}
+div.callout-learnings.callout {
+  border-left-color: LightSlateGray;
+}
+div.callout-learnings.callout-style-default > .callout-header {
+  background-color: rgb(from LightSlateGray r g b / 13%);
+}
+div.callout-learnings .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-learnings.callout-style-default .callout-icon::before, div.callout-learnings.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="LightSlateGray" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 </style>
 
@@ -632,15 +632,16 @@ window.Quarto = {
 <p><strong><em>1. Download und Setup</em></strong></p>
 <ul>
 <li><p>Falls noch nicht installiert: Installieren Sie JASP: <a href="https://jasp-stats.org/download/" class="uri">https://jasp-stats.org/download/</a>.</p></li>
-<li><p>Laden Sie den Ordner <code>uebung-3</code> herunter und entzippen Sie den Ordner. Der Ordner enthält:</p>
+<li><p>Laden Sie den Ordner <code>uebung-3</code> <a href="../data/uebung-3.zip">hier</a> herunter und entzippen Sie den Ordner. Der Ordner enthält:</p>
 <ul>
 <li>Postervorlage zum Ausfüllen</li>
-<li>Datensatz im “wide”-Format: <code>data_dijkstra_wide.csv</code> (geeignet für JASP-Analysen)</li>
-<li>Datensatz im “long”-Format: <code>data_dijkstra_long.csv</code> (geeignet für R- oder JASP-Visualisierungen unter <code>Descriptives</code>)</li>
+<li>Datensatz im “long”-Format: <code>data_dijkstra_long.csv</code> (geeignet für R- oder JASP-Visualisierungen unter <code>Descriptives</code>), dies ist der schon bekannte Datensatz aus Übung 2</li>
+<li>Datensätze im “wide”-Format: <code>data_dijkstra_wide_....csv</code> (geeignet für JASP-Analysen)</li>
 </ul></li>
 <li><p>Machen Sie sich mit den beiden Datensätzen vertraut.</p></li>
 </ul>
-<p><strong>DER WIDE-DATENSATZ WIRD AN DIE IM KURS ZUSAMMENGETRAGENEN HYPOTHESEN ANGEPASST UND IST DAHER ERST AB SPÄTESTENS DEM 21.4.2026 HIER VERFÜGBAR. FALLS AM KURSTERMIN T8 HYPOTHESEN HINZUKOMMEN WIRD ER ERGÄNZT (VARIABLEN WERDEN HINZUGEFÜGT) UND ZUSÄTZLICH HIER AUFGELISTET. IM UNTENSTEHENDEN DATA DICTIONARY FINDEN SIE DANN JEWEILS DIE VERSION DER VARIABLEN.</strong></p>
+<p>Die Datensätze im <code>wide</code>-Format wurden jeweils nach Person sowie zusätzlich einer oder zwei Variablen aus dem <code>long</code>-Datensatz gruppiert und dann der Median der Reaktionszeit und die Accuracy berechnet.</p>
+<p>Der Datensatz <code>data_dijkstra_wide_congruency.csv</code> enthält z.B. für jede Person und Kongruenzbedingung (<code>congruent</code>, <code>incongruent</code> und <code>none</code>) je einen Median-RT und eine Accuracy.</p>
 <p><strong><em>2. Präregistrierung</em></strong></p>
 <ul>
 <li><p><strong>a.</strong> Wählen Sie eine Fragestellung und ein Variablenpaar aus. <em>(Tipp: Lesen Sie beispielweise nach, welche Hypothesen im Originalpaper untersucht und welche Resultate dort gefunden wurden.)</em></p></li>
