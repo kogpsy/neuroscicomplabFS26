@@ -1,0 +1,43 @@
+---
+title: "T11 15.05.2026"
+---
+
+::: {.callout-note title="Lernziele"}
+
+- Die verschiedenen Parameter einer psychometrischen Funktion verstehen und interpretieren können
+
+- Verstehen, weshalb und wann psychometrische Funktionen eingesetzt werden
+
+- Eine psychometrische Funktion selbst in R implementieren können 
+
+:::
+
+**Vorbereitungsauftrag**
+
+- Kurzen Artikel lesen: <https://aeskelton.wixsite.com/my-site/post/what-is-a-psychometric-function>
+
+**Kurstermin**
+
+- Einführung in psychometrischen Funktionen
+
+- Wichtige parametrische Formen (z. B. logistisch, Weibull)
+
+- Bedeutung der verschiedenen Parameter
+
+- Praktisches Beispiel in R 
+
+**Aufträge**
+
+::: {.callout-caution title="Übung 4: EEG Quiz auf Ilias"}
+
+siehe [T10 08.05.2026](../course/10.qmd)
+
+**Abgabetermin: 22.05.2026 23:55**
+
+:::
+
+**Vertiefung**
+
+- Knoblauch, K., & Maloney, L. T. (2012). Modeling Psychophysical Data in R. Kapitel 4: <https://link.springer.com/book/10.1007/978-1-4614-4475-6>
+
+- Kingdom, F. &Prins, N. (2016). Psychophysics: a practical introduction. 2nd edition. Academic Press.

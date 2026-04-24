@@ -14,11 +14,25 @@
     "text": "In der Pyodide-Konsole kann Python-Code geschrieben, verändert und ausgeführt werden.\n\n Konsole Tipp\n\n\nHier Code eingeben:\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nFolgender Beispielscode kann in der Konsole ausgeführt werden:\n\nhirnregionen = [\"Frontallappen\", \"Okzipitallappen\", \"Temporallappen\"]\nfor hirnregion in hirnregionen:   \n    print(\"Ich mag den\", hirnregion, \"!\")"
   },
   {
-    "objectID": "course/12.html",
-    "href": "course/12.html",
-    "title": "T12 22.05.2026",
+    "objectID": "course/13.html",
+    "href": "course/13.html",
+    "title": "T13 29.05.2026",
     "section": "",
-    "text": "NoteLernziele\n\n\n\n\nwissen weshalb Daten in der Neurowissenschaft modelliert werden und welche Informationen dabei gewonnen werden können, sowie wo die Limitationen des Modellierens liegen\n\n\n\nVorbereitungsauftrag\nKurstermin\n\nHypothesentests\nSignal detection theroy\n\nVertiefung für Interessierte (freiwillig)\n\nForstmann, B. U., & Wagenmakers, E. J. (2015). Model-based cognitive neuroscience: A conceptual introduction. In An introduction to model-based cognitive neuroscience (pp. 139-156). New York, NY: Springer New York.\nLewandowsky, S., & Farrell, S. (2010). Computational modeling in cognition: Principles and practice. Sage.\nLewandowsky, S., & Oberauer, K. (2018). Computational modeling in cognition and cognitive neuroscience. Stevens’ handbook of experimental psychology and cognitive neuroscience, 5, 1-35.\nLektüre für die Semesterferien: “Models of the Mind: How Physics, Engineering, and Mathematics Have Shaped Our Understanding of the Brain” von Grace Lindsay (2021)"
+    "text": "NoteLernziele\n\n\n\n\nParameter des Drift Diffusion Modells kennen und wissen was diese aussagen\n\n\n\nVorbereitungsauftrag\nkein Vorbereitungsauftrag\nKurstermin\n\nDrift Diffusion Modell\n\nAufträge\n\n\n\n\n\n\nCautionÜbung 5: Kurs-Quiz auf Ilias\n\n\n\nQuiz auf Ilias ausfüllen. Das Quiz kann beliebig oft ausgefüllt werden.\nAbgabetermin: 12.06.2026 23:55\n\n\nVertiefung\n\nLektüre für die Semesterferien: “Models of the Mind: How Physics, Engineering, and Mathematics Have Shaped Our Understanding of the Brain” von Grace Lindsay (2021)"
+  },
+  {
+    "objectID": "course/11.html",
+    "href": "course/11.html",
+    "title": "T11 15.05.2026",
+    "section": "",
+    "text": "NoteLernziele\n\n\n\n\nDie verschiedenen Parameter einer psychometrischen Funktion verstehen und interpretieren können\nVerstehen, weshalb und wann psychometrische Funktionen eingesetzt werden\nEine psychometrische Funktion selbst in R implementieren können\n\n\n\nVorbereitungsauftrag\n\nKurzen Artikel lesen: https://aeskelton.wixsite.com/my-site/post/what-is-a-psychometric-function\n\nKurstermin\n\nEinführung in psychometrischen Funktionen\nWichtige parametrische Formen (z. B. logistisch, Weibull)\nBedeutung der verschiedenen Parameter\nPraktisches Beispiel in R\n\nAufträge\n\n\n\n\n\n\nCautionÜbung 4: EEG Quiz auf Ilias\n\n\n\nsiehe T10 08.05.2026\nAbgabetermin: 22.05.2026 23:55\n\n\nVertiefung\n\nKnoblauch, K., & Maloney, L. T. (2012). Modeling Psychophysical Data in R. Kapitel 4: https://link.springer.com/book/10.1007/978-1-4614-4475-6\nKingdom, F. &Prins, N. (2016). Psychophysics: a practical introduction. 2nd edition. Academic Press."
+  },
+  {
+    "objectID": "course/09.html",
+    "href": "course/09.html",
+    "title": "T9 01.05.2026",
+    "section": "",
+    "text": "NoteLernziele\n\n\n\n\nGrundlagen von EEG-Daten kennen\nEEG-Rohdaten einlesen und explorativ betrachten können\n\n\n\nVorbereitungsauftrag\n\nEEG-Daten von Ilias herunterladen\n\nKurstermin\n\nKurze Einführung in EEG und ERPs\nEinführung in das MNE Python package\nEEG-Datei einlesen und visualisieren\n\nAufträge\nkeinen\nVertiefung\n\nMNE Tutorial: https://mne.tools/stable/auto_tutorials/index.html"
   },
   {
     "objectID": "course/07.html",
@@ -1377,11 +1391,25 @@
     "text": "Footnotes\n\n\nOpen Access↩︎\nAccess through Uni Bern or Ilias↩︎"
   },
   {
+    "objectID": "course/10.html",
+    "href": "course/10.html",
+    "title": "T10 08.05.2026",
+    "section": "",
+    "text": "NoteLernziele\n\n\n\n\nden typischen Workflow der EEG-Analyse kennen\nERPs selbst berechnen und plotten können\n\n\n\nVorbereitungsauftrag\nkein Vorbereitungsauftrag\nKurstermin\n\nEpochs erstellen\nERPs berechnen und visualisieren\n\nAufträge\n\n\n\n\n\n\nCautionÜbung 4: EEG Quiz auf Ilias\n\n\n\nQuiz auf Ilias ausfüllen. Das Quiz kann beliebig oft ausgefüllt werden.\nAbgabetermin: 22.05.2026 23:55\n\n\nVertiefung\n\nPaper über EEG ERPs Workflow (von Design bis Analyse): https://doi.org/10.1016/j.xpro.2025.103835"
+  },
+  {
+    "objectID": "course/12.html",
+    "href": "course/12.html",
+    "title": "T12 22.05.2026",
+    "section": "",
+    "text": "NoteLernziele\n\n\n\n\nwissen weshalb Daten in der Neurowissenschaft modelliert werden und welche Informationen dabei gewonnen werden können, sowie wo die Limitationen des Modellierens liegen\nSignal detection theory kennen und wissen welche Fragestellungen damit bearbeitet werden können\n\n\n\nVorbereitungsauftrag\nkein Vorbereitungsauftrag\nKurstermin\n\nSignal detection theory\n\nVertiefung\n\nForstmann, B. U., & Wagenmakers, E. J. (2015). Model-based cognitive neuroscience: A conceptual introduction. In An introduction to model-based cognitive neuroscience (pp. 139-156). New York, NY: Springer New York.\nLewandowsky, S., & Farrell, S. (2010). Computational modeling in cognition: Principles and practice. Sage.\nLewandowsky, S., & Oberauer, K. (2018). Computational modeling in cognition and cognitive neuroscience. Stevens’ handbook of experimental psychology and cognitive neuroscience, 5, 1-35.\nLektüre für die Semesterferien: “Models of the Mind: How Physics, Engineering, and Mathematics Have Shaped Our Understanding of the Brain” von Grace Lindsay (2021)"
+  },
+  {
     "objectID": "course/overview.html",
     "href": "course/overview.html",
     "title": "Terminübersicht",
     "section": "",
-    "text": "Termin\nDatum\n\nThema\nVorbereitung\nÜbung\nDeadline Übung\n\n\n\n\nT1\n20.02.2026\nGW/EW\nEinführung\n\n\n\n\n\nT2\n27.02.2026\nEW\nExperimente mit PsychoPy 1\n+\nÜbung 1\n16.03.2026 23:55\n\n\nT3\n06.03.2026\nEW\nExperimente mit PsychoPy 2\n\n\n\n\n\nT4\n13.03.2026\nEW\nDatenverarbeitung 1\n+\n-\n\n\n\nT5\n20.03.2026\nGW\nDatenverarbeitung 2 und Datenvisualisierung 1\n+\nÜbung 2\n23.04.2026 23:55\n\n\nT6\n27.03.2026\nGW\nDatenvisualisierung 2\n+\n\n\n\n\n\n03.04.2026\n\nkein Kurs (Karfreitag)\n\n\n\n\n\n\n10.04.2026\n\nkein Kurs (Semesterpause)\n\n\n\n\n\nT7\n17.04.2026\nGW\nDatenanalyse 1: Parameterschätzung\nkein Vorbereitungsauftrag\nÜbung 3\n15.05.2026 23:55\n\n\nT8\n24.04.2026\nGW\nDatenanalyse 2: Evidence of Absence\n+\n\n\n\n\nT9\n01.05.2026\nEW\nEEG Projekt 1\n\nÜbung 4 (Quiz)\n22.05.2026 23:55\n\n\nT10\n08.05.2026\nEW\nEEG Projekt 2\n\n\n\n\n\nT11\n15.05.2026\nEW\nPsychometrische Funktionen\n+\n\n\n\n\nT12\n22.05.2026\nGW\nSignal Detection Theory\n+\n\n\n\n\nT13\n29.05.2026\nGW\nDrift Diffusion Models\n\nÜbung 5 (Quiz)\n12.06.2026 23:55"
+    "text": "Termin\nDatum\n\nThema\nVorbereitung\nÜbung\nDeadline Übung\n\n\n\n\nT1\n20.02.2026\nGW/EW\nEinführung\n\n\n\n\n\nT2\n27.02.2026\nEW\nExperimente mit PsychoPy 1\n+\nÜbung 1\n16.03.2026 23:55\n\n\nT3\n06.03.2026\nEW\nExperimente mit PsychoPy 2\n\n\n\n\n\nT4\n13.03.2026\nEW\nDatenverarbeitung 1\n+\n-\n\n\n\nT5\n20.03.2026\nGW\nDatenverarbeitung 2 und Datenvisualisierung 1\n+\nÜbung 2\n23.04.2026 23:55\n\n\nT6\n27.03.2026\nGW\nDatenvisualisierung 2\n+\n\n\n\n\n\n03.04.2026\n\nkein Kurs (Karfreitag)\n\n\n\n\n\n\n10.04.2026\n\nkein Kurs (Semesterpause)\n\n\n\n\n\nT7\n17.04.2026\nGW\nDatenanalyse 1: Parameterschätzung\nkein Vorbereitungsauftrag\nÜbung 3\n15.05.2026 23:55\n\n\nT8\n24.04.2026\nGW\nDatenanalyse 2: Evidence of Absence\n+\n\n\n\n\nT9\n01.05.2026\nEW\nEEG Projekt 1\n+\n\n\n\n\nT10\n08.05.2026\nEW\nEEG Projekt 2\n\nÜbung 4 (Quiz)\n22.05.2026 23:55\n\n\nT11\n15.05.2026\nEW\nPsychometrische Funktionen\n+\n\n\n\n\nT12\n22.05.2026\nGW\nSignal Detection Theory\n\n\n\n\n\nT13\n29.05.2026\nGW\nDrift Diffusion Models\n\nÜbung 5 (Quiz)\n12.06.2026 23:55"
   },
   {
     "objectID": "course/syllabus.html",

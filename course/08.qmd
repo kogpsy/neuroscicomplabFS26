@@ -40,6 +40,6 @@ Am Kurstermin werden Sie die wichtigsten Punkte für eine Person, welche den and
 
 ::: {.callout-caution title="Übung 3: Datenanalyse"}
 
-siehe [17.04.2026](../course/07.qmd)
+siehe [T7 17.04.2026](../course/07.qmd)
 
 :::

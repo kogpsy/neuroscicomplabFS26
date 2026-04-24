@@ -1,0 +1,32 @@
+---
+title: "T13 29.05.2026"
+---
+
+::: {.callout-note title="Lernziele"}
+
+- Parameter des Drift Diffusion Modells kennen und wissen was diese aussagen
+
+:::
+
+**Vorbereitungsauftrag**
+
+kein Vorbereitungsauftrag
+
+**Kurstermin**
+
+- [Drift Diffusion Modell](../chapters/ddm.qmd)
+
+
+**Aufträge**
+
+::: {.callout-caution title="Übung 5: Kurs-Quiz auf Ilias"}
+
+Quiz auf Ilias ausfüllen. Das Quiz kann beliebig oft ausgefüllt werden.
+
+**Abgabetermin: 12.06.2026 23:55**
+
+:::
+
+**Vertiefung**
+
+- Lektüre für die Semesterferien: "Models of the Mind: How Physics, Engineering, and Mathematics Have Shaped Our Understanding of the Brain" von Grace Lindsay (2021)

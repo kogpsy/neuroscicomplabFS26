@@ -43,11 +43,11 @@ website:
           - course/06.qmd
           - course/07.qmd
           - course/08.qmd
-          # - course/09.qmd
-          # - course/10.qmd
-          # - course/11.qmd
-          # - course/12.qmd
-          # - course/13.qmd
+          - course/09.qmd
+          - course/10.qmd
+          - course/11.qmd
+          - course/12.qmd
+          - course/13.qmd
 
       - text: "Console"
         menu:

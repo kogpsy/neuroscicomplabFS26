@@ -14,10 +14,9 @@ title: "Terminübersicht"
 |  | 10.04.2026 |  | kein Kurs (Semesterpause) | |  |  | |
 | T7 | [17.04.2026](../course/07.qmd) | GW |Datenanalyse 1: Parameterschätzung | kein Vorbereitungsauftrag | Übung 3 | 15.05.2026 23:55  |
 | T8 | [24.04.2026](../course/08.qmd) | GW |Datenanalyse 2: Evidence of Absence | + |  | |
-| T9 | [01.05.2026]() | EW |EEG Projekt 1 |  | Übung 4 (Quiz) | 22.05.2026 23:55 |
-| T10 | [08.05.2026]() | EW | EEG Projekt 2 |  |  | |
-| T11| [15.05.2026]() | EW |Psychometrische Funktionen | + |  | |
-| T12 | [22.05.2026]() | GW | Signal Detection Theory | + |  | |
-| T13 | [29.05.2026]() | GW | Drift Diffusion Models |  | Übung 5 (Quiz) | 12.06.2026 23:55 |
+| T9 | [01.05.2026](../course/09.qmd) | EW |EEG Projekt 1 | + |  |  |
+| T10 | [08.05.2026](../course/10.qmd) | EW | EEG Projekt 2 |  | Übung 4 (Quiz) | 22.05.2026 23:55 |
+| T11| [15.05.2026](../course/11.qmd) | EW |Psychometrische Funktionen | + |  | |
+| T12 | [22.05.2026](../course/12.qmd) | GW | Signal Detection Theory |  |  |  |
+| T13 | [29.05.2026](../course/13.qmd) | GW | Drift Diffusion Models |  | Übung 5 (Quiz) | 12.06.2026 23:55 |
 :  {.striped .hover}
-

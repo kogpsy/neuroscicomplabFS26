@@ -6,17 +6,19 @@ title: "T12 22.05.2026"
 
 - wissen weshalb Daten in der Neurowissenschaft modelliert werden und welche Informationen dabei gewonnen werden können, sowie wo die Limitationen des Modellierens liegen
 
+- Signal detection theory kennen und wissen welche Fragestellungen damit bearbeitet werden können
+
 :::
 
 **Vorbereitungsauftrag**
 
+kein Vorbereitungsauftrag
+
 **Kurstermin**
 
-- [Hypothesentests](../chapters/modeling.qmd)
+- [Signal detection theory](../chapters/sdt.qmd)
 
-- [Signal detection theroy](../chapters/sdt.qmd)
-
-**Vertiefung für Interessierte (freiwillig)**
+**Vertiefung**
 
 - Forstmann, B. U., & Wagenmakers, E. J. (2015). Model-based cognitive neuroscience: A conceptual introduction. In An introduction to model-based cognitive neuroscience (pp. 139-156). New York, NY: Springer New York.
 

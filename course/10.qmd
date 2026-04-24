@@ -1,0 +1,35 @@
+---
+title: "T10 08.05.2026"
+---
+
+::: {.callout-note title="Lernziele"}
+
+- den typischen Workflow der EEG-Analyse kennen
+
+- ERPs selbst berechnen und plotten können 
+
+:::
+
+**Vorbereitungsauftrag**
+
+kein Vorbereitungsauftrag
+
+**Kurstermin**
+
+- Epochs erstellen
+
+- ERPs berechnen und visualisieren 
+
+**Aufträge**
+
+::: {.callout-caution title="Übung 4: EEG Quiz auf Ilias"}
+
+Quiz auf Ilias ausfüllen. Das Quiz kann beliebig oft ausgefüllt werden.
+
+**Abgabetermin: 22.05.2026 23:55**
+
+:::
+
+**Vertiefung**
+
+- Paper über EEG ERPs Workflow (von Design bis Analyse): <https://doi.org/10.1016/j.xpro.2025.103835>

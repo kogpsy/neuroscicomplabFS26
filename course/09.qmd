@@ -1,0 +1,31 @@
+---
+title: "T9 01.05.2026"
+---
+
+::: {.callout-note title="Lernziele"}
+
+- Grundlagen von EEG-Daten kennen
+
+- EEG-Rohdaten einlesen und explorativ betrachten können 
+
+:::
+
+**Vorbereitungsauftrag**
+
+- EEG-Daten von Ilias herunterladen
+
+**Kurstermin**
+
+- Kurze Einführung in EEG und ERPs
+
+- Einführung in das MNE Python package
+
+- EEG-Datei einlesen und visualisieren 
+
+**Aufträge**
+
+keinen
+
+**Vertiefung**
+
+- MNE Tutorial: <https://mne.tools/stable/auto_tutorials/index.html>
