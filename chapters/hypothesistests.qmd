@@ -94,11 +94,11 @@ $$ BF_{01} = \frac{1}{BF_{10}}$$
 :::callout-caution
 ## Hands-on: Bayesiansicher $t$-Test in JASP
 
-- Laden Sie [hier](data/data_stroop_wide.csv) den Stroop Datensatz herunter. Der Datensatz wurde für diese Zwecke ins `wide`-Format angepasst. 
-
-- Laden Sie den Datensatz in _JASP_ und schauen Sie ihn an.
+- Laden Sie den für [Übung 3](../data/uebung-3.zip) vorbereiteten Ordner herunter. Wählen Sie einen der Datensätze im `wide`-Format. 
 
 - Wie könnte die Forschungsfrage lauten? Was ist die Null- und Alternativhypothese?
+
+- Laden Sie den passenden Datensatz in _JASP_ und schauen Sie ihn an.
 
 - Führen Sie einen `Bayesian Paired Sample $t$-Test` aus.
 
@@ -177,7 +177,7 @@ Es muss daher zwingend vor dem Test gewählt werden.
 :::callout-caution
 ## Hands-on: Äquivalenztests in JASP
 
-- Definieren Sie einen _SESOI_ für den Unterschied der Reaktionszeiten zwischen der kongruenten und inkongruenten Bedingung im _Stroop Task_. Was ist $\Delta$L, was ist $\Delta$U?
+- Definieren Sie einen _SESOI_ für den Unterschied in den zwei zu vergleichenden Bedingungen. Was ist $\Delta$L, was ist $\Delta$U?
 
 - Aktivieren Sie in JASP das Modul __Equivalence T-Tests__.
 
@@ -188,8 +188,6 @@ Es muss daher zwingend vor dem Test gewählt werden.
 - Geben Sie bei `Equivalence Region` Ihren SESOI ein (in Rohwerten oder standardisiert).
 
 - Explorieren Sie die Resultate und welche Optionen Sie für weitere Einstellungen haben.
-
-
 :::
 
 :::callout-note

@@ -29,6 +29,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../chapters/parameterestimates.html" rel="prev">
 <link href="../imgs/logo_landing.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -99,6 +100,16 @@ div.callout-debugging.callout-style-default .callout-icon::before, div.callout-d
   content: '\e4d0' !important;
   background-image: none;
 }
+div.callout-learnings.callout {
+  border-left-color: LightSlateGray;
+}
+div.callout-learnings.callout-style-default > .callout-header {
+  background-color: rgb(from LightSlateGray r g b / 13%);
+}
+div.callout-learnings .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-learnings.callout-style-default .callout-icon::before, div.callout-learnings.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="LightSlateGray" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
 div.callout-preparation.callout {
   border-left-color: RosyBrown;
 }
@@ -111,16 +122,6 @@ div.callout-preparation.callout-style-default .callout-icon::before, div.callout
   font-style: normal;
   content: 'nil' !important;
   background-image: none;
-}
-div.callout-learnings.callout {
-  border-left-color: LightSlateGray;
-}
-div.callout-learnings.callout-style-default > .callout-header {
-  background-color: rgb(from LightSlateGray r g b / 13%);
-}
-div.callout-learnings .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-learnings.callout-style-default .callout-icon::before, div.callout-learnings.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="LightSlateGray" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 </style>
 
@@ -410,7 +411,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/intro_analysis.html">Datenanalyse</a></li><li class="breadcrumb-item"><a href="../chapters/hypothesistests.html">Hypothesentests: Bayesianischer <span class="math inline">\(t\)</span>-Test und Äquivalenztests (TOSTs)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -549,6 +550,12 @@ window.Quarto = {
  <span class="menu-text">Parameterschätzung: Einführung in die Bayesianische Statistik</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/hypothesistests.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Hypothesentests: Bayesianischer <span class="math inline">\(t\)</span>-Test und Äquivalenztests (TOSTs)</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -587,7 +594,7 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content page-columns page-full" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/intro_analysis.html">Datenanalyse</a></li><li class="breadcrumb-item"><a href="../chapters/hypothesistests.html">Hypothesentests: Bayesianischer <span class="math inline">\(t\)</span>-Test und Äquivalenztests (TOSTs)</a></li></ol></nav></header>
 
 
 
@@ -664,9 +671,9 @@ p(\mathcal{M}_2 | y) = \frac{P(y | \mathcal{M}_2) p(\mathcal{M}_2)}{p(y)}
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><p>Laden Sie <a href="data/data_stroop_wide.csv">hier</a> den Stroop Datensatz herunter. Der Datensatz wurde für diese Zwecke ins <code>wide</code>-Format angepasst.</p></li>
-<li><p>Laden Sie den Datensatz in <em>JASP</em> und schauen Sie ihn an.</p></li>
+<li><p>Laden Sie den für <a href="../data/uebung-3.zip">Übung 3</a> vorbereiteten Ordner herunter. Wählen Sie einen der Datensätze im <code>wide</code>-Format.</p></li>
 <li><p>Wie könnte die Forschungsfrage lauten? Was ist die Null- und Alternativhypothese?</p></li>
+<li><p>Laden Sie den passenden Datensatz in <em>JASP</em> und schauen Sie ihn an.</p></li>
 <li><p>Führen Sie einen <code>Bayesian Paired Sample $t$-Test</code> aus.</p></li>
 <li><p>Explorieren Sie die Resultate und welche Optionen Sie für weitere Einstellungen haben.</p>
 <ul>
@@ -746,7 +753,7 @@ Mehr dazu finden Sie hier <a href="https://journals.sagepub.com/doi/10.1177/2515
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><p>Definieren Sie einen <em>SESOI</em> für den Unterschied der Reaktionszeiten zwischen der kongruenten und inkongruenten Bedingung im <em>Stroop Task</em>. Was ist <span class="math inline">\(\Delta\)</span>L, was ist <span class="math inline">\(\Delta\)</span>U?</p></li>
+<li><p>Definieren Sie einen <em>SESOI</em> für den Unterschied in den zwei zu vergleichenden Bedingungen. Was ist <span class="math inline">\(\Delta\)</span>L, was ist <span class="math inline">\(\Delta\)</span>U?</p></li>
 <li><p>Aktivieren Sie in JASP das Modul <strong>Equivalence T-Tests</strong>.</p></li>
 <li><p>Sie können wieder dieselben Daten wie vorhin verwenden.</p></li>
 <li><p>Wählen Sie die passenden Variablen zum Vergleich aus.</p></li>
@@ -1610,6 +1617,15 @@ window.onload = function() {
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/parameterestimates.html" class="pagination-link" aria-label="Parameterschätzung: Einführung in die Bayesianische Statistik">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Parameterschätzung: Einführung in die Bayesianische Statistik</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

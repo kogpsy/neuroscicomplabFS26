@@ -1155,6 +1155,16 @@ globalThis.qwebrExecuteCode = async function (
 
 </script>
 <style>
+div.callout-learnings.callout {
+  border-left-color: LightSlateGray;
+}
+div.callout-learnings.callout-style-default > .callout-header {
+  background-color: rgb(from LightSlateGray r g b / 13%);
+}
+div.callout-learnings .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-learnings.callout-style-default .callout-icon::before, div.callout-learnings.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="LightSlateGray" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
 div.callout-hands-on.callout {
   border-left-color: RosyBrown;
 }
@@ -1163,6 +1173,19 @@ div.callout-hands-on.callout-style-default > .callout-header {
 }
 div.callout-hands-on .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-hands-on.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: 'nil' !important;
+  background-image: none;
+}
+div.callout-preparation.callout {
+  border-left-color: RosyBrown;
+}
+div.callout-preparation.callout-style-default > .callout-header {
+  background-color: rgb(from RosyBrown r g b / 13%);
+}
+div.callout-preparation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-preparation.callout-style-default .callout-icon::before, div.callout-preparation.callout-titled .callout-icon::before {
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: 'nil' !important;
@@ -1179,29 +1202,6 @@ div.callout-debugging.callout-style-default .callout-icon::before, div.callout-d
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: '\e4d0' !important;
-  background-image: none;
-}
-div.callout-learnings.callout {
-  border-left-color: LightSlateGray;
-}
-div.callout-learnings.callout-style-default > .callout-header {
-  background-color: rgb(from LightSlateGray r g b / 13%);
-}
-div.callout-learnings .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-learnings.callout-style-default .callout-icon::before, div.callout-learnings.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="LightSlateGray" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
-div.callout-preparation.callout {
-  border-left-color: RosyBrown;
-}
-div.callout-preparation.callout-style-default > .callout-header {
-  background-color: rgb(from RosyBrown r g b / 13%);
-}
-div.callout-preparation .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-preparation.callout-style-default .callout-icon::before, div.callout-preparation.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: 'nil' !important;
   background-image: none;
 }
 </style>
@@ -1631,6 +1631,12 @@ window.Quarto = {
  <span class="menu-text">Parameterschätzung: Einführung in die Bayesianische Statistik</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/hypothesistests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hypothesentests: Bayesianischer <span class="math inline">\(t\)</span>-Test und Äquivalenztests (TOSTs)</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -1946,7 +1952,7 @@ Auf der Seite von Posit finden Sie zudem Versionen für Debian, Redhat, SUSE, an
 <ul>
 <li>Öffnen Sie <a href="https://posit.co/download/rstudio-desktop/">die Installations-Website</a>.</li>
 </ul>
-<div id="fig-installation1" class="quarto-float quarto-figure quarto-figure-left anchored" alt="Screenshot der oben verlinkten Website." data-fig-align="left">
+<div id="fig-installation1" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="Screenshot der oben verlinkten Website.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-installation1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../imgs/install_r_rstudio_1.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:70.0%" alt="Screenshot der oben verlinkten Website.">
@@ -1961,7 +1967,7 @@ Figure&nbsp;1: Startseite für die Installation von R und RStudio
 <ul>
 <li>Wählen Sie <strong>Download R for Windows</strong>, um die neuste Version von <em>R</em> zu installieren.</li>
 </ul>
-<div id="fig-installation2" class="quarto-float quarto-figure quarto-figure-left anchored" alt="Screenshot der oben verlinkten Website." data-fig-align="left">
+<div id="fig-installation2" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="Screenshot der oben verlinkten Website.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-installation2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../imgs/install_r_1.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:70.0%" alt="Screenshot der oben verlinkten Website.">
@@ -1976,7 +1982,7 @@ Figure&nbsp;2: Installation von R: Auswahl des Betriebssystems
 <ul>
 <li>Laden Sie unter <strong>install R for the first time</strong> die Installationsdatei herunter.</li>
 </ul>
-<div id="fig-installation3" class="quarto-float quarto-figure quarto-figure-left anchored" alt="Screenshot der oben verlinkten Website." data-fig-align="left">
+<div id="fig-installation3" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="Screenshot der oben verlinkten Website.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-installation3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../imgs/install_r_2_windows.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:70.0%" alt="Screenshot der oben verlinkten Website.">
@@ -1991,7 +1997,7 @@ Figure&nbsp;3: Installation von R für Windows: Auswahl der R Version
 <ul>
 <li>Klicken Sie auf <strong>Download R-4.4.x for Windows</strong>.</li>
 </ul>
-<div id="fig-installation4" class="quarto-float quarto-figure quarto-figure-left anchored" alt="Screenshot der oben verlinkten Website." data-fig-align="left">
+<div id="fig-installation4" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="Screenshot der oben verlinkten Website.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-installation4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../imgs/install_r_3_windows.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:70.0%" alt="Screenshot der oben verlinkten Website.">
@@ -2009,7 +2015,7 @@ Figure&nbsp;4: Installation von R für Windows: Downloadlink
 <ul>
 <li>Unter_Select Setup Language_ wählen Sie am besten <em>English</em> als Sprache. Die englische Version macht es leichter im Internet Hilfe zu finden.</li>
 </ul>
-<div id="fig-installation5" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Screenshot des Aufforderungsfensters bei der die Sprache Englisch ausgewählt wurde." data-fig-align="center">
+<div id="fig-installation5" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Screenshot des Aufforderungsfensters bei der die Sprache Englisch ausgewählt wurde.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-installation5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../imgs/install_r_4_startuplanguage.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Screenshot des Aufforderungsfensters bei der die Sprache Englisch ausgewählt wurde.">
@@ -2024,7 +2030,7 @@ Figure&nbsp;5: Installation von R für Windows: Englisch
 <ul>
 <li>Am besten speichern Sie <em>R</em> in einem Ordner auf dem Laufwerk <code>C:</code> ab. Hierfür benötigen Sie Admin-Rechte.</li>
 </ul>
-<div id="fig-installation6" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Screenshot des Aufforderungsfensters bei der das Laufwerk `C:` ausgewählt wurde." data-fig-align="center">
+<div id="fig-installation6" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Screenshot des Aufforderungsfensters bei der das Laufwerk `C:` ausgewählt wurde.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-installation6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../imgs/install_r_5_folder.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt="Screenshot des Aufforderungsfensters bei der das Laufwerk `C:` ausgewählt wurde.">
@@ -2039,7 +2045,7 @@ Figure&nbsp;6: Installation von R für Windows: Wählen des Speicherorts
 <ul>
 <li>Sobald das untenstehende Fenster erscheint, haben Sie <em>R</em> erfolgreich installiert.</li>
 </ul>
-<div id="fig-installation7" class="quarto-float quarto-figure quarto-figure-left anchored" alt="Screenshot des Fensters, dass R erfolgreich installiert wurde." data-fig-align="left">
+<div id="fig-installation7" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="Screenshot des Fensters, dass R erfolgreich installiert wurde.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-installation7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../imgs/install_r_6_success.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:70.0%" alt="Screenshot des Fensters, dass R erfolgreich installiert wurde.">
@@ -2054,7 +2060,7 @@ Figure&nbsp;7: Installation von R für Windows: Erfolgreiche Installation
 <ul>
 <li>Wählen Sie <strong>Download RStudio Desktop for Windows</strong>, um die neuste Version von <em>RStudio</em> zu installieren.</li>
 </ul>
-<div id="fig-installation8" class="quarto-float quarto-figure quarto-figure-left anchored" alt="Screenshot der oben verlinkten Website." data-fig-align="left">
+<div id="fig-installation8" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="Screenshot der oben verlinkten Website.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-installation8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../imgs/install_r_rstudio_2.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:70.0%" alt="Screenshot der oben verlinkten Website.">
@@ -2081,7 +2087,7 @@ Figure&nbsp;8: Startseite für die Installation von R und RStudio
 <ul>
 <li>Öffnen Sie <a href="https://posit.co/download/rstudio-desktop/">die Installations-Website</a>.</li>
 </ul>
-<div id="fig-installation10" class="quarto-float quarto-figure quarto-figure-left anchored" alt="Screenshot der oben verlinkten Website." data-fig-align="left">
+<div id="fig-installation10" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="Screenshot der oben verlinkten Website.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-installation10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../imgs/install_r_rstudio_1_mac.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:70.0%" alt="Screenshot der oben verlinkten Website.">
@@ -2096,7 +2102,7 @@ Figure&nbsp;9: Startseite für die Installation von R und RStudio
 <ul>
 <li>Wählen Sie <strong>Download R for macOS</strong>, um die neuste Version von <em>R</em> zu installieren.</li>
 </ul>
-<div id="fig-installation2" class="quarto-float quarto-figure quarto-figure-left anchored" alt="Screenshot der oben verlinkten Website." data-fig-align="left">
+<div id="fig-installation2" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="Screenshot der oben verlinkten Website.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-installation2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../imgs/install_r_1.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:70.0%" alt="Screenshot der oben verlinkten Website.">
@@ -2111,7 +2117,7 @@ Figure&nbsp;10: Installation von R: Auswahl des Betriebssystems
 <ul>
 <li>Laden Sie die zu Ihrer Version von macOS passende Installationsdatei herunter. Beachten Sie, dass es zwei Versionen gibt. In der Regel gibt es eine Fehlermeldung, falls Sie einen Intel Prozessor (ältere Mac-Modelle, ca. vor 2021) haben und daher nicht die obere Version verwenden können.</li>
 </ul>
-<div id="fig-installation11" class="quarto-float quarto-figure quarto-figure-left anchored" alt="Screenshot der oben verlinkten Website." data-fig-align="left">
+<div id="fig-installation11" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="Screenshot der oben verlinkten Website.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-installation11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../imgs/install_r_2_mac.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:70.0%" alt="Screenshot der oben verlinkten Website.">
@@ -2128,7 +2134,7 @@ Figure&nbsp;11: Installation von R für macOS: Downloadlink
 <li>Falls die Auswahl erscheint, wählen Sie <em>English</em> als Sprache. Die englische Version macht es leichter im Internet Hilfe zu finden. Falls untenstehend nicht anders erwähnt, behalten Sie die Standardeinstellungen bei.</li>
 <li>Speichern Sie <em>R</em> auf der <code>Macintosh HD</code> ab. In der Regel entspricht dies den Standardeinstellung und Sie müssen nichts anpassen. Sie benötigen hierfür Admin-Rechte.</li>
 </ul>
-<div id="fig-installation12" class="quarto-float quarto-figure quarto-figure-left anchored" alt="Screenshot des Aufforderungsfensters." data-fig-align="left">
+<div id="fig-installation12" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="Screenshot des Aufforderungsfensters.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-installation12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../imgs/install_r_5_folder_mac.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:70.0%" alt="Screenshot des Aufforderungsfensters.">
@@ -2143,7 +2149,7 @@ Figure&nbsp;12: Installation von R für macOS: Startfenster
 <ul>
 <li>Sobald das untenstehende Fenster erscheint, haben Sie <em>R</em> erfolgreich installiert.</li>
 </ul>
-<div id="fig-installation13" class="quarto-float quarto-figure quarto-figure-left anchored" alt="Screenshot des Fensters, dass R erfolgreich installiert wurde." data-fig-align="left">
+<div id="fig-installation13" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="Screenshot des Fensters, dass R erfolgreich installiert wurde.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-installation13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../imgs/install_r_6_success_mac.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:70.0%" alt="Screenshot des Fensters, dass R erfolgreich installiert wurde.">
@@ -2158,7 +2164,7 @@ Figure&nbsp;13: Installation von R für macOS: Erfolgreiche Installation
 <ul>
 <li>Wählen Sie <strong>Download RStudio Desktop for MacOS</strong>, um die neuste Version von <em>RStudio</em> zu installieren.</li>
 </ul>
-<div id="fig-installation14" class="quarto-float quarto-figure quarto-figure-left anchored" alt="Screenshot der oben verlinkten Website." data-fig-align="left">
+<div id="fig-installation14" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="Screenshot der oben verlinkten Website.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-installation14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../imgs/install_r_rstudio_2_mac.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:70.0%" alt="Screenshot der oben verlinkten Website.">
@@ -2186,7 +2192,7 @@ Figure&nbsp;14: Startseite für die Installation von R und RStudio
 <ul>
 <li>Entfernen Sie die beiden Haken bei den eingefärbten Kästchen und wählen Sie die Option <code>Never</code>.</li>
 </ul>
-<div id="fig-installation15" class="quarto-float quarto-figure quarto-figure-left anchored" alt="Screenshot Options in RStudio." data-fig-align="left">
+<div id="fig-installation15" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left" alt="Screenshot Options in RStudio.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-installation15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="../imgs/rstudio_options_general_h.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:70.0%" alt="Screenshot Options in RStudio.">

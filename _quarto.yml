@@ -89,7 +89,7 @@ website:
         contents:
           - chapters/datageneratingprocesses.qmd
           - chapters/parameterestimates.qmd
-          #- chapters/hypothesistests.qmd
+          - chapters/hypothesistests.qmd
 
       - section: "EEG Datenanalyse"
         # href: chapters/...
