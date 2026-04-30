@@ -16,6 +16,8 @@ kein Vorbereitungsauftrag
 
 **Kurstermin**
 
+- [Datenmodellierung](../chapters/modeling.qmd)
+
 - [Signal detection theory](../chapters/sdt.qmd)
 
 **Vertiefung**

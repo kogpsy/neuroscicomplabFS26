@@ -16,7 +16,7 @@ title: "T9 01.05.2026"
 
 **Kurstermin**
 
-- Kurze Einführung in EEG und ERPs
+- [Kurze Einführung in EEG und ERPs](../chapters/intro_eeg.qmd)
 
 - Einführung in das MNE Python package
 

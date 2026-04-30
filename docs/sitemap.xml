@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://kogpsy.github.io/neuroscicomplabFS26/course/09.html</loc>
-    <lastmod>2026-04-24T19:09:27.182Z</lastmod>
+    <lastmod>2026-04-30T21:29:24.915Z</lastmod>
   </url>
   <url>
     <loc>https://kogpsy.github.io/neuroscicomplabFS26/course/07.html</loc>
@@ -49,48 +49,52 @@
     <lastmod>2026-02-26T14:40:20.861Z</lastmod>
   </url>
   <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS26/chapters/intro_analysis.html</loc>
-    <lastmod>2026-04-17T09:38:47.637Z</lastmod>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS26/chapters/intro_eeg.html</loc>
+    <lastmod>2026-04-30T21:32:28.236Z</lastmod>
   </url>
   <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS26/chapters/goodpractices_data.html</loc>
-    <lastmod>2026-04-13T13:40:00.105Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS26/chapters/experiments.html</loc>
-    <lastmod>2026-02-20T12:42:52.383Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS26/chapters/data_visualization.html</loc>
-    <lastmod>2026-03-20T12:34:38.460Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS26/chapters/basics_ggplot.html</loc>
-    <lastmod>2026-03-20T12:20:12.616Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS26/index.html</loc>
-    <lastmod>2026-02-20T12:57:01.570Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS26/chapters/basics_datawrangling.html</loc>
-    <lastmod>2026-03-13T13:26:58.317Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS26/chapters/basics_programming.html</loc>
-    <lastmod>2026-02-20T10:19:50.880Z</lastmod>
-  </url>
-  <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS26/chapters/datageneratingprocesses.html</loc>
-    <lastmod>2026-04-17T09:57:26.891Z</lastmod>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS26/chapters/hypothesistests.html</loc>
+    <lastmod>2026-04-23T12:17:51.619Z</lastmod>
   </url>
   <url>
     <loc>https://kogpsy.github.io/neuroscicomplabFS26/chapters/functions_wrangling.html</loc>
     <lastmod>2026-03-12T15:24:37.272Z</lastmod>
   </url>
   <url>
-    <loc>https://kogpsy.github.io/neuroscicomplabFS26/chapters/hypothesistests.html</loc>
-    <lastmod>2026-04-23T12:17:51.619Z</lastmod>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS26/chapters/datageneratingprocesses.html</loc>
+    <lastmod>2026-04-17T09:57:26.891Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS26/chapters/basics_programming.html</loc>
+    <lastmod>2026-02-20T10:19:50.880Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS26/chapters/basics_datawrangling.html</loc>
+    <lastmod>2026-03-13T13:26:58.317Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS26/index.html</loc>
+    <lastmod>2026-02-20T12:57:01.570Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS26/chapters/basics_ggplot.html</loc>
+    <lastmod>2026-03-20T12:20:12.616Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS26/chapters/data_visualization.html</loc>
+    <lastmod>2026-03-20T12:34:38.460Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS26/chapters/experiments.html</loc>
+    <lastmod>2026-02-20T12:42:52.383Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS26/chapters/goodpractices_data.html</loc>
+    <lastmod>2026-04-13T13:40:00.105Z</lastmod>
+  </url>
+  <url>
+    <loc>https://kogpsy.github.io/neuroscicomplabFS26/chapters/intro_analysis.html</loc>
+    <lastmod>2026-04-17T09:38:47.637Z</lastmod>
   </url>
   <url>
     <loc>https://kogpsy.github.io/neuroscicomplabFS26/chapters/intro_python.html</loc>
@@ -130,7 +134,7 @@
   </url>
   <url>
     <loc>https://kogpsy.github.io/neuroscicomplabFS26/course/12.html</loc>
-    <lastmod>2026-04-24T20:27:14.739Z</lastmod>
+    <lastmod>2026-04-24T20:46:51.678Z</lastmod>
   </url>
   <url>
     <loc>https://kogpsy.github.io/neuroscicomplabFS26/course/overview.html</loc>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>T2: 27.02.2026 – Neurowissenschaft Computerlab</title>
+<title>intro_eeg – Neurowissenschaft Computerlab</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,6 +29,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../chapters/hypothesistests.html" rel="prev">
 <link href="../imgs/logo_landing.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -86,6 +87,19 @@ div.callout-hands-on.callout-style-default .callout-icon::before, div.callout-ha
   content: 'nil' !important;
   background-image: none;
 }
+div.callout-debugging.callout {
+  border-left-color: RosyBrown;
+}
+div.callout-debugging.callout-style-default > .callout-header {
+  background-color: rgb(from RosyBrown r g b / 13%);
+}
+div.callout-debugging .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-debugging.callout-style-default .callout-icon::before, div.callout-debugging.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\e4d0' !important;
+  background-image: none;
+}
 div.callout-learnings.callout {
   border-left-color: LightSlateGray;
 }
@@ -107,19 +121,6 @@ div.callout-preparation.callout-style-default .callout-icon::before, div.callout
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: 'nil' !important;
-  background-image: none;
-}
-div.callout-debugging.callout {
-  border-left-color: RosyBrown;
-}
-div.callout-debugging.callout-style-default > .callout-header {
-  background-color: rgb(from RosyBrown r g b / 13%);
-}
-div.callout-debugging .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-debugging.callout-style-default .callout-icon::before, div.callout-debugging.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: '\e4d0' !important;
   background-image: none;
 }
 </style>
@@ -430,7 +431,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">T2: 27.02.2026</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/intro_eeg.html">EEG Datenanalyse</a></li><li class="breadcrumb-item"><a href="../chapters/intro_eeg.html">Einführung EEG</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -588,7 +589,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/intro_eeg.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/intro_eeg.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Einführung EEG</span></a>
   </div>
 </li>
@@ -603,120 +604,119 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#einführung-eeg" id="toc-einführung-eeg" class="nav-link active" data-scroll-target="#einführung-eeg">Einführung EEG</a>
+  <ul class="collapse">
+  <li><a href="#was-ist-eeg" id="toc-was-ist-eeg" class="nav-link" data-scroll-target="#was-ist-eeg">Was ist EEG?</a>
+  <ul class="collapse">
+  <li><a href="#was-misst-eeg" id="toc-was-misst-eeg" class="nav-link" data-scroll-target="#was-misst-eeg">Was misst EEG?</a></li>
+  <li><a href="#wichtige-eigenschaften-des-eeg" id="toc-wichtige-eigenschaften-des-eeg" class="nav-link" data-scroll-target="#wichtige-eigenschaften-des-eeg">Wichtige Eigenschaften des EEG</a></li>
+  </ul></li>
+  <li><a href="#grundlegende-schritte-der-eeg-analyse-bis-zu-erps" id="toc-grundlegende-schritte-der-eeg-analyse-bis-zu-erps" class="nav-link" data-scroll-target="#grundlegende-schritte-der-eeg-analyse-bis-zu-erps">Grundlegende Schritte der EEG-Analyse (bis zu ERPs)</a>
+  <ul class="collapse">
+  <li><a href="#was-sind-erps" id="toc-was-sind-erps" class="nav-link" data-scroll-target="#was-sind-erps">Was sind ERPs?</a></li>
+  <li><a href="#erp-analyse" id="toc-erp-analyse" class="nav-link" data-scroll-target="#erp-analyse">ERP Analyse</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">T2: 27.02.2026</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/intro_eeg.html">EEG Datenanalyse</a></li><li class="breadcrumb-item"><a href="../chapters/intro_eeg.html">Einführung EEG</a></li></ol></nav></header>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
 
 
-</header>
-
-
-<p><strong>Lernziele</strong></p>
-<div class="callout callout-style-default callout-note callout-titled" title="Lernziele">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Lernziele
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<section id="einführung-eeg" class="level1">
+<h1>Einführung EEG</h1>
+<section id="was-ist-eeg" class="level2">
+<h2 class="anchored" data-anchor-id="was-ist-eeg">Was ist EEG?</h2>
+<p>Elektroenzephalographie (EEG) ist eine nicht-invasive Methode zur Messung elektrischer Aktivität im Gehirn. Dabei werden Elektroden auf der Kopfhaut angebracht, um Spannungsänderungen zu erfassen, die durch neuronale Aktivität entstehen.</p>
+<section id="was-misst-eeg" class="level3">
+<h3 class="anchored" data-anchor-id="was-misst-eeg">Was misst EEG?</h3>
+<p>EEG misst vor allem die <strong>summierten postsynaptischen Potentiale</strong> von grossen Gruppen von Nervenzellen, insbesondere den <strong>pyramidalen Neuronen</strong> im Kortex. Diese Neuronen liegen senkrecht zur Kopfhaut und erzeugen elektrische Felder, wenn sie aktiviert werden. Die gemessenen Signale stammen nicht von einzelnen Aktionspotentialen, sondern von der koordinierten Aktivität vieler Neuronen.</p>
+</section>
+<section id="wichtige-eigenschaften-des-eeg" class="level3">
+<h3 class="anchored" data-anchor-id="wichtige-eigenschaften-des-eeg">Wichtige Eigenschaften des EEG</h3>
 <ul>
-<li>Wichtige Bausteine von Programmiersprachen kennen (Funktionen, Argumente, Objekte)</li>
-<li>Erste Schritte in Python (z.B. Datentypen kennen, Bibliotheken verwenden, Einlesen von Datensätzen, Zugriff auf Spalten und Zeilen, Daten filtern)</li>
-<li>Schleifen in Python erstellen können</li>
-<li>Erste Schritte zur Programmierung eines Experiments in PsychoPy umsetzen</li>
+<li><strong>Hohe zeitliche Auflösung</strong> im Millisekundenbereich</li>
+<li><strong>Nicht-invasiv</strong> und relativ kostengünstig</li>
+<li>Sensibel für Prozesse im Kortex, aber weniger für tieferliegende Strukturen</li>
+<li><strong>Inverse Problem</strong>: die Schwierigkeit, aus den EEG-Signalen auf der Kopfhaut eindeutig auf die zugrunde liegenden Quellen im Gehirn zu schliessen.</li>
 </ul>
+<hr>
+</section>
+</section>
+<section id="grundlegende-schritte-der-eeg-analyse-bis-zu-erps" class="level2">
+<h2 class="anchored" data-anchor-id="grundlegende-schritte-der-eeg-analyse-bis-zu-erps">Grundlegende Schritte der EEG-Analyse (bis zu ERPs)</h2>
+<section id="was-sind-erps" class="level3">
+<h3 class="anchored" data-anchor-id="was-sind-erps">Was sind ERPs?</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../imgs/erp.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
 </div>
-</div>
-<p><strong>Vorbereitungsauftrag</strong></p>
+<p><em>Source: Beres, A.M. Time is of the Essence: A Review of Electroencephalography (EEG) and Event-Related Brain Potentials (ERPs) in Language Research. Appl Psychophysiol Biofeedback 42, 247–255 (2017). https://doi.org/10.1007/s10484-017-9371-3</em></p>
+<p>Event-related potentials (ERPs) sind <strong>zeitlich mit einem bestimmten Event verknüpfte Veränderungen im EEG-Signal</strong>, die durch Mittelung über viele ähnliche Ereignisse gewonnen werden. Sie zeigen typische Wellenformen, die Rückschlüsse auf Wahrnehmung, Aufmerksamkeit oder Entscheidungsprozesse erlauben.</p>
+</section>
+<section id="erp-analyse" class="level3">
+<h3 class="anchored" data-anchor-id="erp-analyse">ERP Analyse</h3>
+<p>Die Analyse von EEG-Daten erfolgt in mehreren Schritten, um aus dem Rohsignal Event-Related Potentials (ERPs) zu extrahieren. Hier ein Überblick über die wichtigsten Analysephasen:</p>
+<section id="datenimport" class="level4">
+<h4 class="anchored" data-anchor-id="datenimport">1. Datenimport</h4>
 <ul>
-<li><p>Lesen Kapitel <a href="../chapters/intro_r.html">Einführung in R</a></p></li>
-<li><p>Installieren von <a href="https://posit.co/download/rstudio-desktop/">R und RStudio</a></p></li>
-<li><p>Installieren von <a href="https://www.psychopy.org/download.html">PsychoPy</a>: Version PsychoPy Standalone (Stable)</p></li>
-<li><p>Lesen Artikel “Imagery adds stimulus-specific sensory evidence to perceptual detection” von Dijkstra et al.&nbsp;(2022): <a href="https://doi.org/10.1167/jov.22.2.11" class="uri">https://doi.org/10.1167/jov.22.2.11</a>.</p></li>
-<li><p>Erstellen einer <a href="experiment.html#flowcharts">Flowchart</a> zum geplanten Experiment mit wichtigen Bausteinen und Abläufen:</p>
-<ul>
-<li>Alle <a href="../chapters/experiments.html">Elemente eines Experiments</a></li>
-<li>Wiederholungen von Elementen (mit einem Loop/Pfeil)</li>
-<li>Dauer von Elementen (z.B. in ms)</li>
-<li>Aufgenommene Daten (z.B. gedrückte Taste, welche zur Auswahl?)</li>
-</ul></li>
+<li>Laden der Rohdaten aus dem EEG-Aufzeichnungssystem</li>
+<li>Enthält Informationen zu Kanälen, Sampling-Rate und Markern (Events)</li>
 </ul>
-<p><em>Tipps</em>:</p>
+</section>
+<section id="vorverarbeitung-preprocessing" class="level4">
+<h4 class="anchored" data-anchor-id="vorverarbeitung-preprocessing">2. Vorverarbeitung (Preprocessing)</h4>
 <ul>
-<li>Die Flowchart kann auf einem Blatt Papier, in einem Programm wie Word/Excel oder R mit dem <a href="https://data-mermaid.github.io/mermaidr/">{<code>mermaidr</code>}-Package</a> gezeichnet werden. Sie dient als Vorlage für das Experiment.</li>
+<li><strong>Filterung</strong>: Entfernen von Rauschen, z.B. tieffrequente Drift (High-Pass) oder Muskelartefakte (Low-Pass)</li>
+<li><strong>Re-Referenzierung</strong>: Wahl einer gemeinsamen Referenz (z.B. Durchschnitt aller Elektroden)</li>
+<li><strong>Artefaktentfernung</strong>: Ausschluss oder Korrektur von Störungen wie Augenbewegungen oder Blinzeln (z.B. mit Hilfe von ICA)</li>
 </ul>
-<p><strong>Kurstermin</strong></p>
+</section>
+<section id="event-markierung" class="level4">
+<h4 class="anchored" data-anchor-id="event-markierung">3. Event-Markierung</h4>
 <ul>
-<li><p>Einführung in das <a href="../chapters/intro_python.html">Programmieren mit Python</a></p></li>
-<li><p><a href="../chapters/loops.html">Schleifen programmieren mit Python</a></p></li>
-<li><p>Einführung in das Experiment, das wir im Kurs durchführen werden</p></li>
-<li><p>Einführung in PsychoPy</p></li>
-<li><p>Wichtige Aspekte für Testleitende</p></li>
+<li>Identifikation relevanter Zeitpunkte im EEG (z.B. Reizbeginn, Tastendruck)</li>
+<li>Diese Marker definieren die Zeitfenster für weitere Analysen</li>
 </ul>
-<p><strong>Aufträge</strong></p>
-<div class="callout callout-style-default callout-caution callout-titled" title="Übung 1">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Übung 1
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<p><img src="../imgs/epoch.png" class="img-fluid quarto-figure quarto-figure-center"> <em>Source: Martínez Beltrán, E.T., Quiles Pérez, M., López Bernal, S. <em>et al.</em> Noise-based cyberattacks generating fake P300 waves in brain–computer interfaces. <em>Cluster Comput</em> <strong>25</strong>, 33–48 (2022). https://doi.org/10.1007/s10586-021-03326-z</em></p>
+</section>
+<section id="epochierung" class="level4">
+<h4 class="anchored" data-anchor-id="epochierung">4. Epochierung</h4>
 <ul>
-<li>Führen Sie mit 2 Personen unser Experiment durch. Laden Sie anschliessend die 2 Datensätze auf Ilias hoch. Das Experiment dauert ca. 45 Minuten (abhängig von den Versuchspersonen).</li>
-<li>Öffnen Sie <code>quality_check.Rmd</code>, klicken Sie auf <em>Knit</em>, sodass eine HTML-Datei erzeugt wird, und laden Sie diese HTML-Datei auf ILIAS hoch.</li>
-<li>Diese Übung muss einzeln abgegeben werden.</li>
+<li>Unterteilung des kontinuierlichen EEG in kurze Zeitabschnitte (Epochen) rund um das Event (z.B. -200 bis +800 ms)</li>
+<li>Jede Epoche repräsentiert die Reaktion auf ein einzelnes Event</li>
 </ul>
-<p><strong>Abgabetermin: 16.03.2026 23:55</strong></p>
-<p><strong><em><span class="math inline">\(\rightarrow\)</span> Trouble shooting</em></strong></p>
-<p>Bitte die Fehlermeldung im Fenster genau durchlesen. Dort finden Sie Hinweise darauf, was schief gelaufen ist.</p>
-<p><strong>Das Experiment startet nicht.</strong></p>
+</section>
+<section id="erp-berechnung" class="level4">
+<h4 class="anchored" data-anchor-id="erp-berechnung">5. ERP-Berechnung</h4>
 <ul>
-<li><p>Unter <code>Einstellungen</code> (Radsymbol) den Reiter <code>Basic</code> auswählen. Bei <code>Use PsychoPy version</code> die neuste PsychoPy Version <code>2025.2.4</code> auswählen.</p></li>
-<li><p>Unter <code>Einstellungen</code> (Radsymbol) den Reiter <code>Input</code> auswählen. Bei <code>Keyboard backend</code> (statt <code>ioHub</code>) <code>PsychToolbox</code> auswählen.</p></li>
+<li>Mitteln der Epochen über viele Trials pro Bedingung</li>
+<li>Das resultierende ERP zeigt zeitlich stabile Hirnreaktionen auf spezifische Events</li>
 </ul>
-<p><strong>Das Experiment startet zwar, der Bildschirm ist aber dann einfach für eine kurze Zeit grau und das Fenster schliesst sich wieder.</strong></p>
+</section>
+<section id="visualisierung-und-interpretation" class="level4">
+<h4 class="anchored" data-anchor-id="visualisierung-und-interpretation">6. Visualisierung und Interpretation</h4>
 <ul>
-<li><p>Zugriffsrechte gegeben? (Bei Windows: Als Administrator starten, bei MacOS: <a href="https://support.apple.com/en-gb/guide/mac-help/mchl07817563/12.0/mac/12.0">Zugriffsrechte erteilen</a>)</p></li>
-<li><p>Unter <code>Einstellungen</code> (Radsymbol) den Reiter <code>Input</code> auswählen. <code>Keyboard Backend</code> auf <code>PsychToolbox</code> statt <code>ioHub</code> setzen.</p></li>
-</ul>
-<p><strong>PsychoPy findet die Schriftart <em>Noto Sans</em> nicht.</strong></p>
-<ul>
-<li><p>Laden Sie die Schriftart <em>Noto Sans</em> herunter und installieren Sie sie auf Ihrem Computer:</p>
-<p>https://fonts.google.com/noto/specimen/Noto+Sans</p></li>
-<li><p>Starten Sie PsychoPy nach der Installation neu, damit die Schrift erkannt wird.</p></li>
-</ul>
-</div>
-</div>
-<p><strong>Vertiefung für Interessierte (freiwillig)</strong></p>
-<ul>
-<li>PsychoPy Tutorial (YouTube): <a href="https://www.youtube.com/watch?v=GSv60zgQlB8&amp;list=PL6PJquR5BWXllUt585cRJWcRTly55iXTm" class="uri">https://www.youtube.com/watch?v=GSv60zgQlB8&amp;list=PL6PJquR5BWXllUt585cRJWcRTly55iXTm</a></li>
+<li>Darstellung der ERPs als Wellenformen (z.B. über die Zeit an bestimmten Elektroden)</li>
+<li>Identifikation typischer Komponenten wie P1, N1, P300 usw.</li>
+<li>Vergleich von Bedingungen oder Gruppen mit statistischen Tests</li>
 </ul>
 
 
+</section>
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script>
@@ -1549,6 +1549,15 @@ window.onload = function() {
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/hypothesistests.html" class="pagination-link" aria-label="Hypothesentests: Bayesianischer $t$-Test und Äquivalenztests (TOSTs)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Hypothesentests: Bayesianischer <span class="math inline">\(t\)</span>-Test und Äquivalenztests (TOSTs)</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

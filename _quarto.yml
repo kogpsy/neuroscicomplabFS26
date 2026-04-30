@@ -93,8 +93,8 @@ website:
 
       - section: "EEG Datenanalyse"
         # href: chapters/...
-        # contents:
-        #   - chapters/...
+        contents:
+          - chapters/intro_eeg.qmd
 
       - section: "Modeling"
         # href: chapters/modeling.qmd
