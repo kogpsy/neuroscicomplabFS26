@@ -18,13 +18,14 @@ title: "T11 15.05.2026"
 
 **Kurstermin**
 
-- Einführung in psychometrischen Funktionen
+- [Einführung in psychometrischen Funktionen](../chapters/psychometric_functions.qmd)
 
 - Wichtige parametrische Formen (z. B. logistisch, Weibull)
 
 - Bedeutung der verschiedenen Parameter
 
 - Praktisches Beispiel in R 
+
 
 **Aufträge**
 

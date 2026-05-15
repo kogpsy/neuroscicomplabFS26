@@ -98,8 +98,8 @@ website:
 
       - section: "Modeling"
         # href: chapters/modeling.qmd
-        #contents:
-         # - chapters/psychometricfunctions.qmd
+        contents:
+          - chapters/psychometric_functions.qmd
          # - chapters/sdt.qmd
          # - chapters/ddm.qmd
 
